@@ -36,10 +36,10 @@
             this.dateFill = new System.Windows.Forms.DateTimePicker();
             this.labelNames = new System.Windows.Forms.Label();
             this.labelBirth = new System.Windows.Forms.Label();
-            this.labelPhone = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
-            this.labelWork = new System.Windows.Forms.Label();
+            this.labelPhone = new System.Windows.Forms.Label();
             this.labelSocial = new System.Windows.Forms.Label();
+            this.labelWork = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
             this.panelGender = new System.Windows.Forms.FlowLayoutPanel();
             this.radioMale = new System.Windows.Forms.RadioButton();
@@ -194,18 +194,6 @@
             this.labelBirth.Text = "Дата рождения";
             this.labelBirth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelPhone
-            // 
-            this.labelPhone.AutoSize = true;
-            this.labelPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(3, 310);
-            this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(239, 30);
-            this.labelPhone.TabIndex = 7;
-            this.labelPhone.Text = "Контактный телефон";
-            this.labelPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // labelAddress
             // 
             this.labelAddress.AutoSize = true;
@@ -218,17 +206,17 @@
             this.labelAddress.Text = "Адрес регистрации";
             this.labelAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelWork
+            // labelPhone
             // 
-            this.labelWork.AutoSize = true;
-            this.labelWork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWork.Location = new System.Drawing.Point(3, 400);
-            this.labelWork.Name = "labelWork";
-            this.labelWork.Size = new System.Drawing.Size(239, 60);
-            this.labelWork.TabIndex = 11;
-            this.labelWork.Text = "Место работы (службы, учебы)";
-            this.labelWork.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone.Location = new System.Drawing.Point(3, 310);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(239, 30);
+            this.labelPhone.TabIndex = 7;
+            this.labelPhone.Text = "Контактный телефон";
+            this.labelPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelSocial
             // 
@@ -241,6 +229,18 @@
             this.labelSocial.TabIndex = 12;
             this.labelSocial.Text = "Социальное положение";
             this.labelSocial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelWork
+            // 
+            this.labelWork.AutoSize = true;
+            this.labelWork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWork.Location = new System.Drawing.Point(3, 400);
+            this.labelWork.Name = "labelWork";
+            this.labelWork.Size = new System.Drawing.Size(239, 60);
+            this.labelWork.TabIndex = 11;
+            this.labelWork.Text = "Место работы (службы, учебы)";
+            this.labelWork.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelGender
             // 
@@ -323,6 +323,7 @@
             this.textBoxAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxAddress.Size = new System.Drawing.Size(626, 54);
             this.textBoxAddress.TabIndex = 18;
+            this.textBoxAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxPhone
             // 
@@ -345,6 +346,7 @@
             this.textBoxSocial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSocial.Size = new System.Drawing.Size(626, 54);
             this.textBoxSocial.TabIndex = 20;
+            this.textBoxSocial.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxWork
             // 
@@ -357,6 +359,7 @@
             this.textBoxWork.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxWork.Size = new System.Drawing.Size(626, 54);
             this.textBoxWork.TabIndex = 21;
+            this.textBoxWork.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // dateBirth
             // 
@@ -381,6 +384,7 @@
             // buttonCancel
             // 
             this.buttonCancel.AutoSize = true;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(335, 6);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6);

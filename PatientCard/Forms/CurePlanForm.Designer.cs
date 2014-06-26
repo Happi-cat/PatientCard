@@ -515,6 +515,7 @@
             this.textBoxAid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxAid.Size = new System.Drawing.Size(631, 20);
             this.textBoxAid.TabIndex = 30;
+            this.textBoxAid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxProfilactic1
             // 
@@ -525,6 +526,7 @@
             this.textBoxProfilactic1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxProfilactic1.Size = new System.Drawing.Size(631, 21);
             this.textBoxProfilactic1.TabIndex = 31;
+            this.textBoxProfilactic1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxProfilactic2
             // 
@@ -535,6 +537,7 @@
             this.textBoxProfilactic2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxProfilactic2.Size = new System.Drawing.Size(631, 24);
             this.textBoxProfilactic2.TabIndex = 32;
+            this.textBoxProfilactic2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxProfilactic3
             // 
@@ -545,6 +548,7 @@
             this.textBoxProfilactic3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxProfilactic3.Size = new System.Drawing.Size(631, 21);
             this.textBoxProfilactic3.TabIndex = 33;
+            this.textBoxProfilactic3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxProfilactic4
             // 
@@ -555,6 +559,7 @@
             this.textBoxProfilactic4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxProfilactic4.Size = new System.Drawing.Size(631, 21);
             this.textBoxProfilactic4.TabIndex = 34;
+            this.textBoxProfilactic4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxTherapy1
             // 
@@ -565,6 +570,7 @@
             this.textBoxTherapy1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTherapy1.Size = new System.Drawing.Size(631, 21);
             this.textBoxTherapy1.TabIndex = 35;
+            this.textBoxTherapy1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxTherapy2
             // 
@@ -575,6 +581,7 @@
             this.textBoxTherapy2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTherapy2.Size = new System.Drawing.Size(631, 21);
             this.textBoxTherapy2.TabIndex = 36;
+            this.textBoxTherapy2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxTherapy3
             // 
@@ -585,6 +592,7 @@
             this.textBoxTherapy3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTherapy3.Size = new System.Drawing.Size(631, 21);
             this.textBoxTherapy3.TabIndex = 42;
+            this.textBoxTherapy3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxTherapy4
             // 
@@ -595,6 +603,7 @@
             this.textBoxTherapy4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTherapy4.Size = new System.Drawing.Size(631, 21);
             this.textBoxTherapy4.TabIndex = 44;
+            this.textBoxTherapy4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxTherapy5
             // 
@@ -605,6 +614,7 @@
             this.textBoxTherapy5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTherapy5.Size = new System.Drawing.Size(631, 21);
             this.textBoxTherapy5.TabIndex = 46;
+            this.textBoxTherapy5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxTherapy6
             // 
@@ -615,6 +625,7 @@
             this.textBoxTherapy6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTherapy6.Size = new System.Drawing.Size(631, 21);
             this.textBoxTherapy6.TabIndex = 48;
+            this.textBoxTherapy6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxTherapy7
             // 
@@ -625,6 +636,7 @@
             this.textBoxTherapy7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTherapy7.Size = new System.Drawing.Size(631, 21);
             this.textBoxTherapy7.TabIndex = 50;
+            this.textBoxTherapy7.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxSurgery1
             // 
@@ -635,6 +647,7 @@
             this.textBoxSurgery1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSurgery1.Size = new System.Drawing.Size(631, 21);
             this.textBoxSurgery1.TabIndex = 51;
+            this.textBoxSurgery1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxSurgery2
             // 
@@ -645,6 +658,7 @@
             this.textBoxSurgery2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSurgery2.Size = new System.Drawing.Size(631, 21);
             this.textBoxSurgery2.TabIndex = 53;
+            this.textBoxSurgery2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxSurgery3
             // 
@@ -655,6 +669,7 @@
             this.textBoxSurgery3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSurgery3.Size = new System.Drawing.Size(631, 21);
             this.textBoxSurgery3.TabIndex = 55;
+            this.textBoxSurgery3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxSurgery4
             // 
@@ -665,6 +680,7 @@
             this.textBoxSurgery4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSurgery4.Size = new System.Drawing.Size(631, 21);
             this.textBoxSurgery4.TabIndex = 57;
+            this.textBoxSurgery4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxSurgery5
             // 
@@ -675,6 +691,7 @@
             this.textBoxSurgery5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSurgery5.Size = new System.Drawing.Size(631, 21);
             this.textBoxSurgery5.TabIndex = 59;
+            this.textBoxSurgery5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxSurgery6
             // 
@@ -685,6 +702,7 @@
             this.textBoxSurgery6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSurgery6.Size = new System.Drawing.Size(631, 21);
             this.textBoxSurgery6.TabIndex = 61;
+            this.textBoxSurgery6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxOrtoped
             // 
@@ -695,6 +713,7 @@
             this.textBoxOrtoped.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxOrtoped.Size = new System.Drawing.Size(631, 21);
             this.textBoxOrtoped.TabIndex = 62;
+            this.textBoxOrtoped.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxOrtodont
             // 
@@ -705,6 +724,7 @@
             this.textBoxOrtodont.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxOrtodont.Size = new System.Drawing.Size(631, 21);
             this.textBoxOrtodont.TabIndex = 63;
+            this.textBoxOrtodont.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxAdvanced
             // 
@@ -715,6 +735,7 @@
             this.textBoxAdvanced.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxAdvanced.Size = new System.Drawing.Size(631, 28);
             this.textBoxAdvanced.TabIndex = 64;
+            this.textBoxAdvanced.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxConsult
             // 
@@ -725,6 +746,7 @@
             this.textBoxConsult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxConsult.Size = new System.Drawing.Size(631, 28);
             this.textBoxConsult.TabIndex = 65;
+            this.textBoxConsult.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // label31
             // 

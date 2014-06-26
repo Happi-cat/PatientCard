@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CurePlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CurePlanForm.Designer.cs">
+      <DependentUpon>CurePlanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DiagnosticForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DiagnosticForm.Designer.cs">
       <DependentUpon>DiagnosticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditTextForm.Designer.cs">
+      <DependentUpon>EditTextForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HistoryForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +90,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CurePlanForm.resx">
+      <DependentUpon>CurePlanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DiagnosticForm.resx">
       <DependentUpon>DiagnosticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditTextForm.resx">
+      <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>

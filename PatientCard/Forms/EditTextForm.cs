@@ -16,7 +16,22 @@ namespace PatientCard.Forms
             InitializeComponent();
         }
 
-        private void panelMain_Paint(object sender, PaintEventArgs e)
+        public EditTextForm(string text)
+        {
+            InitializeComponent();
+
+            textBoxEdit.Text = text;
+            ResultText = text;
+        }
+
+        public string ResultText { get; set; }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            ResultText = textBoxEdit.Text;
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
 
         }
