@@ -16,17 +16,7 @@ namespace PatientCard.Forms
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            var form = new HistoryForm();
-            form.Show(this);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var form = new PatientCardForm();
-            form.Show(this);
-        }
+      
 
         private void patientCardToolStripMenuItem_Click(object sender, EventArgs e)
         {
