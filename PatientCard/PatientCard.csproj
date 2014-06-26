@@ -82,11 +82,11 @@
     <Compile Include="Forms\DentistStatForm.Designer.cs">
       <DependentUpon>DentistStatForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DiagnosticForm.cs">
+    <Compile Include="Forms\HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DiagnosticForm.Designer.cs">
-      <DependentUpon>DiagnosticForm.cs</DependentUpon>
+    <Compile Include="Forms\HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditTextForm.cs">
       <SubType>Form</SubType>
@@ -94,11 +94,11 @@
     <Compile Include="Forms\EditTextForm.Designer.cs">
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HistoryForm.cs">
+    <Compile Include="Forms\DiagnosticForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HistoryForm.Designer.cs">
-      <DependentUpon>HistoryForm.cs</DependentUpon>
+    <Compile Include="Forms\DiagnosticForm.Designer.cs">
+      <DependentUpon>DiagnosticForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -118,6 +118,9 @@
     <Compile Include="Forms\ResearchForm.Designer.cs">
       <DependentUpon>ResearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\DataManager.cs" />
+    <Compile Include="Logic\EditMode.cs" />
+    <Compile Include="Logic\Utility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CurePlanForm.resx">
@@ -126,14 +129,14 @@
     <EmbeddedResource Include="Forms\DentistStatForm.resx">
       <DependentUpon>DentistStatForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DiagnosticForm.resx">
-      <DependentUpon>DiagnosticForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditTextForm.resx">
       <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HistoryForm.resx">
-      <DependentUpon>HistoryForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DiagnosticForm.resx">
+      <DependentUpon>DiagnosticForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

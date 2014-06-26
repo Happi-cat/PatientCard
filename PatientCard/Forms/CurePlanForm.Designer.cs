@@ -782,6 +782,7 @@
             // 
             // dateOccured
             // 
+            this.dateOccured.Enabled = false;
             this.dateOccured.Location = new System.Drawing.Point(365, 660);
             this.dateOccured.Name = "dateOccured";
             this.dateOccured.Size = new System.Drawing.Size(200, 21);
@@ -815,6 +816,7 @@
             // buttonOk
             // 
             this.buttonOk.AutoSize = true;
+            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOk.Location = new System.Drawing.Point(463, 6);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(6);

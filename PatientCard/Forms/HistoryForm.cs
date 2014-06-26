@@ -15,14 +15,5 @@ namespace PatientCard.Forms
         {
             InitializeComponent();
         }
-
-        private void multiText_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            var editText = new EditTextForm(((TextBox)sender).Text);
-            if (editText.ShowDialog() == DialogResult.OK)
-            {
-                ((TextBox)sender).Text = editText.ResultText;
-            }
-        }
     }
 }

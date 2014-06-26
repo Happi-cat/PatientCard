@@ -136,6 +136,7 @@
             // 
             // dateFill
             // 
+            this.dateFill.Enabled = false;
             this.dateFill.Location = new System.Drawing.Point(458, 43);
             this.dateFill.Name = "dateFill";
             this.dateFill.Size = new System.Drawing.Size(200, 20);
@@ -368,6 +369,7 @@
             // buttonOk
             // 
             this.buttonOk.AutoSize = true;
+            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOk.Location = new System.Drawing.Point(248, 6);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(6);
