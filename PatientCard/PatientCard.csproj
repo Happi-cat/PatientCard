@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PatientCard.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,6 +75,12 @@
     </Compile>
     <Compile Include="Forms\CurePlanForm.Designer.cs">
       <DependentUpon>CurePlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DentistStatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DentistStatForm.Designer.cs">
+      <DependentUpon>DentistStatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DiagnosticForm.cs">
       <SubType>Form</SubType>
@@ -113,6 +122,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CurePlanForm.resx">
       <DependentUpon>CurePlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DentistStatForm.resx">
+      <DependentUpon>DentistStatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DiagnosticForm.resx">
       <DependentUpon>DiagnosticForm.cs</DependentUpon>

@@ -29,6 +29,22 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxConsult = new System.Windows.Forms.TextBox();
+            this.textBoxAdvanced = new System.Windows.Forms.TextBox();
+            this.textBoxOrtodont = new System.Windows.Forms.TextBox();
+            this.textBoxOrtoped = new System.Windows.Forms.TextBox();
+            this.textBoxSurgery6 = new System.Windows.Forms.TextBox();
+            this.textBoxSurgery5 = new System.Windows.Forms.TextBox();
+            this.textBoxSurgery4 = new System.Windows.Forms.TextBox();
+            this.textBoxSurgery3 = new System.Windows.Forms.TextBox();
+            this.textBoxSurgery2 = new System.Windows.Forms.TextBox();
+            this.textBoxSurgery1 = new System.Windows.Forms.TextBox();
+            this.textBoxTherapy7 = new System.Windows.Forms.TextBox();
+            this.textBoxTherapy6 = new System.Windows.Forms.TextBox();
+            this.textBoxTherapy5 = new System.Windows.Forms.TextBox();
+            this.textBoxTherapy4 = new System.Windows.Forms.TextBox();
+            this.textBoxTherapy3 = new System.Windows.Forms.TextBox();
+            this.textBoxProfilactic1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +59,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -55,32 +70,17 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.textBoxAid = new System.Windows.Forms.TextBox();
-            this.textBoxProfilactic1 = new System.Windows.Forms.TextBox();
             this.textBoxProfilactic2 = new System.Windows.Forms.TextBox();
             this.textBoxProfilactic3 = new System.Windows.Forms.TextBox();
             this.textBoxProfilactic4 = new System.Windows.Forms.TextBox();
             this.textBoxTherapy1 = new System.Windows.Forms.TextBox();
             this.textBoxTherapy2 = new System.Windows.Forms.TextBox();
-            this.textBoxTherapy3 = new System.Windows.Forms.TextBox();
-            this.textBoxTherapy4 = new System.Windows.Forms.TextBox();
-            this.textBoxTherapy5 = new System.Windows.Forms.TextBox();
-            this.textBoxTherapy6 = new System.Windows.Forms.TextBox();
-            this.textBoxTherapy7 = new System.Windows.Forms.TextBox();
-            this.textBoxSurgery1 = new System.Windows.Forms.TextBox();
-            this.textBoxSurgery2 = new System.Windows.Forms.TextBox();
-            this.textBoxSurgery3 = new System.Windows.Forms.TextBox();
-            this.textBoxSurgery4 = new System.Windows.Forms.TextBox();
-            this.textBoxSurgery5 = new System.Windows.Forms.TextBox();
-            this.textBoxSurgery6 = new System.Windows.Forms.TextBox();
-            this.textBoxOrtoped = new System.Windows.Forms.TextBox();
-            this.textBoxOrtodont = new System.Windows.Forms.TextBox();
-            this.textBoxAdvanced = new System.Windows.Forms.TextBox();
-            this.textBoxConsult = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.textBoxDoctor = new System.Windows.Forms.TextBox();
@@ -189,6 +189,182 @@
             this.panelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.panelMain.Size = new System.Drawing.Size(999, 774);
             this.panelMain.TabIndex = 0;
+            // 
+            // textBoxConsult
+            // 
+            this.textBoxConsult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxConsult.Location = new System.Drawing.Point(365, 579);
+            this.textBoxConsult.Multiline = true;
+            this.textBoxConsult.Name = "textBoxConsult";
+            this.textBoxConsult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxConsult.Size = new System.Drawing.Size(631, 28);
+            this.textBoxConsult.TabIndex = 65;
+            this.textBoxConsult.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxAdvanced
+            // 
+            this.textBoxAdvanced.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxAdvanced.Location = new System.Drawing.Point(365, 545);
+            this.textBoxAdvanced.Multiline = true;
+            this.textBoxAdvanced.Name = "textBoxAdvanced";
+            this.textBoxAdvanced.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxAdvanced.Size = new System.Drawing.Size(631, 28);
+            this.textBoxAdvanced.TabIndex = 64;
+            this.textBoxAdvanced.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxOrtodont
+            // 
+            this.textBoxOrtodont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxOrtodont.Location = new System.Drawing.Point(365, 518);
+            this.textBoxOrtodont.Multiline = true;
+            this.textBoxOrtodont.Name = "textBoxOrtodont";
+            this.textBoxOrtodont.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxOrtodont.Size = new System.Drawing.Size(631, 21);
+            this.textBoxOrtodont.TabIndex = 63;
+            this.textBoxOrtodont.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxOrtoped
+            // 
+            this.textBoxOrtoped.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxOrtoped.Location = new System.Drawing.Point(365, 491);
+            this.textBoxOrtoped.Multiline = true;
+            this.textBoxOrtoped.Name = "textBoxOrtoped";
+            this.textBoxOrtoped.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxOrtoped.Size = new System.Drawing.Size(631, 21);
+            this.textBoxOrtoped.TabIndex = 62;
+            this.textBoxOrtoped.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxSurgery6
+            // 
+            this.textBoxSurgery6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSurgery6.Location = new System.Drawing.Point(365, 464);
+            this.textBoxSurgery6.Multiline = true;
+            this.textBoxSurgery6.Name = "textBoxSurgery6";
+            this.textBoxSurgery6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSurgery6.Size = new System.Drawing.Size(631, 21);
+            this.textBoxSurgery6.TabIndex = 61;
+            this.textBoxSurgery6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxSurgery5
+            // 
+            this.textBoxSurgery5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSurgery5.Location = new System.Drawing.Point(365, 437);
+            this.textBoxSurgery5.Multiline = true;
+            this.textBoxSurgery5.Name = "textBoxSurgery5";
+            this.textBoxSurgery5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSurgery5.Size = new System.Drawing.Size(631, 21);
+            this.textBoxSurgery5.TabIndex = 59;
+            this.textBoxSurgery5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxSurgery4
+            // 
+            this.textBoxSurgery4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSurgery4.Location = new System.Drawing.Point(365, 410);
+            this.textBoxSurgery4.Multiline = true;
+            this.textBoxSurgery4.Name = "textBoxSurgery4";
+            this.textBoxSurgery4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSurgery4.Size = new System.Drawing.Size(631, 21);
+            this.textBoxSurgery4.TabIndex = 57;
+            this.textBoxSurgery4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxSurgery3
+            // 
+            this.textBoxSurgery3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSurgery3.Location = new System.Drawing.Point(365, 383);
+            this.textBoxSurgery3.Multiline = true;
+            this.textBoxSurgery3.Name = "textBoxSurgery3";
+            this.textBoxSurgery3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSurgery3.Size = new System.Drawing.Size(631, 21);
+            this.textBoxSurgery3.TabIndex = 55;
+            this.textBoxSurgery3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxSurgery2
+            // 
+            this.textBoxSurgery2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSurgery2.Location = new System.Drawing.Point(365, 356);
+            this.textBoxSurgery2.Multiline = true;
+            this.textBoxSurgery2.Name = "textBoxSurgery2";
+            this.textBoxSurgery2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSurgery2.Size = new System.Drawing.Size(631, 21);
+            this.textBoxSurgery2.TabIndex = 53;
+            this.textBoxSurgery2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxSurgery1
+            // 
+            this.textBoxSurgery1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSurgery1.Location = new System.Drawing.Point(365, 329);
+            this.textBoxSurgery1.Multiline = true;
+            this.textBoxSurgery1.Name = "textBoxSurgery1";
+            this.textBoxSurgery1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSurgery1.Size = new System.Drawing.Size(631, 21);
+            this.textBoxSurgery1.TabIndex = 51;
+            this.textBoxSurgery1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxTherapy7
+            // 
+            this.textBoxTherapy7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxTherapy7.Location = new System.Drawing.Point(365, 302);
+            this.textBoxTherapy7.Multiline = true;
+            this.textBoxTherapy7.Name = "textBoxTherapy7";
+            this.textBoxTherapy7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxTherapy7.Size = new System.Drawing.Size(631, 21);
+            this.textBoxTherapy7.TabIndex = 50;
+            this.textBoxTherapy7.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxTherapy6
+            // 
+            this.textBoxTherapy6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxTherapy6.Location = new System.Drawing.Point(365, 275);
+            this.textBoxTherapy6.Multiline = true;
+            this.textBoxTherapy6.Name = "textBoxTherapy6";
+            this.textBoxTherapy6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxTherapy6.Size = new System.Drawing.Size(631, 21);
+            this.textBoxTherapy6.TabIndex = 48;
+            this.textBoxTherapy6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxTherapy5
+            // 
+            this.textBoxTherapy5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxTherapy5.Location = new System.Drawing.Point(365, 248);
+            this.textBoxTherapy5.Multiline = true;
+            this.textBoxTherapy5.Name = "textBoxTherapy5";
+            this.textBoxTherapy5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxTherapy5.Size = new System.Drawing.Size(631, 21);
+            this.textBoxTherapy5.TabIndex = 46;
+            this.textBoxTherapy5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxTherapy4
+            // 
+            this.textBoxTherapy4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxTherapy4.Location = new System.Drawing.Point(365, 221);
+            this.textBoxTherapy4.Multiline = true;
+            this.textBoxTherapy4.Name = "textBoxTherapy4";
+            this.textBoxTherapy4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxTherapy4.Size = new System.Drawing.Size(631, 21);
+            this.textBoxTherapy4.TabIndex = 44;
+            this.textBoxTherapy4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxTherapy3
+            // 
+            this.textBoxTherapy3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxTherapy3.Location = new System.Drawing.Point(365, 194);
+            this.textBoxTherapy3.Multiline = true;
+            this.textBoxTherapy3.Name = "textBoxTherapy3";
+            this.textBoxTherapy3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxTherapy3.Size = new System.Drawing.Size(631, 21);
+            this.textBoxTherapy3.TabIndex = 42;
+            this.textBoxTherapy3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
+            // 
+            // textBoxProfilactic1
+            // 
+            this.textBoxProfilactic1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxProfilactic1.Location = new System.Drawing.Point(365, 29);
+            this.textBoxProfilactic1.Multiline = true;
+            this.textBoxProfilactic1.Name = "textBoxProfilactic1";
+            this.textBoxProfilactic1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxProfilactic1.Size = new System.Drawing.Size(631, 21);
+            this.textBoxProfilactic1.TabIndex = 31;
+            this.textBoxProfilactic1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // label1
             // 
@@ -336,17 +512,6 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "3";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 326);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 27);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "4";
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -462,6 +627,17 @@
             this.label26.TabIndex = 25;
             this.label26.Text = "Консультация других специалистов (указать)";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 326);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(14, 27);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "4";
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -516,17 +692,6 @@
             this.textBoxAid.Size = new System.Drawing.Size(631, 20);
             this.textBoxAid.TabIndex = 30;
             this.textBoxAid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxProfilactic1
-            // 
-            this.textBoxProfilactic1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxProfilactic1.Location = new System.Drawing.Point(365, 29);
-            this.textBoxProfilactic1.Multiline = true;
-            this.textBoxProfilactic1.Name = "textBoxProfilactic1";
-            this.textBoxProfilactic1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxProfilactic1.Size = new System.Drawing.Size(631, 21);
-            this.textBoxProfilactic1.TabIndex = 31;
-            this.textBoxProfilactic1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
             // textBoxProfilactic2
             // 
@@ -583,171 +748,6 @@
             this.textBoxTherapy2.TabIndex = 36;
             this.textBoxTherapy2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
-            // textBoxTherapy3
-            // 
-            this.textBoxTherapy3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTherapy3.Location = new System.Drawing.Point(365, 194);
-            this.textBoxTherapy3.Multiline = true;
-            this.textBoxTherapy3.Name = "textBoxTherapy3";
-            this.textBoxTherapy3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxTherapy3.Size = new System.Drawing.Size(631, 21);
-            this.textBoxTherapy3.TabIndex = 42;
-            this.textBoxTherapy3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxTherapy4
-            // 
-            this.textBoxTherapy4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTherapy4.Location = new System.Drawing.Point(365, 221);
-            this.textBoxTherapy4.Multiline = true;
-            this.textBoxTherapy4.Name = "textBoxTherapy4";
-            this.textBoxTherapy4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxTherapy4.Size = new System.Drawing.Size(631, 21);
-            this.textBoxTherapy4.TabIndex = 44;
-            this.textBoxTherapy4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxTherapy5
-            // 
-            this.textBoxTherapy5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTherapy5.Location = new System.Drawing.Point(365, 248);
-            this.textBoxTherapy5.Multiline = true;
-            this.textBoxTherapy5.Name = "textBoxTherapy5";
-            this.textBoxTherapy5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxTherapy5.Size = new System.Drawing.Size(631, 21);
-            this.textBoxTherapy5.TabIndex = 46;
-            this.textBoxTherapy5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxTherapy6
-            // 
-            this.textBoxTherapy6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTherapy6.Location = new System.Drawing.Point(365, 275);
-            this.textBoxTherapy6.Multiline = true;
-            this.textBoxTherapy6.Name = "textBoxTherapy6";
-            this.textBoxTherapy6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxTherapy6.Size = new System.Drawing.Size(631, 21);
-            this.textBoxTherapy6.TabIndex = 48;
-            this.textBoxTherapy6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxTherapy7
-            // 
-            this.textBoxTherapy7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTherapy7.Location = new System.Drawing.Point(365, 302);
-            this.textBoxTherapy7.Multiline = true;
-            this.textBoxTherapy7.Name = "textBoxTherapy7";
-            this.textBoxTherapy7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxTherapy7.Size = new System.Drawing.Size(631, 21);
-            this.textBoxTherapy7.TabIndex = 50;
-            this.textBoxTherapy7.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxSurgery1
-            // 
-            this.textBoxSurgery1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSurgery1.Location = new System.Drawing.Point(365, 329);
-            this.textBoxSurgery1.Multiline = true;
-            this.textBoxSurgery1.Name = "textBoxSurgery1";
-            this.textBoxSurgery1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSurgery1.Size = new System.Drawing.Size(631, 21);
-            this.textBoxSurgery1.TabIndex = 51;
-            this.textBoxSurgery1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxSurgery2
-            // 
-            this.textBoxSurgery2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSurgery2.Location = new System.Drawing.Point(365, 356);
-            this.textBoxSurgery2.Multiline = true;
-            this.textBoxSurgery2.Name = "textBoxSurgery2";
-            this.textBoxSurgery2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSurgery2.Size = new System.Drawing.Size(631, 21);
-            this.textBoxSurgery2.TabIndex = 53;
-            this.textBoxSurgery2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxSurgery3
-            // 
-            this.textBoxSurgery3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSurgery3.Location = new System.Drawing.Point(365, 383);
-            this.textBoxSurgery3.Multiline = true;
-            this.textBoxSurgery3.Name = "textBoxSurgery3";
-            this.textBoxSurgery3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSurgery3.Size = new System.Drawing.Size(631, 21);
-            this.textBoxSurgery3.TabIndex = 55;
-            this.textBoxSurgery3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxSurgery4
-            // 
-            this.textBoxSurgery4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSurgery4.Location = new System.Drawing.Point(365, 410);
-            this.textBoxSurgery4.Multiline = true;
-            this.textBoxSurgery4.Name = "textBoxSurgery4";
-            this.textBoxSurgery4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSurgery4.Size = new System.Drawing.Size(631, 21);
-            this.textBoxSurgery4.TabIndex = 57;
-            this.textBoxSurgery4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxSurgery5
-            // 
-            this.textBoxSurgery5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSurgery5.Location = new System.Drawing.Point(365, 437);
-            this.textBoxSurgery5.Multiline = true;
-            this.textBoxSurgery5.Name = "textBoxSurgery5";
-            this.textBoxSurgery5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSurgery5.Size = new System.Drawing.Size(631, 21);
-            this.textBoxSurgery5.TabIndex = 59;
-            this.textBoxSurgery5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxSurgery6
-            // 
-            this.textBoxSurgery6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSurgery6.Location = new System.Drawing.Point(365, 464);
-            this.textBoxSurgery6.Multiline = true;
-            this.textBoxSurgery6.Name = "textBoxSurgery6";
-            this.textBoxSurgery6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSurgery6.Size = new System.Drawing.Size(631, 21);
-            this.textBoxSurgery6.TabIndex = 61;
-            this.textBoxSurgery6.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxOrtoped
-            // 
-            this.textBoxOrtoped.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxOrtoped.Location = new System.Drawing.Point(365, 491);
-            this.textBoxOrtoped.Multiline = true;
-            this.textBoxOrtoped.Name = "textBoxOrtoped";
-            this.textBoxOrtoped.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxOrtoped.Size = new System.Drawing.Size(631, 21);
-            this.textBoxOrtoped.TabIndex = 62;
-            this.textBoxOrtoped.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxOrtodont
-            // 
-            this.textBoxOrtodont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxOrtodont.Location = new System.Drawing.Point(365, 518);
-            this.textBoxOrtodont.Multiline = true;
-            this.textBoxOrtodont.Name = "textBoxOrtodont";
-            this.textBoxOrtodont.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxOrtodont.Size = new System.Drawing.Size(631, 21);
-            this.textBoxOrtodont.TabIndex = 63;
-            this.textBoxOrtodont.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxAdvanced
-            // 
-            this.textBoxAdvanced.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxAdvanced.Location = new System.Drawing.Point(365, 545);
-            this.textBoxAdvanced.Multiline = true;
-            this.textBoxAdvanced.Name = "textBoxAdvanced";
-            this.textBoxAdvanced.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxAdvanced.Size = new System.Drawing.Size(631, 28);
-            this.textBoxAdvanced.TabIndex = 64;
-            this.textBoxAdvanced.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // textBoxConsult
-            // 
-            this.textBoxConsult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxConsult.Location = new System.Drawing.Point(365, 579);
-            this.textBoxConsult.Multiline = true;
-            this.textBoxConsult.Name = "textBoxConsult";
-            this.textBoxConsult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxConsult.Size = new System.Drawing.Size(631, 28);
-            this.textBoxConsult.TabIndex = 65;
-            this.textBoxConsult.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -767,7 +767,7 @@
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(23, 657);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(336, 26);
+            this.label32.Size = new System.Drawing.Size(336, 27);
             this.label32.TabIndex = 67;
             this.label32.Text = "Дата обследования";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -794,14 +794,15 @@
             this.flowButtons.Controls.Add(this.buttonOk);
             this.flowButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowButtons.Location = new System.Drawing.Point(365, 706);
+            this.flowButtons.Location = new System.Drawing.Point(365, 707);
             this.flowButtons.Name = "flowButtons";
-            this.flowButtons.Size = new System.Drawing.Size(631, 65);
+            this.flowButtons.Size = new System.Drawing.Size(631, 64);
             this.flowButtons.TabIndex = 70;
             // 
             // buttonCancel
             // 
             this.buttonCancel.AutoSize = true;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(550, 6);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6);
@@ -833,7 +834,7 @@
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CurePlanForm";
-            this.Text = "CurePlanForm";
+            this.Text = "План лечения";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.flowButtons.ResumeLayout(false);

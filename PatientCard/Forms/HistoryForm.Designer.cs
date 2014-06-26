@@ -33,7 +33,6 @@
             this.labelReason = new System.Windows.Forms.Label();
             this.dateRequest = new System.Windows.Forms.DateTimePicker();
             this.textBoxReason = new System.Windows.Forms.TextBox();
-            this.panelDiagnosis = new System.Windows.Forms.TableLayoutPanel();
             this.labelView = new System.Windows.Forms.Label();
             this.labelFace = new System.Windows.Forms.Label();
             this.labelSkin = new System.Windows.Forms.Label();
@@ -43,8 +42,36 @@
             this.textBoxSkin = new System.Windows.Forms.TextBox();
             this.textBoxLimb = new System.Windows.Forms.TextBox();
             this.textBoxBone = new System.Windows.Forms.TextBox();
+            this.panelDiagnosis = new System.Windows.Forms.TableLayoutPanel();
             this.labelCommon = new System.Windows.Forms.Label();
             this.labelYesNo = new System.Windows.Forms.Label();
+            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesOther = new System.Windows.Forms.RadioButton();
+            this.radioNoOther = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesPragnant = new System.Windows.Forms.RadioButton();
+            this.radioNoPragnant = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesIndustry = new System.Windows.Forms.RadioButton();
+            this.radioNoIndustry = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesDrugs = new System.Windows.Forms.RadioButton();
+            this.radioNoDrugs = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesAlergic = new System.Windows.Forms.RadioButton();
+            this.radioNoAlergic = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesInfection = new System.Windows.Forms.RadioButton();
+            this.radioNoInfection = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesLungs = new System.Windows.Forms.RadioButton();
+            this.radioNoLungs = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesStomach = new System.Windows.Forms.RadioButton();
+            this.radioNoStomach = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioYesEndocrine = new System.Windows.Forms.RadioButton();
+            this.radioNoEndocrine = new System.Windows.Forms.RadioButton();
             this.labelDetails = new System.Windows.Forms.Label();
             this.labelHeart = new System.Windows.Forms.Label();
             this.labelNeuro = new System.Windows.Forms.Label();
@@ -54,8 +81,8 @@
             this.labelLungs = new System.Windows.Forms.Label();
             this.labelDrugs = new System.Windows.Forms.Label();
             this.labelAlergic = new System.Windows.Forms.Label();
-            this.labelPregnant = new System.Windows.Forms.Label();
             this.labelIndustry = new System.Windows.Forms.Label();
+            this.labelPregnant = new System.Windows.Forms.Label();
             this.labelOther = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioYesHeart = new System.Windows.Forms.RadioButton();
@@ -63,33 +90,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.radioYesNeuro = new System.Windows.Forms.RadioButton();
             this.radioNoNeuro = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesEndocrine = new System.Windows.Forms.RadioButton();
-            this.radioNoEndocrine = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesStomach = new System.Windows.Forms.RadioButton();
-            this.radioNoStomach = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesLungs = new System.Windows.Forms.RadioButton();
-            this.radioNoLungs = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesInfection = new System.Windows.Forms.RadioButton();
-            this.radioNoInfection = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesAlergic = new System.Windows.Forms.RadioButton();
-            this.radioNoAlergic = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesDrugs = new System.Windows.Forms.RadioButton();
-            this.radioNoDrugs = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesIndustry = new System.Windows.Forms.RadioButton();
-            this.radioNoIndustry = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesPragnant = new System.Windows.Forms.RadioButton();
-            this.radioNoPragnant = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioYesOther = new System.Windows.Forms.RadioButton();
-            this.radioNoOther = new System.Windows.Forms.RadioButton();
             this.textBoxHeart = new System.Windows.Forms.TextBox();
             this.textBoxNeuro = new System.Windows.Forms.TextBox();
             this.textBoxEndocrine = new System.Windows.Forms.TextBox();
@@ -106,17 +106,17 @@
             this.buttonOk = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelDiagnosis.SuspendLayout();
+            this.flowLayoutPanel11.SuspendLayout();
+            this.flowLayoutPanel10.SuspendLayout();
+            this.flowLayoutPanel9.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
-            this.flowLayoutPanel7.SuspendLayout();
-            this.flowLayoutPanel8.SuspendLayout();
-            this.flowLayoutPanel9.SuspendLayout();
-            this.flowLayoutPanel10.SuspendLayout();
-            this.flowLayoutPanel11.SuspendLayout();
             this.flowButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,70 +200,6 @@
             this.textBoxReason.Size = new System.Drawing.Size(861, 34);
             this.textBoxReason.TabIndex = 3;
             this.textBoxReason.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
-            // 
-            // panelDiagnosis
-            // 
-            this.panelDiagnosis.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.panelDiagnosis.ColumnCount = 3;
-            this.panelMain.SetColumnSpan(this.panelDiagnosis, 2);
-            this.panelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.panelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDiagnosis.Controls.Add(this.labelCommon, 0, 0);
-            this.panelDiagnosis.Controls.Add(this.labelYesNo, 1, 0);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel11, 1, 11);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel10, 1, 10);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel9, 1, 9);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel8, 1, 8);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel7, 1, 7);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel6, 1, 6);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel5, 1, 5);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel4, 1, 4);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel3, 1, 3);
-            this.panelDiagnosis.Controls.Add(this.labelDetails, 2, 0);
-            this.panelDiagnosis.Controls.Add(this.labelHeart, 0, 1);
-            this.panelDiagnosis.Controls.Add(this.labelNeuro, 0, 2);
-            this.panelDiagnosis.Controls.Add(this.labelEndocrine, 0, 3);
-            this.panelDiagnosis.Controls.Add(this.labelStomache, 0, 4);
-            this.panelDiagnosis.Controls.Add(this.labelInfection, 0, 6);
-            this.panelDiagnosis.Controls.Add(this.labelLungs, 0, 5);
-            this.panelDiagnosis.Controls.Add(this.labelDrugs, 0, 8);
-            this.panelDiagnosis.Controls.Add(this.labelAlergic, 0, 7);
-            this.panelDiagnosis.Controls.Add(this.labelIndustry, 0, 9);
-            this.panelDiagnosis.Controls.Add(this.labelPregnant, 0, 10);
-            this.panelDiagnosis.Controls.Add(this.labelOther, 0, 11);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel1, 1, 1);
-            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel2, 1, 2);
-            this.panelDiagnosis.Controls.Add(this.textBoxHeart, 2, 1);
-            this.panelDiagnosis.Controls.Add(this.textBoxNeuro, 2, 2);
-            this.panelDiagnosis.Controls.Add(this.textBoxEndocrine, 2, 3);
-            this.panelDiagnosis.Controls.Add(this.textBoxStomach, 2, 4);
-            this.panelDiagnosis.Controls.Add(this.textBoxLungs, 2, 5);
-            this.panelDiagnosis.Controls.Add(this.textBoxInfection, 2, 6);
-            this.panelDiagnosis.Controls.Add(this.textBoxAlergic, 2, 7);
-            this.panelDiagnosis.Controls.Add(this.textBoxDrugs, 2, 8);
-            this.panelDiagnosis.Controls.Add(this.textBoxIndustry, 2, 9);
-            this.panelDiagnosis.Controls.Add(this.textBoxPragnant, 2, 10);
-            this.panelDiagnosis.Controls.Add(this.textBoxOther, 2, 11);
-            this.panelDiagnosis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDiagnosis.Location = new System.Drawing.Point(3, 73);
-            this.panelDiagnosis.Name = "panelDiagnosis";
-            this.panelDiagnosis.RowCount = 12;
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.panelDiagnosis.Size = new System.Drawing.Size(1197, 394);
-            this.panelDiagnosis.TabIndex = 4;
             // 
             // labelView
             // 
@@ -369,6 +305,70 @@
             this.textBoxBone.TabIndex = 14;
             this.textBoxBone.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
+            // panelDiagnosis
+            // 
+            this.panelDiagnosis.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.panelDiagnosis.ColumnCount = 3;
+            this.panelMain.SetColumnSpan(this.panelDiagnosis, 2);
+            this.panelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.panelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.panelDiagnosis.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDiagnosis.Controls.Add(this.labelCommon, 0, 0);
+            this.panelDiagnosis.Controls.Add(this.labelYesNo, 1, 0);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel11, 1, 11);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel10, 1, 10);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel9, 1, 9);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel8, 1, 8);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel7, 1, 7);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel6, 1, 6);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel5, 1, 5);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel4, 1, 4);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel3, 1, 3);
+            this.panelDiagnosis.Controls.Add(this.labelDetails, 2, 0);
+            this.panelDiagnosis.Controls.Add(this.labelHeart, 0, 1);
+            this.panelDiagnosis.Controls.Add(this.labelNeuro, 0, 2);
+            this.panelDiagnosis.Controls.Add(this.labelEndocrine, 0, 3);
+            this.panelDiagnosis.Controls.Add(this.labelStomache, 0, 4);
+            this.panelDiagnosis.Controls.Add(this.labelInfection, 0, 6);
+            this.panelDiagnosis.Controls.Add(this.labelLungs, 0, 5);
+            this.panelDiagnosis.Controls.Add(this.labelDrugs, 0, 8);
+            this.panelDiagnosis.Controls.Add(this.labelAlergic, 0, 7);
+            this.panelDiagnosis.Controls.Add(this.labelIndustry, 0, 9);
+            this.panelDiagnosis.Controls.Add(this.labelPregnant, 0, 10);
+            this.panelDiagnosis.Controls.Add(this.labelOther, 0, 11);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel1, 1, 1);
+            this.panelDiagnosis.Controls.Add(this.flowLayoutPanel2, 1, 2);
+            this.panelDiagnosis.Controls.Add(this.textBoxHeart, 2, 1);
+            this.panelDiagnosis.Controls.Add(this.textBoxNeuro, 2, 2);
+            this.panelDiagnosis.Controls.Add(this.textBoxEndocrine, 2, 3);
+            this.panelDiagnosis.Controls.Add(this.textBoxStomach, 2, 4);
+            this.panelDiagnosis.Controls.Add(this.textBoxLungs, 2, 5);
+            this.panelDiagnosis.Controls.Add(this.textBoxInfection, 2, 6);
+            this.panelDiagnosis.Controls.Add(this.textBoxAlergic, 2, 7);
+            this.panelDiagnosis.Controls.Add(this.textBoxDrugs, 2, 8);
+            this.panelDiagnosis.Controls.Add(this.textBoxIndustry, 2, 9);
+            this.panelDiagnosis.Controls.Add(this.textBoxPragnant, 2, 10);
+            this.panelDiagnosis.Controls.Add(this.textBoxOther, 2, 11);
+            this.panelDiagnosis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDiagnosis.Location = new System.Drawing.Point(3, 73);
+            this.panelDiagnosis.Name = "panelDiagnosis";
+            this.panelDiagnosis.RowCount = 12;
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panelDiagnosis.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.panelDiagnosis.Size = new System.Drawing.Size(1197, 394);
+            this.panelDiagnosis.TabIndex = 4;
+            // 
             // labelCommon
             // 
             this.labelCommon.AutoSize = true;
@@ -390,6 +390,294 @@
             this.labelYesNo.Size = new System.Drawing.Size(232, 30);
             this.labelYesNo.TabIndex = 1;
             this.labelYesNo.Text = "Да / Нет";
+            // 
+            // flowLayoutPanel11
+            // 
+            this.flowLayoutPanel11.Controls.Add(this.radioYesOther);
+            this.flowLayoutPanel11.Controls.Add(this.radioNoOther);
+            this.flowLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(362, 345);
+            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(232, 45);
+            this.flowLayoutPanel11.TabIndex = 15;
+            // 
+            // radioYesOther
+            // 
+            this.radioYesOther.AutoSize = true;
+            this.radioYesOther.Location = new System.Drawing.Point(3, 3);
+            this.radioYesOther.Name = "radioYesOther";
+            this.radioYesOther.Size = new System.Drawing.Size(41, 19);
+            this.radioYesOther.TabIndex = 0;
+            this.radioYesOther.Text = "Да";
+            this.radioYesOther.UseVisualStyleBackColor = true;
+            // 
+            // radioNoOther
+            // 
+            this.radioNoOther.AutoSize = true;
+            this.radioNoOther.Checked = true;
+            this.radioNoOther.Location = new System.Drawing.Point(50, 3);
+            this.radioNoOther.Name = "radioNoOther";
+            this.radioNoOther.Size = new System.Drawing.Size(48, 19);
+            this.radioNoOther.TabIndex = 1;
+            this.radioNoOther.TabStop = true;
+            this.radioNoOther.Text = "Нет";
+            this.radioNoOther.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel10
+            // 
+            this.flowLayoutPanel10.Controls.Add(this.radioYesPragnant);
+            this.flowLayoutPanel10.Controls.Add(this.radioNoPragnant);
+            this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(362, 314);
+            this.flowLayoutPanel10.Name = "flowLayoutPanel10";
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel10.TabIndex = 15;
+            // 
+            // radioYesPragnant
+            // 
+            this.radioYesPragnant.AutoSize = true;
+            this.radioYesPragnant.Location = new System.Drawing.Point(3, 3);
+            this.radioYesPragnant.Name = "radioYesPragnant";
+            this.radioYesPragnant.Size = new System.Drawing.Size(41, 19);
+            this.radioYesPragnant.TabIndex = 0;
+            this.radioYesPragnant.Text = "Да";
+            this.radioYesPragnant.UseVisualStyleBackColor = true;
+            // 
+            // radioNoPragnant
+            // 
+            this.radioNoPragnant.AutoSize = true;
+            this.radioNoPragnant.Checked = true;
+            this.radioNoPragnant.Location = new System.Drawing.Point(50, 3);
+            this.radioNoPragnant.Name = "radioNoPragnant";
+            this.radioNoPragnant.Size = new System.Drawing.Size(48, 19);
+            this.radioNoPragnant.TabIndex = 1;
+            this.radioNoPragnant.TabStop = true;
+            this.radioNoPragnant.Text = "Нет";
+            this.radioNoPragnant.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel9
+            // 
+            this.flowLayoutPanel9.Controls.Add(this.radioYesIndustry);
+            this.flowLayoutPanel9.Controls.Add(this.radioNoIndustry);
+            this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(362, 283);
+            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel9.TabIndex = 15;
+            // 
+            // radioYesIndustry
+            // 
+            this.radioYesIndustry.AutoSize = true;
+            this.radioYesIndustry.Location = new System.Drawing.Point(3, 3);
+            this.radioYesIndustry.Name = "radioYesIndustry";
+            this.radioYesIndustry.Size = new System.Drawing.Size(41, 19);
+            this.radioYesIndustry.TabIndex = 0;
+            this.radioYesIndustry.Text = "Да";
+            this.radioYesIndustry.UseVisualStyleBackColor = true;
+            // 
+            // radioNoIndustry
+            // 
+            this.radioNoIndustry.AutoSize = true;
+            this.radioNoIndustry.Checked = true;
+            this.radioNoIndustry.Location = new System.Drawing.Point(50, 3);
+            this.radioNoIndustry.Name = "radioNoIndustry";
+            this.radioNoIndustry.Size = new System.Drawing.Size(48, 19);
+            this.radioNoIndustry.TabIndex = 1;
+            this.radioNoIndustry.TabStop = true;
+            this.radioNoIndustry.Text = "Нет";
+            this.radioNoIndustry.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel8
+            // 
+            this.flowLayoutPanel8.Controls.Add(this.radioYesDrugs);
+            this.flowLayoutPanel8.Controls.Add(this.radioNoDrugs);
+            this.flowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(362, 252);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel8.TabIndex = 15;
+            // 
+            // radioYesDrugs
+            // 
+            this.radioYesDrugs.AutoSize = true;
+            this.radioYesDrugs.Location = new System.Drawing.Point(3, 3);
+            this.radioYesDrugs.Name = "radioYesDrugs";
+            this.radioYesDrugs.Size = new System.Drawing.Size(41, 19);
+            this.radioYesDrugs.TabIndex = 0;
+            this.radioYesDrugs.Text = "Да";
+            this.radioYesDrugs.UseVisualStyleBackColor = true;
+            // 
+            // radioNoDrugs
+            // 
+            this.radioNoDrugs.AutoSize = true;
+            this.radioNoDrugs.Checked = true;
+            this.radioNoDrugs.Location = new System.Drawing.Point(50, 3);
+            this.radioNoDrugs.Name = "radioNoDrugs";
+            this.radioNoDrugs.Size = new System.Drawing.Size(48, 19);
+            this.radioNoDrugs.TabIndex = 1;
+            this.radioNoDrugs.TabStop = true;
+            this.radioNoDrugs.Text = "Нет";
+            this.radioNoDrugs.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(this.radioYesAlergic);
+            this.flowLayoutPanel7.Controls.Add(this.radioNoAlergic);
+            this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(362, 221);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel7.TabIndex = 15;
+            // 
+            // radioYesAlergic
+            // 
+            this.radioYesAlergic.AutoSize = true;
+            this.radioYesAlergic.Location = new System.Drawing.Point(3, 3);
+            this.radioYesAlergic.Name = "radioYesAlergic";
+            this.radioYesAlergic.Size = new System.Drawing.Size(41, 19);
+            this.radioYesAlergic.TabIndex = 0;
+            this.radioYesAlergic.Text = "Да";
+            this.radioYesAlergic.UseVisualStyleBackColor = true;
+            // 
+            // radioNoAlergic
+            // 
+            this.radioNoAlergic.AutoSize = true;
+            this.radioNoAlergic.Checked = true;
+            this.radioNoAlergic.Location = new System.Drawing.Point(50, 3);
+            this.radioNoAlergic.Name = "radioNoAlergic";
+            this.radioNoAlergic.Size = new System.Drawing.Size(48, 19);
+            this.radioNoAlergic.TabIndex = 1;
+            this.radioNoAlergic.TabStop = true;
+            this.radioNoAlergic.Text = "Нет";
+            this.radioNoAlergic.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.radioYesInfection);
+            this.flowLayoutPanel6.Controls.Add(this.radioNoInfection);
+            this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(362, 190);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel6.TabIndex = 15;
+            // 
+            // radioYesInfection
+            // 
+            this.radioYesInfection.AutoSize = true;
+            this.radioYesInfection.Location = new System.Drawing.Point(3, 3);
+            this.radioYesInfection.Name = "radioYesInfection";
+            this.radioYesInfection.Size = new System.Drawing.Size(41, 19);
+            this.radioYesInfection.TabIndex = 0;
+            this.radioYesInfection.Text = "Да";
+            this.radioYesInfection.UseVisualStyleBackColor = true;
+            // 
+            // radioNoInfection
+            // 
+            this.radioNoInfection.AutoSize = true;
+            this.radioNoInfection.Checked = true;
+            this.radioNoInfection.Location = new System.Drawing.Point(50, 3);
+            this.radioNoInfection.Name = "radioNoInfection";
+            this.radioNoInfection.Size = new System.Drawing.Size(48, 19);
+            this.radioNoInfection.TabIndex = 1;
+            this.radioNoInfection.TabStop = true;
+            this.radioNoInfection.Text = "Нет";
+            this.radioNoInfection.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.radioYesLungs);
+            this.flowLayoutPanel5.Controls.Add(this.radioNoLungs);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(362, 159);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel5.TabIndex = 15;
+            // 
+            // radioYesLungs
+            // 
+            this.radioYesLungs.AutoSize = true;
+            this.radioYesLungs.Location = new System.Drawing.Point(3, 3);
+            this.radioYesLungs.Name = "radioYesLungs";
+            this.radioYesLungs.Size = new System.Drawing.Size(41, 19);
+            this.radioYesLungs.TabIndex = 0;
+            this.radioYesLungs.Text = "Да";
+            this.radioYesLungs.UseVisualStyleBackColor = true;
+            // 
+            // radioNoLungs
+            // 
+            this.radioNoLungs.AutoSize = true;
+            this.radioNoLungs.Checked = true;
+            this.radioNoLungs.Location = new System.Drawing.Point(50, 3);
+            this.radioNoLungs.Name = "radioNoLungs";
+            this.radioNoLungs.Size = new System.Drawing.Size(48, 19);
+            this.radioNoLungs.TabIndex = 1;
+            this.radioNoLungs.TabStop = true;
+            this.radioNoLungs.Text = "Нет";
+            this.radioNoLungs.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.radioYesStomach);
+            this.flowLayoutPanel4.Controls.Add(this.radioNoStomach);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(362, 128);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel4.TabIndex = 15;
+            // 
+            // radioYesStomach
+            // 
+            this.radioYesStomach.AutoSize = true;
+            this.radioYesStomach.Location = new System.Drawing.Point(3, 3);
+            this.radioYesStomach.Name = "radioYesStomach";
+            this.radioYesStomach.Size = new System.Drawing.Size(41, 19);
+            this.radioYesStomach.TabIndex = 0;
+            this.radioYesStomach.Text = "Да";
+            this.radioYesStomach.UseVisualStyleBackColor = true;
+            // 
+            // radioNoStomach
+            // 
+            this.radioNoStomach.AutoSize = true;
+            this.radioNoStomach.Checked = true;
+            this.radioNoStomach.Location = new System.Drawing.Point(50, 3);
+            this.radioNoStomach.Name = "radioNoStomach";
+            this.radioNoStomach.Size = new System.Drawing.Size(48, 19);
+            this.radioNoStomach.TabIndex = 1;
+            this.radioNoStomach.TabStop = true;
+            this.radioNoStomach.Text = "Нет";
+            this.radioNoStomach.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.radioYesEndocrine);
+            this.flowLayoutPanel3.Controls.Add(this.radioNoEndocrine);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(362, 97);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(232, 24);
+            this.flowLayoutPanel3.TabIndex = 15;
+            // 
+            // radioYesEndocrine
+            // 
+            this.radioYesEndocrine.AutoSize = true;
+            this.radioYesEndocrine.Location = new System.Drawing.Point(3, 3);
+            this.radioYesEndocrine.Name = "radioYesEndocrine";
+            this.radioYesEndocrine.Size = new System.Drawing.Size(41, 19);
+            this.radioYesEndocrine.TabIndex = 0;
+            this.radioYesEndocrine.Text = "Да";
+            this.radioYesEndocrine.UseVisualStyleBackColor = true;
+            // 
+            // radioNoEndocrine
+            // 
+            this.radioNoEndocrine.AutoSize = true;
+            this.radioNoEndocrine.Checked = true;
+            this.radioNoEndocrine.Location = new System.Drawing.Point(50, 3);
+            this.radioNoEndocrine.Name = "radioNoEndocrine";
+            this.radioNoEndocrine.Size = new System.Drawing.Size(48, 19);
+            this.radioNoEndocrine.TabIndex = 1;
+            this.radioNoEndocrine.TabStop = true;
+            this.radioNoEndocrine.Text = "Нет";
+            this.radioNoEndocrine.UseVisualStyleBackColor = true;
             // 
             // labelDetails
             // 
@@ -483,16 +771,6 @@
             this.labelAlergic.TabIndex = 10;
             this.labelAlergic.Text = "Аллергические реакции";
             // 
-            // labelPregnant
-            // 
-            this.labelPregnant.AutoSize = true;
-            this.labelPregnant.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPregnant.Location = new System.Drawing.Point(4, 311);
-            this.labelPregnant.Name = "labelPregnant";
-            this.labelPregnant.Size = new System.Drawing.Size(351, 30);
-            this.labelPregnant.TabIndex = 11;
-            this.labelPregnant.Text = "Беременность, послеродовый период";
-            // 
             // labelIndustry
             // 
             this.labelIndustry.AutoSize = true;
@@ -502,6 +780,16 @@
             this.labelIndustry.Size = new System.Drawing.Size(351, 30);
             this.labelIndustry.TabIndex = 12;
             this.labelIndustry.Text = "Вредные факторы производственной среды";
+            // 
+            // labelPregnant
+            // 
+            this.labelPregnant.AutoSize = true;
+            this.labelPregnant.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelPregnant.Location = new System.Drawing.Point(4, 311);
+            this.labelPregnant.Name = "labelPregnant";
+            this.labelPregnant.Size = new System.Drawing.Size(351, 30);
+            this.labelPregnant.TabIndex = 11;
+            this.labelPregnant.Text = "Беременность, послеродовый период";
             // 
             // labelOther
             // 
@@ -576,294 +864,6 @@
             this.radioNoNeuro.TabStop = true;
             this.radioNoNeuro.Text = "Нет";
             this.radioNoNeuro.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.radioYesEndocrine);
-            this.flowLayoutPanel3.Controls.Add(this.radioNoEndocrine);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(362, 97);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel3.TabIndex = 15;
-            // 
-            // radioYesEndocrine
-            // 
-            this.radioYesEndocrine.AutoSize = true;
-            this.radioYesEndocrine.Location = new System.Drawing.Point(3, 3);
-            this.radioYesEndocrine.Name = "radioYesEndocrine";
-            this.radioYesEndocrine.Size = new System.Drawing.Size(41, 19);
-            this.radioYesEndocrine.TabIndex = 0;
-            this.radioYesEndocrine.Text = "Да";
-            this.radioYesEndocrine.UseVisualStyleBackColor = true;
-            // 
-            // radioNoEndocrine
-            // 
-            this.radioNoEndocrine.AutoSize = true;
-            this.radioNoEndocrine.Checked = true;
-            this.radioNoEndocrine.Location = new System.Drawing.Point(50, 3);
-            this.radioNoEndocrine.Name = "radioNoEndocrine";
-            this.radioNoEndocrine.Size = new System.Drawing.Size(48, 19);
-            this.radioNoEndocrine.TabIndex = 1;
-            this.radioNoEndocrine.TabStop = true;
-            this.radioNoEndocrine.Text = "Нет";
-            this.radioNoEndocrine.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.radioYesStomach);
-            this.flowLayoutPanel4.Controls.Add(this.radioNoStomach);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(362, 128);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel4.TabIndex = 15;
-            // 
-            // radioYesStomach
-            // 
-            this.radioYesStomach.AutoSize = true;
-            this.radioYesStomach.Location = new System.Drawing.Point(3, 3);
-            this.radioYesStomach.Name = "radioYesStomach";
-            this.radioYesStomach.Size = new System.Drawing.Size(41, 19);
-            this.radioYesStomach.TabIndex = 0;
-            this.radioYesStomach.Text = "Да";
-            this.radioYesStomach.UseVisualStyleBackColor = true;
-            // 
-            // radioNoStomach
-            // 
-            this.radioNoStomach.AutoSize = true;
-            this.radioNoStomach.Checked = true;
-            this.radioNoStomach.Location = new System.Drawing.Point(50, 3);
-            this.radioNoStomach.Name = "radioNoStomach";
-            this.radioNoStomach.Size = new System.Drawing.Size(48, 19);
-            this.radioNoStomach.TabIndex = 1;
-            this.radioNoStomach.TabStop = true;
-            this.radioNoStomach.Text = "Нет";
-            this.radioNoStomach.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.radioYesLungs);
-            this.flowLayoutPanel5.Controls.Add(this.radioNoLungs);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(362, 159);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel5.TabIndex = 15;
-            // 
-            // radioYesLungs
-            // 
-            this.radioYesLungs.AutoSize = true;
-            this.radioYesLungs.Location = new System.Drawing.Point(3, 3);
-            this.radioYesLungs.Name = "radioYesLungs";
-            this.radioYesLungs.Size = new System.Drawing.Size(41, 19);
-            this.radioYesLungs.TabIndex = 0;
-            this.radioYesLungs.Text = "Да";
-            this.radioYesLungs.UseVisualStyleBackColor = true;
-            // 
-            // radioNoLungs
-            // 
-            this.radioNoLungs.AutoSize = true;
-            this.radioNoLungs.Checked = true;
-            this.radioNoLungs.Location = new System.Drawing.Point(50, 3);
-            this.radioNoLungs.Name = "radioNoLungs";
-            this.radioNoLungs.Size = new System.Drawing.Size(48, 19);
-            this.radioNoLungs.TabIndex = 1;
-            this.radioNoLungs.TabStop = true;
-            this.radioNoLungs.Text = "Нет";
-            this.radioNoLungs.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.Controls.Add(this.radioYesInfection);
-            this.flowLayoutPanel6.Controls.Add(this.radioNoInfection);
-            this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(362, 190);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel6.TabIndex = 15;
-            // 
-            // radioYesInfection
-            // 
-            this.radioYesInfection.AutoSize = true;
-            this.radioYesInfection.Location = new System.Drawing.Point(3, 3);
-            this.radioYesInfection.Name = "radioYesInfection";
-            this.radioYesInfection.Size = new System.Drawing.Size(41, 19);
-            this.radioYesInfection.TabIndex = 0;
-            this.radioYesInfection.Text = "Да";
-            this.radioYesInfection.UseVisualStyleBackColor = true;
-            // 
-            // radioNoInfection
-            // 
-            this.radioNoInfection.AutoSize = true;
-            this.radioNoInfection.Checked = true;
-            this.radioNoInfection.Location = new System.Drawing.Point(50, 3);
-            this.radioNoInfection.Name = "radioNoInfection";
-            this.radioNoInfection.Size = new System.Drawing.Size(48, 19);
-            this.radioNoInfection.TabIndex = 1;
-            this.radioNoInfection.TabStop = true;
-            this.radioNoInfection.Text = "Нет";
-            this.radioNoInfection.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel7
-            // 
-            this.flowLayoutPanel7.Controls.Add(this.radioYesAlergic);
-            this.flowLayoutPanel7.Controls.Add(this.radioNoAlergic);
-            this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(362, 221);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel7.TabIndex = 15;
-            // 
-            // radioYesAlergic
-            // 
-            this.radioYesAlergic.AutoSize = true;
-            this.radioYesAlergic.Location = new System.Drawing.Point(3, 3);
-            this.radioYesAlergic.Name = "radioYesAlergic";
-            this.radioYesAlergic.Size = new System.Drawing.Size(41, 19);
-            this.radioYesAlergic.TabIndex = 0;
-            this.radioYesAlergic.Text = "Да";
-            this.radioYesAlergic.UseVisualStyleBackColor = true;
-            // 
-            // radioNoAlergic
-            // 
-            this.radioNoAlergic.AutoSize = true;
-            this.radioNoAlergic.Checked = true;
-            this.radioNoAlergic.Location = new System.Drawing.Point(50, 3);
-            this.radioNoAlergic.Name = "radioNoAlergic";
-            this.radioNoAlergic.Size = new System.Drawing.Size(48, 19);
-            this.radioNoAlergic.TabIndex = 1;
-            this.radioNoAlergic.TabStop = true;
-            this.radioNoAlergic.Text = "Нет";
-            this.radioNoAlergic.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel8
-            // 
-            this.flowLayoutPanel8.Controls.Add(this.radioYesDrugs);
-            this.flowLayoutPanel8.Controls.Add(this.radioNoDrugs);
-            this.flowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(362, 252);
-            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel8.TabIndex = 15;
-            // 
-            // radioYesDrugs
-            // 
-            this.radioYesDrugs.AutoSize = true;
-            this.radioYesDrugs.Location = new System.Drawing.Point(3, 3);
-            this.radioYesDrugs.Name = "radioYesDrugs";
-            this.radioYesDrugs.Size = new System.Drawing.Size(41, 19);
-            this.radioYesDrugs.TabIndex = 0;
-            this.radioYesDrugs.Text = "Да";
-            this.radioYesDrugs.UseVisualStyleBackColor = true;
-            // 
-            // radioNoDrugs
-            // 
-            this.radioNoDrugs.AutoSize = true;
-            this.radioNoDrugs.Checked = true;
-            this.radioNoDrugs.Location = new System.Drawing.Point(50, 3);
-            this.radioNoDrugs.Name = "radioNoDrugs";
-            this.radioNoDrugs.Size = new System.Drawing.Size(48, 19);
-            this.radioNoDrugs.TabIndex = 1;
-            this.radioNoDrugs.TabStop = true;
-            this.radioNoDrugs.Text = "Нет";
-            this.radioNoDrugs.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel9
-            // 
-            this.flowLayoutPanel9.Controls.Add(this.radioYesIndustry);
-            this.flowLayoutPanel9.Controls.Add(this.radioNoIndustry);
-            this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(362, 283);
-            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel9.TabIndex = 15;
-            // 
-            // radioYesIndustry
-            // 
-            this.radioYesIndustry.AutoSize = true;
-            this.radioYesIndustry.Location = new System.Drawing.Point(3, 3);
-            this.radioYesIndustry.Name = "radioYesIndustry";
-            this.radioYesIndustry.Size = new System.Drawing.Size(41, 19);
-            this.radioYesIndustry.TabIndex = 0;
-            this.radioYesIndustry.Text = "Да";
-            this.radioYesIndustry.UseVisualStyleBackColor = true;
-            // 
-            // radioNoIndustry
-            // 
-            this.radioNoIndustry.AutoSize = true;
-            this.radioNoIndustry.Checked = true;
-            this.radioNoIndustry.Location = new System.Drawing.Point(50, 3);
-            this.radioNoIndustry.Name = "radioNoIndustry";
-            this.radioNoIndustry.Size = new System.Drawing.Size(48, 19);
-            this.radioNoIndustry.TabIndex = 1;
-            this.radioNoIndustry.TabStop = true;
-            this.radioNoIndustry.Text = "Нет";
-            this.radioNoIndustry.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel10
-            // 
-            this.flowLayoutPanel10.Controls.Add(this.radioYesPragnant);
-            this.flowLayoutPanel10.Controls.Add(this.radioNoPragnant);
-            this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(362, 314);
-            this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(232, 24);
-            this.flowLayoutPanel10.TabIndex = 15;
-            // 
-            // radioYesPragnant
-            // 
-            this.radioYesPragnant.AutoSize = true;
-            this.radioYesPragnant.Location = new System.Drawing.Point(3, 3);
-            this.radioYesPragnant.Name = "radioYesPragnant";
-            this.radioYesPragnant.Size = new System.Drawing.Size(41, 19);
-            this.radioYesPragnant.TabIndex = 0;
-            this.radioYesPragnant.Text = "Да";
-            this.radioYesPragnant.UseVisualStyleBackColor = true;
-            // 
-            // radioNoPragnant
-            // 
-            this.radioNoPragnant.AutoSize = true;
-            this.radioNoPragnant.Checked = true;
-            this.radioNoPragnant.Location = new System.Drawing.Point(50, 3);
-            this.radioNoPragnant.Name = "radioNoPragnant";
-            this.radioNoPragnant.Size = new System.Drawing.Size(48, 19);
-            this.radioNoPragnant.TabIndex = 1;
-            this.radioNoPragnant.TabStop = true;
-            this.radioNoPragnant.Text = "Нет";
-            this.radioNoPragnant.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel11
-            // 
-            this.flowLayoutPanel11.Controls.Add(this.radioYesOther);
-            this.flowLayoutPanel11.Controls.Add(this.radioNoOther);
-            this.flowLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(362, 345);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(232, 45);
-            this.flowLayoutPanel11.TabIndex = 15;
-            // 
-            // radioYesOther
-            // 
-            this.radioYesOther.AutoSize = true;
-            this.radioYesOther.Location = new System.Drawing.Point(3, 3);
-            this.radioYesOther.Name = "radioYesOther";
-            this.radioYesOther.Size = new System.Drawing.Size(41, 19);
-            this.radioYesOther.TabIndex = 0;
-            this.radioYesOther.Text = "Да";
-            this.radioYesOther.UseVisualStyleBackColor = true;
-            // 
-            // radioNoOther
-            // 
-            this.radioNoOther.AutoSize = true;
-            this.radioNoOther.Checked = true;
-            this.radioNoOther.Location = new System.Drawing.Point(50, 3);
-            this.radioNoOther.Name = "radioNoOther";
-            this.radioNoOther.Size = new System.Drawing.Size(48, 19);
-            this.radioNoOther.TabIndex = 1;
-            this.radioNoOther.TabStop = true;
-            this.radioNoOther.Text = "Нет";
-            this.radioNoOther.UseVisualStyleBackColor = true;
             // 
             // textBoxHeart
             // 
@@ -1001,6 +1001,7 @@
             // buttonCancel
             // 
             this.buttonCancel.AutoSize = true;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(780, 6);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6);
@@ -1032,33 +1033,33 @@
             this.Controls.Add(this.panelMain);
             this.MinimumSize = new System.Drawing.Size(1200, 790);
             this.Name = "HistoryForm";
-            this.Text = "HistoryForm";
+            this.Text = "Обследование пациента";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.panelDiagnosis.ResumeLayout(false);
             this.panelDiagnosis.PerformLayout();
+            this.flowLayoutPanel11.ResumeLayout(false);
+            this.flowLayoutPanel11.PerformLayout();
+            this.flowLayoutPanel10.ResumeLayout(false);
+            this.flowLayoutPanel10.PerformLayout();
+            this.flowLayoutPanel9.ResumeLayout(false);
+            this.flowLayoutPanel9.PerformLayout();
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
-            this.flowLayoutPanel7.ResumeLayout(false);
-            this.flowLayoutPanel7.PerformLayout();
-            this.flowLayoutPanel8.ResumeLayout(false);
-            this.flowLayoutPanel8.PerformLayout();
-            this.flowLayoutPanel9.ResumeLayout(false);
-            this.flowLayoutPanel9.PerformLayout();
-            this.flowLayoutPanel10.ResumeLayout(false);
-            this.flowLayoutPanel10.PerformLayout();
-            this.flowLayoutPanel11.ResumeLayout(false);
-            this.flowLayoutPanel11.PerformLayout();
             this.flowButtons.ResumeLayout(false);
             this.flowButtons.PerformLayout();
             this.ResumeLayout(false);
