@@ -43,9 +43,17 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.diagnosticFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.curePlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.researchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -65,7 +73,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 24);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -165,10 +173,67 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 49);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1251, 585);
+            this.dataGridView1.Size = new System.Drawing.Size(1251, 561);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1251, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.patientCardToolStripMenuItem,
+            this.diagnosticFormToolStripMenuItem,
+            this.historyFormToolStripMenuItem,
+            this.curePlanToolStripMenuItem,
+            this.researchToolStripMenuItem});
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            // 
+            // patientCardToolStripMenuItem
+            // 
+            this.patientCardToolStripMenuItem.Name = "patientCardToolStripMenuItem";
+            this.patientCardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patientCardToolStripMenuItem.Text = "Patient card";
+            this.patientCardToolStripMenuItem.Click += new System.EventHandler(this.patientCardToolStripMenuItem_Click);
+            // 
+            // diagnosticFormToolStripMenuItem
+            // 
+            this.diagnosticFormToolStripMenuItem.Name = "diagnosticFormToolStripMenuItem";
+            this.diagnosticFormToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.diagnosticFormToolStripMenuItem.Text = "Diagnostic";
+            this.diagnosticFormToolStripMenuItem.Click += new System.EventHandler(this.diagnosticFormToolStripMenuItem_Click);
+            // 
+            // historyFormToolStripMenuItem
+            // 
+            this.historyFormToolStripMenuItem.Name = "historyFormToolStripMenuItem";
+            this.historyFormToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.historyFormToolStripMenuItem.Text = "History";
+            this.historyFormToolStripMenuItem.Click += new System.EventHandler(this.historyFormToolStripMenuItem_Click);
+            // 
+            // curePlanToolStripMenuItem
+            // 
+            this.curePlanToolStripMenuItem.Name = "curePlanToolStripMenuItem";
+            this.curePlanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.curePlanToolStripMenuItem.Text = "Cure plan";
+            this.curePlanToolStripMenuItem.Click += new System.EventHandler(this.curePlanToolStripMenuItem_Click);
+            // 
+            // researchToolStripMenuItem
+            // 
+            this.researchToolStripMenuItem.Name = "researchToolStripMenuItem";
+            this.researchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.researchToolStripMenuItem.Text = "Research";
+            this.researchToolStripMenuItem.Click += new System.EventHandler(this.researchToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -177,12 +242,16 @@
             this.ClientSize = new System.Drawing.Size(1251, 610);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bindingNavigator1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +272,13 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientCardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem diagnosticFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historyFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem curePlanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem researchToolStripMenuItem;
 
 
     }

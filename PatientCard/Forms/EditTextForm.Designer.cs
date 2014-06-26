@@ -93,7 +93,10 @@
             // 
             // textBoxEdit
             // 
+            this.textBoxEdit.AcceptsReturn = true;
+            this.textBoxEdit.AcceptsTab = true;
             this.textBoxEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEdit.Location = new System.Drawing.Point(3, 3);
             this.textBoxEdit.Multiline = true;
             this.textBoxEdit.Name = "textBoxEdit";
