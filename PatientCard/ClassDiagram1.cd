@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PatientCard.Data.ClinicDataSet" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="PatientCard.Data.ClinicDataSet.PatientCardsDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.UsersRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.DiagnosticsRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.CurePlansRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.CurePlansRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PatientCard.Data.ClinicDataSet.DiagnosticsRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="PatientCard.Data.ClinicDataSet.CurePlansRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="PatientCard.Data.ClinicDataSet.PatientCardsRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="PatientCard.Data.ClinicDataSet.ResearchsDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.PatientCardsRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.PatientCardsRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.DiagnosticsDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.CurePlansDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.UsersRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PatientCard.Data.ClinicDataSet.UsersRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="PatientCard.Data.ClinicDataSet.ResearchsRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.UsersDataTable">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="PatientCard.Data.ClinicDataSet.ResearchsRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="PatientCard.Data.ClinicDataSet.DiagnosticsRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="PatientCard.Data.ClinicDataSet.ResearchsRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAACgAAwAAgAJABAABQSAABAgKQBgABAAQCQEAJBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Data.ClinicDataSetTableAdapters.PatientCardsTableAdapter" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Data.ClinicDataSetTableAdapters.UsersTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Data.ClinicDataSetTableAdapters.CurePlansTableAdapter" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Data.ClinicDataSetTableAdapters.ResearchsTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Data.ClinicDataSetTableAdapters.DiagnosticsTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Data.ClinicDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABICAAAABABEEBQAAAMAAgAAACgAAEAARAAQIgBQQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.CurePlanForm" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/wBAQggEACAAARAIAAmAFAAGAAAQAgAACQAAAEAAQDo=</HashCode>
+      <FileName>Forms\CurePlanForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.DentistStatForm" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/wDAAAAEACAAABAABACABAACgAAAAAAQAQAACAAAABA=</HashCode>
+      <FileName>Forms\DentistStatForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.DiagnosticForm" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ThBQIoEGdaQBLCAKFWKARAij0Ig/4hESHWQCCiAgABA=</HashCode>
+      <FileName>Forms\DiagnosticForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.EditTextForm" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABIAAAEACAAAAAIAACABAACEAAAAAAAAYAAAAAAAAA=</HashCode>
+      <FileName>Forms\EditTextForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.HistoryForm" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\HistoryForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.LoginForm" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAEACAAABAIAACABAACAAAAAAAAAQAAAAIAAAA=</HashCode>
+      <FileName>Forms\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.MainForm" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAQQIAAkCIABAMAIACEMABSAgkAAAAAAIAAIIABAIA=</HashCode>
+      <FileName>Forms\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.PatientCardForm" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAEECBAABMYACWEFABCAIAwEoFCCQAARCAAACA=</HashCode>
+      <FileName>Forms\PatientCardForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Forms.ResearchForm" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAIAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\ResearchForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Logic.DataManager" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Logic.Utility" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Logic\Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Program" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientCard.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgABAAIAAAAAABAAAAAAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PatientCard.Logic.EditMode" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAEAAIAAAAAAA=</HashCode>
+      <FileName>Logic\EditMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

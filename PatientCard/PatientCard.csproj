@@ -65,10 +65,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\ClinicDatabaseDataSet.Designer.cs">
+    <Compile Include="Data\ClinicDataSet.cs">
+      <DependentUpon>ClinicDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ClinicDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ClinicDatabaseDataSet.xsd</DependentUpon>
+      <DependentUpon>ClinicDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\CurePlanForm.cs">
       <SubType>Form</SubType>
@@ -166,16 +170,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.config" />
-    <None Include="Data\ClinicDatabaseDataSet.xsc">
-      <DependentUpon>ClinicDatabaseDataSet.xsd</DependentUpon>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Data\ClinicDataSet.xsc">
+      <DependentUpon>ClinicDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Data\ClinicDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ClinicDatabaseDataSet.Designer.cs</LastGenOutput>
+    <None Include="Data\ClinicDataSet.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClinicDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Data\ClinicDatabaseDataSet.xss">
-      <DependentUpon>ClinicDatabaseDataSet.xsd</DependentUpon>
+    <None Include="Data\ClinicDataSet.xss">
+      <DependentUpon>ClinicDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -224,15 +229,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\ClinicDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\ClinicDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ClinicDatabase.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

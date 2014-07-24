@@ -1,29 +1,39 @@
 ﻿using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using PatientCard.Data;
+using PatientCard.Data.ClinicDataSetTableAdapters;
 
 namespace PatientCard.Logic
 {
     public class DataManager
     {
-        public SqlDataAdapter DataAdapter { get; set; }
+	    private static object _sync = new object();
+	    private static ClinicDataSet _dataSet;
 
-        public void CreateEntry(DataRow row)
-        {
-            DataAdapter.Update(new [] {row});
-        }
+	    public static ClinicDataSet ClinicDataSet
+	    {
+		    get
+		    {
+			    if (_dataSet == null)
+			    {
+				    lock (_sync)
+				    {
+					    if (_dataSet == null)
+					    {
+						    _dataSet = new ClinicDataSet();
+							Init(_dataSet);
+					    }
+				    }
+			    }
+			    return _dataSet;
+		    }
+	    }
 
-        public void UpdateEntry(DataRow row)
-        {
-            DataAdapter.Update(new[] {row});
-        }
-
-        public void DeleteEntry(DataRow row)
-        {
-            row.Delete();
-            DataAdapter.Update(new[] {row});
-        }
-
-       
+		private static void Init(ClinicDataSet dataSet)
+		{
+			var usersAdapter = new UsersTableAdapter();
+			usersAdapter.Fill(dataSet.Users);
+		}
     }
 }

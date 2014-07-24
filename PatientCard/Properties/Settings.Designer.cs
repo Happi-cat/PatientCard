@@ -43,5 +43,15 @@ namespace PatientCard.Properties {
                 return ((string)(this["ClinicDatabaseConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=Clinic;Integrated Security=True")]
+        public string ClinicConnectionString {
+            get {
+                return ((string)(this["ClinicConnectionString"]));
+            }
+        }
     }
 }
