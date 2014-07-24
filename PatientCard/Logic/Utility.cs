@@ -1,9 +1,15 @@
-﻿using System.Windows.Forms;
+﻿using System.Linq;
+using System.Windows.Forms;
 
 namespace PatientCard.Logic
 {
     public class Utility
     {
+		public static T GetDataGridViewCellValue<T>(DataGridViewRow gridRow, string columnName)
+		{
+			return (T) gridRow.Cells.Cast<DataGridViewCell>().First(n => n.OwningColumn.DataPropertyName == columnName).Value;
+		}
+
         public static void LockTextBoxes(Form form)
         {
             foreach (var control in form.Controls)

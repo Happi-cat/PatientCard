@@ -29,10 +29,6 @@ namespace PatientCard.Forms
 			if (form.ShowDialog() == DialogResult.OK)
 			{
 				Visible = true;
-
-				//var patientsAdapter = new PatientCardsTableAdapter();
-				//patientsAdapter.Fill(clinicDataSet.PatientCards);
-
 			}
 			else
 			{
@@ -74,7 +70,14 @@ namespace PatientCard.Forms
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+	        var gridRow = dataGridPatients.Rows[e.RowIndex];
+	        var row = clinicDataSet.PatientCards.FindByCardId(Utility.GetDataGridViewCellValue<int>(gridRow, "CardId"));
+	        var form = new PatientCardForm(row);
+			form.EditMode = EditMode.EditCurrent;
+	        if (form.ShowDialog() == DialogResult.OK)
+	        {
+		        patientCardsTableAdapter.Update(row);
+	        }
         }
 
 		private void MainForm_Load(object sender, EventArgs e)
@@ -91,7 +94,27 @@ namespace PatientCard.Forms
 
 		private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
 		{
+			var row = clinicDataSet.PatientCards.NewPatientCardsRow();
+			var form = new PatientCardForm(row);
+			form.EditMode = EditMode.CreateNew;
+			if (form.ShowDialog() == DialogResult.OK)
+			{
+				clinicDataSet.PatientCards.AddPatientCardsRow(row);
+				patientCardsTableAdapter.Update(row);
+			}
+		}
 
+		private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("Вы точно хотите удалить?", "Удалить?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+			    DialogResult.Yes)
+			{
+				foreach (DataGridViewRow selectedRow in dataGridPatients.SelectedRows)
+				{
+					var row = clinicDataSet.PatientCards.FindByCardId(Utility.GetDataGridViewCellValue<int>(selectedRow, "CardId"));
+					clinicDataSet.PatientCards.RemovePatientCardsRow(row);
+				}
+			}
 		}
 
     }

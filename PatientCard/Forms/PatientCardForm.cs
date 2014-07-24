@@ -18,21 +18,6 @@ namespace PatientCard.Forms
             InitializeComponent();
 
 	        Row = row;
-
-	        dateFill.Value = Row.Created;
-	        dateBirth.Value = Row.BirthDate;
-
-	        textBoxFirstName.Text = Row.FirstName;
-	        textBoxLastName.Text = Row.LastName;
-	        textBoxMiddleName.Text = Row.MiddleName;
-
-	        textBoxAddress.Text = Row.Address;
-	        textBoxPhone.Text = Row.Phone;
-	        textBoxSocial.Text = Row.SocialStatus;
-	        textBoxWork.Text = Row.Work;
-
-			radioMale.Checked = (Row.Gender == "M");
-			radioFemale.Checked = (Row.Gender == "F");
         }
 
         public EditMode EditMode { get; set; }
@@ -44,6 +29,23 @@ namespace PatientCard.Forms
             {
                 Utility.LockTextBoxes(this);
             }
+			if (EditMode != EditMode.CreateNew)
+			{
+				dateFill.Value = Row.Created;
+				dateBirth.Value = Row.BirthDate;
+
+				textBoxFirstName.Text = Row.FirstName;
+				textBoxLastName.Text = Row.LastName;
+				textBoxMiddleName.Text = Row.MiddleName;
+
+				textBoxAddress.Text = Row.Address;
+				textBoxPhone.Text = Row.Phone;
+				textBoxSocial.Text = Row.SocialStatus;
+				textBoxWork.Text = Row.Work;
+
+				radioMale.Checked = (Row.Gender == "M");
+				radioFemale.Checked = (Row.Gender == "F");
+			}
             base.OnLoad(e);
         }
 
@@ -58,6 +60,10 @@ namespace PatientCard.Forms
 
 	    private void buttonOk_Click(object sender, EventArgs e)
 	    {
+			if (EditMode == EditMode.CreateNew)
+			{
+				Row.Created = dateFill.Value;
+			}
 		    Row.BirthDate = dateBirth.Value;
 
 		    Row.FirstName = textBoxFirstName.Text;

@@ -32,6 +32,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.clinicDataSet = new PatientCard.Data.ClinicDataSet();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -50,9 +52,6 @@
 			this.curePlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.researchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dataGridPatients = new System.Windows.Forms.DataGridView();
-			this.clinicDataSet = new PatientCard.Data.ClinicDataSet();
-			this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.patientCardsTableAdapter = new PatientCard.Data.ClinicDataSetTableAdapters.PatientCardsTableAdapter();
 			this.cardIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,20 +63,21 @@
 			this.socialStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.workDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.createdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.patientCardsTableAdapter = new PatientCard.Data.ClinicDataSetTableAdapters.PatientCardsTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
 			this.bindingNavigator.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridPatients)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// bindingNavigator
 			// 
-			this.bindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+			this.bindingNavigator.AddNewItem = null;
 			this.bindingNavigator.BindingSource = this.bindingSource;
 			this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
-			this.bindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+			this.bindingNavigator.DeleteItem = null;
 			this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -111,6 +111,17 @@
 			this.bindingNavigatorAddNewItem.Text = "Add new";
 			this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
 			// 
+			// bindingSource
+			// 
+			this.bindingSource.AllowNew = true;
+			this.bindingSource.DataMember = "PatientCards";
+			this.bindingSource.DataSource = this.clinicDataSet;
+			// 
+			// clinicDataSet
+			// 
+			this.clinicDataSet.DataSetName = "ClinicDataSet";
+			this.clinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// bindingNavigatorCountItem
 			// 
 			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -126,6 +137,7 @@
 			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
 			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
 			this.bindingNavigatorDeleteItem.Text = "Delete";
+			this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
 			// 
 			// bindingNavigatorMoveFirstItem
 			// 
@@ -271,27 +283,11 @@
 			this.dataGridPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPatients_CellContentClick);
 			this.dataGridPatients.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
 			// 
-			// clinicDataSet
-			// 
-			this.clinicDataSet.DataSetName = "ClinicDataSet";
-			this.clinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// bindingSource
-			// 
-			this.bindingSource.AllowNew = true;
-			this.bindingSource.DataMember = "PatientCards";
-			this.bindingSource.DataSource = this.clinicDataSet;
-			// 
-			// patientCardsTableAdapter
-			// 
-			this.patientCardsTableAdapter.ClearBeforeFill = true;
-			// 
 			// cardIdDataGridViewTextBoxColumn
 			// 
 			this.cardIdDataGridViewTextBoxColumn.DataPropertyName = "CardId";
 			this.cardIdDataGridViewTextBoxColumn.HeaderText = "CardId";
 			this.cardIdDataGridViewTextBoxColumn.Name = "cardIdDataGridViewTextBoxColumn";
-			this.cardIdDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// lastNameDataGridViewTextBoxColumn
 			// 
@@ -353,6 +349,10 @@
 			this.createdDataGridViewTextBoxColumn.HeaderText = "Created";
 			this.createdDataGridViewTextBoxColumn.Name = "createdDataGridViewTextBoxColumn";
 			// 
+			// patientCardsTableAdapter
+			// 
+			this.patientCardsTableAdapter.ClearBeforeFill = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,11 +368,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
 			this.bindingNavigator.ResumeLayout(false);
 			this.bindingNavigator.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridPatients)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.clinicDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
