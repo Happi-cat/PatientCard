@@ -18,50 +18,6 @@ namespace PatientCard.Forms
             InitializeComponent();
 			
 	        Row = row;
-
-	        dateRequest.Value = row.Created;
-	        textBoxReason.Text = row.Reason;
-
-	        textBoxHeart.Text = row.Heart;
-	        textBoxNeuro.Text = row.Neuro;
-	        textBoxEndocrine.Text = row.Endocrine;
-	        textBoxStomach.Text = row.Stomach;
-	        textBoxLungs.Text = row.Lungs;
-	        textBoxInfection.Text = row.Infection;
-	        textBoxAlergic.Text = row.Alergic;
-	        textBoxDrugs.Text = row.Drugs;
-	        textBoxIndustry.Text = row.Industry;
-	        textBoxPragnant.Text = row.Pregnant;
-	        textBoxOther.Text = row.Other;
-
-			radioYesHeart.Checked = row.IsHeart;
-			radioYesNeuro.Checked = row.IsNeuro;
-			radioYesEndocrine.Checked = row.IsEndocrine;
-			radioYesStomach.Checked = row.IsStomach;
-			radioYesLungs.Checked = row.IsLungs;
-			radioYesInfection.Checked = row.IsInfection;
-			radioYesAlergic.Checked = row.IsAlergic;
-			radioYesDrugs.Checked = row.IsDrugs;
-			radioYesIndustry.Checked = row.IsIndustry;
-			radioYesPragnant.Checked = row.IsPregnant;
-			radioYesOther.Checked = row.IsOther;
-
-			radioNoHeart.Checked = ! row.IsHeart;
-			radioNoNeuro.Checked = ! row.IsNeuro;
-			radioNoEndocrine.Checked = ! row.IsEndocrine;
-			radioNoStomach.Checked = ! row.IsStomach;
-			radioNoLungs.Checked = ! row.IsLungs;
-			radioNoInfection.Checked = ! row.IsInfection;
-			radioNoAlergic.Checked = ! row.IsAlergic;
-			radioNoDrugs.Checked = ! row.IsDrugs;
-			radioNoIndustry.Checked = ! row.IsIndustry;
-			radioNoPragnant.Checked = ! row.IsPregnant;
-			radioNoOther.Checked = ! row.IsOther;
-
-	        textBoxFace.Text = row.Face;
-	        textBoxSkin.Text = row.Skin;
-	        textBoxLimb.Text = row.Limb;
-	        textBoxBone.Text = row.Bone;
         }
 
         public EditMode EditMode { get; set; }
@@ -73,6 +29,52 @@ namespace PatientCard.Forms
             {
                 Utility.LockTextBoxes(this);
             }
+			if (EditMode != EditMode.CreateNew)
+			{
+				dateRequest.Value = Row.Created;
+				textBoxReason.Text = Row.Reason;
+
+				textBoxHeart.Text = Row.Heart;
+				textBoxNeuro.Text = Row.Neuro;
+				textBoxEndocrine.Text = Row.Endocrine;
+				textBoxStomach.Text = Row.Stomach;
+				textBoxLungs.Text = Row.Lungs;
+				textBoxInfection.Text = Row.Infection;
+				textBoxAlergic.Text = Row.Alergic;
+				textBoxDrugs.Text = Row.Drugs;
+				textBoxIndustry.Text = Row.Industry;
+				textBoxPragnant.Text = Row.Pregnant;
+				textBoxOther.Text = Row.Other;
+
+				radioYesHeart.Checked = Row.IsHeart;
+				radioYesNeuro.Checked = Row.IsNeuro;
+				radioYesEndocrine.Checked = Row.IsEndocrine;
+				radioYesStomach.Checked = Row.IsStomach;
+				radioYesLungs.Checked = Row.IsLungs;
+				radioYesInfection.Checked = Row.IsInfection;
+				radioYesAlergic.Checked = Row.IsAlergic;
+				radioYesDrugs.Checked = Row.IsDrugs;
+				radioYesIndustry.Checked = Row.IsIndustry;
+				radioYesPragnant.Checked = Row.IsPregnant;
+				radioYesOther.Checked = Row.IsOther;
+
+				radioNoHeart.Checked = !Row.IsHeart;
+				radioNoNeuro.Checked = !Row.IsNeuro;
+				radioNoEndocrine.Checked = !Row.IsEndocrine;
+				radioNoStomach.Checked = !Row.IsStomach;
+				radioNoLungs.Checked = !Row.IsLungs;
+				radioNoInfection.Checked = !Row.IsInfection;
+				radioNoAlergic.Checked = !Row.IsAlergic;
+				radioNoDrugs.Checked = !Row.IsDrugs;
+				radioNoIndustry.Checked = !Row.IsIndustry;
+				radioNoPragnant.Checked = !Row.IsPregnant;
+				radioNoOther.Checked = !Row.IsOther;
+
+				textBoxFace.Text = Row.Face;
+				textBoxSkin.Text = Row.Skin;
+				textBoxLimb.Text = Row.Limb;
+				textBoxBone.Text = Row.Bone;
+			}
             base.OnLoad(e);
         }
 

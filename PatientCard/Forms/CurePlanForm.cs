@@ -17,30 +17,7 @@ namespace PatientCard.Forms
         {
             InitializeComponent();
 
-	        textBoxAid.Text = row.FirstAid;
-	        textBoxProfilactic1.Text = row.Profilactic1;
-			textBoxProfilactic2.Text = row.Profilactic2;
-			textBoxProfilactic3.Text = row.Profilactic3;
-			textBoxProfilactic4.Text = row.Profilactic4;
-	        textBoxTherapy1.Text = row.Therapy1;
-			textBoxTherapy2.Text = row.Therapy2;
-			textBoxTherapy3.Text = row.Therapy3;
-			textBoxTherapy4.Text = row.Therapy4; 
-			textBoxTherapy5.Text = row.Therapy5;
-			textBoxTherapy6.Text = row.Therapy6;
-			textBoxTherapy7.Text = row.Therapy7;
-	        textBoxSurgery1.Text = row.Surgery1;
-			textBoxSurgery2.Text = row.Surgery2;
-			textBoxSurgery3.Text = row.Surgery3;
-			textBoxSurgery4.Text = row.Surgery4;
-			textBoxSurgery5.Text = row.Surgery5;
-			textBoxSurgery6.Text = row.Surgery6;
-	        textBoxOrtoped.Text = row.Ortoped;
-	        textBoxOrtodont.Text = row.Ortodont;
-	        textBoxAdvanced.Text = row.Advanced;
-	        textBoxConsult.Text = row.Consult;
-	        textBoxDoctor.Text = row.Doctor;
-	        dateOccured.Value = row.Created;
+	        
 
 	        Row = row;
         }
@@ -54,6 +31,33 @@ namespace PatientCard.Forms
             {
                 Utility.LockTextBoxes(this);
             }
+			if (EditMode != EditMode.CreateNew)
+			{
+				textBoxAid.Text = Row.FirstAid;
+				textBoxProfilactic1.Text = Row.Profilactic1;
+				textBoxProfilactic2.Text = Row.Profilactic2;
+				textBoxProfilactic3.Text = Row.Profilactic3;
+				textBoxProfilactic4.Text = Row.Profilactic4;
+				textBoxTherapy1.Text = Row.Therapy1;
+				textBoxTherapy2.Text = Row.Therapy2;
+				textBoxTherapy3.Text = Row.Therapy3;
+				textBoxTherapy4.Text = Row.Therapy4;
+				textBoxTherapy5.Text = Row.Therapy5;
+				textBoxTherapy6.Text = Row.Therapy6;
+				textBoxTherapy7.Text = Row.Therapy7;
+				textBoxSurgery1.Text = Row.Surgery1;
+				textBoxSurgery2.Text = Row.Surgery2;
+				textBoxSurgery3.Text = Row.Surgery3;
+				textBoxSurgery4.Text = Row.Surgery4;
+				textBoxSurgery5.Text = Row.Surgery5;
+				textBoxSurgery6.Text = Row.Surgery6;
+				textBoxOrtoped.Text = Row.Ortoped;
+				textBoxOrtodont.Text = Row.Ortodont;
+				textBoxAdvanced.Text = Row.Advanced;
+				textBoxConsult.Text = Row.Consult;
+				textBoxDoctor.Text = Row.Doctor;
+				dateOccured.Value = Row.Created;
+			}
             base.OnLoad(e);
         }
 

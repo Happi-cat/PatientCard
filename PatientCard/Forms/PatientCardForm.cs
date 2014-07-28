@@ -17,6 +17,15 @@ namespace PatientCard.Forms
         {
             InitializeComponent();
 
+	        textBoxFirstName.Validating += Utility.TextBoxEmptyValidating;
+			textBoxLastName.Validating += Utility.TextBoxEmptyValidating;
+			textBoxMiddleName.Validating += Utility.TextBoxEmptyValidating;
+
+			textBoxAddress.Validating += Utility.TextBoxEmptyValidating;
+			textBoxSocial.Validating += Utility.TextBoxEmptyValidating;
+			textBoxWork.Validating += Utility.TextBoxEmptyValidating;
+
+
 	        Row = row;
         }
 

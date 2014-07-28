@@ -117,5 +117,17 @@ namespace PatientCard.Forms
 			}
 		}
 
+		private void dataGridPatients_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			if (Utility.GetDataGridViewCellValue<string>(dataGridPatients.Rows[e.RowIndex], "Gender") == "M")
+			{
+				e.CellStyle.BackColor = Color.LightCyan;
+			}
+			else
+			{
+				e.CellStyle.BackColor = Color.MistyRose;
+			}
+		}
+
     }
 }

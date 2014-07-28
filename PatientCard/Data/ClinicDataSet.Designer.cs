@@ -5330,11 +5330,19 @@ SELECT PlanId, CardId, Created, FirstAid, Profilactic1, Profilactic2, Profilacti
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT PlanId, CardId, Created, FirstAid, Profilactic1, Profilactic2, Profilactic3, Profilactic4, Therapy1, Therapy2, Therapy3, Therapy4, Therapy5, Therapy6, Therapy7, Surgery1, Surgery2, Surgery3, Surgery4, Surgery5, Surgery6, Ortoped, Ortodont, Advanced, Consult, Doctor FROM dbo.CurePlans";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        PlanId, CardId, Created, FirstAid, Profilactic1, Profilactic2, Profilactic3, Profilactic4, Therapy1, Therapy2, Therapy3, Therapy4, Therapy5, Therapy6, Therapy7, 
+                         Surgery1, Surgery2, Surgery3, Surgery4, Surgery5, Surgery6, Ortoped, Ortodont, Advanced, Consult, Doctor
+FROM            CurePlans
+WHERE        (CardId = @CardId)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CardId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5356,6 +5364,32 @@ SELECT PlanId, CardId, Created, FirstAid, Profilactic1, Profilactic2, Profilacti
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ClinicDataSet.CurePlansDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ClinicDataSet.CurePlansDataTable dataTable = new ClinicDataSet.CurePlansDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCard(ClinicDataSet.CurePlansDataTable dataTable, int CardId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CardId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ClinicDataSet.CurePlansDataTable GetDataByCard(int CardId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CardId));
             ClinicDataSet.CurePlansDataTable dataTable = new ClinicDataSet.CurePlansDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8065,11 +8099,19 @@ SELECT DiagnosticId, CardId, Created, Reason, Heart, Neuro, Endocrine, Stomach, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT DiagnosticId, CardId, Created, Reason, Heart, Neuro, Endocrine, Stomach, Lungs, Infection, Alergic, Drugs, Industry, Pregnant, Other, IsHeart, IsNeuro, IsEndocrine, IsStomach, IsLungs, IsInfection, IsAlergic, IsDrugs, IsIndustry, IsPregnant, IsOther, Face, Skin, Limb, Bone FROM dbo.Diagnostics";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        DiagnosticId, CardId, Created, Reason, Heart, Neuro, Endocrine, Stomach, Lungs, Infection, Alergic, Drugs, Industry, Pregnant, Other, IsHeart, IsNeuro, IsEndocrine, 
+                         IsStomach, IsLungs, IsInfection, IsAlergic, IsDrugs, IsIndustry, IsPregnant, IsOther, Face, Skin, Limb, Bone
+FROM            Diagnostics
+WHERE        (CardId = @CardId)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CardId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CardId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8091,6 +8133,32 @@ SELECT DiagnosticId, CardId, Created, Reason, Heart, Neuro, Endocrine, Stomach, 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ClinicDataSet.DiagnosticsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ClinicDataSet.DiagnosticsDataTable dataTable = new ClinicDataSet.DiagnosticsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCard(ClinicDataSet.DiagnosticsDataTable dataTable, int CardId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CardId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ClinicDataSet.DiagnosticsDataTable GetDataByCard(int CardId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CardId));
             ClinicDataSet.DiagnosticsDataTable dataTable = new ClinicDataSet.DiagnosticsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

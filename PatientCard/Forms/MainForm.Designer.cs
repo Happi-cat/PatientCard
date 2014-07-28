@@ -31,11 +31,9 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.clinicDataSet = new PatientCard.Data.ClinicDataSet();
 			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -44,6 +42,8 @@
 			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.patientCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,16 +101,6 @@
 			this.bindingNavigator.TabIndex = 1;
 			this.bindingNavigator.Text = "bindingNavigator";
 			// 
-			// bindingNavigatorAddNewItem
-			// 
-			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorAddNewItem.Text = "Add new";
-			this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-			// 
 			// bindingSource
 			// 
 			this.bindingSource.AllowNew = true;
@@ -128,16 +118,6 @@
 			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
 			this.bindingNavigatorCountItem.Text = "of {0}";
 			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-			// 
-			// bindingNavigatorDeleteItem
-			// 
-			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorDeleteItem.Text = "Delete";
-			this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
 			// 
 			// bindingNavigatorMoveFirstItem
 			// 
@@ -198,6 +178,26 @@
 			// 
 			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
 			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
+			// bindingNavigatorAddNewItem
+			// 
+			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorAddNewItem.Text = "Add new";
+			this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+			// 
+			// bindingNavigatorDeleteItem
+			// 
+			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+			this.bindingNavigatorDeleteItem.Text = "Delete";
+			this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
 			// 
 			// menuStrip1
 			// 
@@ -275,6 +275,7 @@
             this.createdDataGridViewTextBoxColumn});
 			this.dataGridPatients.DataSource = this.bindingSource;
 			this.dataGridPatients.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridPatients.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dataGridPatients.Location = new System.Drawing.Point(0, 49);
 			this.dataGridPatients.Name = "dataGridPatients";
 			this.dataGridPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -282,12 +283,14 @@
 			this.dataGridPatients.TabIndex = 2;
 			this.dataGridPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPatients_CellContentClick);
 			this.dataGridPatients.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+			this.dataGridPatients.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridPatients_CellFormatting);
 			// 
 			// cardIdDataGridViewTextBoxColumn
 			// 
 			this.cardIdDataGridViewTextBoxColumn.DataPropertyName = "CardId";
 			this.cardIdDataGridViewTextBoxColumn.HeaderText = "CardId";
 			this.cardIdDataGridViewTextBoxColumn.Name = "cardIdDataGridViewTextBoxColumn";
+			this.cardIdDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// lastNameDataGridViewTextBoxColumn
 			// 
