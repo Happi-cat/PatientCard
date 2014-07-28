@@ -22,6 +22,14 @@ namespace PatientCard.Forms
 	    {
 		    if (DataManager.ClinicDataSet.Users.Any(n => n.Username == textBoxUsername.Text && n.Password == textBoxPassword.Text))
 		    {
+		        var dbUser = DataManager.ClinicDataSet.Users.First(n => n.Username == textBoxUsername.Text);
+                AuthManager.CurrentUser = new AuthManager.User
+                    {
+                        FirstName =  dbUser.FirstName,
+                        MiddleName = dbUser.MiddleName,
+                        LastName = dbUser.LastName,
+                        Username = dbUser.Username,
+                    };
 			    DialogResult = DialogResult.OK;
 		    }
 		    else

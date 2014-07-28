@@ -16,7 +16,19 @@ namespace PatientCard.Forms
         public DiagnosticForm(ClinicDataSet.DiagnosticsRow row)
         {
             InitializeComponent();
-			
+
+            textBoxReason.Validating += TextBoxEmptyValidating;
+            textBoxFace.Validating += TextBoxEmptyValidating;
+            textBoxSkin.Validating += TextBoxEmptyValidating;
+            textBoxLimb.Validating += TextBoxEmptyValidating;
+            textBoxBone.Validating += TextBoxEmptyValidating;
+
+            textBoxReason.Validated += ControlValidated;
+            textBoxFace.Validated += ControlValidated;
+            textBoxSkin.Validated += ControlValidated;
+            textBoxLimb.Validated += ControlValidated;
+            textBoxBone.Validated += ControlValidated;
+
 	        Row = row;
         }
 
@@ -89,36 +101,62 @@ namespace PatientCard.Forms
 
 	    private void buttonOk_Click(object sender, EventArgs e)
 	    {
-		    Row.Reason = textBoxReason.Text;
+            if (EditMode == EditMode.CreateNew)
+            {
+                Row.Created = dateRequest.Value;
+            }
+	        if (EditMode != EditMode.ReadOnly)
+	        {
+                if (!ValidateChildren())
+                {
+                    DialogResult = DialogResult.None;
+                    return;
+                }
+	            Row.Reason = textBoxReason.Text;
 
-		    Row.Heart = textBoxHeart.Text;
-		    Row.Neuro = textBoxNeuro.Text;
-		    Row.Endocrine = textBoxEndocrine.Text;
-		    Row.Stomach = textBoxStomach.Text;
-		    Row.Lungs = textBoxLungs.Text;
-		    Row.Infection = textBoxInfection.Text;
-		    Row.Alergic = textBoxAlergic.Text;
-		    Row.Drugs = textBoxDrugs.Text;
-		    Row.Industry = textBoxIndustry.Text;
-		    Row.Pregnant = textBoxPragnant.Text;
-		    Row.Other = textBoxOther.Text;
+	            Row.Heart = textBoxHeart.Text;
+	            Row.Neuro = textBoxNeuro.Text;
+	            Row.Endocrine = textBoxEndocrine.Text;
+	            Row.Stomach = textBoxStomach.Text;
+	            Row.Lungs = textBoxLungs.Text;
+	            Row.Infection = textBoxInfection.Text;
+	            Row.Alergic = textBoxAlergic.Text;
+	            Row.Drugs = textBoxDrugs.Text;
+	            Row.Industry = textBoxIndustry.Text;
+	            Row.Pregnant = textBoxPragnant.Text;
+	            Row.Other = textBoxOther.Text;
 
-		    Row.IsHeart = radioYesHeart.Checked;
-		    Row.IsNeuro = radioYesNeuro.Checked;
-		    Row.IsEndocrine = radioYesEndocrine.Checked;
-		    Row.IsStomach = radioYesStomach.Checked;
-		    Row.IsLungs = radioYesLungs.Checked;
-		    Row.IsInfection = radioYesInfection.Checked;
-		    Row.IsAlergic = radioYesAlergic.Checked;
-		    Row.IsDrugs = radioYesDrugs.Checked;
-		    Row.IsIndustry = radioYesIndustry.Checked;
-		    Row.IsPregnant = radioYesPragnant.Checked;
-		    Row.IsOther = radioYesOther.Checked;
+	            Row.IsHeart = radioYesHeart.Checked;
+	            Row.IsNeuro = radioYesNeuro.Checked;
+	            Row.IsEndocrine = radioYesEndocrine.Checked;
+	            Row.IsStomach = radioYesStomach.Checked;
+	            Row.IsLungs = radioYesLungs.Checked;
+	            Row.IsInfection = radioYesInfection.Checked;
+	            Row.IsAlergic = radioYesAlergic.Checked;
+	            Row.IsDrugs = radioYesDrugs.Checked;
+	            Row.IsIndustry = radioYesIndustry.Checked;
+	            Row.IsPregnant = radioYesPragnant.Checked;
+	            Row.IsOther = radioYesOther.Checked;
 
-		    Row.Face = textBoxFace.Text;
-		    Row.Skin = textBoxSkin.Text;
-		    Row.Limb = textBoxLimb.Text;
-		    Row.Bone = textBoxBone.Text;
+	            Row.Face = textBoxFace.Text;
+	            Row.Skin = textBoxSkin.Text;
+	            Row.Limb = textBoxLimb.Text;
+	            Row.Bone = textBoxBone.Text;
+	        }
 	    }
+
+        private void TextBoxEmptyValidating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(((TextBox)sender).Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError((Control)sender, "Пустое поле");
+            }
+        }
+
+        private void ControlValidated(object sender, EventArgs e)
+        {
+            errorProvider.SetError((Control)sender, "");
+        }
     }
 }

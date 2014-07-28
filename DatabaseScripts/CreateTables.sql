@@ -29,7 +29,7 @@ create table Diagnostics
 	[DiagnosticId] int not null primary key IDENTITY(1,1),
 	[CardId] int not null,
 	[Created] datetime not null default GETDATE(),
-	constraint fk_DiagnosticPatientCard foreign key ([CardId]) references PatientCards([CardId])
+	constraint fk_DiagnosticPatientCard foreign key ([CardId]) references PatientCards([CardId]) ON DELETE CASCADE;
 );
 
 create table Researchs
@@ -37,7 +37,7 @@ create table Researchs
 	[ResearchId] int not null primary key IDENTITY(1,1),
 	[CardId] int not null,
 	[Created] datetime not null default GETDATE(),
-	constraint fk_ResearchPatientCard foreign key ([CardId]) references PatientCards([CardId])
+	constraint fk_ResearchPatientCard foreign key ([CardId]) references PatientCards([CardId]) ON DELETE CASCADE;
 );
 
 
@@ -46,5 +46,5 @@ create table CurePlans
 	[PlanId] int not null primary key IDENTITY(1,1),
 	[CardId] int not null,
 	[Created] datetime not null default GETDATE(),
-	constraint fk_PlanPatientCard foreign key ([CardId]) references PatientCards([CardId])
+	constraint fk_PlanPatientCard foreign key ([CardId]) references PatientCards([CardId]) ON DELETE CASCADE;
 );

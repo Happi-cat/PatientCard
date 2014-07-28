@@ -37,37 +37,6 @@ namespace PatientCard.Forms
 			}
 		}
 
-        private void patientCardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			//var form = new PatientCardForm();
-			//form.EditMode = EditMode.CreateNew;
-			//form.ShowDialog(this);
-        }
-
-        private void diagnosticFormToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new HistoryForm();
-            form.Show(this);
-        }
-
-        private void historyFormToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			//var form = new DiagnosticForm(new ClinicDataSet.DiagnosticsRow(new DataRowBuilder()));
-			//form.Show(this);
-        }
-
-        private void curePlanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			//var form = new CurePlanForm();
-			//form.ShowDialog(this);
-        }
-
-        private void researchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			//var form = new ResearchForm();
-			//form.Show(this);
-        }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 	        var gridRow = dataGridPatients.Rows[e.RowIndex];
@@ -128,6 +97,28 @@ namespace PatientCard.Forms
 				e.CellStyle.BackColor = Color.MistyRose;
 			}
 		}
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("У вас самая последняя версия программы", "Обновление", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AboutForm();
+            form.ShowDialog();
+        }
 
     }
 }

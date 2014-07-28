@@ -7,10 +7,10 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="57" ViewPortY="-6" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:CurePlans" ZOrder="8" X="604" Y="205" Height="324" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:Users" ZOrder="7" X="1522" Y="206" Height="210" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:Users" ZOrder="7" X="1546" Y="165" Height="210" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:PatientCards" ZOrder="6" X="898" Y="206" Height="286" Width="218" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
-    <Shape ID="DesignTable:Researchs" ZOrder="3" X="1187" Y="203" Height="134" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Diagnostics" ZOrder="2" X="1278" Y="418" Height="324" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Diagnostics" ZOrder="4" X="1278" Y="418" Height="324" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Researchs" ZOrder="2" X="1223" Y="169" Height="229" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:fk_PlanPatientCard" ZOrder="5" LineWidth="11">
@@ -29,19 +29,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:fk_ResearchPatientCard" ZOrder="4" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>1116</X>
-          <Y>232</Y>
-        </Point>
-        <Point>
-          <X>1187</X>
-          <Y>232</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:fk_DiagnosticPatientCard" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:fk_DiagnosticPatientCard" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1116</X>
@@ -50,6 +38,18 @@
         <Point>
           <X>1278</X>
           <Y>453</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:fk_ResearchPatientCard" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>1116</X>
+          <Y>215</Y>
+        </Point>
+        <Point>
+          <X>1223</X>
+          <Y>215</Y>
         </Point>
       </RoutePoints>
     </Connector>

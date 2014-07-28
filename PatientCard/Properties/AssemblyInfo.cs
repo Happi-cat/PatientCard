@@ -5,12 +5,23 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PatientCard")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Стоматологическая Амбулаторная Карта")]
+[assembly: AssemblyDescription(@"Белорусский государственный университет
+Институт непрерывного образования
+Кафедра прикладной математики и информатики
+
+КУРСОВОЙ ПРОЕКТ
+по специальности «Программное обеспечение информационных систем»
+на тему
+«Электронная стоматологическая амбулаторная карта»
+слушателя группы 15ПО13-03в  
+Антиповой (Свирской) Анны Валерьевны
+Руководитель: Петровская Татьяна Александровна
+Минск 2014")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PatientCard")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Анна Антипова")]
+[assembly: AssemblyProduct("Стоматологическая Амбулаторная Карта")]
+[assembly: AssemblyCopyright("Copyright © Ann Antipova 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

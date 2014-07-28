@@ -74,6 +74,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CurePlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,11 +134,15 @@
     <Compile Include="Forms\ResearchForm.Designer.cs">
       <DependentUpon>ResearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AuthManager.cs" />
     <Compile Include="Logic\DataManager.cs" />
     <Compile Include="Logic\EditMode.cs" />
     <Compile Include="Logic\Utility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CurePlanForm.resx">
       <DependentUpon>CurePlanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +178,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
@@ -229,7 +240,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\w512h5121339361119lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Стандарты-стоматологии.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

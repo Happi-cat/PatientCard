@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientCard", "PatientCard\PatientCard.csproj", "{D08FD3C4-0131-4D4E-A177-417AE0B9EFC5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{47DF82A1-134D-4BF7-96A6-8004B02A6413}"
-	ProjectSection(SolutionItems) = preProject
-		DatabaseScripts\CreateTables.sql = DatabaseScripts\CreateTables.sql
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

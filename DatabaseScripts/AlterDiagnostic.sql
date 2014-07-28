@@ -1,4 +1,4 @@
-alter table Diagnostics add Reason nvarchar(400);
+alter table Diagnostics add Reason nvarchar(400) not null;
 
 alter table Diagnostics add Heart nvarchar(400);
 alter table Diagnostics add Neuro nvarchar(400);
@@ -24,7 +24,7 @@ alter table Diagnostics add IsIndustry bit
 alter table Diagnostics add IsPregnant bit
 alter table Diagnostics add IsOther bit
 
-alter table Diagnostics add Face nvarchar(400);
-alter table Diagnostics add Skin nvarchar(400);
-alter table Diagnostics add Limb nvarchar(400);
-alter table Diagnostics add Bone nvarchar(400);
+alter table Diagnostics add Face nvarchar(400) not null;
+alter table Diagnostics add Skin nvarchar(400) not null;
+alter table Diagnostics add Limb nvarchar(400) not null;
+alter table Diagnostics add Bone nvarchar(400) not null;
