@@ -49,6 +49,11 @@ namespace PatientCard.Forms
 
         protected override void OnLoad(EventArgs e)
         {
+            if (EditMode == EditMode.CreateNew)
+            {
+                buttonHistory.Enabled = false;
+                buttonResearchs.Enabled = false;
+            }
             if (EditMode == EditMode.ReadOnly)
             {
                 Utility.LockTextBoxes(this);
@@ -113,7 +118,7 @@ namespace PatientCard.Forms
 
         private void buttonResearchs_Click(object sender, EventArgs e)
         {
-            var form = new ResearchForm();
+            var form = new ResearchForm(Row.CardId);
             form.ShowDialog();
         }
 

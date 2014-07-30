@@ -73,7 +73,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel1.Controls.Add(this.labelTitle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelDate, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateFill, 3, 1);
@@ -121,7 +121,7 @@
             this.labelTitle.Location = new System.Drawing.Point(18, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Padding = new System.Windows.Forms.Padding(10);
-            this.labelTitle.Size = new System.Drawing.Size(839, 40);
+            this.labelTitle.Size = new System.Drawing.Size(836, 40);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "АМБУЛАТОРНАЯ КАРТА";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,7 +133,7 @@
             this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDate.Location = new System.Drawing.Point(254, 40);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(197, 30);
+            this.labelDate.Size = new System.Drawing.Size(196, 30);
             this.labelDate.TabIndex = 3;
             this.labelDate.Text = "Дата заполнения: ";
             this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,9 +141,9 @@
             // dateFill
             // 
             this.dateFill.Enabled = false;
-            this.dateFill.Location = new System.Drawing.Point(457, 43);
+            this.dateFill.Location = new System.Drawing.Point(456, 43);
             this.dateFill.Name = "dateFill";
-            this.dateFill.Size = new System.Drawing.Size(197, 20);
+            this.dateFill.Size = new System.Drawing.Size(196, 20);
             this.dateFill.TabIndex = 4;
             // 
             // labelNames
@@ -223,9 +223,9 @@
             this.labelGender.AutoSize = true;
             this.labelGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGender.Location = new System.Drawing.Point(457, 120);
+            this.labelGender.Location = new System.Drawing.Point(456, 120);
             this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(197, 30);
+            this.labelGender.Size = new System.Drawing.Size(196, 30);
             this.labelGender.TabIndex = 13;
             this.labelGender.Text = "Пол";
             this.labelGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -234,9 +234,9 @@
             // 
             this.panelGender.Controls.Add(this.radioMale);
             this.panelGender.Controls.Add(this.radioFemale);
-            this.panelGender.Location = new System.Drawing.Point(660, 123);
+            this.panelGender.Location = new System.Drawing.Point(658, 123);
             this.panelGender.Name = "panelGender";
-            this.panelGender.Size = new System.Drawing.Size(197, 24);
+            this.panelGender.Size = new System.Drawing.Size(196, 24);
             this.panelGender.TabIndex = 14;
             // 
             // radioMale
@@ -268,7 +268,7 @@
             this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLastName.Location = new System.Drawing.Point(254, 93);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(197, 21);
+            this.textBoxLastName.Size = new System.Drawing.Size(196, 21);
             this.textBoxLastName.TabIndex = 15;
             // 
             // textBoxFirstName
@@ -276,9 +276,9 @@
             this.textBoxFirstName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(457, 93);
+            this.textBoxFirstName.Location = new System.Drawing.Point(456, 93);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(197, 21);
+            this.textBoxFirstName.Size = new System.Drawing.Size(196, 21);
             this.textBoxFirstName.TabIndex = 16;
             // 
             // textBoxMiddleName
@@ -286,9 +286,9 @@
             this.textBoxMiddleName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiddleName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMiddleName.Location = new System.Drawing.Point(660, 93);
+            this.textBoxMiddleName.Location = new System.Drawing.Point(658, 93);
             this.textBoxMiddleName.Name = "textBoxMiddleName";
-            this.textBoxMiddleName.Size = new System.Drawing.Size(197, 21);
+            this.textBoxMiddleName.Size = new System.Drawing.Size(196, 21);
             this.textBoxMiddleName.TabIndex = 17;
             // 
             // textBoxAddress
@@ -300,7 +300,7 @@
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxAddress.Size = new System.Drawing.Size(603, 54);
+            this.textBoxAddress.Size = new System.Drawing.Size(600, 54);
             this.textBoxAddress.TabIndex = 18;
             this.textBoxAddress.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
@@ -311,7 +311,7 @@
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPhone.Location = new System.Drawing.Point(254, 213);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(603, 21);
+            this.textBoxPhone.Size = new System.Drawing.Size(600, 21);
             this.textBoxPhone.TabIndex = 19;
             // 
             // textBoxSocial
@@ -323,7 +323,7 @@
             this.textBoxSocial.Multiline = true;
             this.textBoxSocial.Name = "textBoxSocial";
             this.textBoxSocial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSocial.Size = new System.Drawing.Size(603, 54);
+            this.textBoxSocial.Size = new System.Drawing.Size(600, 54);
             this.textBoxSocial.TabIndex = 20;
             this.textBoxSocial.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
@@ -336,7 +336,7 @@
             this.textBoxWork.Multiline = true;
             this.textBoxWork.Name = "textBoxWork";
             this.textBoxWork.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxWork.Size = new System.Drawing.Size(603, 54);
+            this.textBoxWork.Size = new System.Drawing.Size(600, 54);
             this.textBoxWork.TabIndex = 21;
             this.textBoxWork.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.multiText_MouseDoubleClick);
             // 
@@ -344,7 +344,7 @@
             // 
             this.dateBirth.Location = new System.Drawing.Point(254, 123);
             this.dateBirth.Name = "dateBirth";
-            this.dateBirth.Size = new System.Drawing.Size(197, 20);
+            this.dateBirth.Size = new System.Drawing.Size(196, 20);
             this.dateBirth.TabIndex = 22;
             // 
             // flowButtons
@@ -355,9 +355,9 @@
             this.flowButtons.Controls.Add(this.buttonOk);
             this.flowButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowButtons.Location = new System.Drawing.Point(457, 363);
+            this.flowButtons.Location = new System.Drawing.Point(456, 363);
             this.flowButtons.Name = "flowButtons";
-            this.flowButtons.Size = new System.Drawing.Size(400, 76);
+            this.flowButtons.Size = new System.Drawing.Size(398, 76);
             this.flowButtons.TabIndex = 23;
             // 
             // buttonCancel
@@ -366,7 +366,7 @@
             this.buttonCancel.CausesValidation = false;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Location = new System.Drawing.Point(319, 6);
+            this.buttonCancel.Location = new System.Drawing.Point(317, 6);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 50);
@@ -379,7 +379,7 @@
             this.buttonOk.AutoSize = true;
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOk.Location = new System.Drawing.Point(232, 6);
+            this.buttonOk.Location = new System.Drawing.Point(230, 6);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(6);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 50);
@@ -397,7 +397,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 363);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(433, 76);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(432, 76);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // buttonResearchs

@@ -14,9 +14,20 @@ namespace PatientCard
         [STAThread]
         static void Main()
         {
+            AppDomain domain = AppDomain.CurrentDomain;
+            domain.UnhandledException += domain_UnhandledException;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+
+        }
+
+
+        static void domain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("Произошла ошибка! Свяжитесь с администратором для выяснения причин", "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

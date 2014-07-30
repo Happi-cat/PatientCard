@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -105,7 +107,19 @@ namespace PatientCard.Forms
 
         private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Process myProcess = new Process();
 
+            try
+            {
+                // true is the default, but it is important not to set it to false
+                myProcess.StartInfo.UseShellExecute = true;
+                myProcess.StartInfo.FileName =  Path.Combine(Application.StartupPath , @"Help\index.htm");
+                myProcess.Start();
+
+            }
+            catch (Exception exception)
+            {
+            }
         }
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)

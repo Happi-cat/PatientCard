@@ -193,6 +193,9 @@
     <None Include="Data\ClinicDataSet.xss">
       <DependentUpon>ClinicDataSet.xsd</DependentUpon>
     </None>
+    <Content Include="Help\index.files\themedata.thmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -245,6 +248,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Стандарты-стоматологии.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\index.files\colorschememapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\index.files\filelist.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\index.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

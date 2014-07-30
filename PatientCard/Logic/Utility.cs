@@ -11,7 +11,12 @@ namespace PatientCard.Logic
 		{
 			return (T) gridRow.Cells.Cast<DataGridViewCell>().First(n => n.OwningColumn.DataPropertyName == columnName).Value;
 		}
-		
+
+        public static void SetDataGridViewCellValue<T>(DataGridViewRow gridRow, string columnName, T value)
+        {
+            gridRow.Cells.Cast<DataGridViewCell>().First(n => n.OwningColumn.DataPropertyName == columnName).Value = value;
+        }
+
 	    public static void LockTextBoxes(Form form)
         {
             foreach (var control in form.Controls)
