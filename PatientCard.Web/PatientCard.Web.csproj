@@ -108,6 +108,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\WidgetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -129,7 +131,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Content\angularjs-nvd3-directives\" />
+    <Folder Include="Content\angularjs\" />
+    <Folder Include="Content\bootstrap\" />
+    <Folder Include="Content\d3\" />
+    <Folder Include="Content\jquery\" />
+    <Folder Include="Content\patient-card\app\" />
+    <Folder Include="Content\patient-card\controllers\" />
+    <Folder Include="Content\patient-card\directives\" />
+    <Folder Include="Content\patient-card\modules\" />
+    <Folder Include="Content\patient-card\services\" />
+    <Folder Include="Content\patient-card\styles\" />
+    <Folder Include="Controllers\Api\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
