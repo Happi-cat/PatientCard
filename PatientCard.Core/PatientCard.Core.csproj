@@ -51,6 +51,8 @@
     <Compile Include="Injection\IFactoryContainer.cs" />
     <Compile Include="Models\DentistStatus.cs" />
     <Compile Include="Models\FirstSurvey.cs" />
+    <Compile Include="Models\FirstSurveyDetail.cs" />
+    <Compile Include="Models\FirstSurveyOption.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Job.cs" />
@@ -58,7 +60,7 @@
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\SurveyType.cs" />
     <Compile Include="Models\ThreatmentPlan.cs" />
-    <Compile Include="Models\ThreatmentPlanOption.cs" />
+    <Compile Include="Models\ThreatmentOption.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VisitDiary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

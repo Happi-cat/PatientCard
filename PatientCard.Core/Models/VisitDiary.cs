@@ -8,5 +8,6 @@
 
 		public virtual string Username { get; set; }
 
+		public virtual string Description { get; set; }
 	}
 }
