@@ -1,6 +1,6 @@
 ﻿namespace PatientCard.Core.Models
 {
-	public class Profile
+	public class DentistStatus
 	{
 		 
 	}

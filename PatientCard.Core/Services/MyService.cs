@@ -1,35 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using PatientCard.Core.Models;
 using PatientCard.Core.Repositories;
 using PatientCard.Core.Services.Interfaces;
 
 namespace PatientCard.Core.Services
 {
-    public class MyService<T> : IMyService<T>
+    public class MyService<TEntity, TKey> : IMyService<TEntity, TKey> where TEntity : IEntity<TKey>
     {
-        public MyService(IRepository<T> myRepository)
+        public MyService(IRepository<TEntity, TKey> myRepository)
         {
             MyRepository = myRepository;
         }
 
-        protected IRepository<T> MyRepository { get; private set; }
+        protected IRepository<TEntity, TKey> MyRepository { get; private set; }
 
-        public T GetMyItem(T key)
+        public TEntity GetMyItem(TKey key)
         {
             return MyRepository.Get(key);
         }
 
-        public virtual IList<T> GetItems()
+		public virtual IList<TEntity> GetItems()
         {
             throw new NotSupportedException();
         }
 
-        public IList<T> GetMyItems()
+        public IList<TEntity> GetMyItems()
         {
             return MyRepository.GetAll();
         }
 
-        public void StoreMyItem(T item)
+		public void StoreMyItem(TEntity item)
         {
             if (MyRepository.CheckExist(item))
             {
@@ -41,7 +42,7 @@ namespace PatientCard.Core.Services
             }
         }
 
-        public void DeleteMyItem(T item)
+		public void DeleteMyItem(TEntity item)
         {
             if (MyRepository.CheckExist(item))
             {
@@ -50,4 +51,11 @@ namespace PatientCard.Core.Services
 
         }
     }
+
+	public class MyService<TEntity> : MyService<TEntity, string> where TEntity : IEntity
+	{
+		public MyService(IRepository<TEntity, string> myRepository) : base(myRepository)
+		{
+		}
+	}
 }

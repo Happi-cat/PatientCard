@@ -49,13 +49,22 @@
     <Compile Include="Injection\Containers\LazyFactoryContainer.cs" />
     <Compile Include="Injection\Containers\ThreadLocalFactoryContainer.cs" />
     <Compile Include="Injection\IFactoryContainer.cs" />
+    <Compile Include="Models\DentistStatus.cs" />
+    <Compile Include="Models\FirstSurvey.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Patient.cs" />
-    <Compile Include="Models\Profile.cs" />
+    <Compile Include="Models\Survey.cs" />
+    <Compile Include="Models\SurveyType.cs" />
+    <Compile Include="Models\ThreatmentPlan.cs" />
+    <Compile Include="Models\ThreatmentPlanOption.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\VisitDiary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Services\GateService.cs" />
+    <Compile Include="Services\Interfaces\IAccountService.cs" />
     <Compile Include="Services\Interfaces\IMyService.cs" />
     <Compile Include="Services\MyService.cs" />
   </ItemGroup>
