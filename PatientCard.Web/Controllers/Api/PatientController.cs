@@ -8,10 +8,11 @@ namespace PatientCard.Web.Controllers.Api
 {
     public class PatientController : ApiController
     {
-	   
+	    private readonly IPatientService _patientService;
 
 		public PatientController()
 		{
+			_patientService = Bootstrap.BuildFactory.GetInstance<IPatientService>();
 		}
     }
 }

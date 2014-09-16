@@ -12,9 +12,9 @@ namespace PatientCard.Core.Models
 		public virtual string Name { get; set; }
 
 		[DataMember(Name = "group")]
-		public virtual int? Group { get; set; }
+		public virtual int? GroupNumber { get; set; }
 
 		[DataMember(Name = "order")]
-		public virtual int? Order { get; set; }
+		public virtual int? OrderNumber { get; set; }
 	}
 }

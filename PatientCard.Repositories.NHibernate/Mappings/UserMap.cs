@@ -120,9 +120,9 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		{
 			Table("ThreatmentOptions");
 			Id(e => e.Key, "Id").GeneratedBy.Increment();
-			Map(e => e.Name).Unique().Not.Nullable().Length(400);
-			Map(e => e.Group);
-			Map(e => e.Order);
+			Map(e => e.Name).UniqueKey("uk_ThreatmentOptions").Not.Nullable().Length(400);
+			Map(e => e.GroupNumber).UniqueKey("uk_ThreatmentOptions").Not.Nullable();
+			Map(e => e.OrderNumber);
 		}
 	}
 

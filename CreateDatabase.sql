@@ -76,9 +76,9 @@ create table [SurveyTypes] (
 create table [ThreatmentOptions] (
 	[Id] int identity(1,1) not null primary key,
 	[Name] nvarchar(400) not null,
-	[Group] int null,
-	[Order] int null,
-	constraint uk_ThreatmentOptions unique ([Name], [Group])
+	[GroupNumber] int not null,
+	[OrderNumber] int null,
+	constraint uk_ThreatmentOptions unique ([Name], [GroupNumber])
 );
 
 create table [ThreatmentPlans] (

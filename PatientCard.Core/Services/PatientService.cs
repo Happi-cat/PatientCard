@@ -15,7 +15,8 @@ namespace PatientCard.Core.Services
 		private readonly IVisitDiaryRepository _visitRepository;
 
 		public PatientService(IRepository<Patient, int> repository, IFirstSurveyRepository firstSurveyRepository, IFirstSurveyDetailRepository firstSurveyDetailRepository,
-			IThreatmentPlanRepository threatmentPlanRepository, ISurveyRepository surveyRepository, IVisitDiaryRepository visitDiaryRepository) : base(repository)
+			IThreatmentPlanRepository threatmentPlanRepository, ISurveyRepository surveyRepository, IVisitDiaryRepository visitDiaryRepository)
+			: base(repository)
 		{
 			_firstSurveyRepository = firstSurveyRepository;
 			_firstSurveyDetailRepository = firstSurveyDetailRepository;
