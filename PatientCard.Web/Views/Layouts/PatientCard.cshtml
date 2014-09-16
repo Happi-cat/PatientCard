@@ -1,0 +1,26 @@
+﻿@using System.Web.Optimization
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="ru" ng-app="patient-card-app">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Untech.Web</title>
+	@Styles.Render("~/bundles/styles/common")
+</head>
+<body>
+	@*<div class="sidebar">
+		<ul class="nav nav-pills nav-stacked nav-sidebar"  ng-controller="MenuCtrl as main">
+			<li ng-repeat="item in items" ng-class="{ active:isActive( '{{item.url}}' ) }">
+				<a href="#!{{item.url}}"><span class="{{item.icon}}"></span><span class="text">{{item.title}}</span></a>
+			</li>
+		</ul>
+	</div>*@
+	<div class="main container-fluid">
+		@RenderBody()
+	</div>
+
+	@Scripts.Render("~/bundles/js/common", "~/bundles/js/angular")
+</body>
+</html>

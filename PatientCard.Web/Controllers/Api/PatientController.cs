@@ -61,7 +61,7 @@ namespace PatientCard.Web.Controllers.Api
 
 		[HttpGet]
 		[ActionName("First-Survey-Details")]
-		private IList<FirstSurveyDetail> GetFirstSurveyDetails(int patientId)
+		public IList<FirstSurveyDetail> GetFirstSurveyDetails(int patientId)
 		{
 			return _patientService.GetFirstSurveyDetails(patientId);
 		}
@@ -76,7 +76,7 @@ namespace PatientCard.Web.Controllers.Api
 
 		[HttpGet]
 		[ActionName("Survey")]
-		private IList<Survey> GetSurveys(int patientId)
+		public IList<Survey> GetSurveys(int patientId)
 		{
 			return _patientService.GetSurveys(patientId);
 		}
