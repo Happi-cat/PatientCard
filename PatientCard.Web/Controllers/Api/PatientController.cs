@@ -91,7 +91,7 @@ namespace PatientCard.Web.Controllers.Api
 
 		[HttpGet]
 		[ActionName("Threatment-Plan")]
-		private IList<ThreatmentPlan> GetThreatmentPlan(int patientId)
+		public IList<ThreatmentPlan> GetThreatmentPlan(int patientId)
 		{
 			return _patientService.GetThreatmentPlan(patientId);
 		}
@@ -106,7 +106,7 @@ namespace PatientCard.Web.Controllers.Api
 
 		[HttpGet]
 		[ActionName("Visit-Diary")]
-		private IList<VisitDiary> GetVisitDiary(int patientId)
+		public IList<VisitDiary> GetVisitDiary(int patientId)
 		{
 			return _patientService.GetVisitDiary(patientId);
 		}
