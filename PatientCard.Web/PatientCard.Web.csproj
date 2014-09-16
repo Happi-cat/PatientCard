@@ -108,6 +108,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\InjectionConfig.cs" />
+    <Compile Include="Controllers\Api\AccountController.cs" />
+    <Compile Include="Controllers\Api\PatientController.cs" />
+    <Compile Include="Controllers\Api\SystemController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\WidgetController.cs" />
     <Compile Include="Global.asax.cs">
@@ -132,6 +136,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\angularjs-nvd3-directives\" />
+    <Folder Include="Content\angularjs-ui-bootstrap\" />
     <Folder Include="Content\angularjs\" />
     <Folder Include="Content\bootstrap\" />
     <Folder Include="Content\d3\" />
@@ -142,11 +147,23 @@
     <Folder Include="Content\patient-card\modules\" />
     <Folder Include="Content\patient-card\services\" />
     <Folder Include="Content\patient-card\styles\" />
-    <Folder Include="Controllers\Api\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PatientCard.Core\PatientCard.Core.csproj">
+      <Project>{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}</Project>
+      <Name>PatientCard.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PatientCard.Repositories.NHibernate\PatientCard.Repositories.NHibernate.csproj">
+      <Project>{ccf2dc2b-a5be-4bfe-a357-bc689bb6ff98}</Project>
+      <Name>PatientCard.Repositories.NHibernate</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Page\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

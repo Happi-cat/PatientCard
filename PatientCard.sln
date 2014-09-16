@@ -5,6 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientCard.Web", "PatientC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientCard.Core", "PatientCard.Core\PatientCard.Core.csproj", "{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientCard.Repositories.NHibernate", "PatientCard.Repositories.NHibernate\PatientCard.Repositories.NHibernate.csproj", "{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{27A03818-F47C-40E7-969B-C6F8AB0F349B}"
+	ProjectSection(SolutionItems) = preProject
+		CreateDatabase.sql = CreateDatabase.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +27,7 @@ Global
 		{54828BB0-7AB8-47AA-9123-4C7813215411}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{54828BB0-7AB8-47AA-9123-4C7813215411}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{54828BB0-7AB8-47AA-9123-4C7813215411}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{54828BB0-7AB8-47AA-9123-4C7813215411}.Debug|x86.Build.0 = Debug|Any CPU
 		{54828BB0-7AB8-47AA-9123-4C7813215411}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54828BB0-7AB8-47AA-9123-4C7813215411}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54828BB0-7AB8-47AA-9123-4C7813215411}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
@@ -30,11 +38,23 @@ Global
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Debug|x86.Build.0 = Debug|Any CPU
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E0A79E1F-0BF4-4897-8315-0907C6E1E26A}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Debug|x86.Build.0 = Debug|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CCF2DC2B-A5BE-4BFE-A357-BC689BB6FF98}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

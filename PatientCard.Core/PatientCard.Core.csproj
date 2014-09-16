@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap.cs" />
     <Compile Include="Caching\CacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />
     <Compile Include="Generic\Singleton.cs" />
@@ -64,11 +66,21 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VisitDiary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IFirstSurveyDetailRepository.cs" />
+    <Compile Include="Repositories\IFirstSurveyRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\ISurveyRepository.cs" />
+    <Compile Include="Repositories\IThreatmentPlanRepository.cs" />
+    <Compile Include="Repositories\IVisitDiaryRepository.cs" />
+    <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\GateService.cs" />
     <Compile Include="Services\Interfaces\IAccountService.cs" />
-    <Compile Include="Services\Interfaces\IMyService.cs" />
-    <Compile Include="Services\MyService.cs" />
+    <Compile Include="Services\Interfaces\IPatientService.cs" />
+    <Compile Include="Services\Interfaces\IService.cs" />
+    <Compile Include="Services\Interfaces\ISystemService.cs" />
+    <Compile Include="Services\PatientService.cs" />
+    <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\SystemService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

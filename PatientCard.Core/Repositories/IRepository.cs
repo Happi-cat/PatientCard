@@ -3,9 +3,9 @@ using PatientCard.Core.Models;
 
 namespace PatientCard.Core.Repositories
 {
-	public interface IRepository<TEntity, in TKey> where TEntity :IEntity<TKey>
+	public interface IRepository<TEntity, TKey> where TEntity :IEntity<TKey>
 	{
-		TEntity Get(TKey key);
+		TEntity Get(TEntity key);
 
 		IList<TEntity> GetAll();
 
