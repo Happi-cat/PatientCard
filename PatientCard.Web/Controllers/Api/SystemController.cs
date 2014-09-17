@@ -69,6 +69,13 @@ namespace PatientCard.Web.Controllers.Api
 		//}
 
 		[HttpGet]
+		[ActionName("First-Survey-Options")]
+		public IList<FirstSurveyOption> GetFirstSurveyOptions()
+		{
+			return _systemService.GetFirstSurveyOptions();
+		}
+
+		[HttpGet]
 		[ActionName("Threatment-Options")]
 		public IList<ThreatmentOption> GetThreatmentOptions()
 		{

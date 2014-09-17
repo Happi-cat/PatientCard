@@ -448,6 +448,8 @@
     <Content Include="Content\jquery\jquery-2.1.1.js" />
     <Content Include="Content\jquery\jquery.tmpl.js" />
     <Content Include="Content\patient-card\app\app.js" />
+    <Content Include="Content\patient-card\modules\modules.js" />
+    <Content Include="Content\patient-card\services\systemSvc.js" />
     <Content Include="Content\patient-card\styles\common.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -463,8 +465,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\patient-card\controllers\" />
     <Folder Include="Content\patient-card\directives\" />
-    <Folder Include="Content\patient-card\modules\" />
-    <Folder Include="Content\patient-card\services\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

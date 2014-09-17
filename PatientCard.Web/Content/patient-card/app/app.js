@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var webapp = angular.module('patient-card-app', ['ui.bootstrap', 'nvd3ChartDirectives', 'ngRoute'])
+var webapp = angular.module('patient-card-app', ['patient-card.services', 'ui.bootstrap', 'nvd3ChartDirectives', 'ngRoute'])
 	.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 		$routeProvider
 			//.when('/', { templateUrl: '/Page/Overview', controller: OverviewCtrl })

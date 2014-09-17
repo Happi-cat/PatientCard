@@ -14,6 +14,7 @@ namespace PatientCard.Web
 			buildFactory.Transient()
 			            .Register<IRepository<Job, string>>(() => new NHibernateRepository<Job, string>())
 			            .Register<IRepository<SurveyType, int>>(() => new NHibernateRepository<SurveyType, int>())
+						.Register<IRepository<FirstSurveyOption, int>>(() => new NHibernateRepository<FirstSurveyOption, int>())
 			            .Register<IRepository<ThreatmentOption, int>>(() => new NHibernateRepository<ThreatmentOption, int>())
 						.Register<IRepository<User, string>>(() => new NHibernateRepository<User, string>())
 						.Register<IRepository<Patient, int>>(() => new NHibernateRepository<Patient, int>())
@@ -29,6 +30,7 @@ namespace PatientCard.Web
 			            .Register<ISystemService>(
 				            () => new SystemService(buildFactory.GetInstance<IRepository<Job, string>>(),
 				                                    buildFactory.GetInstance<IRepository<SurveyType, int>>(),
+													buildFactory.GetInstance<IRepository<FirstSurveyOption, int>>(),
 				                                    buildFactory.GetInstance<IRepository<ThreatmentOption, int>>()
 					                  ))
 			            .Register<IPatientService>(

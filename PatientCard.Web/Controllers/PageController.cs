@@ -16,5 +16,29 @@ namespace PatientCard.Web.Controllers
             return View();
         }
 
+		public ActionResult Home()
+		{
+			return View();
+		}
+
+		public ActionResult Patients()
+		{
+			return View();
+		}
+
+		public ActionResult Patient()
+		{
+			return View();
+		}
+
+		public ActionResult Help()
+		{
+			return View();
+		}
+
+		public ActionResult About()
+		{
+			return View();
+		}
     }
 }

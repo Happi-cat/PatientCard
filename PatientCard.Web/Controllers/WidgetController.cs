@@ -10,11 +10,17 @@ namespace PatientCard.Web.Controllers
     {
         //
         // GET: /Widget/
-
-        public ActionResult Index()
+		[ActionName("Patient-Overview")]
+        public ActionResult PatientOverview()
         {
             return View();
         }
+
+		[ActionName("Patient-First-Survey")]
+		public ActionResult PatientFirstSurvey()
+		{
+			return View();
+		}
 
     }
 }
