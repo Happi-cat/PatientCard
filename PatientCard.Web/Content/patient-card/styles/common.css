@@ -5,3 +5,13 @@
 .thumbnail-fixed-height {
 	min-height: 100px;
 }
+
+.tile {
+	padding: 10px;
+}
+
+.btn-toolbar-padding {
+	padding-bottom: 20px;
+
+}
+

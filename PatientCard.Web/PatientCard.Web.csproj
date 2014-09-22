@@ -556,7 +556,10 @@
     <Content Include="Views\Widget\PatientThreatmentPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Patient\Index.cshtml" />
+    <Content Include="Views\Widget\PatientSurvey.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widget\PatientVisitDiary.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,15 +5,29 @@ angular.module('patient-card.services')
 		var self = {};
 
 		self.getPatients = function() {
-			return $http.get('/api/patient');
+			var deferred = $q.defer();
+			$http.get('/api/patient').then(function (data) {
+				deferred.resolve(data.data);
+			}, function (error) {
+				deferred.reject(error);
+			});
+
+			return deferred.promise;
 		};
 
-		self.getPatient = function(id) {
-			return $http.get('/api/patient/:id', {
+		self.getPatient = function (id) {
+			var deferred = $q.defer();
+			$http.get('/api/patient/:id', {
 				params: {
 					id: id
 				}
+			}).then(function(data) {
+				deferred.resolve(data.data);
+			}, function(error) {
+				deferred.reject(error);
 			});
+
+			return deferred.promise;
 		};
 
 		self.storePatient = function(patient) {

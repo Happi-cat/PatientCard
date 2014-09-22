@@ -1,5 +1,38 @@
-﻿<div class="row">
-	
-	
+﻿<div class="container-fluid" ng-controller="PatientsCtrl as patients">
 
+
+	<div class="btn-toolbar btn-toolbar-padding">
+		<div class="btn-group">
+			<a href="#!/patient/new" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Добавить пациента</a>
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Фамилия</th>
+				<th>Имя</th>
+				<th>Отчество</th>
+				<th>Телефон</th>
+				<th>Адрес</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in patients.items">
+				<td>
+					<div class="btn-group btn-group-xs">
+						
+						<a href="#!/patient/edit/{{ item.id }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></a>
+						<a href="#!/patient/edit/{{ item.id }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+					</div>
+				</td>
+				<td>{{ item.lastName }}</td>
+				<td>{{ item.firstName }}</td>
+				<td>{{ item.middleName }}</td>
+				<td>{{ item.phone }}</td>
+				<td>{{ item.address }}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
