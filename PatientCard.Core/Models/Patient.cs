@@ -19,7 +19,7 @@ namespace PatientCard.Core.Models
 		public virtual string LastName { get; set; }
 
 		[DataMember(Name = "birthday")]
-		public virtual DateTime BirthDate { get; set; }
+		public virtual DateTime? BirthDate { get; set; }
 
 		[DataMember(Name = "gender")]
 		public virtual Gender Gender { get; set; }

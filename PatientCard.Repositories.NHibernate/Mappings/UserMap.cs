@@ -79,7 +79,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 			Map(e => e.FirstName).Not.Nullable().Length(100);
 			Map(e => e.MiddleName).Not.Nullable().Length(100);
 			Map(e => e.LastName).Not.Nullable().Length(100);
-			Map(e => e.BirthDate);
+			Map(e => e.BirthDate).Nullable();
 			Map(e => e.Gender);
 			Map(e => e.Address).Length(400);
 			Map(e => e.Phone).Length(100);
