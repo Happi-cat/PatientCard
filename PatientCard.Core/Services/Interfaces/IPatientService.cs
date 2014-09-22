@@ -8,9 +8,6 @@ namespace PatientCard.Core.Services.Interfaces
 		FirstSurvey GetFirstSurvey(int patientId);
 		void StoreFirstSurvey(FirstSurvey survey);
 		
-		IList<FirstSurveyDetail> GetFirstSurveyDetails(int patientId);
-		void StoreFirstSurveyDetails(IList<FirstSurveyDetail> surveyDetails);
-
 		IList<Survey> GetSurveys(int patientId);
 		void StoreSurvey(Survey survey);
 

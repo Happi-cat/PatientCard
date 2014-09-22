@@ -3,10 +3,11 @@
 var webapp = angular.module('patient-card-app', ['patient-card.services', 'ui.bootstrap', 'nvd3ChartDirectives', 'ngRoute'])
 	.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 		$routeProvider
-			//.when('/', { templateUrl: '/Page/Overview', controller: OverviewCtrl })
-			//.when('/packages', { templateUrl: '/Page/Packages', controller: PackagesPageCtrl })
-			//.when('/currencies', { templateUrl: '/Page/Currencies', controller: CurrenciesPageCtrl })
-			//.when('/weather', { templateUrl: '/Page/Weather', controller: WeatherPageCtrl })
+			.when('/', { templateUrl: '/Page/Home', controller: LandingCtrl })
+			.when('/patients', { templateUrl: '/Page/Patients' })
+			.when('/patient', { templateUrl: '/Page/Patient' })
+			.when('/help', { templateUrl: '/Page/Help' })
+			.when('/about', { templateUrl: '/Page/About' })
 			.otherwise({ redirectTo: '/' });
 
 		// NOTE: This part is very important

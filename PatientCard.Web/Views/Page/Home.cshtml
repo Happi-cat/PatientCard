@@ -1,0 +1,22 @@
+﻿<div class="row">
+	<div class="col-md-8 col-md-offset-2 col-sm-12">
+		<div class="jumbotron">
+			<h1>Как начать работать..</h1>
+			<p>выберите одно из желаемых действий ниже</p>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 col-sm-6" ng-repeat="item in items">
+				<a href="#!{{item.url}}" class="thumbnail thumbnail-fixed-height">
+					<div class="media">
+						<div class="media-object pull-left health-icon-lg {{ item.icon }}"></div>
+						<div class="media-body">
+							<h4 class="media-heading">{{ item.title }}</h4>
+							{{ item.description }}
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

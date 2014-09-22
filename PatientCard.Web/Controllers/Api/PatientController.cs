@@ -60,21 +60,6 @@ namespace PatientCard.Web.Controllers.Api
 		}
 
 		[HttpGet]
-		[ActionName("First-Survey-Details")]
-		public IList<FirstSurveyDetail> GetFirstSurveyDetails(int patientId)
-		{
-			return _patientService.GetFirstSurveyDetails(patientId);
-		}
-
-		[HttpPost]
-		[ActionName("First-Survey-Details")]
-		public HttpResponseMessage PostFirstSurveyDetails(IList<FirstSurveyDetail> surveyDetails)
-		{
-			_patientService.StoreFirstSurveyDetails(surveyDetails);
-			return new HttpResponseMessage(HttpStatusCode.Created);
-		}
-
-		[HttpGet]
 		[ActionName("Survey")]
 		public IList<Survey> GetSurveys(int patientId)
 		{

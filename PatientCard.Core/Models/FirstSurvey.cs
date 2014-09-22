@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace PatientCard.Core.Models
 {
@@ -24,5 +25,8 @@ namespace PatientCard.Core.Models
 
 		[DataMember(Name = "bones")]
 		public virtual string Bones { get; set; }
+
+		[DataMember(Name = "details")]
+		public virtual IList<FirstSurveyDetail> Details { get; set; }
 	}
 }

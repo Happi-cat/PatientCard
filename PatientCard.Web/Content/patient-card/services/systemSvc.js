@@ -3,22 +3,22 @@
 angular.module('patient-card.services')
 	.factory('systemSvc', function ($http, $q) {
 		var self = {};
-
-		$http.get('/api/system/jobs').then(function(data) {
-			self.jobs = data;
-		});
-
-		$http.get('/api/system/survey-types').then(function (data) {
-			self.surveyTypes = data;
-		});
 		
-		$http.get('/api/system/first-survey-options').then(function (data) {
-			self.firstSurveyOptions = data;
-		});
+		self.jobs = function () {
+			return $http.get('/api/system/jobs');
+		};
 		
-		$http.get('/api/system/threatment-options').then(function (data) {
-			self.threatmentOptions = data;
-		});
+		self.surveyTypes = function () {
+			return $http.get('/api/system/survey-types');
+		};
+		
+		self.firstSurveyOptions = function () {
+			return $http.get('/api/system/first-survey-options');
+		};
+		
+		self.threatmentOptions = function () {
+			return $http.get('/api/system/threatment-options');
+		};
 
 		return self;
 	});

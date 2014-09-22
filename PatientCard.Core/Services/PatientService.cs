@@ -28,7 +28,12 @@ namespace PatientCard.Core.Services
 
 		public FirstSurvey GetFirstSurvey(int patientId)
 		{
-			return _firstSurveyRepository.GetPatientItems(patientId).FirstOrDefault();
+			var firstSurvey =  _firstSurveyRepository.GetPatientItems(patientId).FirstOrDefault();
+			if (firstSurvey != null)
+			{
+				firstSurvey.Details = _firstSurveyDetailRepository.GetPatientItems(patientId);
+			}
+			return firstSurvey;
 		}
 
 		public void StoreFirstSurvey(FirstSurvey survey)
@@ -41,14 +46,13 @@ namespace PatientCard.Core.Services
 			{
 				_firstSurveyRepository.Create(survey);
 			}
+			if (survey.Details != null)
+			{
+				StoreFirstSurveyDetails(survey.Details);
+			}
 		}
 
-		public IList<FirstSurveyDetail> GetFirstSurveyDetails(int patientId)
-		{
-			return _firstSurveyDetailRepository.GetPatientItems(patientId);
-		}
-
-		public void StoreFirstSurveyDetails(IList<FirstSurveyDetail> surveyDetails)
+		private void StoreFirstSurveyDetails(IList<FirstSurveyDetail> surveyDetails)
 		{
 			foreach (var detail in surveyDetails)
 			{

@@ -1,0 +1,55 @@
+﻿.health-icon-lg {
+	width: 64px;
+	height: 64px;
+	background-repeat: no-repeat;
+	background-size: 64px 64px;
+}
+
+.health-icon-md {
+	width: 48px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-size: 48px 48px;
+}
+
+.health-icon-sm {
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+}
+
+.health-icon-xs {
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+}
+
+.health-icon-xxs {
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+}
+
+.health-icon-ambulance-car { background-image: url('img/ambulance_car.png'); }
+.health-icon-biohazard { background-image: url('img/biohazard.png'); }
+.health-icon-blood { background-image: url('img/blood.png'); }
+.health-icon-blood-pressure { background-image: url('img/blood_pressure.png'); }
+.health-icon-bottle { background-image: url('img/bottle.png'); }
+.health-icon-caduceus { background-image: url('img/caduceus.png'); }
+.health-icon-capsule { background-image: url('img/capsule.png'); }
+.health-icon-dna { background-image: url('img/dna.png'); }
+.health-icon-ecg { background-image: url('img/ecg.png'); }
+.health-icon-hospital { background-image: url('img/hospital.png'); }
+.health-icon-microscope { background-image: url('img/microscope.png'); }
+.health-icon-nurse { background-image: url('img/nurse.png'); }
+.health-icon-onlinepharmacycheck { background-image: url('img/onlinepharmacycheck.png'); }
+.health-icon-prescription { background-image: url('img/prescription.png'); }
+.health-icon-scale { background-image: url('img/scale.png'); }
+.health-icon-sthetoscope { background-image: url('img/sthetoscope.png'); }
+.health-icon-test-tube { background-image: url('img/test_tube.png'); }
+.health-icon-tooth { background-image: url('img/tooth.png'); }
+.health-icon-toothbrush { background-image: url('img/toothbrush.png'); }
+.health-icon-virus { background-image: url('img/virus.png'); }

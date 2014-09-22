@@ -1,3 +1,7 @@
 ﻿body {
 
 }
+
+.thumbnail-fixed-height {
+	min-height: 100px;
+}
