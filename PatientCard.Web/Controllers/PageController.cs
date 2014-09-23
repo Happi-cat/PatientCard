@@ -26,8 +26,12 @@ namespace PatientCard.Web.Controllers
 			return View();
 		}
 
-		public ActionResult Patient()
+		public ActionResult Patient(string id)
 		{
+			var mode = (id ?? "").ToLowerInvariant();
+			ViewBag.View = (mode == "view");
+			ViewBag.Edit = (mode == "edit");
+			ViewBag.New = (mode == "new");
 			return View();
 		}
 

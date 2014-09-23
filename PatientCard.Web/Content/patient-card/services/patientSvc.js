@@ -1,41 +1,38 @@
 ﻿'use strict';
 
 angular.module('patient-card.services')
-	.factory('patientSvc', function ($http, $q) {
+	.factory('patientSvc', function($http, $q) {
 		var self = {};
 
-		self.getPatients = function() {
+		var httpWrap = function(obj) {
 			var deferred = $q.defer();
-			$http.get('/api/patient').then(function (data) {
+			$http(obj).then(function(data) {
 				deferred.resolve(data.data);
-			}, function (error) {
-				deferred.reject(error);
+			}, function (data) {
+				deferred.reject({
+					status: data.status,
+					message: data.statusText,
+				});
 			});
-
 			return deferred.promise;
 		};
 
-		self.getPatient = function (id) {
-			var deferred = $q.defer();
-			$http.get('/api/patient/:id', {
-				params: {
-					id: id
-				}
-			}).then(function(data) {
-				deferred.resolve(data.data);
-			}, function(error) {
-				deferred.reject(error);
-			});
+		self.getPatients = function() {
+			return httpWrap({ method: 'GET', url: '/api/patient' });
+		};
 
-			return deferred.promise;
+		self.getPatient = function(id) {
+			return httpWrap({ method: 'GET', url: '/api/patient/:id', params: { id: id } });
 		};
 
 		self.storePatient = function(patient) {
-			return $http.post('/api/patient', patient);
+			return httpWrap({ method: 'POST', url: '/api/patient', data: patient });
 		};
 
 		self.getFirstSurvey = function(patientId) {
-			return $http.get('/api/patient/first-survey/:id', {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/first-survey/:id',
 				params: {
 					id: patientId
 				}
@@ -43,43 +40,49 @@ angular.module('patient-card.services')
 		};
 
 		self.storeFirstSurveyDetails = function(surveyDetails) {
-			return $http.post('/api/patient/firs-survey-details', surveyDetails);
+			return httpWrap({ method: 'POST', url: '/api/patient/firs-survey-details', data: surveyDetails });
 		};
-		
-		self.getSurveys = function (patientId) {
-			return $http.get('/api/patient/survey/:id', {
+
+		self.getSurveys = function(patientId) {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/survey/:id',
 				params: {
 					id: patientId
 				}
 			});
 		};
 
-		self.storeSurvey = function (survey) {
-			return $http.post('/api/patient/survey', survey);
+		self.storeSurvey = function(survey) {
+			return httpWrap({ method: 'POST', url: '/api/patient/survey', data: survey });
 		};
-		
-		self.getThreatmentPlan = function (patientId) {
-			return $http.get('/api/patient/threatment-plan/:id', {
+
+		self.getThreatmentPlan = function(patientId) {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/threatment-plan/:id',
 				params: {
 					id: patientId
 				}
 			});
 		};
 
-		self.storeThreatmentPlan = function (threatmentPlan) {
-			return $http.post('/api/patient/threatment-plan', threatmentPlan);
+		self.storeThreatmentPlan = function(threatmentPlan) {
+			return httpWrap({ method: 'POST', url: '/api/patient/threatment-plan', data: threatmentPlan });
 		};
 
-		self.getVisitDiary = function (patientId) {
-			return $http.get('/api/patient/visit-diary/:id', {
+		self.getVisitDiary = function(patientId) {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/visit-diary/:id',
 				params: {
 					id: patientId
 				}
 			});
 		};
 
-		self.storeVisitDiary = function (diary) {
-			return $http.post('/api/patient/visit-diary', diary);
+		self.storeVisitDiary = function(diary) {
+			return httpWrap({ method: 'POST', url: '/api/patient/visit-diary', data: diary });
 		};
 
 		return self;

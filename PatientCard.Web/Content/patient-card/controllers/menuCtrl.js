@@ -1,10 +1,13 @@
 ﻿'use strict';
 
 function MenuCtrl() {
-	this.actions = [];
-	
-}
+	var self = {
+		items: [{
+				title: 'Пациенты',
+				url: '/patients'
+			},
+		]
+	};
 
-MenuCtrl.prototype.registerLink = function(action) {
-	this.actions.push(action);
-};
+	return self;
+}

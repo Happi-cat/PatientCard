@@ -23,6 +23,11 @@ namespace PatientCard.Web.Controllers
             return View();
         }
 
+		public ActionResult PatientEditor()
+		{
+			return View();
+		}
+
 		[ActionName("PatientFirstSurvey")]
 		public ActionResult PatientFirstSurvey()
 		{

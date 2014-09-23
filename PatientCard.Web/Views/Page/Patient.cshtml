@@ -1,1 +1,17 @@
-﻿
+﻿<div class="container">
+	<div class="page-header">
+		<h1>Карточка пациента</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-6" ng-repeat="item in landing.items">
+			<div class="media tile">
+			<div class="media-object pull-left health-icon-lg {{ item.icon }}"></div>
+			<div class="media-body">
+				<a href="#!{{item.url}}">
+					<h4 class="media-heading">{{ item.title }}</h4>
+				</a>
+				{{ item.description }}
+			</div></div>
+		</div>
+	</div>
+</div>

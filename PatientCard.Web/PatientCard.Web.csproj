@@ -450,6 +450,7 @@
     <Content Include="Content\patient-card\app\app.js" />
     <Content Include="Content\patient-card\controllers\firstSurveyCtrl.js" />
     <Content Include="Content\patient-card\controllers\landingCtrl.js" />
+    <Content Include="Content\patient-card\controllers\menuCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientsCtrl.js" />
     <Content Include="Content\patient-card\controllers\surveyCtrl.js" />
     <Content Include="Content\patient-card\controllers\threatmentPlanCtrl.js" />
@@ -560,6 +561,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Widget\PatientVisitDiary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widget\PatientEditor.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

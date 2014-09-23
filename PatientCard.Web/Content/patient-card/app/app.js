@@ -5,8 +5,9 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'ui.bo
 		$routeProvider
 			.when('/', { templateUrl: '/Page/Home' })
 			.when('/patients', { templateUrl: '/Page/Patients' })
-			.when('/patient', { templateUrl: '/Page/Patient' })
+			.when('/patient/view/:id', { templateUrl: '/Page/Patient' })
 			.when('/patient/new', { templateUrl: '/Page/Patient' })
+			.when('/patient/edit/:id', { templateUrl: '/Page/Patient' })
 			.when('/help', { templateUrl: '/Page/Help' })
 			.when('/about', { templateUrl: '/Page/About' })
 			.otherwise({ redirectTo: '/' });
