@@ -1,0 +1,4 @@
+﻿<ol class="breadcrumb" ng-if="breadcrumb">
+	<li ng-repeat="item in breadcrumb.items"><a href="#!{{ item.url }}">{{ item.title }}</a></li>
+	<li class="active" ng-if="breadcrumb.current">{{ breadcrumb.current }}</li>
+</ol>

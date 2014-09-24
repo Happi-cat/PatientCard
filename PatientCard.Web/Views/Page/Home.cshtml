@@ -1,20 +1,7 @@
-﻿<div class="container" ng-controller="LandingCtrl as landing">
+﻿<div class="container" ng-controller="LandingCtrl">
 	<div class="jumbotron">
 		<h1>С чего начать работу...</h1>
 		<p>выберите одно из желаемых действий ниже</p>
 	</div>
-	<div class="row">
-		<div class="col-md-4 col-sm-6" ng-repeat-start="item in landing.items">
-			<div class="media tile">
-				<div class="media-object pull-left health-icon-lg {{ item.icon }}"></div>
-				<div class="media-body">
-					<a href="#!{{item.url}}">
-						<h4 class="media-heading">{{ item.title }}</h4>
-					</a>
-					{{ item.description }}
-				</div></div>
-		</div>
-		<div ng-if="$index % 2 == 1" class="clearfix visible-sm"></div>
-		<div ng-if="$index % 3 == 2" class="clearfix visible-md" ng-repeat-end></div>
-	</div>
+	<ng-include src="'/Widget/Landing'"></ng-include>
 </div>

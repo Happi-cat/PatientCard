@@ -11,7 +11,7 @@ namespace PatientCard.Repositories.NHibernate
 		{
 			using (ISession session = NHibernateHelper.OpenSession())
 			{
-				return session.Get<TEntity>(key);
+				return session.Get<TEntity>(key.Key);
 			}
 		}
 

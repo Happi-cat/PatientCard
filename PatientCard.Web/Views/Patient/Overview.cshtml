@@ -1,0 +1,32 @@
+﻿<div class="container" ng-controller="PatientOverviewCtrl">
+	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
+	<div class="page-header">
+		<h3>Пациент</h3>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<div class="health-icon-lg health-icon-ecg"></div>
+		</div>
+		<div class="col-sm-8">
+			<dl>
+				<dt>Ф.И.О.</dt>
+				<dd>{{ patient.lastName }} {{ patient.firstName }} {{ patient.middleName }}</dd>
+				<dt>Дата рождения</dt>
+				<dd>{{ patient.birthdate }}</dd>
+				<dt>Адрес постоянной (временной) регистрации</dt>
+				<dd>{{ patient.address }}</dd>
+				<dt>Контактные телефоны</dt>
+				<dd>{{ patient.phone }}</dd>
+				<dt>Социальное положение</dt>
+				<dd>{{ patient.social }}</dd>
+				<dt>Место работы (службы, учебы)</dt>
+				<dd>{{ patient.job }}</dd>
+
+			</dl>
+		</div>
+	</div>
+	<div class="page-header">
+		<h3>Начните работу с пациентом</h3>
+	</div>
+	<ng-include src="'/Widget/Landing'"></ng-include>
+</div>

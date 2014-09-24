@@ -1,0 +1,37 @@
+﻿<div class="container" ng-controller="PatientSurveyCtrl">
+	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
+	<div class="page-header">
+		<h3>Заполнить новое исследование пациента</h3>
+	</div>
+	<form class="form-inline form-inline-padding" role="form">
+		<div class="form-group">
+			<label class="sr-only">Исследование</label>
+			<select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select>
+		</div>
+		<div class="form-group">
+			<label class="sr-only">Проведено</label>
+			<input type="text" class="form-control" placeholder="Проведено">
+		</div>
+		<div class="form-group">
+			<label class="sr-only">Экв. доза (мЗВ)</label>
+			<input type="text" class="form-control" placeholder="Экв. доза (мЗВ)">
+		</div>
+		<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+	</form>
+	<div class="page-header">
+		<h3>Список исследований пациента</h3>
+	</div>
+	<table class="table table-striped table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th>Исследование</th>
+				<th>Назначил</th>
+				<th>Проведено исследование</th>
+				<th>Дата проведения</th>
+				<th>Экв. доза (мЗВ)</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>

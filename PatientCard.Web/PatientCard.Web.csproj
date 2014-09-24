@@ -125,6 +125,8 @@
     <Compile Include="Controllers\Api\PatientController.cs" />
     <Compile Include="Controllers\Api\SystemController.cs" />
     <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\WidgetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -448,13 +450,10 @@
     <Content Include="Content\jquery\jquery-2.1.1.js" />
     <Content Include="Content\jquery\jquery.tmpl.js" />
     <Content Include="Content\patient-card\app\app.js" />
-    <Content Include="Content\patient-card\controllers\firstSurveyCtrl.js" />
     <Content Include="Content\patient-card\controllers\landingCtrl.js" />
     <Content Include="Content\patient-card\controllers\menuCtrl.js" />
+    <Content Include="Content\patient-card\controllers\patientCtrls.js" />
     <Content Include="Content\patient-card\controllers\patientsCtrl.js" />
-    <Content Include="Content\patient-card\controllers\surveyCtrl.js" />
-    <Content Include="Content\patient-card\controllers\threatmentPlanCtrl.js" />
-    <Content Include="Content\patient-card\controllers\visitDiaryCtrl.js" />
     <Content Include="Content\patient-card\modules\modules.js" />
     <Content Include="Content\patient-card\services\patientSvc.js" />
     <Content Include="Content\patient-card\services\systemSvc.js" />
@@ -539,31 +538,34 @@
     <Content Include="Views\Page\Patients.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Page\Patient.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Page\Help.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Page\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Page\PatientOverview.cshtml" />
+    <Content Include="Views\Patient\Overview.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Page\PatientFirstSurvey.cshtml" />
+    <Content Include="Views\Patient\FirstSurvey.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Page\PatientThreatmentPlan.cshtml" />
+    <Content Include="Views\Patient\ThreatmentPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Page\PatientSurvey.cshtml" />
+    <Content Include="Views\Patient\Survey.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Page\PatientVisitDiary.cshtml" />
+    <Content Include="Views\Patient\VisitDiary.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Page\PatientEditor.cshtml" />
+    <Content Include="Views\Patient\Editor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widget\Landing.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Widget\Breadcrumb.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

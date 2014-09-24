@@ -22,7 +22,7 @@ angular.module('patient-card.services')
 		};
 
 		self.getPatient = function(id) {
-			return httpWrap({ method: 'GET', url: '/api/patient/:id', params: { id: id } });
+			return httpWrap({ method: 'GET', url: '/api/patient', params: { id: id } });
 		};
 
 		self.storePatient = function(patient) {
@@ -46,7 +46,7 @@ angular.module('patient-card.services')
 		self.getSurveys = function(patientId) {
 			return httpWrap({
 				method: 'GET',
-				url: '/api/patient/survey/:id',
+				url: '/api/patient/survey',
 				params: {
 					id: patientId
 				}
@@ -60,7 +60,7 @@ angular.module('patient-card.services')
 		self.getThreatmentPlan = function(patientId) {
 			return httpWrap({
 				method: 'GET',
-				url: '/api/patient/threatment-plan/:id',
+				url: '/api/patient/threatment-plan',
 				params: {
 					id: patientId
 				}

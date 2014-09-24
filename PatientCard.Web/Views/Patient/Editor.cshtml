@@ -1,0 +1,70 @@
+﻿<div class="container" ng-controller="PatientEditorCtrl">
+	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
+	<div class="page-header">
+		<h3>Карта пациента</h3>
+	</div>
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Ф.И.О. Пациента</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" placeholder="Фамилия" ng-model="patient.lastName">
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" placeholder="Имя" ng-model="patient.firstName">
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" placeholder="Отчество" ng-model="patient.middleName">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Дата рождения</label>
+			<div class="col-sm-3">
+				<p class="input-group">
+					<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened"
+					       datepicker-options="dateOptions" show-button-bar="false"
+					       date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+				</p>
+			</div>
+			<label class="col-sm-offset-1 col-sm-2 control-label">Пол</label>
+			<div class="col-sm-3">
+				<select class="form-control">
+					<option>male</option>
+					<option>female</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Адрес постоянной (временной) регистрации</label>
+			<div class="col-sm-9">
+				<textarea class="form-control" rows="2" placeholder="Адрес" ng-model="patient.address"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Контактные телефоны</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Телефоны" ng-model="patient.phone">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Социальное положение</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Соц. положение" ng-model="patient.social">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Место работы (службы, учебы)</label>
+			<div class="col-sm-9">
+				<textarea class="form-control" rows="2" placeholder="Место работы и т.д." ng-model="patient.job"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-9">
+				<button class="btn btn-primary" ng-click="ok()"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Сохранить</button>
+				<button class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+			</div>
+		</div>
+	</form>
+</div>

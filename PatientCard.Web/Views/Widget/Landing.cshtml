@@ -1,0 +1,15 @@
+﻿<div class="row">
+	<div ng-repeat-start="item in landing" class="col-md-4 col-sm-6" >
+		<div class="media tile">
+			<div class="media-object pull-left health-icon-lg {{ item.icon }}"></div>
+			<div class="media-body">
+				<a href="#!{{item.url}}">
+					<h4 class="media-heading">{{ item.title }}</h4>
+				</a>
+				{{ item.description }}
+			</div>
+		</div>
+	</div>
+	<div ng-if="$index % 2 == 1" class="clearfix visible-sm"></div>
+	<div ng-repeat-end ng-if="$index % 3 == 2" class="clearfix visible-md"></div>
+</div>
