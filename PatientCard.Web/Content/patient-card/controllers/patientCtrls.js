@@ -2,6 +2,8 @@
 
 function PatientCtrl($scope, $routeParams) {
 	$scope.patientId = $routeParams.id;
+
+	
 }
 
 function PatientOverviewCtrl($scope, patientSvc) {
@@ -59,7 +61,9 @@ function PatientOverviewCtrl($scope, patientSvc) {
 	load();
 }
 
-function PatientEditorCtrl($scope, patientSvc) {
+function PatientEditCtrl($scope, $location, $routeParams, patientSvc) {
+	$scope.patientId = $routeParams.id;
+
 	$scope.breadcrumb = {
 		items: [
 			{
@@ -86,25 +90,16 @@ function PatientEditorCtrl($scope, patientSvc) {
 
 	load();
 	
-	$scope.today = function () {
-		$scope.dt = new Date();
+	$scope.cancel = function () {
+		if ($scope.breadcrumb && $scope.breadcrumb.items) {
+			var items = $scope.breadcrumb.items;
+			var prev = items[items.length - 1];
+			if (prev.url) {
+				$location.path(prev.url);
+			}
+		}
 	};
-	$scope.today();
-
-	$scope.clear = function () {
-		$scope.dt = null;
-	};
-
-	// Disable weekend selection
-	$scope.disabled = function (date, mode) {
-		return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
-	};
-
-	$scope.toggleMin = function () {
-		$scope.minDate = $scope.minDate ? null : new Date();
-	};
-	$scope.toggleMin();
-
+	
 	$scope.open = function ($event) {
 		$event.preventDefault();
 		$event.stopPropagation();
@@ -112,14 +107,7 @@ function PatientEditorCtrl($scope, patientSvc) {
 		$scope.opened = true;
 	};
 
-	$scope.dateOptions = {
-		formatYear: 'yy',
-		startingDay: 1
-	};
-
-	$scope.initDate = new Date('2016-15-20');
-	$scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-	$scope.format = $scope.formats[0];
+		
 }
 
 function PatientFirstSurveyCtrl($scope, patientSvc) {
@@ -179,7 +167,7 @@ function PatientSurveyCtrl($scope, patientSvc)
 	load();
 }
 
-function PatientThreatmentPlan($scope, patientSvc) {
+function PatientThreatmentPlanCtrl($scope, patientSvc) {
 	$scope.breadcrumb = {
 		items: [
 			{
@@ -207,7 +195,7 @@ function PatientThreatmentPlan($scope, patientSvc) {
 	load();
 }
 
-function PatientVisitDiary($scope, patientSvc) {
+function PatientVisitDiaryCtrl($scope, patientSvc) {
 	$scope.breadcrumb = {
 		items: [
 			{
@@ -235,35 +223,8 @@ function PatientVisitDiary($scope, patientSvc) {
 	load();
 }
 
-function PatientEdit($scope, patientSvc) {
-	$scope.breadcrumb = {
-		items: [
-			{
-				title: 'Пациенты',
-				url: '/patients'
-			},
-			{
-				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
-			}
-		],
-		current: 'Первичный осмотр'
-	};
 
-	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
-			$scope.patient = data;
-			var item = $scope.breadcrumb.items[1];
-			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
-		}, function (error) {
-			$scope.addAlert({ type: 'danger', title: error.status, details: error.message })
-		});
-	};
-
-	load();
-}
-
-function PatientNew($scope, patientSvc) {
+function PatientNewCtrl($scope, patientSvc) {
 	$scope.breadcrumb = {
 		items: [
 			{
