@@ -23,6 +23,7 @@ namespace PatientCard.Web
 				            .Include("~/Content/angularjs-nvd3-directives/nv.d3.js")
 				            .Include("~/Content/angularjs-nvd3-directives/angularjs-nvd3-directives.js")
 				            .IncludeDirectory("~/Content/angularjs-ui-bootstrap", "*.js")
+							.IncludeDirectory("~/Content/angularjs-ui-router", "*.js")
 				            .IncludeDirectory("~/Content/patient-card/controllers", "*.js")
 				            .IncludeDirectory("~/Content/patient-card/modules", "*.js")
 				            .IncludeDirectory("~/Content/patient-card/directives", "*.js")

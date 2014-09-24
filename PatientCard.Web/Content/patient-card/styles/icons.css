@@ -1,4 +1,8 @@
-﻿.health-icon-lg {
+﻿body {
+	background: url('img/tooth.png') no-repeat 95% 95% fixed;
+}
+
+.health-icon-lg {
 	width: 64px;
 	height: 64px;
 	background-repeat: no-repeat;

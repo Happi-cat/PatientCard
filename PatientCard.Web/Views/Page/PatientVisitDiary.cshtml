@@ -1,0 +1,38 @@
+﻿@model IList<PatientCard.Core.Models.FirstSurveyOption>
+@{
+	Layout = "Patient.cshtml";
+}
+
+<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<div class="col-sm-12">
+			<label class="sr-only">Детали о посещении</label>
+			<textarea class="form-control" rows="2" placeholder="Жалобы, клиническая картина и т.д."></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-12">
+			<button type="submit" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+		</div>
+	</div>
+</form>
+<table class="table table-striped table-condensed table-bordered">
+	<thead>
+		<tr>
+			<th>Описание</th>
+			<th>Врач</th>
+			<th>Дата проведения</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+
+@section Breadcrumb
+{
+	<ol class="breadcrumb">
+		<li><a href="#!/patients">Пациенты</a></li>
+		<li><a href="#!/patient/view/id">ИМЯ</a></li>
+		<li class="active">Дневник посещений</li>
+	</ol>
+}

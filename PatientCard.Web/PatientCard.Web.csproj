@@ -125,7 +125,6 @@
     <Compile Include="Controllers\Api\PatientController.cs" />
     <Compile Include="Controllers\Api\SystemController.cs" />
     <Compile Include="Controllers\PageController.cs" />
-    <Compile Include="Controllers\WidgetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -140,6 +139,7 @@
     <Content Include="Content\angularjs-nvd3-directives\nv.d3.css" />
     <Content Include="Content\angularjs-nvd3-directives\nv.d3.js" />
     <Content Include="Content\angularjs-ui-bootstrap\ui-bootstrap-tpls-0.11.0.js" />
+    <Content Include="Content\angularjs-ui-router\angular-ui-router.js" />
     <Content Include="Content\angularjs\angular-animate.js" />
     <Content Include="Content\angularjs\angular-animate.min.js" />
     <Content Include="Content\angularjs\angular-cookies.js" />
@@ -548,22 +548,22 @@
     <Content Include="Views\Page\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Widget\PatientOverview.cshtml" />
+    <Content Include="Views\Page\PatientOverview.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Widget\PatientFirstSurvey.cshtml" />
+    <Content Include="Views\Page\PatientFirstSurvey.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Widget\PatientThreatmentPlan.cshtml" />
+    <Content Include="Views\Page\PatientThreatmentPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Widget\PatientSurvey.cshtml" />
+    <Content Include="Views\Page\PatientSurvey.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Widget\PatientVisitDiary.cshtml" />
+    <Content Include="Views\Page\PatientVisitDiary.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Widget\PatientEditor.cshtml" />
+    <Content Include="Views\Page\PatientEditor.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

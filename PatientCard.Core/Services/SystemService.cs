@@ -16,7 +16,7 @@ namespace PatientCard.Core.Services
 		{
 			_jobRepository = jobRepository;
 			_surveyTypesRepository = surveyTypesRepository;
-			_firstSurveyOptionRepository = _firstSurveyOptionRepository;
+			_firstSurveyOptionRepository = firstSurveyOptionRepository;
 			_threatmentOptionsRepository = threatmentOptionsRepository;
 		}
 
