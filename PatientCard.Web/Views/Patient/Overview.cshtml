@@ -12,7 +12,7 @@
 				<dt>Ф.И.О.</dt>
 				<dd>{{ patient.lastName }} {{ patient.firstName }} {{ patient.middleName }}</dd>
 				<dt>Дата рождения</dt>
-				<dd>{{ patient.birthdate }}</dd>
+				<dd>{{ patient.birthday | date }}</dd>
 				<dt>Адрес постоянной (временной) регистрации</dt>
 				<dd>{{ patient.address }}</dd>
 				<dt>Контактные телефоны</dt>
