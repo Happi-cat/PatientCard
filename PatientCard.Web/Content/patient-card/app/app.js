@@ -20,15 +20,39 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'ui.bo
 		// NOTE: This part is very important
 		$locationProvider.html5Mode(false).hashPrefix('!');
 	}]
-	).run(function($rootScope, $timeout) {
+	).run(function($rootScope, $location, $timeout) {
 		$rootScope.alerts = [];
 
 		$rootScope.addAlert = function (alert) {
+			if ($rootScope.alerts.length > 3) {
+				$rootScope.alerts.splice(0, 1);
+			}
 			$rootScope.alerts.push(alert);
 		};
 
 		$rootScope.closeAlert = function (index) {
-			$scope.alerts.splice(index, 1);
+			$rootScope.alerts.splice(index, 1);
 		};
 
+		$rootScope.onLoadFailed = function (error) {
+			console.log(error);
+			$rootScope.addAlert({ type: 'danger', title: 'Ошибка при загрузке', details: 'Не удаётся загрузить данные' });
+		};
+
+		$rootScope.onSaveFailed = function(error) {
+			console.log(error);
+			$rootScope.addAlert({ type: 'danger', title: 'Ошибка при сохранении', details: 'Не удаёится сохранить данные' });
+		};
+
+		$rootScope.goUp = function (breadcrumb) {
+			if (breadcrumb && breadcrumb.items) {
+				var items = breadcrumb.items;
+				if (items.length > 0) {
+					var prev = items[items.length - 1];
+					if (prev.url) {
+						$location.path(prev.url);
+					}
+				}
+			}
+		};
 	});

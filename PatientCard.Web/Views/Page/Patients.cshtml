@@ -14,9 +14,13 @@
 				<td>{{ item.phone }}</td>
 				<td>{{ item.address }}</td>
 				<td>
-					<div class="btn-group btn-group-xs pull-right">
-						<a href="#!/patient/view/{{ item.id }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;Открыть</a>
-						<a href="#!/patient/edit/{{ item.id }}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Редактировать</a>
+					<div class="btn-toolbar pull-right">
+						<div class="btn-group btn-group-xs">
+							<a href="#!/patient/view/{{ item.id }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></a>
+						</div>
+						<div class="btn-group btn-group-xs">
+							<a href="#!/patient/edit/{{ item.id }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+						</div>
 					</div>
 				</td>
 			</tr>

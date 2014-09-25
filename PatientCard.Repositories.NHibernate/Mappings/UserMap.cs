@@ -85,7 +85,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 			Map(e => e.Phone).Length(100);
 			Map(e => e.SocialStatus).Length(400);
 			Map(e => e.Job).Length(100);
-			Map(e => e.Created);
+			Map(e => e.Created).Generated.Insert();
 		}
 	}
 

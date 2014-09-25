@@ -453,7 +453,10 @@
     <Content Include="Content\patient-card\controllers\landingCtrl.js" />
     <Content Include="Content\patient-card\controllers\menuCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientCtrls.js" />
+    <Content Include="Content\patient-card\controllers\patientEditCtrl.js" />
+    <Content Include="Content\patient-card\controllers\patientNewCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientsCtrl.js" />
+    <Content Include="Content\patient-card\controllers\tableHeadCtrl.js" />
     <Content Include="Content\patient-card\modules\modules.js" />
     <Content Include="Content\patient-card\services\patientSvc.js" />
     <Content Include="Content\patient-card\services\systemSvc.js" />

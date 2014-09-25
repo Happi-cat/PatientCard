@@ -2,8 +2,6 @@
 
 function PatientCtrl($scope, $routeParams) {
 	$scope.patientId = $routeParams.id;
-
-	
 }
 
 function PatientOverviewCtrl($scope, patientSvc) {
@@ -61,54 +59,7 @@ function PatientOverviewCtrl($scope, patientSvc) {
 	load();
 }
 
-function PatientEditCtrl($scope, $location, $routeParams, patientSvc) {
-	$scope.patientId = $routeParams.id;
 
-	$scope.breadcrumb = {
-		items: [
-			{
-				title: 'Пациенты',
-				url: '/patients'
-			},
-			{
-				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
-			}
-		],
-		current: 'Редактирование'
-	};
-
-	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
-			$scope.patient = data;
-			var item = $scope.breadcrumb.items[1];
-			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
-		}, function (error) {
-			$scope.addAlert({ type: 'danger', title: error.status, details: error.message })
-		});
-	};
-
-	load();
-	
-	$scope.cancel = function () {
-		if ($scope.breadcrumb && $scope.breadcrumb.items) {
-			var items = $scope.breadcrumb.items;
-			var prev = items[items.length - 1];
-			if (prev.url) {
-				$location.path(prev.url);
-			}
-		}
-	};
-	
-	$scope.open = function ($event) {
-		$event.preventDefault();
-		$event.stopPropagation();
-
-		$scope.opened = true;
-	};
-
-		
-}
 
 function PatientFirstSurveyCtrl($scope, patientSvc) {
 	$scope.breadcrumb = {
@@ -223,31 +174,3 @@ function PatientVisitDiaryCtrl($scope, patientSvc) {
 	load();
 }
 
-
-function PatientNewCtrl($scope, patientSvc) {
-	$scope.breadcrumb = {
-		items: [
-			{
-				title: 'Пациенты',
-				url: '/patients'
-			},
-			{
-				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
-			}
-		],
-		current: 'Первичный осмотр'
-	};
-
-	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
-			$scope.patient = data;
-			var item = $scope.breadcrumb.items[1];
-			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
-		}, function (error) {
-			$scope.addAlert({ type: 'danger', title: error.status, details: error.message })
-		});
-	};
-
-	load();
-}
