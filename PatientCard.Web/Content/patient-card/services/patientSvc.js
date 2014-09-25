@@ -6,8 +6,12 @@ angular.module('patient-card.services')
 
 		var httpWrap = function(obj) {
 			var deferred = $q.defer();
-			$http(obj).then(function(data) {
-				deferred.resolve(data.data);
+			$http(obj).then(function (data) {
+				if (data.data == 'null') {
+					deferred.resolve(null);
+				} else {
+					deferred.resolve(data.data);
+				}
 			}, function (data) {
 				deferred.reject({
 					status: data.status,
@@ -32,15 +36,15 @@ angular.module('patient-card.services')
 		self.getFirstSurvey = function(patientId) {
 			return httpWrap({
 				method: 'GET',
-				url: '/api/patient/first-survey/:id',
+				url: '/api/patient/first-survey',
 				params: {
-					id: patientId
+					patientId: patientId
 				}
 			});
 		};
 
-		self.storeFirstSurveyDetails = function(surveyDetails) {
-			return httpWrap({ method: 'POST', url: '/api/patient/firs-survey-details', data: surveyDetails });
+		self.storeFirstSurvey = function(survey) {
+			return httpWrap({ method: 'POST', url: '/api/patient/first-survey', data: survey });
 		};
 
 		self.getSurveys = function(patientId) {
@@ -48,7 +52,7 @@ angular.module('patient-card.services')
 				method: 'GET',
 				url: '/api/patient/survey',
 				params: {
-					id: patientId
+					patientId: patientId
 				}
 			});
 		};
@@ -62,7 +66,7 @@ angular.module('patient-card.services')
 				method: 'GET',
 				url: '/api/patient/threatment-plan',
 				params: {
-					id: patientId
+					patientId: patientId
 				}
 			});
 		};
@@ -74,9 +78,9 @@ angular.module('patient-card.services')
 		self.getVisitDiary = function(patientId) {
 			return httpWrap({
 				method: 'GET',
-				url: '/api/patient/visit-diary/:id',
+				url: '/api/patient/visit-diary',
 				params: {
-					id: patientId
+					patientId: patientId
 				}
 			});
 		};

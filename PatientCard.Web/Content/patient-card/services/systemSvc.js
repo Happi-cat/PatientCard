@@ -11,13 +11,33 @@ angular.module('patient-card.services')
 		self.surveyTypes = function () {
 			return $http.get('/api/system/survey-types');
 		};
-		
-		self.firstSurveyOptions = function () {
-			return $http.get('/api/system/first-survey-options');
+
+		var firstSurveyData;
+		self.getFirstSurveyOptions = function () {
+			var deferred = $q.defer();
+			if (!firstSurveyData) {
+				$http.get('/api/system/first-survey-options').then(function(data) {
+					firstSurveyData = data.data;
+					deferred.resolve(data.data);
+				});
+			} else {
+				deferred.resolve(firstSurveyData);
+			}
+			return deferred.promise;
 		};
-		
-		self.threatmentOptions = function () {
-			return $http.get('/api/system/threatment-options');
+
+		var threatmentOptionsData;
+		self.getThreatmentOptions = function () {
+			var deferred = $q.defer();
+			if (!threatmentOptionsData) {
+				$http.get('/api/system/threatment-options').then(function (data) {
+					threatmentOptionsData = data.data;
+					deferred.resolve(data.data);
+				});
+			} else {
+				deferred.resolve(threatmentOptionsData);
+			}
+			return deferred.promise;
 		};
 
 		return self;

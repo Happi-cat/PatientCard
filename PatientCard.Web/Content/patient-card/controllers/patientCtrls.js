@@ -61,7 +61,7 @@ function PatientOverviewCtrl($scope, patientSvc) {
 
 
 
-function PatientFirstSurveyCtrl($scope, patientSvc) {
+function PatientFirstSurveyCtrl($scope, patientSvc, systemSvc) {
 	$scope.breadcrumb = {
 		items: [
 			{
@@ -76,17 +76,62 @@ function PatientFirstSurveyCtrl($scope, patientSvc) {
 		current: 'Первичный осмотр'
 	};
 
+	var options = [];
 	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
+		systemSvc.getFirstSurveyOptions().then(function (data) {
+			options = data;
+
+			return patientSvc.getPatient($scope.patientId);
+		}).then(function (data) {
 			$scope.patient = data;
+
 			var item = $scope.breadcrumb.items[1];
 			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
-		}, function (error) {
-			$scope.addAlert({ type: 'danger', title: error.status, details: error.message })
-		});
+
+			return patientSvc.getFirstSurvey($scope.patientId);
+		}).then(function (data) {
+			$scope.firstSurvey = data;
+			if (!$scope.firstSurvey) {
+				$scope.firstSurvey = {
+					patientId : $scope.patientId
+				};
+			}
+
+			angular.forEach(options, getDetail);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
+
+	var getDetail = function (option) {
+		if (!$scope.firstSurvey.details) {
+			$scope.firstSurvey.details = [];
+		}
+		
+		var detail = null;
+		angular.forEach($scope.firstSurvey.details, function (item) {
+			if (option.id == item.surveyOptionId) {
+				detail = item;
+			}
+		});
+		
+		if (!detail) {
+			detail = { surveyOptionId: option.id, patientId: $scope.patientId };
+			$scope.firstSurvey.details.push(detail);
+		}
+		detail.value = option.value;
+	};
+
+	$scope.ok = function () {
+		$scope.firstSurvey.patientId = $scope.patientId;
+		patientSvc.storeFirstSurvey($scope.firstSurvey).then(function (data) {
+			$scope.goUp($scope.breadcrumb);
+		}, $scope.onSaveFailed);
+	};
+
+	$scope.cancel = function () {
+		$scope.goUp($scope.breadcrumb);
+	};
 }
 
 function PatientSurveyCtrl($scope, patientSvc)
@@ -116,9 +161,10 @@ function PatientSurveyCtrl($scope, patientSvc)
 	};
 
 	load();
+	
 }
 
-function PatientThreatmentPlanCtrl($scope, patientSvc) {
+function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc) {
 	$scope.breadcrumb = {
 		items: [
 			{
@@ -133,17 +179,57 @@ function PatientThreatmentPlanCtrl($scope, patientSvc) {
 		current: 'План лечения'
 	};
 
+	var options = [];
 	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
+		systemSvc.getThreatmentOptions().then(function (data) {
+			options = data;
+
+			return patientSvc.getPatient($scope.patientId);
+		}).then(function (data) {
 			$scope.patient = data;
+
 			var item = $scope.breadcrumb.items[1];
 			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
-		}, function (error) {
-			$scope.addAlert({ type: 'danger', title: error.status, details: error.message })
-		});
+
+			return patientSvc.getThreatmentPlan($scope.patientId);
+		}).then(function (data) {
+			$scope.threatmentPlan = data;
+			if (!$scope.threatmentPlan) {
+				$scope.threatmentPlan = [ ];
+			}
+
+			angular.forEach(options, getPlan);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
+
+	var getPlan = function (option) {
+		var plan = null;
+		angular.forEach($scope.threatmentPlan, function (item) {
+			if (option.id == item.threatmentOptionId) {
+				plan = item;
+			}
+		});
+
+		if (!plan) {
+			plan = { threatmentOptionId: option.id, patientId: $scope.patientId };
+			$scope.threatmentPlan.push(plan);
+		}
+		plan.name = option.name;
+		plan.order = option.order;
+		plan.group = option.group;
+	};
+
+	$scope.ok = function () {
+		patientSvc.storeThreatmentPlan($scope.threatmentPlan).then(function (data) {
+			$scope.goUp($scope.breadcrumb);
+		}, $scope.onSaveFailed);
+	};
+
+	$scope.cancel = function () {
+		$scope.goUp($scope.breadcrumb);
+	};
 }
 
 function PatientVisitDiaryCtrl($scope, patientSvc) {

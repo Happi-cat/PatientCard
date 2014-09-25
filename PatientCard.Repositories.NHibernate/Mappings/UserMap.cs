@@ -55,8 +55,8 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 			CompositeId()
 				.KeyProperty(e => e.PatientId)
 				.KeyProperty(e => e.SurveyOptionId);
-			Map(e => e.YesNo);
-			Map(e => e.Detail);
+			Map(e => e.YesNo).Update().CustomType("Boolean").CustomSqlType("bit");
+			Map(e => e.Detail).Update();
 		}
 	}
 
@@ -85,7 +85,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 			Map(e => e.Phone).Length(100);
 			Map(e => e.SocialStatus).Length(400);
 			Map(e => e.Job).Length(100);
-			Map(e => e.Created).Generated.Insert();
+			Map(e => e.Created).Not.Insert().Not.Update();
 		}
 	}
 

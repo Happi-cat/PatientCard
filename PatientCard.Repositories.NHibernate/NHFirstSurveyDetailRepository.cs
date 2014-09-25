@@ -20,5 +20,30 @@ namespace PatientCard.Repositories.NHibernate
 			}
 			return result;
 		}
+
+		public new FirstSurveyDetail Get(FirstSurveyDetail key)
+		{
+			using (ISession session = NHibernateHelper.OpenSession())
+			{
+				return session.Get<FirstSurveyDetail>(key);
+			}
+		}
+
+		public new bool CheckExist(FirstSurveyDetail entity)
+		{
+			using (ISession session = NHibernateHelper.OpenSession())
+			{
+				return session.Get<FirstSurveyDetail>(entity) != null;
+			}
+		}
+		public new void Update(FirstSurveyDetail item)
+		{
+			using (ISession session = NHibernateHelper.OpenSession())
+			using (ITransaction transaction = session.BeginTransaction())
+			{
+				session.Update(item, item);
+				transaction.Commit();
+			}
+		}
 	}
 }

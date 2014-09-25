@@ -41,7 +41,7 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'ui.bo
 
 		$rootScope.onSaveFailed = function(error) {
 			console.log(error);
-			$rootScope.addAlert({ type: 'danger', title: 'Ошибка при сохранении', details: 'Не удаёится сохранить данные' });
+			$rootScope.addAlert({ type: 'danger', title: 'Ошибка при сохранении', details: 'Не удаётся сохранить данные' });
 		};
 
 		$rootScope.goUp = function (breadcrumb) {

@@ -3,7 +3,7 @@
 	Layout = "../Layouts/PatientCard.cshtml";
 }
 <div class="container">
-	 <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><strong>{{ alert.title }}</strong>{{ alert.details }}</alert>
+	 <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><strong>{{ alert.title }}</strong>&nbsp;{{ alert.details }}</alert>
 </div>
 <div ng-view>
 </div>
