@@ -17,5 +17,10 @@ namespace PatientCard.Web.Controllers
 		{
 			return View();
 		}
+
+	    public ActionResult TableHeader()
+	    {
+		    return View();
+	    }
     }
 }

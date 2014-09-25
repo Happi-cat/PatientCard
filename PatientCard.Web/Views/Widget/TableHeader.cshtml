@@ -1,0 +1,10 @@
+﻿<tr>
+	<th ng-repeat="item in tablehead" ng-controller="TableHeadCtrl">
+		{{ item.title }}
+		<a class="small" ng-if="item.sortable" ng-click="toogleSort(item)" ng-switch on="item.sort">
+			<span ng-switch-when="1" class="glyphicon glyphicon-sort-by-alphabet pull-right"></span>
+			<span ng-switch-when="-1" class="glyphicon glyphicon-sort-by-alphabet-alt pull-right"></span>
+			<span ng-switch-default class="glyphicon glyphicon-sort pull-right"></span>
+		</a>
+	</th>
+</tr>
