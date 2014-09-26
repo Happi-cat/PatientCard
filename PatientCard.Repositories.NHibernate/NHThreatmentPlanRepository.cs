@@ -32,5 +32,22 @@ namespace PatientCard.Repositories.NHibernate
 			}
 			return result;
 		}
+
+
+		public new ThreatmentPlan Get(ThreatmentPlan key)
+		{
+			using (ISession session = NHibernateHelper.OpenSession())
+			{
+				return session.Get<ThreatmentPlan>(key);
+			}
+		}
+
+		public new bool CheckExist(ThreatmentPlan entity)
+		{
+			using (ISession session = NHibernateHelper.OpenSession())
+			{
+				return session.Get<ThreatmentPlan>(entity) != null;
+			}
+		}
 	}
 }

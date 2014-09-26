@@ -1,43 +1,40 @@
 ﻿'use strict';
 
 angular.module('patient-card.services')
-	.factory('systemSvc', function ($http, $q) {
+	.factory('systemSvc', function($http, $q) {
 		var self = {};
-		
-		self.jobs = function () {
-			return $http.get('/api/system/jobs');
-		};
-		
-		self.surveyTypes = function () {
-			return $http.get('/api/system/survey-types');
-		};
 
-		var firstSurveyData;
-		self.getFirstSurveyOptions = function () {
+		var httpWrap = function(obj) {
 			var deferred = $q.defer();
-			if (!firstSurveyData) {
-				$http.get('/api/system/first-survey-options').then(function(data) {
-					firstSurveyData = data.data;
+			$http(obj).then(function(data) {
+				if (data.data == 'null') {
+					deferred.resolve(null);
+				} else {
 					deferred.resolve(data.data);
+				}
+			}, function(data) {
+				deferred.reject({
+					status: data.status,
+					message: data.statusText,
 				});
-			} else {
-				deferred.resolve(firstSurveyData);
-			}
+			});
 			return deferred.promise;
 		};
 
-		var threatmentOptionsData;
-		self.getThreatmentOptions = function () {
-			var deferred = $q.defer();
-			if (!threatmentOptionsData) {
-				$http.get('/api/system/threatment-options').then(function (data) {
-					threatmentOptionsData = data.data;
-					deferred.resolve(data.data);
-				});
-			} else {
-				deferred.resolve(threatmentOptionsData);
-			}
-			return deferred.promise;
+		self.getJobs = function() {
+			return httpWrap({ method: 'GET', url: '/api/system/jobs', cache: true });
+		};
+
+		self.getSurveyTypes = function() {
+			return httpWrap({ method: 'GET', url: '/api/system/survey-types', cache: true });
+		};
+
+		self.getFirstSurveyOptions = function() {
+			return httpWrap({ method: 'GET', url: '/api/system/first-survey-options', cache: true });
+		};
+
+		self.getThreatmentOptions = function() {
+			return httpWrap({ method: 'GET', url: '/api/system/threatment-options', cache: true });
 		};
 
 		return self;

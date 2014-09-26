@@ -23,6 +23,11 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'ui.bo
 	).run(function($rootScope, $location, $timeout) {
 		$rootScope.alerts = [];
 
+		$timeout(function() {
+			
+				$rootScope.alerts.splice(0, 1);
+		}, 30000);
+
 		$rootScope.addAlert = function (alert) {
 			if ($rootScope.alerts.length > 3) {
 				$rootScope.alerts.splice(0, 1);
