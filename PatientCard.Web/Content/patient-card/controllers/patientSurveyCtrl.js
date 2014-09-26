@@ -37,6 +37,7 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc) {
 		current: 'Обследования'
 	};
 
+	$scope.sortFields = [];
 	$scope.survey = {};
 
 	var load = function () {
@@ -48,7 +49,7 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc) {
 			$scope.patient = data;
 
 			var item = $scope.breadcrumb.items[1];
-			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
+			item.title = data.displayName;
 
 			return patientSvc.getSurveys($scope.patientId);
 		}).then(function(data) {
@@ -62,7 +63,7 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc) {
 
 	var getSurvey = function (survey) {
 		angular.forEach($scope.surveyTypes, function (type) {
-			if (survey.typeId == type.id) {
+			if (!survey.type && survey.typeId == type.id) {
 				survey.type = type.value;
 			}
 		});
@@ -71,14 +72,12 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc) {
 	$scope.ok = function () {
 		$scope.survey.patientId = $scope.patientId;
 		patientSvc.storeSurvey($scope.survey).then(function (data) {
-			$scope.surveyForm.$setPristine();
 			$scope.survey = {};
 			load();
 		}, $scope.onSaveFailed);
 	};
 
 	$scope.cancel = function () {
-		$scope.surveyForm.$setPristine();
 		$scope.survey = {};
 	};
 }

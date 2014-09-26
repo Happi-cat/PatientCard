@@ -30,9 +30,8 @@
 			</div>
 			<label class="col-sm-offset-1 col-sm-2 control-label">Пол</label>
 			<div class="col-sm-3">
-				<select class="form-control">
-					<option>male</option>
-					<option>female</option>
+				<select name="gender" class="form-control" ng-model="patient.gender" ng-options="g.id as g.value for g in gender">
+					
 				</select>
 			</div>
 		</div>

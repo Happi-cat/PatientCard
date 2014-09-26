@@ -46,7 +46,7 @@ function PatientOverviewCtrl($scope, patientSvc) {
 	var load = function () {
 		patientSvc.getPatient($scope.patientId).then(function (data) {
 			$scope.patient = data;
-			$scope.breadcrumb.current = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
+			$scope.breadcrumb.current = data.displayName;
 		}, function (error) {
 			$scope.addAlert({ type: 'danger', title: error.status, details: error.message })
 		});

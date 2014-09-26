@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function PatientsCtrl($scope, patientSvc) {
+function PatientListCtrl($scope, patientSvc) {
 	$scope.tablehead = [
 		{
 			name: 'lastName',

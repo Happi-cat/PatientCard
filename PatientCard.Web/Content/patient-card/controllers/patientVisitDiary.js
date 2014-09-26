@@ -32,6 +32,7 @@ function PatientVisitDiaryCtrl($scope, patientSvc) {
 		current: 'Дневник посещений'
 	};
 
+	$scope.sortFields = [];
 	$scope.visitDiary = {};
 
 	var load = function () {
@@ -39,7 +40,7 @@ function PatientVisitDiaryCtrl($scope, patientSvc) {
 			$scope.patient = data;
 
 			var item = $scope.breadcrumb.items[1];
-			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
+			item.title = data.displayName;
 
 			return patientSvc.getVisitDiary($scope.patientId);
 		}).then(function (data) {
@@ -52,14 +53,12 @@ function PatientVisitDiaryCtrl($scope, patientSvc) {
 	$scope.ok = function () {
 		$scope.visitDiary.patientId = $scope.patientId;
 		patientSvc.storeVisitDiary($scope.visitDiary).then(function (data) {
-			$scope.visitDiaryForm.$setPristine();
 			$scope.visitDiary = {};
 			load();
 		}, $scope.onSaveFailed);
 	};
 
 	$scope.cancel = function () {
-		$scope.visitDiaryForm.$setPristine();
 		$scope.visitDiary = {};
 	};
 }

@@ -18,7 +18,7 @@
 		</div>
 		<div class="btn-group">
 			<button class="btn btn-primary" ng-click="ok()" ng-disabled="surveyForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
-			<button type="reset" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Очистить</button>
+			<button type="reset" class="btn btn-default" ng-click="surveyForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Очистить</button>
 		</div>
 	</form>
 	<div class="page-header">

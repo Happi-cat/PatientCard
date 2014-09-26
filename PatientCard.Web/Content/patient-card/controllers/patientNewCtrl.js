@@ -12,6 +12,17 @@ function PatientNewCtrl($scope, $location, patientSvc) {
 		current: 'Новый пациент'
 	};
 	
+	$scope.gender = [
+		{
+			id: 'male',
+			value: 'Муж.'
+		},
+		{
+			id: 'female',
+			value: 'Жен.'
+		}
+	];
+	
 	$scope.ok = function () {
 		patientSvc.storePatient($scope.patient).then(function (data) {
 			$scope.goUp($scope.breadcrumb);

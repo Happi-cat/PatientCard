@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace PatientCard.Core.Models
 {
@@ -22,6 +24,7 @@ namespace PatientCard.Core.Models
 		public virtual DateTime? BirthDate { get; set; }
 
 		[DataMember(Name = "gender")]
+		[JsonConverter(typeof(StringEnumConverter))]
 		public virtual Gender Gender { get; set; }
 		
 		[DataMember(Name = "address")]

@@ -26,7 +26,14 @@ angular.module('patient-card.services')
 		};
 
 		self.getPatient = function(id) {
-			return httpWrap({ method: 'GET', url: '/api/patient', params: { id: id } });
+			return httpWrap({ method: 'GET', url: '/api/patient', params: { id: id } }).then(function (data) {
+				var deferred = $q.defer();
+				if (data) {
+					data.displayName = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
+				}
+				deferred.resolve(data);
+				return deferred.promise;
+			});
 		};
 
 		self.storePatient = function(patient) {

@@ -25,7 +25,7 @@ function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc) {
 			$scope.patient = data;
 
 			var item = $scope.breadcrumb.items[1];
-			item.title = data.lastName + ' ' + data.firstName + ' ' + data.middleName;
+			item.title = data.displayName;
 
 			return patientSvc.getThreatmentPlan($scope.patientId);
 		}).then(function (data) {
@@ -43,7 +43,7 @@ function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc) {
 	var getPlan = function (option) {
 		var plan = null;
 		angular.forEach($scope.threatmentPlan, function (item) {
-			if (option.id == item.threatmentOptionId) {
+			if (!plan && option.id == item.threatmentOptionId) {
 				plan = item;
 			}
 		});
