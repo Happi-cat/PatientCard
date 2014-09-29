@@ -38,6 +38,7 @@ namespace PatientCard.Repositories.NHibernate
 		}
 		public new void Update(FirstSurveyDetail item)
 		{
+
 			using (ISession session = NHibernateHelper.OpenSession())
 			using (ITransaction transaction = session.BeginTransaction())
 			{

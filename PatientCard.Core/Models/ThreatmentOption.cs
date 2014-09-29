@@ -5,16 +5,16 @@ namespace PatientCard.Core.Models
 	[DataContract]
 	public class ThreatmentOption : IEntity<int>
 	{
-		[DataMember(Name = "id")]
+		[DataMember(Name = "Id")]
 		public virtual int Key { get; set; }
 
-		[DataMember(Name = "name")]
+		[DataMember]
 		public virtual string Name { get; set; }
 
-		[DataMember(Name = "group")]
+		[DataMember(Name = "Group")]
 		public virtual int? GroupNumber { get; set; }
 
-		[DataMember(Name = "order")]
+		[DataMember(Name = "Order")]
 		public virtual int? OrderNumber { get; set; }
 	}
 }

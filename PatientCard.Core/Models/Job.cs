@@ -7,10 +7,10 @@ namespace PatientCard.Core.Models
 	{
 		public virtual string Key { get { return Name; } }
 
-		[DataMember(Name = "job")]
+		[DataMember(Name = "Job")]
 		public virtual string Name { get; set; }
 
-		[DataMember(Name = "description")]
+		[DataMember(Name = "Description")]
 		public virtual string Description { get; set; }
 	}
 }

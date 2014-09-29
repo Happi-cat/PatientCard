@@ -6,25 +6,25 @@ namespace PatientCard.Core.Models
 	[DataContract]
 	public class Survey : IEntity<int>
 	{
-		[DataMember(Name = "id")]
+		[DataMember(Name = "Id")]
 		public virtual int Key { get; set; }
 
-		[DataMember(Name = "patientId")]
+		[DataMember]
 		public virtual int PatientId { get; set; }
 
-		[DataMember(Name = "username")]
+		[DataMember]
 		public virtual string Username { get; set; }
 
-		[DataMember(Name = "typeId")]
+		[DataMember]
 		public virtual int? TypeId { get; set; }
 
-		[DataMember(Name = "description")]
+		[DataMember]
 		public virtual string Description { get; set; }
 
-		[DataMember(Name = "created")]
+		[DataMember]
 		public virtual string Created { get; set; }
 
-		[DataMember(Name = "dose")]
+		[DataMember]
 		public virtual int? Dose { get; set; }
 	}
 }

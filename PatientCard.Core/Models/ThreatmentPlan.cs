@@ -8,19 +8,19 @@ namespace PatientCard.Core.Models
 	{
 		public virtual Tuple<int, int> Key { get { return new Tuple<int, int>(PatientId, ThreatmentOptionId); } }
 
-		[DataMember(Name = "patientId")]
+		[DataMember]
 		public virtual int PatientId { get; set; }
 
-		[DataMember(Name = "threatmentOptionId")]
+		[DataMember]
 		public virtual int ThreatmentOptionId { get; set; }
 
-		[DataMember(Name = "description")]
+		[DataMember]
 		public virtual string Description { get; set; }
 
-		[DataMember(Name = "username")]
+		[DataMember]
 		public virtual string Username { get; set; }
 
-		[DataMember(Name = "created")]
+		[DataMember]
 		public virtual DateTime Created { get; set; }
 
 		public override bool Equals(object obj)

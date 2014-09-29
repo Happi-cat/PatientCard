@@ -5,10 +5,10 @@ namespace PatientCard.Core.Models
 	[DataContract]
 	public class SurveyType : IEntity<int>
 	{
-		[DataMember(Name = "id")]
+		[DataMember(Name = "Id")]
 		public virtual int Key { get; set; }
 
-		[DataMember(Name = "value")]
+		[DataMember(Name = "Value")]
 		public virtual string Name { get; set; }
 
 	}

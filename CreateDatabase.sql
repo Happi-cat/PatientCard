@@ -49,7 +49,7 @@ create table [Patients] (
 	[FirstName] nvarchar(100) not null,
 	[MiddleName] nvarchar(100) not null,
 	[LastName] nvarchar(100) not null,
-	[BirthDate] datetime,
+	[Birthday] datetime,
 	[Gender] nvarchar(20),
 	[Address] nvarchar(400),
 	[Phone] nvarchar(100),

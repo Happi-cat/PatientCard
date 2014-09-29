@@ -8,25 +8,25 @@ namespace PatientCard.Core.Models
 	{
 		public virtual int Key { get { return PatientId; } }
 
-		[DataMember(Name = "patientId")]
+		[DataMember]
 		public virtual int PatientId { get; set; }
 
-		[DataMember(Name = "reason")]
+		[DataMember]
 		public virtual string Reason { get; set; }
 
-		[DataMember(Name = "face")]
+		[DataMember]
 		public virtual string Face { get; set; }
 
-		[DataMember(Name = "skin")]
+		[DataMember]
 		public virtual string Skin { get; set; }
 
-		[DataMember(Name = "limbs")]
+		[DataMember]
 		public virtual string Limbs { get; set; }
 
-		[DataMember(Name = "bones")]
+		[DataMember]
 		public virtual string Bones { get; set; }
 
-		[DataMember(Name = "details")]
+		[DataMember]
 		public virtual IList<FirstSurveyDetail> Details { get; set; }
 	}
 }

@@ -47,10 +47,10 @@
 				<input type="text" class="form-control" placeholder="Телефоны" name="phone" ng-model="patient.phone" required>
 			</div>
 		</div>
-		<div class="form-group" ng-class="{ 'has-error': patientForm.social.$invalid }">
+		<div class="form-group" ng-class="{ 'has-error': patientForm.socialStatus.$invalid }">
 			<label class="col-sm-3 control-label">Социальное положение</label>
 			<div class="col-sm-9">
-				<input type="text" class="form-control" placeholder="Соц. положение" name="social" ng-model="patient.social">
+				<input type="text" class="form-control" placeholder="Соц. положение" name="socialStatus" ng-model="patient.socialStatus">
 			</div>
 		</div>
 		<div class="form-group" ng-class="{ 'has-error': patientForm.job.$invalid }">

@@ -83,7 +83,7 @@ namespace PatientCard.Web.Controllers.Api
 
 		[HttpPost]
 		[ActionName("Threatment-Plan")]
-		public HttpResponseMessage PostThreatmentPlan(IList<ThreatmentPlan> plan)
+		public HttpResponseMessage PostThreatmentPlan([FromBody]IList<ThreatmentPlan> plan)
 		{
 			_patientService.StoreThreatmentPlan(plan);
 			return new HttpResponseMessage(HttpStatusCode.Created);

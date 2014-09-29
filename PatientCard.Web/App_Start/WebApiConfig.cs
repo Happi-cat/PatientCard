@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using Newtonsoft.Json.Serialization;
 
 namespace PatientCard.Web
 {
@@ -22,6 +24,8 @@ namespace PatientCard.Web
 			config.Routes.MapHttpRoute("DefaultApiWithId", "api/{controller}/id/{id}", new { id = RouteParameter.Optional });
 			config.Routes.MapHttpRoute("DefaultApiWithAction", "api/{controller}/{action}/{id}", new { id = RouteParameter.Optional });
 
+			var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
+			jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 		}
 	}
 }

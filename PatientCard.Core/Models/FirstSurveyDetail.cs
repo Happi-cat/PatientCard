@@ -8,16 +8,16 @@ namespace PatientCard.Core.Models
 	{
 		public virtual Tuple<int, int> Key { get { return new Tuple<int, int>(PatientId, SurveyOptionId); } }
 
-		[DataMember(Name = "patientId")]
+		[DataMember]
 		public virtual int PatientId { get; set; }
 
-		[DataMember(Name = "surveyOptionId")]
+		[DataMember]
 		public virtual int SurveyOptionId { get; set; }
 
-		[DataMember(Name = "yesNo")]
+		[DataMember]
 		public virtual bool YesNo { get; set; }
 
-		[DataMember(Name = "detail")]
+		[DataMember]
 		public virtual string Detail { get; set; }
 
 		public override bool Equals(object obj)

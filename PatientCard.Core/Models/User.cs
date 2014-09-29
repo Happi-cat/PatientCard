@@ -8,36 +8,36 @@ namespace PatientCard.Core.Models
 	{
 		public virtual string Key { get { return Username; } }
 
-		[DataMember(Name = "username")]
+		[DataMember]
 		public virtual string Username { get; set; }
 
 		public virtual string Password { get; set; }
 
-		[DataMember(Name = "firstName")]
+		[DataMember]
 		public virtual string FirstName { get; set; }
 
-		[DataMember(Name = "middleName")]
+		[DataMember]
 		public virtual string MiddleName { get; set; }
 
-		[DataMember(Name = "lastName")]
+		[DataMember]
 		public virtual string LastName { get; set; }
 
-		[DataMember(Name = "email")]
+		[DataMember]
 		public virtual string Email { get; set; }
 
-		[DataMember(Name = "job")]
+		[DataMember]
 		public virtual string Job { get; set; }
 
-		[DataMember(Name = "created")]
+		[DataMember]
 		public virtual DateTime? Created { get; set; }
 
-		[DataMember(Name ="active")]
+		[DataMember]
 		public virtual bool Active { get; set; }
 
-		[DataMember(Name = "address")]
+		[DataMember]
 		public virtual string Address { get; set; }
 
-		[DataMember(Name = "phone")]
+		[DataMember]
 		public virtual string Phone { get; set; }
 	}
 }

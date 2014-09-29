@@ -8,16 +8,13 @@
 		<thead ng-include="'/Widget/TableHeader'"></thead>
 		<tbody>
 			<tr ng-repeat="item in items | orderBy:sortFields | filter: searchText">
-				<td><b>{{ item.lastName }}</b></td>
+				<td><a href="#!/patient/view/{{ item.id }}">{{ item.lastName }}</a></td>
 				<td>{{ item.firstName }}</td>
 				<td>{{ item.middleName }}</td>
 				<td>{{ item.phone }}</td>
 				<td>{{ item.address }}</td>
 				<td>
 					<div class="btn-toolbar pull-right">
-						<div class="btn-group btn-group-xs">
-							<a href="#!/patient/view/{{ item.id }}" class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></a>
-						</div>
 						<div class="btn-group btn-group-xs">
 							<a href="#!/patient/edit/{{ item.id }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
 						</div>

@@ -49,5 +49,27 @@ namespace PatientCard.Repositories.NHibernate
 				return session.Get<ThreatmentPlan>(entity) != null;
 			}
 		}
+
+		public void Update(ThreatmentPlan item)
+		{
+			Delete(item);
+			Create(item);
+			//using (ISession session = NHibernateHelper.OpenSession())
+			//using (ITransaction transaction = session.BeginTransaction())
+			//{
+			//	session.Update(item);
+			//	transaction.Commit();
+			//}
+		}
+
+		public void Delete(ThreatmentPlan item)
+		{
+			using (ISession session = NHibernateHelper.OpenSession())
+			using (ITransaction transaction = session.BeginTransaction())
+			{
+				session.Delete(item);
+				transaction.Commit();
+			}
+		}
 	}
 }
