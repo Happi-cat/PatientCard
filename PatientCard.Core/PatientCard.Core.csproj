@@ -37,6 +37,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\IPrincipalService.cs" />
+    <Compile Include="Auth\UserCookie.cs" />
+    <Compile Include="Auth\UserIdentity.cs" />
+    <Compile Include="Auth\UserPrincipal.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Caching\CacheManager.cs" />
     <Compile Include="Caching\MemoryCacheManager.cs" />
@@ -85,6 +90,7 @@
     <Compile Include="Services\Service.cs" />
     <Compile Include="Services\SystemService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

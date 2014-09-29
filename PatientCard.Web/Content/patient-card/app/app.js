@@ -4,6 +4,7 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'ui.bo
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		$routeProvider
 			.when('/', { templateUrl: '/Page/Home', controller: 'LandingCtrl' })
+			.when('/login', { templateUrl: '/Page/Login', controller: 'LandingCtrl' })
 			.when('/patients', { templateUrl: '/Page/Patients' })
 			.when('/patient/view/:id', { templateUrl: '/Patient/Overview', controller: 'PatientCtrl' })
 			.when('/patient/view/:id/first-survey', { templateUrl: '/Patient/FirstSurvey', controller: 'PatientCtrl' })
