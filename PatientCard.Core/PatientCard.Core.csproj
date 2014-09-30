@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\FormsAuthPrincipalService.cs" />
+    <Compile Include="Auth\FormsAuthService.cs" />
     <Compile Include="Auth\IPrincipalService.cs" />
     <Compile Include="Auth\UserCookie.cs" />
     <Compile Include="Auth\UserIdentity.cs" />

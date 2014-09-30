@@ -18,5 +18,6 @@ namespace PatientCard.Web.Controllers.Api
 			_accountService = Bootstrap.BuildFactory.GetInstance<IAccountService>();
 		}
 
+		
     }
 }
