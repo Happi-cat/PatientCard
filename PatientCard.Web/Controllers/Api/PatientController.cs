@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
+using System.Web;
 using System.Web.Http;
 using PatientCard.Core;
+using PatientCard.Core.Auth;
 using PatientCard.Core.Models;
 using PatientCard.Core.Services.Interfaces;
 

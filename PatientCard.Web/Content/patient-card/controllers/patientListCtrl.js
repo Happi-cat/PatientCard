@@ -31,9 +31,7 @@ function PatientListCtrl($scope, patientSvc) {
 	var load = function() {
 		patientSvc.getPatients().then(function(data) {
 			$scope.items = data;
-		}, function(error) {
-			console.log(error);
-		});
+		}, $scope.onLoadFailed);
 	};
 
 	load();
