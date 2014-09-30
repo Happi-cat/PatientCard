@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Principal;
+using System.Threading;
 using System.Web;
 using System.Web.Security;
 using Newtonsoft.Json;
@@ -9,10 +12,10 @@ namespace PatientCard.Core.Auth
 {
 	public class FormsAuthService : IAuthService
 	{
-		private readonly HttpContextBase _httpContext;
+		private readonly HttpContext _httpContext;
 		private readonly IAccountService _accountService;
 
-		public FormsAuthService(HttpContextBase httpContext, IAccountService accountService)
+		public FormsAuthService(HttpContext httpContext, IAccountService accountService)
 		{
 			_httpContext = httpContext;
 			_accountService = accountService;
@@ -33,7 +36,8 @@ namespace PatientCard.Core.Auth
 					FirstName = user.FirstName,
 					LastName = user.LastName,
 					MiddleName = user.MiddleName,
-					RememberMe = true
+					RememberMe = true,
+					Roles = new List<string>{ user.Job }
 				};
 
 				string userData = JsonConvert.SerializeObject(cookie);

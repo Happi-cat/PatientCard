@@ -13,7 +13,6 @@ namespace PatientCard.Core.Services
 		{
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
 		public new User Get(User key)
 		{
 			return base.Get(key);

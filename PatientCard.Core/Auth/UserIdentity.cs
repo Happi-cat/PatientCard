@@ -33,16 +33,6 @@ namespace PatientCard.Core.Auth
 				       ? data.Username
 				       : string.Format("{0} {1} {2}", data.LastName, data.FirstName, data.MiddleName);
 			Roles = data.Roles ?? new List<string> { "user" };
-			RememberMe = data.RememberMe;
-
-			try
-			{
-				TimeZone = TimeZoneInfo.FindSystemTimeZoneById(data.TimeZone);
-			}
-			catch (Exception)
-			{
-				TimeZone = TimeZoneInfo.Utc;
-			}
 		}
 
 		public UserIdentity(User user, List<string> roles = null)
@@ -73,7 +63,6 @@ namespace PatientCard.Core.Auth
 		public string LastName { get; set; }
 		public string FirstName { get; set; }
 		public string MiddleName { get; set; }
-		public TimeZoneInfo TimeZone { get; set; }
 		public List<string> Roles { get; set; }
 		public bool RememberMe { get; set; }
 

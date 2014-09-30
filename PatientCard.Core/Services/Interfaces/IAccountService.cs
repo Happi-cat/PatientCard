@@ -4,6 +4,6 @@ namespace PatientCard.Core.Services.Interfaces
 {
 	public interface IAccountService : IAuthService, IService<User, string>
 	{
-		
+
 	}
 }
