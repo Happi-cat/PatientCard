@@ -23,6 +23,17 @@ namespace PatientCard.Core.Models
 		public virtual string LastName { get; set; }
 
 		[DataMember]
+		public virtual string DisplayName
+		{
+			get
+			{
+				if (string.IsNullOrEmpty(FirstName) && string.IsNullOrEmpty(LastName))
+					return Username;
+				return string.Format("{0} {1} {2}", LastName, FirstName, MiddleName).Trim();
+			}
+		}
+
+		[DataMember]
 		public virtual string Email { get; set; }
 
 		[DataMember]

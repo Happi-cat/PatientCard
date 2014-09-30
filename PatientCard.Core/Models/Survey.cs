@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace PatientCard.Core.Models
@@ -13,16 +14,27 @@ namespace PatientCard.Core.Models
 		public virtual int PatientId { get; set; }
 
 		[DataMember]
+		public virtual Patient Patient { get; set; }
+
+		[DataMember]
+		[Required]
 		public virtual string Username { get; set; }
+
+		[DataMember]
+		public virtual User User { get; set; }
 
 		[DataMember]
 		public virtual int? TypeId { get; set; }
 
 		[DataMember]
+		public virtual SurveyType Type { get; set; }
+
+		[DataMember]
+		[Required]
 		public virtual string Description { get; set; }
 
 		[DataMember]
-		public virtual string Created { get; set; }
+		public virtual DateTime Created { get; set; }
 
 		[DataMember]
 		public virtual int? Dose { get; set; }

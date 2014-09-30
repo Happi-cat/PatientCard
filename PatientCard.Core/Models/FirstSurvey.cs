@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace PatientCard.Core.Models
@@ -9,7 +10,11 @@ namespace PatientCard.Core.Models
 		public virtual int Key { get { return PatientId; } }
 
 		[DataMember]
+		[Required]
 		public virtual int PatientId { get; set; }
+
+		[DataMember]
+		public virtual Patient Patient { get; set; }
 
 		[DataMember]
 		public virtual string Reason { get; set; }

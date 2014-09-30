@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace PatientCard.Web
@@ -26,6 +27,7 @@ namespace PatientCard.Web
 
 			var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
 			jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+			jsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
 		}
 	}
 }

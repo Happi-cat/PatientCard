@@ -6,9 +6,9 @@ using PatientCard.Core.Services.Interfaces;
 
 namespace PatientCard.Core.Services
 {
-    public class Service<TEntity, TKey> : IService<TEntity, TKey> where TEntity : IEntity<TKey>
+    public abstract class Service<TEntity, TKey> : IService<TEntity, TKey> where TEntity : IEntity<TKey>
     {
-        public Service(IRepository<TEntity, TKey> repository)
+        protected Service(IRepository<TEntity, TKey> repository)
         {
             Repository = repository;
         }

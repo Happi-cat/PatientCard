@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace PatientCard.Core.Models
@@ -9,10 +10,17 @@ namespace PatientCard.Core.Models
 		public virtual Tuple<int, int> Key { get { return new Tuple<int, int>(PatientId, SurveyOptionId); } }
 
 		[DataMember]
+		[Required]
 		public virtual int PatientId { get; set; }
 
 		[DataMember]
+		public virtual Patient Patient { get; set; }
+
+		[DataMember]
 		public virtual int SurveyOptionId { get; set; }
+
+		[DataMember]
+		public virtual FirstSurveyOption SurveyOption { get; set; }
 
 		[DataMember]
 		public virtual bool YesNo { get; set; }
