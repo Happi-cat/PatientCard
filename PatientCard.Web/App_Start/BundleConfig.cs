@@ -26,8 +26,9 @@ namespace PatientCard.Web
 							.IncludeDirectory("~/Content/angularjs-ui-router", "*.js")
 				            .IncludeDirectory("~/Content/patient-card/controllers", "*.js")
 				            .IncludeDirectory("~/Content/patient-card/modules", "*.js")
-				            .IncludeDirectory("~/Content/patient-card/directives", "*.js")
-				            .IncludeDirectory("~/Content/patient-card/services", "*.js")
+				            .IncludeDirectory("~/Content/patient-card/modules/services", "*.js")
+							.IncludeDirectory("~/Content/patient-card/modules/directives", "*.js")
+							.IncludeDirectory("~/Content/patient-card/modules/auth", "*.js")
 				            .IncludeDirectory("~/Content/patient-card/app", "*.js"));
 		}
 	}

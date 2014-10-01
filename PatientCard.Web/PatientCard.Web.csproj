@@ -467,10 +467,13 @@
     <Content Include="Content\patient-card\controllers\patientThreatmentPlan.js" />
     <Content Include="Content\patient-card\controllers\patientVisitDiary.js" />
     <Content Include="Content\patient-card\controllers\tableHeadCtrl.js" />
+    <Content Include="Content\patient-card\modules\auth\httpInterceptor.js" />
+    <Content Include="Content\patient-card\modules\auth\permSvc.js" />
+    <Content Include="Content\patient-card\modules\auth\roles.js" />
     <Content Include="Content\patient-card\modules\modules.js" />
-    <Content Include="Content\patient-card\services\authSvc.js" />
-    <Content Include="Content\patient-card\services\patientSvc.js" />
-    <Content Include="Content\patient-card\services\systemSvc.js" />
+    <Content Include="Content\patient-card\modules\auth\authSvc.js" />
+    <Content Include="Content\patient-card\modules\services\patientSvc.js" />
+    <Content Include="Content\patient-card\modules\services\systemSvc.js" />
     <Content Include="Content\patient-card\styles\common.css" />
     <Content Include="Content\patient-card\styles\icons.css" />
     <Content Include="Content\patient-card\styles\img\ambulance_car.png" />
@@ -505,7 +508,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\patient-card\directives\" />
+    <Folder Include="Content\patient-card\modules\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

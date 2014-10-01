@@ -3,9 +3,10 @@
 var webapp = angular.module('patient-card-app', ['patient-card.services', 'patient-card.auth', 'ui.bootstrap', 'ui.router', 'nvd3ChartDirectives', 'ngRoute'])
 	.constant('URLS', {
 		login: '/login',
-		home: '/'
+		home: '/',
+		logout: '/logout',
 	})
-	.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider, ROLES) {
+	.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: '/Page/Home',
@@ -120,15 +121,12 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 			}
 		};
 
-		$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+		$rootScope.checkPerm = permSvc.checkPerm;
+	
+		// Check perm before page change
+		$rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
 			if (!permSvc.checkPerm(currRoute.perm)) {
 				$location.path(URLS.login);
 			}
 		});
-
-		$rootScope.checkPerm = permSvc.checkPerm;
-
-		$rootScope.checkItemPerm = function(item) {
-			return permSvc.checkPerm(item.perm);
-		};
 	});

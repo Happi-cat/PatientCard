@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function ActionsCtrl() {
+function ActionsCtrl(permSvc) {
 	var self = {};
 	self.items = [
 		{
@@ -25,6 +25,10 @@ function ActionsCtrl() {
 			}
 		}
 	];
+
+	self.checkItemPerm = function (item) {
+		return permSvc.checkPerm(item.perm);
+	};
 
 	return self;
 }

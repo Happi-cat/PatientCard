@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function MenuCtrl($scope, ROLES) {
+function MenuCtrl(permSvc, ROLES) {
 	var self = {};
 	self.items = [
 		{
@@ -18,6 +18,10 @@ function MenuCtrl($scope, ROLES) {
 			}
 		},
 	];
+	
+	self.checkItemPerm = function (item) {
+		return permSvc.checkPerm(item.perm);
+	};
 
 	return self;
 }

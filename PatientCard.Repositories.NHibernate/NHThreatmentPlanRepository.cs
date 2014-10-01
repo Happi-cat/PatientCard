@@ -52,14 +52,12 @@ namespace PatientCard.Repositories.NHibernate
 
 		public void Update(ThreatmentPlan item)
 		{
-			Delete(item);
-			Create(item);
-			//using (ISession session = NHibernateHelper.OpenSession())
-			//using (ITransaction transaction = session.BeginTransaction())
-			//{
-			//	session.Update(item);
-			//	transaction.Commit();
-			//}
+			using (ISession session = NHibernateHelper.OpenSession())
+			using (ITransaction transaction = session.BeginTransaction())
+			{
+				session.Update(item);
+				transaction.Commit();
+			}
 		}
 
 		public void Delete(ThreatmentPlan item)
