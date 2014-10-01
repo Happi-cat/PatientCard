@@ -36,16 +36,12 @@ namespace PatientCard.Web.Controllers
 
 		public ActionResult ThreatmentPlan()
 		{
-			var model = _systemService.GetThreatmentOptions();
-			ViewBag.View = true;
-			return View(model);
+			return View();
 		}
 
 		public ActionResult ThreatmentPlanEditor()
 		{
-			var model = _systemService.GetThreatmentOptions();
-			ViewBag.View = false;
-			return View("ThreatmentPlan", model);
+			return View();
 		}
 
 		public ActionResult Survey()

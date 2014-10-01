@@ -26,6 +26,8 @@ namespace PatientCard.Core.Auth
 		{
 			if (_accountService.Login(username, password))
 			{
+				Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(username), null);
+
 				var user = _accountService.Get(new User {Username = username});
 				if (user == null)
 					throw new ArgumentNullException("user");
@@ -36,7 +38,6 @@ namespace PatientCard.Core.Auth
 					FirstName = user.FirstName,
 					LastName = user.LastName,
 					MiddleName = user.MiddleName,
-					RememberMe = true,
 					Roles = new List<string>{ user.Job }
 				};
 

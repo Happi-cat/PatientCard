@@ -42,7 +42,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		public FirstSurveyOptionMap()
 		{
 			Table("FirstSurveyOptions");
-			Id(e => e.Key, "Id").GeneratedBy.Increment();
+			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.Name).Unique().Not.Nullable().Length(400);
 		}
 	}
@@ -75,7 +75,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		public PatientMap()
 		{
 			Table("Patients");
-			Id(e => e.Key, "Id").GeneratedBy.Increment();
+			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.FirstName).Not.Nullable().Length(100);
 			Map(e => e.MiddleName).Not.Nullable().Length(100);
 			Map(e => e.LastName).Not.Nullable().Length(100);
@@ -94,12 +94,12 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		public SurveyMap()
 		{
 			Table("Surveys");
-			Id(e => e.Key, "Id").GeneratedBy.Increment();
+			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.PatientId).Not.Nullable();
 			Map(e => e.Username).Not.Nullable().Length(100);
 			Map(e => e.TypeId).Nullable();
 			Map(e => e.Description).Length(400);
-			Map(e => e.Created);
+			Map(e => e.Created).Not.Insert().Not.Update();
 			Map(e => e.Dose);
 		}
 	}
@@ -109,7 +109,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		public SurveyTypeMap()
 		{
 			Table("SurveyTypes");
-			Id(e => e.Key, "Id").GeneratedBy.Increment();
+			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.Name).Unique().Not.Nullable().Length(400);
 		}
 	}
@@ -119,7 +119,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		public ThreatmentOptionMap()
 		{
 			Table("ThreatmentOptions");
-			Id(e => e.Key, "Id").GeneratedBy.Increment();
+			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.Name).UniqueKey("uk_ThreatmentOptions").Not.Nullable().Length(400);
 			Map(e => e.GroupNumber).UniqueKey("uk_ThreatmentOptions").Not.Nullable();
 			Map(e => e.OrderNumber);
@@ -136,7 +136,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 				.KeyProperty(e => e.ThreatmentOptionId);
 			Map(e => e.Description).Length(400);
 			Map(e => e.Username).Not.Nullable().Length(100);
-			Map(e => e.Created);
+			Map(e => e.Created).Not.Insert().Not.Update();
 		}
 	}
 
@@ -145,10 +145,11 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		public VisitDiaryMap()
 		{
 			Table("VisitDiary");
-			Id(e => e.Key, "Id").GeneratedBy.Increment();
+			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.PatientId).Not.Nullable();
 			Map(e => e.Username).Not.Nullable().Length(100);
 			Map(e => e.Description).Length(400);
+			Map(e => e.Created).Not.Insert().Not.Update();
 		}
 	}
 }

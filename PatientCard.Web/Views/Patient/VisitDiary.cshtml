@@ -1,9 +1,9 @@
 ﻿<div class="container" ng-controller="PatientVisitDiaryCtrl">
 	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
-	<div class="page-header">
+	<div class="page-header" ng-if="checkPerm(editPerm)">
 		<h3>Новое посещение</h3>
 	</div>
-	<form name="visitDiaryForm" class="form-horizontal" role="form">
+	<form name="visitDiaryForm" class="form-horizontal" role="form"  ng-if="checkPerm(editPerm)">
 		<div class="form-group" ng-class="{ 'has-error': visitDiaryForm.description.$invalid && visitDiaryForm.description.$dirty }">
 			<div class="col-sm-12">
 				<label class="sr-only">Детали о посещении</label>
@@ -27,8 +27,8 @@
 		<tbody>
 			<tr ng-repeat="item in visits | orderBy:sortFields | filter:serachText">
 				<td>{{ item.description }}</td>
-				<td>{{ item.doctor }}</td>
-				<td>{{ item.created }}</td>
+				<td>{{ item.user.displayName }}</td>
+				<td>{{ item.created | date }}</td>
 			</tr>
 		</tbody>
 	</table>

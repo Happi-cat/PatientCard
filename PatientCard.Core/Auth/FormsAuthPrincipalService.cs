@@ -18,8 +18,11 @@ namespace PatientCard.Core.Auth
 			HttpCookie authCookie = _context.Request.Cookies[FormsAuthentication.FormsCookieName];
 			if (authCookie != null)
 			{
-
 				FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+
+				if (FormsAuthentication.SlidingExpiration)
+					authTicket = FormsAuthentication.RenewTicketIfOld(authTicket);
+
 				return new UserPrincipal(new UserIdentity(authTicket) );
 			}
 

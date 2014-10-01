@@ -453,7 +453,9 @@
     <Content Include="Content\jquery\jquery-2.1.1.js" />
     <Content Include="Content\jquery\jquery.tmpl.js" />
     <Content Include="Content\patient-card\app\app.js" />
+    <Content Include="Content\patient-card\controllers\actionsCtrl.js" />
     <Content Include="Content\patient-card\controllers\landingCtrl.js" />
+    <Content Include="Content\patient-card\controllers\loginCtrl.js" />
     <Content Include="Content\patient-card\controllers\menuCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientEditCtrl.js" />
@@ -583,6 +585,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Page\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Patient\ThreatmentPlanEditor.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

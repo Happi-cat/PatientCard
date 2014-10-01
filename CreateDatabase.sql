@@ -1,4 +1,7 @@
-﻿create database [PatientCards];
+﻿drop database [PatientCards];
+go 
+
+create database [PatientCards];
 go
 
 use [PatientCards];
@@ -95,6 +98,7 @@ create table [VisitDiary] (
 	[PatientId] int not null,
 	[Username] nvarchar(100) not null,
 	[Description] nvarchar(400) null,
+	[Created] datetime not null default GETDATE()
 );
 
 alter table [Users] 
@@ -147,11 +151,9 @@ insert into [FirstSurveyOptions] ( [Name] ) values ( N'Беременность,
 insert into [FirstSurveyOptions] ( [Name] ) values ( N'Другое' );
 
 
-insert into [Jobs] ( [Name] ) values ( N'Администратор' );
-insert into [Jobs] ( [Name] ) values ( N'Программист' );
-insert into [Jobs] ( [Name] ) values ( N'Доктор' );
-insert into [Jobs] ( [Name] ) values ( N'Зав. отделением' );
-insert into [Jobs] ( [Name] ) values ( N'Медсестра' );
+insert into [Jobs] ( [Name] ) values ( N'Administrator' );
+insert into [Jobs] ( [Name] ) values ( N'Doctor' );
+insert into [Jobs] ( [Name] ) values ( N'Nurse' );
 
 insert into [SurveyTypes] ( [Name] ) values ( N'Разное' );
 insert into [SurveyTypes] ( [Name] ) values ( N'Рентген' );
@@ -179,5 +181,6 @@ insert into [ThreatmentOptions] ( [Name], [GroupNumber], [OrderNumber] ) values 
 insert into [ThreatmentOptions] ( [Name], [GroupNumber], [OrderNumber] ) values ( N'Дополнительные диагностические мероприятия (указать)', 7, 0 );
 insert into [ThreatmentOptions] ( [Name], [GroupNumber], [OrderNumber] ) values ( N'Консультация других специалистов (указать)', 8, 0 );
 
-insert into [Users] ( [Username], [Password] ) values ( N'admin', N'admin' );
-insert into [Users] ( [Username], [Password] ) values ( N'test', N'test' );
+insert into [Users] ( [Username], [Password], [Job] ) values ( N'admin', N'admin', N'Administrator' );
+insert into [Users] ( [Username], [Password], [Job] ) values ( N'testnurse', N'testnurse', N'Nurse' );
+insert into [Users] ( [Username], [Password], [Job] ) values ( N'testdoctor', N'testdoctor', N'Doctor' );

@@ -3,7 +3,7 @@
 function PatientEditCtrl($scope, $routeParams, patientSvc) {
 	$scope.patientId = $routeParams.id;
 	$scope.edit = true;
-
+	
 	$scope.breadcrumb = {
 		items: [
 			{

@@ -14,6 +14,7 @@ namespace PatientCard.Core.Services
 			Repository = unityOfWork.UserRepository;
 		}
 
+		[PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
 		public new User Get(User key)
 		{
 			return base.Get(key);
@@ -29,7 +30,7 @@ namespace PatientCard.Core.Services
 		public new void Store(User item)
 		{
 			var permUser = new PrincipalPermission(item.Username, null);
-			var permAdmin = new PrincipalPermission(null, "Administrators");
+			var permAdmin = new PrincipalPermission(null, "Administrator");
 			
 			(permUser.Union(permAdmin)).Demand();
 
@@ -38,7 +39,7 @@ namespace PatientCard.Core.Services
 			base.Store(item);
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
 		public new void Delete(User item)
 		{
 			base.Delete(item);
@@ -55,7 +56,7 @@ namespace PatientCard.Core.Services
 			return false;
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
 		public bool SignUp(string username, string password)
 		{
 			return false;

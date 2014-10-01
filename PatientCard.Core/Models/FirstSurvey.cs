@@ -9,8 +9,7 @@ namespace PatientCard.Core.Models
 	{
 		public virtual int Key { get { return PatientId; } }
 
-		[DataMember]
-		[Required]
+		[DataMember(IsRequired = true)]
 		public virtual int PatientId { get; set; }
 
 		[DataMember]

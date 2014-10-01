@@ -1,6 +1,10 @@
 ﻿'use strict';
 
-function PatientSurveyCtrl($scope, patientSvc, systemSvc) {
+function PatientSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
+	$scope.editPerm = {
+		role: [ROLES.doctor, ROLES.admin]
+	};
+	
 	$scope.tablehead = [
 		{
 			name: 'type',
@@ -20,6 +24,10 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc) {
 			name: 'created',
 			title: 'Дата',
 			sortable: true
+		},
+		{
+			name: 'dose',
+			title: 'Доза'
 		}
 	];
 

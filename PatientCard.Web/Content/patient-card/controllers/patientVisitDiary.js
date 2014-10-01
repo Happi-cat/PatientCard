@@ -1,6 +1,10 @@
 ﻿'use strict';
 
-function PatientVisitDiaryCtrl($scope, patientSvc) {
+function PatientVisitDiaryCtrl($scope, patientSvc, ROLES) {
+	$scope.editPerm = {
+		role: [ROLES.doctor, ROLES.admin]
+	};
+	
 	$scope.tablehead = [
 			{
 				name: 'description',

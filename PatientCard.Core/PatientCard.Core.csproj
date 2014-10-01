@@ -83,6 +83,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\ISurveyRepository.cs" />
     <Compile Include="Repositories\IThreatmentPlanRepository.cs" />
+    <Compile Include="Repositories\IUnityOfWork.cs" />
     <Compile Include="Repositories\IVisitDiaryRepository.cs" />
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\Interfaces\IAccountService.cs" />
@@ -94,7 +95,9 @@
     <Compile Include="Services\Service.cs" />
     <Compile Include="Services\SystemService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Validation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -12,15 +12,15 @@ namespace PatientCard.Core.Models
 		[DataMember(Name = "Id")]
 		public virtual int Key { get; set; }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		[Required]
 		public virtual string FirstName { get; set; }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		[Required]
 		public virtual string MiddleName { get; set; }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		[Required]
 		public virtual string LastName { get; set; }
 
@@ -40,7 +40,7 @@ namespace PatientCard.Core.Models
 		[JsonConverter(typeof(StringEnumConverter))]
 		public virtual Gender Gender { get; set; }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		[Required]
 		public virtual string Address { get; set; }
 

@@ -7,16 +7,16 @@
 		<div class="form-group" ng-class="{ 'has-error': patientForm.lastName.$invalid || patientForm.firstName.$invalid || patientForm.middleName.$invalid }">
 			<label class="col-sm-3 control-label">Ф.И.О. Пациента</label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" placeholder="Фамилия" name="lastName" ng-model="patient.lastName" required ng-disabled="edit">
+				<input type="text" class="form-control capitalize" placeholder="Фамилия" name="lastName" ng-model="patient.lastName" required ng-disabled="edit">
 			</div>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" placeholder="Имя" name="firstName" ng-model="patient.firstName" required ng-disabled="edit">
+				<input type="text" class="form-control capitalize" placeholder="Имя" name="firstName" ng-model="patient.firstName" required ng-disabled="edit">
 			</div>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" placeholder="Отчество" name="middleName" ng-model="patient.middleName" required ng-disabled="edit">
+				<input type="text" class="form-control capitalize" placeholder="Отчество" name="middleName" ng-model="patient.middleName" required ng-disabled="edit">
 			</div>
 		</div>
-		<div class="form-group" ng-class="{ 'has-error': patientForm.birthday.$invalid }">
+		<div class="form-group" ng-class="{ 'has-error': patientForm.birthday.$invalid || patientForm.gender.$invalid  }">
 			<label class="col-sm-3 control-label">Дата рождения</label>
 			<div class="col-sm-3">
 				<p class="input-group">
@@ -30,21 +30,19 @@
 			</div>
 			<label class="col-sm-offset-1 col-sm-2 control-label">Пол</label>
 			<div class="col-sm-3">
-				<select name="gender" class="form-control" ng-model="patient.gender" ng-options="g.id as g.value for g in gender">
-					
-				</select>
+				<select name="gender" class="form-control" ng-model="patient.gender" ng-options="g.id as g.value for g in gender" required />
 			</div>
 		</div>
 		<div class="form-group" ng-class="{ 'has-error': patientForm.address.$invalid }">
 			<label class="col-sm-3 control-label">Адрес постоянной (временной) регистрации</label>
 			<div class="col-sm-9">
-				<textarea class="form-control" rows="2" placeholder="Адрес" name="address" ng-model="patient.address"></textarea>
+				<textarea class="form-control" rows="2" placeholder="Адрес" name="address" ng-model="patient.address" required></textarea>
 			</div>
 		</div>
 		<div class="form-group" ng-class="{ 'has-error': patientForm.phone.$invalid }">
 			<label class="col-sm-3 control-label">Контактные телефоны</label>
 			<div class="col-sm-9">
-				<input type="text" class="form-control" placeholder="Телефоны" name="phone" ng-model="patient.phone" required>
+				<input type="text" class="form-control" placeholder="Телефоны" name="phone" ng-model="patient.phone">
 			</div>
 		</div>
 		<div class="form-group" ng-class="{ 'has-error': patientForm.socialStatus.$invalid }">

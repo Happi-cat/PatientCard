@@ -55,6 +55,7 @@
     <Compile Include="NHibernateRepository.cs" />
     <Compile Include="NHSurveyRepository.cs" />
     <Compile Include="NHThreatmentPlanRepository.cs" />
+    <Compile Include="NHUnityOfWork.cs" />
     <Compile Include="NHVisitDiaryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

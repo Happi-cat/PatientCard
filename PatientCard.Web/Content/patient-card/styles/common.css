@@ -18,3 +18,7 @@
 .form-condensed .form-group{
 	margin-bottom: 5px !important;
 }
+
+.capitalize {
+	text-transform: capitalize;
+}

@@ -10,13 +10,13 @@ namespace PatientCard.Core.Models
 		[DataMember(Name = "Id")]
 		public virtual int Key { get; set; }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		public virtual int PatientId { get; set; }
 
 		[DataMember]
 		public virtual Patient Patient { get; set; }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		[Required]
 		public virtual string Username { get; set; }
 

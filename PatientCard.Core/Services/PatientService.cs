@@ -43,7 +43,7 @@ namespace PatientCard.Core.Services
 			base.Store(item);
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
 		public new void Delete(Patient item)
 		{
 			base.Delete(item);
@@ -60,8 +60,8 @@ namespace PatientCard.Core.Services
 			return firstSurvey;
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
-		[PrincipalPermission(SecurityAction.Demand, Role = "Doctors")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Doctor")]
 		public void StoreFirstSurvey(FirstSurvey survey)
 		{
 			Validator.ValidateObject(survey, new ValidationContext(survey));
@@ -79,8 +79,8 @@ namespace PatientCard.Core.Services
 			}
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
-		[PrincipalPermission(SecurityAction.Demand, Role = "Doctors")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Doctor")]
 		private void StoreFirstSurveyDetails(IList<FirstSurveyDetail> surveyDetails)
 		{
 			foreach (var detail in surveyDetails)
@@ -111,8 +111,8 @@ namespace PatientCard.Core.Services
 			return list;
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
-		[PrincipalPermission(SecurityAction.Demand, Role = "Doctors")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Doctor")]
 		public void StoreSurvey(Survey survey)
 		{
 			survey.Username = Thread.CurrentPrincipal.Identity.Name;
@@ -141,8 +141,8 @@ namespace PatientCard.Core.Services
 			return list;
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
-		[PrincipalPermission(SecurityAction.Demand, Role = "Doctors")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Doctor")]
 		public void StoreThreatmentPlan(IList<ThreatmentPlan> plan)
 		{
 			foreach (var p in plan)
@@ -174,8 +174,8 @@ namespace PatientCard.Core.Services
 			return list;
 		}
 
-		[PrincipalPermission(SecurityAction.Demand, Role = "Administrators")]
-		[PrincipalPermission(SecurityAction.Demand, Role = "Doctors")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]
+		[PrincipalPermission(SecurityAction.Demand, Role = "Doctor")]
 		public void StoreVisitDiary(VisitDiary visitDiary)
 		{
 			visitDiary.Username = Thread.CurrentPrincipal.Identity.Name;

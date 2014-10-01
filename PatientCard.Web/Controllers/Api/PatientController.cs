@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Web.Http;
 using PatientCard.Core;
 using PatientCard.Core.Models;
@@ -20,6 +21,7 @@ namespace PatientCard.Web.Controllers.Api
 		[HttpGet]
 		public IList<Patient> Get()
 		{
+			var principal = Thread.CurrentPrincipal;
 			return _patientService.GetAll();
 		}
 

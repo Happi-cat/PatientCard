@@ -1,9 +1,9 @@
 ﻿<div class="container" ng-controller="PatientSurveyCtrl">
 	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
-	<div class="page-header">
+	<div class="page-header" ng-if="checkPerm(editPerm)">
 		<h3>Заполнить новое исследование пациента</h3>
 	</div>
-	<form name="surveyForm" class="form-inline bottom-padding" role="form">
+	<form name="surveyForm" class="form-inline bottom-padding" role="form" ng-if="checkPerm(editPerm)">
 		<div class="form-group">
 			<label class="sr-only">Исследование</label>
 			<select name="typeId" class="form-control" ng-model="survey.typeId" ng-options="type.id as type.value for type in surveyTypes"></select>
@@ -14,7 +14,7 @@
 		</div>
 		<div class="form-group">
 			<label class="sr-only">Экв. доза (мЗВ)</label>
-			<input name="dose" type="text" class="form-control" placeholder="Экв. доза (мЗВ)" ng-model="dose">
+			<input name="dose" type="text" class="form-control" placeholder="Экв. доза (мЗВ)" ng-model="survey.dose">
 		</div>
 		<div class="btn-group">
 			<button class="btn btn-primary" ng-click="ok()" ng-disabled="surveyForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
@@ -30,8 +30,9 @@
 			<tr ng-repeat="item in surveys | orderBy:sortFields | filter:serachText">
 				<td>{{ item.type }}</td>
 				<td>{{ item.description }}</td>
-				<td>{{ item.doctor }}</td>
-				<td>{{ item.created }}</td>
+				<td>{{ item.user.displayName }}</td>
+				<td>{{ item.created | date }}</td>
+				<td>{{ item.dose }}</td>
 			</tr>
 		</tbody>
 	</table>

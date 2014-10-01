@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Http.Routing;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using PatientCard.Core.Web;
 
 namespace PatientCard.Web
 {
@@ -14,6 +15,7 @@ namespace PatientCard.Web
 	{
 		public static void Register(HttpConfiguration config)
 		{
+			config.Filters.Add(new SecurityExceptionFilterAttribute());
 
 			config.Routes.MapHttpRoute("DefaultApiDelete", "api/{controller}", new { action = "Delete" }, new { httpMethod = new HttpMethodConstraint(HttpMethod.Delete) });
 			config.Routes.MapHttpRoute("DefaultApiDeleteWithId", "api/{controller}/{id}", new { action = "Delete" }, new { httpMethod = new HttpMethodConstraint(HttpMethod.Delete) });

@@ -1,6 +1,10 @@
 ﻿'use strict';
 
-function PatientFirstSurveyCtrl($scope, patientSvc, systemSvc) {
+function PatientFirstSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
+	$scope.editPerm = {
+		role: [ROLES.doctor, ROLES.admin]
+	};
+	
 	$scope.breadcrumb = {
 		items: [
 			{

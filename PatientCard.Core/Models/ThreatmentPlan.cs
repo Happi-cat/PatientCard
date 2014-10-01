@@ -9,7 +9,7 @@ namespace PatientCard.Core.Models
 	{
 		public virtual Tuple<int, int> Key { get { return new Tuple<int, int>(PatientId, ThreatmentOptionId); } }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		public virtual int PatientId { get; set; }
 
 		[DataMember]
@@ -22,10 +22,9 @@ namespace PatientCard.Core.Models
 		public virtual ThreatmentOption ThreatmentOption { get; set; }
 
 		[DataMember]
-		[Required]
 		public virtual string Description { get; set; }
 
-		[DataMember]
+		[DataMember(IsRequired = true)]
 		[Required]
 		public virtual string Username { get; set; }
 

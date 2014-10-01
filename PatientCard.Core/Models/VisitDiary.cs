@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace PatientCard.Core.Models
@@ -25,5 +26,8 @@ namespace PatientCard.Core.Models
 		[DataMember]
 		[Required]
 		public virtual string Description { get; set; }
+
+		[DataMember]
+		public virtual DateTime Created { get; set; }
 	}
 }

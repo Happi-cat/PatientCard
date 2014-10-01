@@ -9,8 +9,7 @@ namespace PatientCard.Core.Models
 	{
 		public virtual Tuple<int, int> Key { get { return new Tuple<int, int>(PatientId, SurveyOptionId); } }
 
-		[DataMember]
-		[Required]
+		[DataMember(IsRequired = true)]
 		public virtual int PatientId { get; set; }
 
 		[DataMember]

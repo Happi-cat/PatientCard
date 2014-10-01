@@ -1,6 +1,10 @@
 ﻿'use strict';
 
-function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc) {
+function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
+	$scope.editPerm = {
+		role: [ROLES.doctor, ROLES.admin]
+	};
+	
 	$scope.breadcrumb = {
 		items: [
 			{
