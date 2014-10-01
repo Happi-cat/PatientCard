@@ -33,7 +33,7 @@ namespace PatientCard.Repositories.NHibernate
 		{
 			using (ISession session = NHibernateHelper.OpenSession())
 			{
-				return session.Get<FirstSurveyDetail>(entity) != null;
+				return session.Get<FirstSurveyDetail>(new FirstSurveyDetail{ PatientId = entity.PatientId, SurveyOptionId = entity.SurveyOptionId }) != null;
 			}
 		}
 		public new void Update(FirstSurveyDetail item)
@@ -42,7 +42,7 @@ namespace PatientCard.Repositories.NHibernate
 			using (ISession session = NHibernateHelper.OpenSession())
 			using (ITransaction transaction = session.BeginTransaction())
 			{
-				session.Update(item, item);
+				session.Update(item);
 				transaction.Commit();
 			}
 		}

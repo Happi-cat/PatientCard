@@ -46,7 +46,7 @@ namespace PatientCard.Repositories.NHibernate
 		{
 			using (ISession session = NHibernateHelper.OpenSession())
 			{
-				return session.Get<ThreatmentPlan>(entity) != null;
+				return session.Get<ThreatmentPlan>(new ThreatmentPlan{ PatientId = entity.PatientId, ThreatmentOptionId = entity.ThreatmentOptionId}) != null;
 			}
 		}
 
@@ -56,16 +56,6 @@ namespace PatientCard.Repositories.NHibernate
 			using (ITransaction transaction = session.BeginTransaction())
 			{
 				session.Update(item);
-				transaction.Commit();
-			}
-		}
-
-		public void Delete(ThreatmentPlan item)
-		{
-			using (ISession session = NHibernateHelper.OpenSession())
-			using (ITransaction transaction = session.BeginTransaction())
-			{
-				session.Delete(item);
 				transaction.Commit();
 			}
 		}

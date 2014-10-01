@@ -43,5 +43,6 @@ namespace PatientCard.Repositories.NHibernate
 			Trace.WriteLine(sql.ToString());
 			return sql;
 		}
+		
 	}
 }
