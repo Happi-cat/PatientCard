@@ -7,37 +7,31 @@ namespace PatientCard.Core.Services
 {
 	public class SystemService :ISystemService
 	{
-		private readonly IRepository<Job, string> _jobRepository;
-		private readonly IRepository<SurveyType, int> _surveyTypesRepository;
-		private readonly IRepository<FirstSurveyOption, int> _firstSurveyOptionRepository;
-		private readonly IRepository<ThreatmentOption, int> _threatmentOptionsRepository;
+		private readonly IUnityOfWork _unityOfWork;
 
-		public SystemService(IRepository<Job, string > jobRepository, IRepository<SurveyType, int> surveyTypesRepository, IRepository<FirstSurveyOption, int> firstSurveyOptionRepository, IRepository<ThreatmentOption, int> threatmentOptionsRepository  )
+		public SystemService(IUnityOfWork unityOfWork)
 		{
-			_jobRepository = jobRepository;
-			_surveyTypesRepository = surveyTypesRepository;
-			_firstSurveyOptionRepository = firstSurveyOptionRepository;
-			_threatmentOptionsRepository = threatmentOptionsRepository;
+			_unityOfWork = unityOfWork;
 		}
 
 		public IList<Job> GetJobs()
 		{
-			return _jobRepository.GetAll();
+			return _unityOfWork.JobRepository.GetAll();
 		}
 
 		public IList<SurveyType> GetSurveyTypes()
 		{
-			return _surveyTypesRepository.GetAll();
+			return _unityOfWork.SurveyTypeRepository.GetAll();
 		}
 
 		public IList<FirstSurveyOption> GetFirstSurveyOptions()
 		{
-			return _firstSurveyOptionRepository.GetAll();
+			return _unityOfWork.FirstSurveyOptionRepository.GetAll();
 		}
 
 		public IList<ThreatmentOption> GetThreatmentOptions()
 		{
-			return _threatmentOptionsRepository.GetAll();
+			return _unityOfWork.ThreatmentOptionRepository.GetAll();
 		}
 	}
 }

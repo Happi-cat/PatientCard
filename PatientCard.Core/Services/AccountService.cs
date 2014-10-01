@@ -9,8 +9,9 @@ namespace PatientCard.Core.Services
 {
 	public class AccountService : Service<User,string>, IAccountService
 	{
-		public AccountService(IRepository<User, string> repository) : base(repository)
+		public AccountService(IUnityOfWork unityOfWork)
 		{
+			Repository = unityOfWork.UserRepository;
 		}
 
 		public new User Get(User key)

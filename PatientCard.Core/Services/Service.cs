@@ -8,12 +8,17 @@ namespace PatientCard.Core.Services
 {
     public abstract class Service<TEntity, TKey> : IService<TEntity, TKey> where TEntity : IEntity<TKey>
     {
-        protected Service(IRepository<TEntity, TKey> repository)
-        {
-            Repository = repository;
-        }
+		protected Service()
+		{
+			
+		}
 
-        protected IRepository<TEntity, TKey> Repository { get; private set; }
+		protected Service(IRepository<TEntity, TKey> repository)
+		{
+			Repository = repository;
+		}
+
+		protected IRepository<TEntity, TKey> Repository { get; set; }
 
         public TEntity Get(TEntity key)
         {

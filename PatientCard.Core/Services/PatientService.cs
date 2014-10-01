@@ -14,22 +14,13 @@ namespace PatientCard.Core.Services
 	{
 		private readonly IAccountService _accountService;
 
-		private readonly IFirstSurveyRepository _firstSurveyRepository;
-		private readonly IFirstSurveyDetailRepository _firstSurveyDetailRepository;
-		private readonly IThreatmentPlanRepository _threatmentPlanRepository;
-		private readonly ISurveyRepository _surveyRepository;
-		private readonly IVisitDiaryRepository _visitRepository;
+		private readonly IUnityOfWork _unityOfWork;
 
 
-		public PatientService(IAccountService accountService, IRepository<Patient, int> repository, IFirstSurveyRepository firstSurveyRepository, IFirstSurveyDetailRepository firstSurveyDetailRepository,
-			IThreatmentPlanRepository threatmentPlanRepository, ISurveyRepository surveyRepository, IVisitDiaryRepository visitDiaryRepository)
-			: base(repository)
+		public PatientService(IAccountService accountService, IUnityOfWork unityOfWork)
 		{
-			_firstSurveyRepository = firstSurveyRepository;
-			_firstSurveyDetailRepository = firstSurveyDetailRepository;
-			_threatmentPlanRepository = threatmentPlanRepository;
-			_surveyRepository = surveyRepository;
-			_visitRepository = visitDiaryRepository;
+			Repository = unityOfWork.PatientRepositopry;
+			_unityOfWork = unityOfWork;
 			_accountService = accountService;
 		}
 
@@ -61,10 +52,10 @@ namespace PatientCard.Core.Services
 		[PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
 		public FirstSurvey GetFirstSurvey(int patientId)
 		{
-			var firstSurvey = _firstSurveyRepository.GetPatientItems(patientId).FirstOrDefault();
+			var firstSurvey = _unityOfWork.FirstSurveyRepository.GetPatientItems(patientId).FirstOrDefault();
 			if (firstSurvey != null)
 			{
-				firstSurvey.Details = _firstSurveyDetailRepository.GetPatientItems(patientId);
+				firstSurvey.Details = _unityOfWork.FirstSurveyDetailRepository.GetPatientItems(patientId);
 			}
 			return firstSurvey;
 		}
@@ -74,13 +65,13 @@ namespace PatientCard.Core.Services
 		public void StoreFirstSurvey(FirstSurvey survey)
 		{
 			Validator.ValidateObject(survey, new ValidationContext(survey));
-			if (_firstSurveyRepository.CheckExist(survey))
+			if (_unityOfWork.FirstSurveyRepository.CheckExist(survey))
 			{
-				_firstSurveyRepository.Update(survey);
+				_unityOfWork.FirstSurveyRepository.Update(survey);
 			}
 			else
 			{
-				_firstSurveyRepository.Create(survey);
+				_unityOfWork.FirstSurveyRepository.Create(survey);
 			}
 			if (survey.Details != null)
 			{
@@ -95,13 +86,13 @@ namespace PatientCard.Core.Services
 			foreach (var detail in surveyDetails)
 			{
 				Validator.ValidateObject(detail, new ValidationContext(detail));
-				if (_firstSurveyDetailRepository.CheckExist(detail))
+				if (_unityOfWork.FirstSurveyDetailRepository.CheckExist(detail))
 				{
-					_firstSurveyDetailRepository.Update(detail);
+					_unityOfWork.FirstSurveyDetailRepository.Update(detail);
 				}
 				else
 				{
-					_firstSurveyDetailRepository.Create(detail);
+					_unityOfWork.FirstSurveyDetailRepository.Create(detail);
 				}
 			}
 		}
@@ -109,7 +100,7 @@ namespace PatientCard.Core.Services
 		[PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
 		public IList<Survey> GetSurveys(int patientId)
 		{
-			var list = _surveyRepository.GetPatientItems(patientId);
+			var list = _unityOfWork.SurveyRepository.GetPatientItems(patientId);
 			foreach (var survey in list)
 			{
 				if (!string.IsNullOrEmpty(survey.Username))
@@ -126,20 +117,20 @@ namespace PatientCard.Core.Services
 		{
 			survey.Username = Thread.CurrentPrincipal.Identity.Name;
 			Validator.ValidateObject(survey, new ValidationContext(survey));
-			if (_surveyRepository.CheckExist(survey))
+			if (_unityOfWork.SurveyRepository.CheckExist(survey))
 			{
-				_surveyRepository.Update(survey);
+				_unityOfWork.SurveyRepository.Update(survey);
 			}
 			else
 			{
-				_surveyRepository.Create(survey);
+				_unityOfWork.SurveyRepository.Create(survey);
 			}
 		}
 
 		[PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
 		public IList<ThreatmentPlan> GetThreatmentPlan(int patientId)
 		{
-			var list = _threatmentPlanRepository.GetPatientItems(patientId);
+			var list = _unityOfWork.ThreatmentPlanRepository.GetPatientItems(patientId);
 			foreach (var plan in list)
 			{
 				if (!string.IsNullOrEmpty(plan.Username))
@@ -158,13 +149,13 @@ namespace PatientCard.Core.Services
 			{
 				p.Username = Thread.CurrentPrincipal.Identity.Name;
 				Validator.ValidateObject(p, new ValidationContext(p));
-				if (_threatmentPlanRepository.CheckExist(p))
+				if (_unityOfWork.ThreatmentPlanRepository.CheckExist(p))
 				{
-					_threatmentPlanRepository.Update(p);
+					_unityOfWork.ThreatmentPlanRepository.Update(p);
 				}
 				else
 				{
-					_threatmentPlanRepository.Create(p);
+					_unityOfWork.ThreatmentPlanRepository.Create(p);
 				}
 			}
 		}
@@ -172,7 +163,7 @@ namespace PatientCard.Core.Services
 		[PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
 		public IList<VisitDiary> GetVisitDiary(int patientId)
 		{
-			var list = _visitRepository.GetPatientItems(patientId);
+			var list = _unityOfWork.VisitDiaryRepository.GetPatientItems(patientId);
 			foreach (var visit in list)
 			{
 				if (!string.IsNullOrEmpty(visit.Username))
@@ -189,13 +180,13 @@ namespace PatientCard.Core.Services
 		{
 			visitDiary.Username = Thread.CurrentPrincipal.Identity.Name;
 			Validator.ValidateObject(visitDiary, new ValidationContext(visitDiary));
-			if (_visitRepository.CheckExist(visitDiary))
+			if (_unityOfWork.VisitDiaryRepository.CheckExist(visitDiary))
 			{
-				_visitRepository.Update(visitDiary);
+				_unityOfWork.VisitDiaryRepository.Update(visitDiary);
 			}
 			else
 			{
-				_visitRepository.Create(visitDiary);
+				_unityOfWork.VisitDiaryRepository.Create(visitDiary);
 			}
 		}
 	}
