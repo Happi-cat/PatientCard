@@ -3,10 +3,11 @@ using System.Runtime.Serialization;
 
 namespace PatientCard.Core.Models
 {
+	[DataContract]
 	public class DentistStatus : IEntity<int>
 	{
 		[DataMember(Name = "Id")]
-		public virtual int Key { get; private set; }
+		public virtual int Key { get; set; }
 
 		[DataMember(IsRequired = true)]
 		public virtual int PatientId { get; set; }

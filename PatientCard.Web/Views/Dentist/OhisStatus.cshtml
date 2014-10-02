@@ -1,0 +1,18 @@
+﻿<div class="row">
+	<div ng-repeat="item in ohisStatuses | orderBy:'-created' | limitTo:3" class="col-md-3 col-sm-4">
+		<h4>{{ item.ohis }}</h4>
+		<h3>{{ item.created | date }}</h3>
+		<table class="table table-condensed table-bordered">
+			<tr>
+				<td>{{ item.dis1 }}&nbsp;<b>/</b>&nbsp;{{ item.cis1 }}</td>
+				<td>{{ item.dis2 }}&nbsp;<b>/</b>&nbsp;{{ item.cis2 }}</td>
+				<td>{{ item.dis3 }}&nbsp;<b>/</b>&nbsp;{{ item.cis3 }}</td>
+			</tr>
+			<tr>
+				<td>{{ item.dis4 }}&nbsp;<b>/</b>&nbsp;{{ item.cis4 }}</td>
+				<td>{{ item.dis5 }}&nbsp;<b>/</b>&nbsp;{{ item.cis5 }}</td>
+				<td>{{ item.dis6 }}&nbsp;<b>/</b>&nbsp;{{ item.cis6 }}</td>
+			</tr>
+		</table>
+	</div>
+</div>

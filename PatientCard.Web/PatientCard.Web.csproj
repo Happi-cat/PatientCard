@@ -125,6 +125,7 @@
     <Compile Include="Controllers\Api\AccountController.cs" />
     <Compile Include="Controllers\Api\PatientController.cs" />
     <Compile Include="Controllers\Api\SystemController.cs" />
+    <Compile Include="Controllers\DentistController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\WidgetController.cs" />
@@ -463,6 +464,7 @@
     <Content Include="Content\patient-card\controllers\patientNewCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientOverviewCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientListCtrl.js" />
+    <Content Include="Content\patient-card\controllers\patientStatusCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientSurveyCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientTreatmentPlanCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientVisitCtrl.js" />
@@ -591,6 +593,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Patient\TreatmentPlanEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\DentistStatus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\DentistStatusEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\CpiStatus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\CpiStatusEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\DfmStatus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\DfmStatusEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\OhisStatus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dentist\OhisStatusEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Patient\Status.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

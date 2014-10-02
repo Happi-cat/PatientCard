@@ -1,0 +1,18 @@
+﻿<div class="row">
+	<div ng-repeat="item in cpiStatuses | orderBy:'-created' | limitTo:3" class="col-md-3 col-sm-4">
+		<h4>{{ item.cpi }}</h4>
+		<h3>{{ item.created | date }}</h3>
+		<table class="table table-condensed table-bordered">
+			<tr>
+				<td>{{ item.value1 }}</td>
+				<td>{{ item.value2 }}</td>
+				<td>{{ item.value3 }}</td>
+			</tr>
+			<tr>
+				<td>{{ item.value4 }}</td>
+				<td>{{ item.value5 }}</td>
+				<td>{{ item.value6 }}</td>
+			</tr>
+		</table>
+	</div>
+</div>

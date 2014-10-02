@@ -25,10 +25,10 @@ function PatientOverviewCtrl($scope, patientSvc) {
 			url: '/patient/view/' + $scope.patientId + '/first-survey'
 		},
 		{
-			icon: 'health-icon-capsule',
+			icon: 'health-icon-toothbrush',
 			title: 'План лечения',
 			description: 'Выберите этот пункт если хотите посмотреть план лечения пациента',
-			url: '/patient/view/' + $scope.patientId + '/Treatment-plan'
+			url: '/patient/view/' + $scope.patientId + '/treatment-plan'
 		},
 		{
 			icon: 'health-icon-microscope',
@@ -41,7 +41,14 @@ function PatientOverviewCtrl($scope, patientSvc) {
 			title: 'Дневник посещений',
 			description: 'Выберите данный пункт если хотите посмотреть дневник посещений пациента и(или) добавить новую запись',
 			url: '/patient/view/' + $scope.patientId + '/visit'
-		}];
+		},
+		{
+			icon: 'health-icon-tooth',
+			title: 'Стоматологический статус',
+			description: 'Здесь вы можете узнать стоматологический статус для данного пациента',
+			url: '/patient/view/' + $scope.patientId + '/status'
+		}
+	];
 
 	var load = function () {
 		patientSvc.getPatient($scope.patientId).then(function (data) {

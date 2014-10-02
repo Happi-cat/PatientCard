@@ -1,0 +1,13 @@
+﻿<table class="table table-condensed table-bordered small">
+	<thead ng-include="'/Widget/TableHeader'"></thead>
+	<tbody>
+		<tr ng-repeat="item in dentistStatuses | orderBy:'-created' | limitTo:3">
+			<td>{{ item.created | date }}</td>
+			<td>{{ item.bite }}</td>
+			<td>{{ item.hardTissue }}</td>
+			<td>{{ item.mucous }}</td>
+			<td>{{ item.xrayDiagnostics }}</td>
+			<td>{{ item.preliminaryDiagnosis }}</td>
+		</tr>
+	</tbody>
+</table>

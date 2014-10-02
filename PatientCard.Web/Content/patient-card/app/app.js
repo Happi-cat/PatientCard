@@ -6,7 +6,7 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 		home: '/',
 		logout: '/logout',
 	})
-	.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
+	.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: '/Page/Home',
@@ -41,13 +41,18 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
 			})
-			.when('/patient/view/:id/Treatment-plan', {
+			.when('/patient/view/:id/treatment-plan', {
 				templateUrl: '/Patient/TreatmentPlan',
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
 			})
 			.when('/patient/view/:id/visit', {
-				templateUrl: '/Patient/visit',
+				templateUrl: '/Patient/Visit',
+				controller: 'PatientCtrl',
+				perm: { authorized: true }
+			})
+			.when('/patient/view/:id/status', {
+				templateUrl: '/Patient/Status',
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
 			})
@@ -61,7 +66,7 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 				controller: 'PatientEditCtrl',
 				perm: { authorized: true }
 			})
-			.when('/patient/edit/:id/Treatment-plan', {
+			.when('/patient/edit/:id/treatment-plan', {
 				templateUrl: '/Patient/TreatmentPlanEditor',
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
@@ -80,36 +85,36 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 		// Push auth interceptor
 		$httpProvider.interceptors.push('authHttpInterceptor');
 	}]
-	).run(function($rootScope, $location, $timeout, permSvc, URLS) {
+	).run(function ($rootScope, $location, $timeout, permSvc, URLS) {
 		$rootScope.alerts = [];
 
-		$timeout(function() {
+		$timeout(function () {
 
 			$rootScope.alerts.splice(0, 1);
 		}, 30000);
 
-		$rootScope.addAlert = function(alert) {
+		$rootScope.addAlert = function (alert) {
 			if ($rootScope.alerts.length > 3) {
 				$rootScope.alerts.splice(0, 1);
 			}
 			$rootScope.alerts.push(alert);
 		};
 
-		$rootScope.closeAlert = function(index) {
+		$rootScope.closeAlert = function (index) {
 			$rootScope.alerts.splice(index, 1);
 		};
 
-		$rootScope.onLoadFailed = function(error) {
+		$rootScope.onLoadFailed = function (error) {
 			console.log(error);
 			$rootScope.addAlert({ type: 'danger', title: 'Ошибка при загрузке', details: 'Не удаётся загрузить данные' });
 		};
 
-		$rootScope.onSaveFailed = function(error) {
+		$rootScope.onSaveFailed = function (error) {
 			console.log(error);
 			$rootScope.addAlert({ type: 'danger', title: 'Ошибка при сохранении', details: 'Не удаётся сохранить данные' });
 		};
 
-		$rootScope.goUp = function(breadcrumb) {
+		$rootScope.goUp = function (breadcrumb) {
 			if (breadcrumb && breadcrumb.items) {
 				var items = breadcrumb.items;
 				if (items.length > 0) {
@@ -122,7 +127,7 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 		};
 
 		$rootScope.checkPerm = permSvc.checkPerm;
-	
+
 		// Check perm before page change
 		$rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
 			if (!permSvc.checkPerm(currRoute.perm)) {

@@ -46,7 +46,7 @@ function PatientVisitCtrl($scope, patientSvc, ROLES) {
 			var item = $scope.breadcrumb.items[1];
 			item.title = data.displayName;
 
-			return patientSvc.getvisit($scope.patientId);
+			return patientSvc.getVisit($scope.patientId);
 		}).then(function (data) {
 			$scope.visits = data;
 		}, $scope.onLoadFailed);
@@ -56,7 +56,7 @@ function PatientVisitCtrl($scope, patientSvc, ROLES) {
 
 	$scope.ok = function () {
 		$scope.visit.patientId = $scope.patientId;
-		patientSvc.storevisit($scope.visit).then(function (data) {
+		patientSvc.storeVisit($scope.visit).then(function (data) {
 			$scope.visit = {};
 			load();
 		}, $scope.onSaveFailed);

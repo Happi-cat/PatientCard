@@ -54,42 +54,7 @@ namespace PatientCard.Web.Controllers
 			return View();
 		}
 
-		public ActionResult DentistStatus()
-		{
-			return View();
-		}
-
-		public ActionResult DentistStatusEditor()
-		{
-			return View();
-		}
-
-		public ActionResult CpiStatus()
-		{
-			return View();
-		}
-
-		public ActionResult CpiStatusEditor()
-		{
-			return View();
-		}
-
-		public ActionResult DfmStatus()
-		{
-			return View();
-		}
-
-		public ActionResult DfmStatusEditor()
-		{
-			return View();
-		}
-
-		public ActionResult OhisStatus()
-		{
-			return View();
-		}
-
-		public ActionResult OhisStatusEditor()
+		public ActionResult Status()
 		{
 			return View();
 		}
