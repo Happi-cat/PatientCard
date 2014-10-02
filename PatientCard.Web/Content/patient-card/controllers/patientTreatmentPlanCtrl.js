@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
+function PatientTreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
 	$scope.editPerm = {
 		role: [ROLES.doctor, ROLES.admin]
 	};
@@ -21,7 +21,7 @@ function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
 
 	var options = [];
 	var load = function () {
-		systemSvc.getThreatmentOptions().then(function (data) {
+		systemSvc.getTreatmentOptions().then(function (data) {
 			options = data;
 
 			return patientSvc.getPatient($scope.patientId);
@@ -31,11 +31,11 @@ function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
 			var item = $scope.breadcrumb.items[1];
 			item.title = data.displayName;
 
-			return patientSvc.getThreatmentPlan($scope.patientId);
+			return patientSvc.getTreatmentPlan($scope.patientId);
 		}).then(function (data) {
-			$scope.threatmentPlan = data;
-			if (!$scope.threatmentPlan) {
-				$scope.threatmentPlan = [];
+			$scope.treatmentPlan = data;
+			if (!$scope.treatmentPlan) {
+				$scope.treatmentPlan = [];
 			}
 
 			angular.forEach(options, getPlan);
@@ -46,15 +46,15 @@ function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
 
 	var getPlan = function (option) {
 		var plan = null;
-		angular.forEach($scope.threatmentPlan, function (item) {
-			if (!plan && option.id == item.threatmentOptionId) {
+		angular.forEach($scope.treatmentPlan, function (item) {
+			if (!plan && option.id == item.treatmentOptionId) {
 				plan = item;
 			}
 		});
 
 		if (!plan) {
-			plan = { threatmentOptionId: option.id, patientId: $scope.patientId };
-			$scope.threatmentPlan.push(plan);
+			plan = { treatmentOptionId: option.id, patientId: $scope.patientId };
+			$scope.treatmentPlan.push(plan);
 		}
 		plan.name = option.name;
 		plan.order = option.order;
@@ -62,7 +62,7 @@ function PatientThreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
 	};
 
 	$scope.ok = function () {
-		patientSvc.storeThreatmentPlan($scope.threatmentPlan).then(function (data) {
+		patientSvc.storeTreatmentPlan($scope.treatmentPlan).then(function (data) {
 			$scope.goUp($scope.breadcrumb);
 		}, $scope.onSaveFailed);
 	};

@@ -76,32 +76,92 @@ namespace PatientCard.Web.Controllers.Api
 		}
 
 		[HttpGet]
-		[ActionName("Threatment-Plan")]
-		public IList<ThreatmentPlan> GetThreatmentPlan(int patientId)
+		[ActionName("Treatment-Plan")]
+		public IList<TreatmentPlan> GetTreatmentPlan(int patientId)
 		{
-			return _patientService.GetThreatmentPlan(patientId);
+			return _patientService.GetTreatmentPlan(patientId);
 		}
 
 		[HttpPost]
-		[ActionName("Threatment-Plan")]
-		public HttpResponseMessage PostThreatmentPlan([FromBody]IList<ThreatmentPlan> plan)
+		[ActionName("Treatment-Plan")]
+		public HttpResponseMessage PostTreatmentPlan([FromBody]IList<TreatmentPlan> plan)
 		{
-			_patientService.StoreThreatmentPlan(plan);
+			_patientService.StoreTreatmentPlan(plan);
 			return new HttpResponseMessage(HttpStatusCode.Created);
 		}
 
 		[HttpGet]
-		[ActionName("Visit-Diary")]
-		public IList<VisitDiary> GetVisitDiary(int patientId)
+		[ActionName("Visit")]
+		public IList<Visit> GetVisits(int patientId)
 		{
-			return _patientService.GetVisitDiary(patientId);
+			return _patientService.GetVisits(patientId);
 		}
 
 		[HttpPost]
-		[ActionName("Visit-Diary")]
-		public HttpResponseMessage PostVisitDiary(VisitDiary visitDiary)
+		[ActionName("Visit")]
+		public HttpResponseMessage PostVisitDiary(Visit visit)
 		{
-			_patientService.StoreVisitDiary(visitDiary);
+			_patientService.StoreVisit(visit);
+			return new HttpResponseMessage(HttpStatusCode.Created);
+		}
+
+		[HttpGet]
+		[ActionName("Dentist-Status")]
+		public IList<DentistStatus> GetDentistStatuses(int patientId)
+		{
+			return _patientService.GetDentistStatuses(patientId);
+		}
+
+		[HttpPost]
+		[ActionName("Dentist-Status")]
+		public HttpResponseMessage PostDentistStatus(DentistStatus dentistStatus)
+		{
+			_patientService.StoreDentistStatus(dentistStatus);
+			return new HttpResponseMessage(HttpStatusCode.Created);
+		}
+
+		[HttpGet]
+		[ActionName("Cpi-Status")]
+		public IList<CpiStatus> GetCpiStatuses(int patientId)
+		{
+			return _patientService.GetCpiStatuses(patientId);
+		}
+
+		[HttpPost]
+		[ActionName("Cpi-Status")]
+		public HttpResponseMessage PostCpiStatus(CpiStatus cpiStatus)
+		{
+			_patientService.StoreCpiStatus(cpiStatus);
+			return new HttpResponseMessage(HttpStatusCode.Created);
+		}
+
+		[HttpGet]
+		[ActionName("Dfm-Status")]
+		public IList<DfmStatus> GetDfmStatuses(int patientId)
+		{
+			return _patientService.GetDfmStatuses(patientId);
+		}
+
+		[HttpPost]
+		[ActionName("Dfm-Status")]
+		public HttpResponseMessage PostDfmStatus(DfmStatus dfmStatus)
+		{
+			_patientService.StoreDfmStatus(dfmStatus);
+			return new HttpResponseMessage(HttpStatusCode.Created);
+		}
+
+		[HttpGet]
+		[ActionName("Ohis-Status")]
+		public IList<OhisStatus> GetOhisStatuses(int patientId)
+		{
+			return _patientService.GetOhisStatuses(patientId);
+		}
+
+		[HttpPost]
+		[ActionName("Ohis-Status")]
+		public HttpResponseMessage PostOhisStatus(OhisStatus ohisStatus)
+		{
+			_patientService.StoreOhisStatus(ohisStatus);
 			return new HttpResponseMessage(HttpStatusCode.Created);
 		}
 	}

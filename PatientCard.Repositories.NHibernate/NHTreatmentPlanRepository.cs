@@ -7,50 +7,50 @@ using PatientCard.Core.Repositories;
 
 namespace PatientCard.Repositories.NHibernate
 {
-	public class NHThreatmentPlanRepository : NHibernateRepository<ThreatmentPlan, Tuple<int, int>>, IThreatmentPlanRepository
+	public class NHTreatmentPlanRepository : NHibernateRepository<TreatmentPlan, Tuple<int, int>>, ITreatmentPlanRepository
 	{
-		public IList<ThreatmentPlan> GetPatientItems(int patientId)
+		public IList<TreatmentPlan> GetPatientItems(int patientId)
 		{
-			IList<ThreatmentPlan> result;
+			IList<TreatmentPlan> result;
 			using (ISession session = NHibernateHelper.OpenSession())
 			using (ITransaction transaction = session.BeginTransaction())
 			{
-				result = session.CreateCriteria<ThreatmentPlan>().Add(Restrictions.Eq("PatientId", patientId)).List<ThreatmentPlan>();
+				result = session.CreateCriteria<TreatmentPlan>().Add(Restrictions.Eq("PatientId", patientId)).List<TreatmentPlan>();
 				transaction.Commit();
 			}
 			return result;
 		}
 
-		public IList<ThreatmentPlan> GetUsernameItems(string username)
+		public IList<TreatmentPlan> GetUsernameItems(string username)
 		{
-			IList<ThreatmentPlan> result;
+			IList<TreatmentPlan> result;
 			using (ISession session = NHibernateHelper.OpenSession())
 			using (ITransaction transaction = session.BeginTransaction())
 			{
-				result = session.CreateCriteria<ThreatmentPlan>().Add(Restrictions.Eq("Username", username)).List<ThreatmentPlan>();
+				result = session.CreateCriteria<TreatmentPlan>().Add(Restrictions.Eq("Username", username)).List<TreatmentPlan>();
 				transaction.Commit();
 			}
 			return result;
 		}
 
 
-		public new ThreatmentPlan Get(ThreatmentPlan key)
+		public new TreatmentPlan Get(TreatmentPlan key)
 		{
 			using (ISession session = NHibernateHelper.OpenSession())
 			{
-				return session.Get<ThreatmentPlan>(key);
+				return session.Get<TreatmentPlan>(key);
 			}
 		}
 
-		public new bool CheckExist(ThreatmentPlan entity)
+		public new bool CheckExist(TreatmentPlan entity)
 		{
 			using (ISession session = NHibernateHelper.OpenSession())
 			{
-				return session.Get<ThreatmentPlan>(new ThreatmentPlan{ PatientId = entity.PatientId, ThreatmentOptionId = entity.ThreatmentOptionId}) != null;
+				return session.Get<TreatmentPlan>(new TreatmentPlan{ PatientId = entity.PatientId, TreatmentOptionId = entity.TreatmentOptionId}) != null;
 			}
 		}
 
-		public void Update(ThreatmentPlan item)
+		public void Update(TreatmentPlan item)
 		{
 			using (ISession session = NHibernateHelper.OpenSession())
 			using (ITransaction transaction = session.BeginTransaction())

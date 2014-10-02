@@ -1,14 +1,14 @@
-﻿<div class="container" ng-controller="PatientThreatmentPlanCtrl">
+﻿<div class="container" ng-controller="PatientTreatmentPlanCtrl">
 	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
 	<div class="page-header">
 		<h3>План лечения</h3>
 	</div>
-	<form name="threatmentPlanForm" class="form-horizontal" role="form">
-		<div class="form-group" ng-repeat="item in threatmentPlan | orderBy:['group','order'] ">
+	<form name="treatmentPlanForm" class="form-horizontal" role="form">
+		<div class="form-group" ng-repeat="item in treatmentPlan | orderBy:['group','order'] ">
 			<label class="col-sm-1 control-label" ng-if="!item.order">{{ item.group }}</label>
 			<div class="col-sm-11" ng-class="{ 'col-sm-offset-1' : item.order }">
 				<label class="control-label">{{ item.name }}</label>
-				<input type="text" class="form-control" name="description{{ item.threatmentOptionId }}" ng-model="item.description">
+				<input type="text" class="form-control" name="description{{ item.treatmentOptionId }}" ng-model="item.description">
 			</div>
 		</div>
 		<div class="form-group">

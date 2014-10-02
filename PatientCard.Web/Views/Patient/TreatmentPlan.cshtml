@@ -1,0 +1,25 @@
+﻿<div class="container" ng-controller="PatientTreatmentPlanCtrl">
+	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
+	<div class="page-header">
+		<h3>План лечения</h3>
+	</div>
+	<dl>
+		<dt ng-repeat-start="item in treatmentPlan | orderBy:['group','order'] ">
+			<label class="col-sm-1 control-label" ng-if="!item.order">{{ item.group }}</label>
+			<div class="col-sm-11" ng-class="{ 'col-sm-offset-1' : item.order }">
+				<label class="control-label">{{ item.name }}</label>
+			</div>
+		</dt>
+		<dd ng-repeat-end>
+			<div class="col-sm-offset-1 col-sm-11">
+				{{ item.description }}
+			</div>
+		</dd>
+	</dl>
+	<div class="clearfix Lower-padding"></div>
+	<div class="row">
+		<div class="col-sm-offset-1 col-sm-11">
+			<a href="#!/patient/edit/{{ patientId }}/treatment-plan" class="btn btn-primary" ng-if="checkPerm(editPerm)"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Заполнить форму</a>
+		</div>
+	</div>
+</div>

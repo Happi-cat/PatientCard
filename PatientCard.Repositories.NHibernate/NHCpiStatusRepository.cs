@@ -6,27 +6,27 @@ using PatientCard.Core.Repositories;
 
 namespace PatientCard.Repositories.NHibernate
 {
-	public class NHVisitDiaryRepository :NHibernateRepository<VisitDiary,int> , IVisitDiaryRepository
+	public class NHCpiStatusRepository : NHibernateRepository<CpiStatus, int>, ICpiStatusRepository
 	{
-		public IList<VisitDiary> GetPatientItems(int patientId)
+		public IList<CpiStatus> GetPatientItems(int patientId)
 		{
-			IList<VisitDiary> result;
+			IList<CpiStatus> result;
 			using (ISession session = NHibernateHelper.OpenSession())
 			using (ITransaction transaction = session.BeginTransaction())
 			{
-				result = session.CreateCriteria<VisitDiary>().Add(Restrictions.Eq("PatientId", patientId)).List<VisitDiary>();
+				result = session.CreateCriteria<CpiStatus>().Add(Restrictions.Eq("PatientId", patientId)).List<CpiStatus>();
 				transaction.Commit();
 			}
 			return result;
 		}
 
-		public IList<VisitDiary> GetUsernameItems(string username)
+		public IList<CpiStatus> GetUsernameItems(string username)
 		{
-			IList<VisitDiary> result;
+			IList<CpiStatus> result;
 			using (ISession session = NHibernateHelper.OpenSession())
 			using (ITransaction transaction = session.BeginTransaction())
 			{
-				result = session.CreateCriteria<VisitDiary>().Add(Restrictions.Eq("Username", username)).List<VisitDiary>();
+				result = session.CreateCriteria<CpiStatus>().Add(Restrictions.Eq("Username", username)).List<CpiStatus>();
 				transaction.Commit();
 			}
 			return result;

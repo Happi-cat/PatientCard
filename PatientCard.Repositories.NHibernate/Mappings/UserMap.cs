@@ -114,37 +114,37 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 		}
 	}
 
-	public class ThreatmentOptionMap : ClassMap<ThreatmentOption>
+	public class TreatmentOptionMap : ClassMap<TreatmentOption>
 	{
-		public ThreatmentOptionMap()
+		public TreatmentOptionMap()
 		{
-			Table("ThreatmentOptions");
+			Table("TreatmentOptions");
 			Id(e => e.Key, "Id").GeneratedBy.Native();
-			Map(e => e.Name).UniqueKey("uk_ThreatmentOptions").Not.Nullable().Length(400);
-			Map(e => e.GroupNumber).UniqueKey("uk_ThreatmentOptions").Not.Nullable();
+			Map(e => e.Name).UniqueKey("uk_TreatmentOptions").Not.Nullable().Length(400);
+			Map(e => e.GroupNumber).UniqueKey("uk_TreatmentOptions").Not.Nullable();
 			Map(e => e.OrderNumber);
 		}
 	}
 
-	public class ThreatmentPlanMap : ClassMap<ThreatmentPlan>
+	public class TreatmentPlanMap : ClassMap<TreatmentPlan>
 	{
-		public ThreatmentPlanMap()
+		public TreatmentPlanMap()
 		{
-			Table("ThreatmentPlans");
+			Table("TreatmentPlans");
 			CompositeId()
 				.KeyProperty(e => e.PatientId)
-				.KeyProperty(e => e.ThreatmentOptionId);
+				.KeyProperty(e => e.TreatmentOptionId);
 			Map(e => e.Description).Length(400);
 			Map(e => e.Username).Not.Nullable().Length(100);
 			Map(e => e.Created).Not.Insert().Not.Update();
 		}
 	}
 
-	public class VisitDiaryMap : ClassMap<VisitDiary>
+	public class VisitDiaryMap : ClassMap<Visit>
 	{
 		public VisitDiaryMap()
 		{
-			Table("VisitDiary");
+			Table("Visits");
 			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.PatientId).Not.Nullable();
 			Map(e => e.Username).Not.Nullable().Length(100);

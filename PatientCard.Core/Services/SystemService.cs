@@ -16,22 +16,22 @@ namespace PatientCard.Core.Services
 
 		public IList<Job> GetJobs()
 		{
-			return _unityOfWork.JobRepository.GetAll();
+			return _unityOfWork.Job.GetAll();
 		}
 
 		public IList<SurveyType> GetSurveyTypes()
 		{
-			return _unityOfWork.SurveyTypeRepository.GetAll();
+			return _unityOfWork.SurveyType.GetAll();
 		}
 
 		public IList<FirstSurveyOption> GetFirstSurveyOptions()
 		{
-			return _unityOfWork.FirstSurveyOptionRepository.GetAll();
+			return _unityOfWork.FirstSurveyOption.GetAll();
 		}
 
-		public IList<ThreatmentOption> GetThreatmentOptions()
+		public IList<TreatmentOption> GetTreatmentOptions()
 		{
-			return _unityOfWork.ThreatmentOptionRepository.GetAll();
+			return _unityOfWork.TreatmentOption.GetAll();
 		}
 	}
 }

@@ -464,8 +464,8 @@
     <Content Include="Content\patient-card\controllers\patientOverviewCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientListCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientSurveyCtrl.js" />
-    <Content Include="Content\patient-card\controllers\patientThreatmentPlan.js" />
-    <Content Include="Content\patient-card\controllers\patientVisitDiary.js" />
+    <Content Include="Content\patient-card\controllers\patientTreatmentPlanCtrl.js" />
+    <Content Include="Content\patient-card\controllers\patientVisitCtrl.js" />
     <Content Include="Content\patient-card\controllers\tableHeadCtrl.js" />
     <Content Include="Content\patient-card\modules\auth\httpInterceptor.js" />
     <Content Include="Content\patient-card\modules\auth\permSvc.js" />
@@ -566,13 +566,13 @@
     <Content Include="Views\Patient\FirstSurvey.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Patient\ThreatmentPlan.cshtml" />
+    <Content Include="Views\Patient\TreatmentPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Patient\Survey.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Patient\VisitDiary.cshtml" />
+    <Content Include="Views\Patient\Visit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Patient\Editor.cshtml" />
@@ -590,7 +590,7 @@
     <Content Include="Views\Page\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Patient\ThreatmentPlanEditor.cshtml" />
+    <Content Include="Views\Patient\TreatmentPlanEditor.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

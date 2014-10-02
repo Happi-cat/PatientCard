@@ -37,10 +37,10 @@ namespace PatientCard.Web.Controllers.Api
 		}
 
 		[HttpGet]
-		[ActionName("Threatment-Options")]
-		public IList<ThreatmentOption> GetThreatmentOptions()
+		[ActionName("Treatment-Options")]
+		public IList<TreatmentOption> GetTreatmentOptions()
 		{
-			return _systemService.GetThreatmentOptions();
+			return _systemService.GetTreatmentOptions();
 		}
 	}
 }

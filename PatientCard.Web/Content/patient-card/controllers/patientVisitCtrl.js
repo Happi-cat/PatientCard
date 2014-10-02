@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function PatientVisitDiaryCtrl($scope, patientSvc, ROLES) {
+function PatientVisitCtrl($scope, patientSvc, ROLES) {
 	$scope.editPerm = {
 		role: [ROLES.doctor, ROLES.admin]
 	};
@@ -37,7 +37,7 @@ function PatientVisitDiaryCtrl($scope, patientSvc, ROLES) {
 	};
 
 	$scope.sortFields = [];
-	$scope.visitDiary = {};
+	$scope.visit = {};
 
 	var load = function () {
 		patientSvc.getPatient($scope.patientId).then(function (data) {
@@ -46,7 +46,7 @@ function PatientVisitDiaryCtrl($scope, patientSvc, ROLES) {
 			var item = $scope.breadcrumb.items[1];
 			item.title = data.displayName;
 
-			return patientSvc.getVisitDiary($scope.patientId);
+			return patientSvc.getvisit($scope.patientId);
 		}).then(function (data) {
 			$scope.visits = data;
 		}, $scope.onLoadFailed);
@@ -55,14 +55,14 @@ function PatientVisitDiaryCtrl($scope, patientSvc, ROLES) {
 	load();
 
 	$scope.ok = function () {
-		$scope.visitDiary.patientId = $scope.patientId;
-		patientSvc.storeVisitDiary($scope.visitDiary).then(function (data) {
-			$scope.visitDiary = {};
+		$scope.visit.patientId = $scope.patientId;
+		patientSvc.storevisit($scope.visit).then(function (data) {
+			$scope.visit = {};
 			load();
 		}, $scope.onSaveFailed);
 	};
 
 	$scope.cancel = function () {
-		$scope.visitDiary = {};
+		$scope.visit = {};
 	};
 }

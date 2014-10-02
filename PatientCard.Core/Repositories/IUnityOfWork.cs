@@ -4,16 +4,20 @@ namespace PatientCard.Core.Repositories
 {
 	public interface IUnityOfWork
 	{
-		IRepository<Job, string> JobRepository { get; }
-		IRepository<SurveyType, int> SurveyTypeRepository { get; }
-		IRepository<FirstSurveyOption, int> FirstSurveyOptionRepository { get; }
-		IRepository<ThreatmentOption, int> ThreatmentOptionRepository { get; }
-		IRepository<User, string> UserRepository { get; }
-		IRepository<Patient, int> PatientRepositopry { get;  }
-		IFirstSurveyRepository FirstSurveyRepository { get; }
-		IFirstSurveyDetailRepository FirstSurveyDetailRepository { get; }
-		ISurveyRepository SurveyRepository { get; }
-		IThreatmentPlanRepository ThreatmentPlanRepository { get; }
-		IVisitDiaryRepository VisitDiaryRepository { get; }
+		IRepository<Job, string> Job { get; }
+		IRepository<SurveyType, int> SurveyType { get; }
+		IRepository<FirstSurveyOption, int> FirstSurveyOption { get; }
+		IRepository<TreatmentOption, int> TreatmentOption { get; }
+		IRepository<User, string> User { get; }
+		IRepository<Patient, int> Patient { get;  }
+		IFirstSurveyRepository FirstSurvey { get; }
+		IFirstSurveyDetailRepository FirstSurveyDetail { get; }
+		ISurveyRepository Survey { get; }
+		ITreatmentPlanRepository TreatmentPlan { get; }
+		IVisitRepository Visit { get; }
+		IDentistStatusRepository DentistStatus { get; }
+		ICpiStatusRepository CpiStatus { get; }
+		IDfmStatusRepository DfmStatus { get; }
+		IOhisStatusRepository OhisStatus { get; }
 	}
 }

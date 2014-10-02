@@ -33,8 +33,8 @@ angular.module('patient-card.services')
 			return httpWrap({ method: 'GET', url: '/api/system/first-survey-options', cache: true });
 		};
 
-		self.getThreatmentOptions = function() {
-			return httpWrap({ method: 'GET', url: '/api/system/threatment-options', cache: true });
+		self.getTreatmentOptions = function() {
+			return httpWrap({ method: 'GET', url: '/api/system/treatment-options', cache: true });
 		};
 
 		return self;

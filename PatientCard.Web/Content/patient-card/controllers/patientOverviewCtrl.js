@@ -28,7 +28,7 @@ function PatientOverviewCtrl($scope, patientSvc) {
 			icon: 'health-icon-capsule',
 			title: 'План лечения',
 			description: 'Выберите этот пункт если хотите посмотреть план лечения пациента',
-			url: '/patient/view/' + $scope.patientId + '/threatment-plan'
+			url: '/patient/view/' + $scope.patientId + '/Treatment-plan'
 		},
 		{
 			icon: 'health-icon-microscope',
@@ -40,7 +40,7 @@ function PatientOverviewCtrl($scope, patientSvc) {
 			icon: 'health-icon-sthetoscope',
 			title: 'Дневник посещений',
 			description: 'Выберите данный пункт если хотите посмотреть дневник посещений пациента и(или) добавить новую запись',
-			url: '/patient/view/' + $scope.patientId + '/visit-diary'
+			url: '/patient/view/' + $scope.patientId + '/visit'
 		}];
 
 	var load = function () {

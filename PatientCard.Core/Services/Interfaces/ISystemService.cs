@@ -11,6 +11,6 @@ namespace PatientCard.Core.Services.Interfaces
 
 		IList<FirstSurveyOption> GetFirstSurveyOptions();
 		
-		IList<ThreatmentOption> GetThreatmentOptions();
+		IList<TreatmentOption> GetTreatmentOptions();
 	}
 }

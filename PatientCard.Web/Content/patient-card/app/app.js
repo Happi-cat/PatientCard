@@ -41,13 +41,13 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
 			})
-			.when('/patient/view/:id/threatment-plan', {
-				templateUrl: '/Patient/ThreatmentPlan',
+			.when('/patient/view/:id/Treatment-plan', {
+				templateUrl: '/Patient/TreatmentPlan',
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
 			})
-			.when('/patient/view/:id/visit-diary', {
-				templateUrl: '/Patient/VisitDiary',
+			.when('/patient/view/:id/visit', {
+				templateUrl: '/Patient/visit',
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
 			})
@@ -61,8 +61,8 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 				controller: 'PatientEditCtrl',
 				perm: { authorized: true }
 			})
-			.when('/patient/edit/:id/threatment-plan', {
-				templateUrl: '/Patient/ThreatmentPlanEditor',
+			.when('/patient/edit/:id/Treatment-plan', {
+				templateUrl: '/Patient/TreatmentPlanEditor',
 				controller: 'PatientCtrl',
 				perm: { authorized: true }
 			})

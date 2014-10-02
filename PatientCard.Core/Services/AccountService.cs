@@ -11,7 +11,7 @@ namespace PatientCard.Core.Services
 	{
 		public AccountService(IUnityOfWork unityOfWork)
 		{
-			Repository = unityOfWork.UserRepository;
+			Repository = unityOfWork.User;
 		}
 
 		[PrincipalPermission(SecurityAction.Demand, Authenticated = true)]

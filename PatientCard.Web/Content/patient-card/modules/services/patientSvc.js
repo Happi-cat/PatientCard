@@ -65,32 +65,32 @@ angular.module('patient-card.services')
 			return httpWrap({ method: 'POST', url: '/api/patient/survey', data: survey });
 		};
 
-		self.getThreatmentPlan = function(patientId) {
+		self.getTreatmentPlan = function(patientId) {
 			return httpWrap({
 				method: 'GET',
-				url: '/api/patient/threatment-plan',
+				url: '/api/patient/Treatment-plan',
 				params: {
 					patientId: patientId
 				}
 			});
 		};
 
-		self.storeThreatmentPlan = function(threatmentPlan) {
-			return httpWrap({ method: 'POST', url: '/api/patient/threatment-plan', data: threatmentPlan });
+		self.storeTreatmentPlan = function(TreatmentPlan) {
+			return httpWrap({ method: 'POST', url: '/api/patient/Treatment-plan', data: TreatmentPlan });
 		};
 
-		self.getVisitDiary = function(patientId) {
+		self.getVisit = function(patientId) {
 			return httpWrap({
 				method: 'GET',
-				url: '/api/patient/visit-diary',
+				url: '/api/patient/visit',
 				params: {
 					patientId: patientId
 				}
 			});
 		};
 
-		self.storeVisitDiary = function(diary) {
-			return httpWrap({ method: 'POST', url: '/api/patient/visit-diary', data: diary });
+		self.storeVisit = function(diary) {
+			return httpWrap({ method: 'POST', url: '/api/patient/visit', data: diary });
 		};
 
 		return self;

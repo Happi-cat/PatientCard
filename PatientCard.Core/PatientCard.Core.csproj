@@ -63,28 +63,35 @@
     <Compile Include="Injection\Containers\LazyFactoryContainer.cs" />
     <Compile Include="Injection\Containers\ThreadLocalFactoryContainer.cs" />
     <Compile Include="Injection\IFactoryContainer.cs" />
+    <Compile Include="Models\CpiStatus.cs" />
     <Compile Include="Models\DentistStatus.cs" />
+    <Compile Include="Models\DfmStatus.cs" />
     <Compile Include="Models\FirstSurvey.cs" />
     <Compile Include="Models\FirstSurveyDetail.cs" />
     <Compile Include="Models\FirstSurveyOption.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\OhisStatus.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Survey.cs" />
     <Compile Include="Models\SurveyType.cs" />
-    <Compile Include="Models\ThreatmentPlan.cs" />
-    <Compile Include="Models\ThreatmentOption.cs" />
+    <Compile Include="Models\TreatmentPlan.cs" />
+    <Compile Include="Models\TreatmentOption.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\VisitDiary.cs" />
+    <Compile Include="Models\Visit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ICpiStatusRepository.cs" />
+    <Compile Include="Repositories\IDentistStatusRepository.cs" />
+    <Compile Include="Repositories\IDfmStatusRepository.cs" />
     <Compile Include="Repositories\IFirstSurveyDetailRepository.cs" />
     <Compile Include="Repositories\IFirstSurveyRepository.cs" />
+    <Compile Include="Repositories\IOhisStatusRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\ISurveyRepository.cs" />
-    <Compile Include="Repositories\IThreatmentPlanRepository.cs" />
+    <Compile Include="Repositories\ITreatmentPlanRepository.cs" />
     <Compile Include="Repositories\IUnityOfWork.cs" />
-    <Compile Include="Repositories\IVisitDiaryRepository.cs" />
+    <Compile Include="Repositories\IVisitRepository.cs" />
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\Interfaces\IAccountService.cs" />
     <Compile Include="Services\Interfaces\IAuthService.cs" />
@@ -94,10 +101,9 @@
     <Compile Include="Services\PatientService.cs" />
     <Compile Include="Services\Service.cs" />
     <Compile Include="Services\SystemService.cs" />
+    <Compile Include="Utilities\CalcHelper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -34,12 +34,12 @@ namespace PatientCard.Web.Controllers
 			return View(model);
 		}
 
-		public ActionResult ThreatmentPlan()
+		public ActionResult TreatmentPlan()
 		{
 			return View();
 		}
 
-		public ActionResult ThreatmentPlanEditor()
+		public ActionResult TreatmentPlanEditor()
 		{
 			return View();
 		}
@@ -49,10 +49,49 @@ namespace PatientCard.Web.Controllers
 			return View();
 		}
 
-		public ActionResult VisitDiary()
+		public ActionResult Visit()
 		{
 			return View();
 		}
 
+		public ActionResult DentistStatus()
+		{
+			return View();
+		}
+
+		public ActionResult DentistStatusEditor()
+		{
+			return View();
+		}
+
+		public ActionResult CpiStatus()
+		{
+			return View();
+		}
+
+		public ActionResult CpiStatusEditor()
+		{
+			return View();
+		}
+
+		public ActionResult DfmStatus()
+		{
+			return View();
+		}
+
+		public ActionResult DfmStatusEditor()
+		{
+			return View();
+		}
+
+		public ActionResult OhisStatus()
+		{
+			return View();
+		}
+
+		public ActionResult OhisStatusEditor()
+		{
+			return View();
+		}
     }
 }

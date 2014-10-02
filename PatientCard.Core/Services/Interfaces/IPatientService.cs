@@ -11,10 +11,22 @@ namespace PatientCard.Core.Services.Interfaces
 		IList<Survey> GetSurveys(int patientId);
 		void StoreSurvey(Survey survey);
 
-		IList<ThreatmentPlan> GetThreatmentPlan(int patientId);
-		void StoreThreatmentPlan(IList<ThreatmentPlan> plan);
+		IList<TreatmentPlan> GetTreatmentPlan(int patientId);
+		void StoreTreatmentPlan(IList<TreatmentPlan> plan);
 
-		IList<VisitDiary> GetVisitDiary(int patientId);
-		void StoreVisitDiary(VisitDiary visitDiary);
+		IList<Visit> GetVisits(int patientId);
+		void StoreVisit(Visit visit);
+
+		IList<DentistStatus> GetDentistStatuses(int patientId);
+		void StoreDentistStatus(DentistStatus dentistStatus);
+
+		IList<CpiStatus> GetCpiStatuses(int patientId);
+		void StoreCpiStatus(CpiStatus cpiStatus);
+
+		IList<DfmStatus> GetDfmStatuses(int patientId);
+		void StoreDfmStatus(DfmStatus dfmStatus);
+
+		IList<OhisStatus> GetOhisStatuses(int patientId);
+		void StoreOhisStatus(OhisStatus ohisStatus);
 	}
 }

@@ -1,0 +1,35 @@
+﻿<div class="container" ng-controller="PatientVisitCtrl">
+	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
+	<div class="page-header" ng-if="checkPerm(editPerm)">
+		<h3>Новое посещение</h3>
+	</div>
+	<form name="visitForm" class="form-horizontal" role="form"  ng-if="checkPerm(editPerm)">
+		<div class="form-group" ng-class="{ 'has-error': visitForm.description.$invalid && visitForm.description.$dirty }">
+			<div class="col-sm-12">
+				<label class="sr-only">Детали о посещении</label>
+				<textarea name="description" class="form-control" rows="2" placeholder="Жалобы, клиническая картина и т.д." ng-model="visit.description" required></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-12">
+				<div class="btn-group pull-right">
+					<button class="btn btn-primary" ng-click="ok()" ng-disabled="visitForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+					<button type="reset" class="btn btn-default" ng-click="surveyForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Очистить</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="page-header">
+		<h3>Список всех посещений</h3>
+	</div>
+	<table class="table table-striped table-condensed table-bordered">
+		<thead ng-include="'/Widget/TableHeader'"></thead>
+		<tbody>
+			<tr ng-repeat="item in visits | orderBy:sortFields | filter:serachText">
+				<td>{{ item.description }}</td>
+				<td>{{ item.user.displayName }}</td>
+				<td>{{ item.created | date }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

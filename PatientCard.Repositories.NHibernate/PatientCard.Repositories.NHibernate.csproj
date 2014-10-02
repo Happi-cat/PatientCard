@@ -49,14 +49,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mappings\UserMap.cs" />
+    <Compile Include="NHCpiStatusRepository.cs" />
+    <Compile Include="NHDentistStatusRepository.cs" />
+    <Compile Include="NHDfmStatusRepository.cs" />
     <Compile Include="NHFirstSurveyDetailRepository.cs" />
     <Compile Include="NHFirstSurveyRepository.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="NHibernateRepository.cs" />
+    <Compile Include="NHOhisStatusRepository.cs" />
     <Compile Include="NHSurveyRepository.cs" />
-    <Compile Include="NHThreatmentPlanRepository.cs" />
+    <Compile Include="NHTreatmentPlanRepository.cs" />
     <Compile Include="NHUnityOfWork.cs" />
-    <Compile Include="NHVisitDiaryRepository.cs" />
+    <Compile Include="NHVisitRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

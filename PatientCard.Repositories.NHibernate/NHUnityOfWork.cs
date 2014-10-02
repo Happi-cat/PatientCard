@@ -7,29 +7,37 @@ namespace PatientCard.Repositories.NHibernate
 	{
 		public NHUnityOfWork()
 		{
-			JobRepository = new NHibernateRepository<Job, string>();
-			SurveyTypeRepository= new NHibernateRepository<SurveyType, int>();
-			FirstSurveyOptionRepository = new NHibernateRepository<FirstSurveyOption, int>();
-			ThreatmentOptionRepository = new NHibernateRepository<ThreatmentOption, int>();
-			UserRepository = new NHibernateRepository<User, string>();
-			PatientRepositopry = new NHibernateRepository<Patient, int>();
-			FirstSurveyRepository = new NHFirstSurveyRepository();
-			FirstSurveyDetailRepository = new NHFirstSurveyDetailRepository();
-			SurveyRepository = new NHSurveyRepository();
-			ThreatmentPlanRepository = new NHThreatmentPlanRepository();
-			VisitDiaryRepository = new NHVisitDiaryRepository();
+			Job = new NHibernateRepository<Job, string>();
+			SurveyType= new NHibernateRepository<SurveyType, int>();
+			FirstSurveyOption = new NHibernateRepository<FirstSurveyOption, int>();
+			TreatmentOption = new NHibernateRepository<TreatmentOption, int>();
+			User = new NHibernateRepository<User, string>();
+			Patient = new NHibernateRepository<Patient, int>();
+			FirstSurvey = new NHFirstSurveyRepository();
+			FirstSurveyDetail = new NHFirstSurveyDetailRepository();
+			Survey = new NHSurveyRepository();
+			TreatmentPlan = new NHTreatmentPlanRepository();
+			Visit = new NHVisitRepository();
+			DentistStatus = new NHDentistStatusRepository();
+			CpiStatus = new NHCpiStatusRepository();
+			DfmStatus = new NHDfmStatusRepository();
+			OhisStatus = new NHOhisStatusRepository();
 		}
 
-		public IRepository<Job, string> JobRepository { get; private set; }
-		public IRepository<SurveyType, int> SurveyTypeRepository { get; private set; }
-		public IRepository<FirstSurveyOption, int> FirstSurveyOptionRepository { get; private set; }
-		public IRepository<ThreatmentOption, int> ThreatmentOptionRepository { get; private set; }
-		public IRepository<User, string> UserRepository { get; private set; }
-		public IRepository<Patient, int> PatientRepositopry { get; private set; }
-		public IFirstSurveyRepository FirstSurveyRepository { get; private set; }
-		public IFirstSurveyDetailRepository FirstSurveyDetailRepository { get; private set; }
-		public ISurveyRepository SurveyRepository { get; private set; }
-		public IThreatmentPlanRepository ThreatmentPlanRepository { get; private set; }
-		public IVisitDiaryRepository VisitDiaryRepository { get; private set; }
+		public IRepository<Job, string> Job { get; private set; }
+		public IRepository<SurveyType, int> SurveyType { get; private set; }
+		public IRepository<FirstSurveyOption, int> FirstSurveyOption { get; private set; }
+		public IRepository<TreatmentOption, int> TreatmentOption { get; private set; }
+		public IRepository<User, string> User { get; private set; }
+		public IRepository<Patient, int> Patient { get; private set; }
+		public IFirstSurveyRepository FirstSurvey { get; private set; }
+		public IFirstSurveyDetailRepository FirstSurveyDetail { get; private set; }
+		public ISurveyRepository Survey { get; private set; }
+		public ITreatmentPlanRepository TreatmentPlan { get; private set; }
+		public IVisitRepository Visit { get; private set; }
+		public IDentistStatusRepository DentistStatus { get; private set; }
+		public ICpiStatusRepository CpiStatus { get; private set; }
+		public IDfmStatusRepository DfmStatus { get; private set; }
+		public IOhisStatusRepository OhisStatus { get; private set; }
 	}
 }
