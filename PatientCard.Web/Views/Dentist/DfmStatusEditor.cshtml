@@ -2,81 +2,85 @@
 	<button class="btn btn-default" ng-click="add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
 </div>
 <form name="statusForm" class="form-horizontal form-dfm" role="form" ng-if="editFormEnabled">
-	<table class="table table-condensed table-bordered table-dfm small">
-		<tr class="border-bottom">
-			<td></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperLeft8" ng-model="status.upperLeft8"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperLeft7" ng-model="status.upperLeft7"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperLeft6" ng-model="status.upperLeft6"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperLeft5" ng-model="status.upperLeft5"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperLeft4" ng-model="status.upperLeft4"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperLeft3" ng-model="status.upperLeft3"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperLeft2" ng-model="status.upperLeft2"></td>
-			<td class="border-right">
-				<input type="text" maxlength="1" class="form-control" name="upperLeft1" ng-model="status.upperLeft1"></td>
-			<td class="border-left">
-				<input type="text" maxlength="1" class="form-control" name="upperRight1" ng-model="status.upperRight1"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperRight2" ng-model="status.upperRight2"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperRight3" ng-model="status.upperRight3"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperRight4" ng-model="status.upperRight4"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperRight5" ng-model="status.upperRight5"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperRight6" ng-model="status.upperRight6"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperRight7" ng-model="status.upperRight7"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="upperRight8" ng-model="status.upperRight8"></td>
-		</tr>
-		<tr class="border-top">
-			<td></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft8" ng-model="status.lowerLeft8"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft7" ng-model="status.lowerLeft7"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft6" ng-model="status.lowerLeft6"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft5" ng-model="status.lowerLeft5"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft4" ng-model="status.lowerLeft4"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft3" ng-model="status.lowerLeft3"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft2" ng-model="status.lowerLeft2"></td>
-			<td class="border-right">
-				<input type="text" maxlength="1" class="form-control" name="lowerLeft1" ng-model="status.lowerLeft1"></td>
-			<td class="border-left">
-				<input type="text" maxlength="1" class="form-control" name="lowerRight1" ng-model="status.lowerRight1"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerRight2" ng-model="status.lowerRight2"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerRight3" ng-model="status.lowerRight3"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerRight4" ng-model="status.lowerRight4"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerRight5" ng-model="status.lowerRight5"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerRight6" ng-model="status.lowerRight6"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerRight7" ng-model="status.lowerRight7"></td>
-			<td>
-				<input type="text" maxlength="1" class="form-control" name="lowerRight8" ng-model="status.lowerRight8"></td>
-		</tr>
-	</table>
-	<div class="btn-group">
-		<button class="btn btn-primary" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
-		<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+	<div class="panel panel-default">
+		<table class="table table-condensed table-dfm small">
+			<tr class="border-bottom">
+				<td></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperLeft8" ng-model="status.upperLeft8"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperLeft7" ng-model="status.upperLeft7"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperLeft6" ng-model="status.upperLeft6"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperLeft5" ng-model="status.upperLeft5"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperLeft4" ng-model="status.upperLeft4"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperLeft3" ng-model="status.upperLeft3"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperLeft2" ng-model="status.upperLeft2"></td>
+				<td class="border-right">
+					<input type="text" maxlength="1" class="form-control" name="upperLeft1" ng-model="status.upperLeft1"></td>
+				<td class="border-left">
+					<input type="text" maxlength="1" class="form-control" name="upperRight1" ng-model="status.upperRight1"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperRight2" ng-model="status.upperRight2"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperRight3" ng-model="status.upperRight3"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperRight4" ng-model="status.upperRight4"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperRight5" ng-model="status.upperRight5"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperRight6" ng-model="status.upperRight6"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperRight7" ng-model="status.upperRight7"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="upperRight8" ng-model="status.upperRight8"></td>
+			</tr>
+			<tr class="border-top">
+				<td></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft8" ng-model="status.lowerLeft8"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft7" ng-model="status.lowerLeft7"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft6" ng-model="status.lowerLeft6"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft5" ng-model="status.lowerLeft5"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft4" ng-model="status.lowerLeft4"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft3" ng-model="status.lowerLeft3"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft2" ng-model="status.lowerLeft2"></td>
+				<td class="border-right">
+					<input type="text" maxlength="1" class="form-control" name="lowerLeft1" ng-model="status.lowerLeft1"></td>
+				<td class="border-left">
+					<input type="text" maxlength="1" class="form-control" name="lowerRight1" ng-model="status.lowerRight1"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerRight2" ng-model="status.lowerRight2"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerRight3" ng-model="status.lowerRight3"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerRight4" ng-model="status.lowerRight4"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerRight5" ng-model="status.lowerRight5"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerRight6" ng-model="status.lowerRight6"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerRight7" ng-model="status.lowerRight7"></td>
+				<td>
+					<input type="text" maxlength="1" class="form-control" name="lowerRight8" ng-model="status.lowerRight8"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-12">
+			<button class="btn btn-primary" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+			<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+		</div>
 	</div>
 </form>
 

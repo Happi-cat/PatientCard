@@ -12,6 +12,10 @@
 			<input type="text" maxlength="1" class="form-control" name="value6" ng-model="status.value6" />
 		</div>
 	</div>
-	<button class="btn btn-primary btn-block" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
-	<button type="reset" class="btn btn-default btn-block" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+	<div class="form-group">
+		<div class="col-sm-12 btn-group-vertical">
+			<button class="btn btn-primary" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+			<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+		</div>
+	</div>
 </form>

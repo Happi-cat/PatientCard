@@ -1,20 +1,23 @@
 ﻿<ul class="media-list" ng-controller="PatientDentistStatusCtrl">
 	<li class="media" ng-if="checkPerm(editPerm)" ng-include="'/Dentist/DentistStatusEditor'"></li>
 	<li class="media" ng-repeat="item in dentistStatuses | orderBy:'-created' | limitTo:3">
-		<h4>Дата записи: {{ item.created | date }}</h4>
-		<dl>
-			<dt>Прикус</dt>
-			<dd>{{ item.bite }}</dd>
-			<dt>Состояние твердых тканей зубов, периодонта</dt>
-			<dd>{{ item.hardTissue }}</dd>
-			<dt>Состояние слизистой оболочки рта</dt>
-			<dd>{{ item.mucous }}</dd>
-			<dt>Данные рентгеновского и других исследований</dt>
-			<dd>{{ item.xrayDiagnostics }}</dd>
-			<dt>Предварительный диагноз</dt>
-			<dd>{{ item.preliminaryDiagnosis }}</dd>
-			<dt>Доктор</dt>
-			<dd>{{ item.user.displayName }}</dd>
-		</dl>
+		<div class="health-icon-lg health-icon-sthetoscope pull-left"></div>
+		<div class="media-body">
+			<h4 class="media-heading">Дата записи: {{ item.created | date }}</h4>
+			<dl>
+				<dt>Прикус</dt>
+				<dd>{{ item.bite }}</dd>
+				<dt>Состояние твердых тканей зубов, периодонта</dt>
+				<dd>{{ item.hardTissue }}</dd>
+				<dt>Состояние слизистой оболочки рта</dt>
+				<dd>{{ item.mucous }}</dd>
+				<dt>Данные рентгеновского и других исследований</dt>
+				<dd>{{ item.xrayDiagnostics }}</dd>
+				<dt>Предварительный диагноз</dt>
+				<dd>{{ item.preliminaryDiagnosis }}</dd>
+				<dt>Доктор</dt>
+				<dd>{{ item.user.displayName }}</dd>
+			</dl>
+		</div>
 	</li>
 </ul>

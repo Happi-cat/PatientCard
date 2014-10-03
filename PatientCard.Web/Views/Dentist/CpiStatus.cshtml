@@ -1,19 +1,22 @@
 ﻿<ul class="media-list" ng-controller="PatientCpiStatusCtrl">
 	<li class="media" ng-if="checkPerm(editPerm)" ng-include="'/Dentist/CpiStatusEditor'"></li>
 	<li class="media" ng-repeat="item in cpiStatuses | orderBy:'-created' | limitTo:3">
-		<h5>{{ item.created | date }}</h5>
-		<h5><span class="label label-info">КПИ</span>&nbsp;{{ item.cpi }}</h5>
-		<table class="table table-cpi table-condensed table-bordered small">
-			<tr>
-				<td>{{ item.value1 }}</td>
-				<td>{{ item.value2 }}</td>
-				<td>{{ item.value3 }}</td>
-			</tr>
-			<tr>
-				<td>{{ item.value4 }}</td>
-				<td>{{ item.value5 }}</td>
-				<td>{{ item.value6 }}</td>
-			</tr>
-		</table>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{ item.created | date }}<span class="badge pull-right">{{ item.cpi }}</span>
+			</div>
+			<table class="table table-cpi table-condensed table-bordered small">
+				<tr>
+					<td>{{ item.value1 }}</td>
+					<td>{{ item.value2 }}</td>
+					<td>{{ item.value3 }}</td>
+				</tr>
+				<tr>
+					<td>{{ item.value4 }}</td>
+					<td>{{ item.value5 }}</td>
+					<td>{{ item.value6 }}</td>
+				</tr>
+			</table>
+		</div>
 	</li>
 </ul>

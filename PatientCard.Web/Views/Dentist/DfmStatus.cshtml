@@ -2,121 +2,123 @@
 	<div class="col-sm-12 bottom-padding" ng-include="'/Dentist/DfmStatusEditor'" ng-if="checkPerm(editPerm)">
 	</div>
 	<div class="col-sm-12">
-		<table class="table table-condensed table-bordered table-dfm small" >
-			<tr ng-repeat="item in dfmStatuses | orderBy:'-created' | limitTo:3 | orderBy:'created'">
-				<td>{{ item.created | date }}<span class="badge pull-right">{{ item.dfm }}</span></td>
-				<td>{{ item.upperLeft8 }}</td>
-				<td>{{ item.upperLeft7 }}</td>
-				<td>{{ item.upperLeft6 }}</td>
-				<td>{{ item.upperLeft5 }}</td>
-				<td>{{ item.upperLeft4 }}</td>
-				<td>{{ item.upperLeft3 }}</td>
-				<td>{{ item.upperLeft2 }}</td>
-				<td class="border-right">{{ item.upperLeft1 }}</td>
-				<td class="border-left">{{ item.upperRight1 }}</td>
-				<td>{{ item.upperRight2 }}</td>
-				<td>{{ item.upperRight3 }}</td>
-				<td>{{ item.upperRight4 }}</td>
-				<td>{{ item.upperRight5 }}</td>
-				<td>{{ item.upperRight6 }}</td>
-				<td>{{ item.upperRight7 }}</td>
-				<td>{{ item.upperRight8 }}</td>
-			</tr>
-			<tr class="header success">
-				<td></td>
-				<td>18</td>
-				<td>17</td>
-				<td>16</td>
-				<td>15</td>
-				<td>14</td>
-				<td>13</td>
-				<td>12</td>
-				<td class="border-right">11</td>
-				<td class="border-left">21</td>
-				<td>22</td>
-				<td>23</td>
-				<td>24</td>
-				<td>25</td>
-				<td>26</td>
-				<td>27</td>
-				<td>28</td>
-			</tr>
-			<tr class="header border-bottom success">
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>55</td>
-				<td>54</td>
-				<td>53</td>
-				<td>52</td>
-				<td class="border-right">51</td>
-				<td class="border-left">61</td>
-				<td>62</td>
-				<td>63</td>
-				<td>64</td>
-				<td>65</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr class="header border-top success">
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>85</td>
-				<td>84</td>
-				<td>83</td>
-				<td>82</td>
-				<td class="border-right">81</td>
-				<td class="border-left">71</td>
-				<td>72</td>
-				<td>73</td>
-				<td>74</td>
-				<td>75</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr class="header success">
-				<td></td>
-				<td>48</td>
-				<td>47</td>
-				<td>46</td>
-				<td>45</td>
-				<td>44</td>
-				<td>43</td>
-				<td>42</td>
-				<td class="border-right">41</td>
-				<td class="border-left">31</td>
-				<td>32</td>
-				<td>33</td>
-				<td>34</td>
-				<td>35</td>
-				<td>36</td>
-				<td>37</td>
-				<td>38</td>
-			</tr>
-			<tr ng-repeat="item in dfmStatuses | orderBy:'-created' | limitTo:3">
-				<td>{{ item.created | date }}<span class="badge pull-right">{{ item.dfm }}</span></td>
-				<td>{{ item.lowerLeft8 }}</td>
-				<td>{{ item.lowerLeft7 }}</td>
-				<td>{{ item.lowerLeft6 }}</td>
-				<td>{{ item.lowerLeft5 }}</td>
-				<td>{{ item.lowerLeft4 }}</td>
-				<td>{{ item.lowerLeft3 }}</td>
-				<td>{{ item.lowerLeft2 }}</td>
-				<td class="border-right">{{ item.lowerLeft1 }}</td>
-				<td class="border-left">{{ item.lowerRight1 }}</td>
-				<td>{{ item.lowerRight2 }}</td>
-				<td>{{ item.lowerRight3 }}</td>
-				<td>{{ item.lowerRight4 }}</td>
-				<td>{{ item.lowerRight5 }}</td>
-				<td>{{ item.lowerRight6 }}</td>
-				<td>{{ item.lowerRight7 }}</td>
-				<td>{{ item.lowerRight8 }}</td>
-			</tr>
-		</table>
+		<div class="panel panel-default">
+			<table class="table table-condensed table-bordered table-dfm small">
+				<tr ng-repeat="item in dfmStatuses | orderBy:'-created' | limitTo:3 | orderBy:'created'">
+					<td>{{ item.created | date }}<span class="badge pull-right">{{ item.dfm }}</span></td>
+					<td>{{ item.upperLeft8 }}</td>
+					<td>{{ item.upperLeft7 }}</td>
+					<td>{{ item.upperLeft6 }}</td>
+					<td>{{ item.upperLeft5 }}</td>
+					<td>{{ item.upperLeft4 }}</td>
+					<td>{{ item.upperLeft3 }}</td>
+					<td>{{ item.upperLeft2 }}</td>
+					<td class="border-right">{{ item.upperLeft1 }}</td>
+					<td class="border-left">{{ item.upperRight1 }}</td>
+					<td>{{ item.upperRight2 }}</td>
+					<td>{{ item.upperRight3 }}</td>
+					<td>{{ item.upperRight4 }}</td>
+					<td>{{ item.upperRight5 }}</td>
+					<td>{{ item.upperRight6 }}</td>
+					<td>{{ item.upperRight7 }}</td>
+					<td>{{ item.upperRight8 }}</td>
+				</tr>
+				<tr class="header success">
+					<td></td>
+					<td>18</td>
+					<td>17</td>
+					<td>16</td>
+					<td>15</td>
+					<td>14</td>
+					<td>13</td>
+					<td>12</td>
+					<td class="border-right">11</td>
+					<td class="border-left">21</td>
+					<td>22</td>
+					<td>23</td>
+					<td>24</td>
+					<td>25</td>
+					<td>26</td>
+					<td>27</td>
+					<td>28</td>
+				</tr>
+				<tr class="header border-bottom success">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>55</td>
+					<td>54</td>
+					<td>53</td>
+					<td>52</td>
+					<td class="border-right">51</td>
+					<td class="border-left">61</td>
+					<td>62</td>
+					<td>63</td>
+					<td>64</td>
+					<td>65</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="header border-top success">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>85</td>
+					<td>84</td>
+					<td>83</td>
+					<td>82</td>
+					<td class="border-right">81</td>
+					<td class="border-left">71</td>
+					<td>72</td>
+					<td>73</td>
+					<td>74</td>
+					<td>75</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="header success">
+					<td></td>
+					<td>48</td>
+					<td>47</td>
+					<td>46</td>
+					<td>45</td>
+					<td>44</td>
+					<td>43</td>
+					<td>42</td>
+					<td class="border-right">41</td>
+					<td class="border-left">31</td>
+					<td>32</td>
+					<td>33</td>
+					<td>34</td>
+					<td>35</td>
+					<td>36</td>
+					<td>37</td>
+					<td>38</td>
+				</tr>
+				<tr ng-repeat="item in dfmStatuses | orderBy:'-created' | limitTo:3">
+					<td>{{ item.created | date }}<span class="badge pull-right">{{ item.dfm }}</span></td>
+					<td>{{ item.lowerLeft8 }}</td>
+					<td>{{ item.lowerLeft7 }}</td>
+					<td>{{ item.lowerLeft6 }}</td>
+					<td>{{ item.lowerLeft5 }}</td>
+					<td>{{ item.lowerLeft4 }}</td>
+					<td>{{ item.lowerLeft3 }}</td>
+					<td>{{ item.lowerLeft2 }}</td>
+					<td class="border-right">{{ item.lowerLeft1 }}</td>
+					<td class="border-left">{{ item.lowerRight1 }}</td>
+					<td>{{ item.lowerRight2 }}</td>
+					<td>{{ item.lowerRight3 }}</td>
+					<td>{{ item.lowerRight4 }}</td>
+					<td>{{ item.lowerRight5 }}</td>
+					<td>{{ item.lowerRight6 }}</td>
+					<td>{{ item.lowerRight7 }}</td>
+					<td>{{ item.lowerRight8 }}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

@@ -1,19 +1,22 @@
 ﻿<ul class="media-list" ng-controller="PatientOhisStatusCtrl">
 	<li class="media" ng-if="checkPerm(editPerm)" ng-include="'/Dentist/OhisStatusEditor'"></li>
 	<li class="media" ng-repeat="item in ohisStatuses | orderBy:'-created' | limitTo:3">
-		<h5>{{ item.created | date }}</h5>
-		<h5><span class="label label-info">OHIS</span>&nbsp;{{ item.ohis }}</h5>
-		<table class="table table-ohis table-condensed table-bordered small">
-			<tr>
-				<td>{{ item.dis1 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis1 }}</td>
-				<td>{{ item.dis2 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis2 }}</td>
-				<td>{{ item.dis3 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis3 }}</td>
-			</tr>
-			<tr>
-				<td>{{ item.dis4 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis4 }}</td>
-				<td>{{ item.dis5 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis5 }}</td>
-				<td>{{ item.dis6 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis6 }}</td>
-			</tr>
-		</table>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{ item.created | date }}<span class="badge pull-right">{{ item.ohis }}</span>
+			</div>
+			<table class="table table-ohis table-condensed table-bordered small">
+				<tr>
+					<td>{{ item.dis1 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis1 }}</td>
+					<td>{{ item.dis2 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis2 }}</td>
+					<td>{{ item.dis3 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis3 }}</td>
+				</tr>
+				<tr>
+					<td>{{ item.dis4 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis4 }}</td>
+					<td>{{ item.dis5 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis5 }}</td>
+					<td>{{ item.dis6 }}&nbsp;<b>&#x2215</b>&nbsp;{{ item.cis6 }}</td>
+				</tr>
+			</table>
+		</div>
 	</li>
 </ul>
