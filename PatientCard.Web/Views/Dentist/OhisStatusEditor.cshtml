@@ -1,1 +1,42 @@
-﻿
+﻿<button class="btn btn-default btn-block" ng-if="!editFormEnabled" ng-click="add()">
+	<span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить
+</button>
+<form name="statusForm" class="form-horizontal form-ohis" role="form" ng-if="editFormEnabled">
+	<div class="form-group">
+		<div class="col-xs-12">
+			<div class="input-group">
+				<input type="text" maxlength="1" class="form-control" name="dis1" ng-model="status.dis1" />
+				<span class="input-group-addon">&#x2215</span>
+				<input type="text" maxlength="1" class="form-control" name="cis1" ng-model="status.cis1" />
+			</div>
+			<div class="input-group">
+				<input type="text" maxlength="1" class="form-control" name="dis2" ng-model="status.dis2" />
+				<span class="input-group-addon">&#x2215</span>
+				<input type="text" maxlength="1" class="form-control" name="cis2" ng-model="status.cis2" />
+			</div>
+			<div class="input-group">
+				<input type="text" maxlength="1" class="form-control" name="dis3" ng-model="status.dis3" />
+				<span class="input-group-addon">&#x2215</span>
+				<input type="text" maxlength="1" class="form-control" name="cis3" ng-model="status.cis3" />
+			</div>
+			<div class="input-group">
+				<input type="text" maxlength="1" class="form-control" name="dis4" ng-model="status.dis4" />
+				<span class="input-group-addon">&#x2215</span>
+				<input type="text" maxlength="1" class="form-control" name="cis4" ng-model="status.cis4" />
+			</div>
+			<div class="input-group">
+				<input type="text" maxlength="1" class="form-control" name="dis5" ng-model="status.dis5" />
+				<span class="input-group-addon">&#x2215</span>
+				<input type="text" maxlength="1" class="form-control" name="cis5" ng-model="status.cis5" />
+			</div>
+
+			<div class="input-group">
+				<input type="text" maxlength="1" class="form-control" name="dis6" ng-model="status.dis6" />
+				<span class="input-group-addon">&#x2215</span>
+				<input type="text" maxlength="1" class="form-control" name="cis6" ng-model="status.cis6" />
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-primary btn-block" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+	<button type="reset" class="btn btn-default btn-block" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+</form>

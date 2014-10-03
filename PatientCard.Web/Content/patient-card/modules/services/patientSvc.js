@@ -68,15 +68,15 @@ angular.module('patient-card.services')
 		self.getTreatmentPlan = function(patientId) {
 			return httpWrap({
 				method: 'GET',
-				url: '/api/patient/Treatment-plan',
+				url: '/api/patient/treatment-plan',
 				params: {
 					patientId: patientId
 				}
 			});
 		};
 
-		self.storeTreatmentPlan = function(TreatmentPlan) {
-			return httpWrap({ method: 'POST', url: '/api/patient/Treatment-plan', data: TreatmentPlan });
+		self.storeTreatmentPlan = function(treatmentPlan) {
+			return httpWrap({ method: 'POST', url: '/api/patient/treatment-plan', data: treatmentPlan });
 		};
 
 		self.getVisit = function(patientId) {
@@ -91,6 +91,62 @@ angular.module('patient-card.services')
 
 		self.storeVisit = function(diary) {
 			return httpWrap({ method: 'POST', url: '/api/patient/visit', data: diary });
+		};
+
+		self.getDentistStatuses = function (patientId) {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/dentist-status',
+				params: {
+					patientId: patientId
+				}
+			});
+		};
+
+		self.storeDentistStatus = function (status) {
+			return httpWrap({ method: 'POST', url: '/api/patient/dentist-status', data: status });
+		};
+		
+		self.getOhisStatuses = function (patientId) {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/ohis-status',
+				params: {
+					patientId: patientId
+				}
+			});
+		};
+
+		self.storeOhisStatus = function (status) {
+			return httpWrap({ method: 'POST', url: '/api/patient/ohis-status', data: status });
+		};
+		
+		self.getCpiStatuses = function (patientId) {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/cpi-status',
+				params: {
+					patientId: patientId
+				}
+			});
+		};
+
+		self.storeCpiStatus = function (status) {
+			return httpWrap({ method: 'POST', url: '/api/patient/cpi-status', data: status });
+		};
+		
+		self.getDfmStatuses = function (patientId) {
+			return httpWrap({
+				method: 'GET',
+				url: '/api/patient/dfm-status',
+				params: {
+					patientId: patientId
+				}
+			});
+		};
+
+		self.storeDfmStatus = function (status) {
+			return httpWrap({ method: 'POST', url: '/api/patient/dfm-status', data: status });
 		};
 
 		return self;

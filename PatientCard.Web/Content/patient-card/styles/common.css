@@ -22,3 +22,53 @@
 .capitalize {
 	text-transform: capitalize;
 }
+
+
+.table-dfm td,
+.table-cpi td,
+.table-ohis td {
+	text-align: center;
+}
+
+.table-dfm td {
+	width: 5%;
+}
+
+.table-dfm td:first-of-type {
+	width: 20%;
+	text-align: left;
+}
+
+.table-dfm .border-left {
+	border-left: 2px solid #428bca;
+}
+
+.table-dfm .border-right {
+	border-right: 2px solid #428bca;
+}
+
+.table-dfm .border-top {
+	border-top: 2px solid #428bca;
+}
+
+.table-dfm .border-bottom {
+	border-bottom: 2px solid #428bca;
+}
+
+.table-dfm .header {
+	font-weight: bold;
+}
+
+.form-ohis .form-group .input-group,
+.form-cpi .form-group .form-control {
+	margin-bottom: 2px; 
+}
+
+.form-ohis .form-group .input-group:last-of-type,
+.form-cpi .form-group .form-control:last-of-type {
+	margin-bottom: 0; 
+}
+
+.form-dfm td {
+	padding: 0 !important;
+}

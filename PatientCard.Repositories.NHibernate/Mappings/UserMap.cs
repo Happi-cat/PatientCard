@@ -157,7 +157,7 @@ namespace PatientCard.Repositories.NHibernate.Mappings
 	{
 		public DentistStatusMap()
 		{
-			Table("DentitStatuses");
+			Table("DentistStatuses");
 			Id(e => e.Key, "Id").GeneratedBy.Native();
 			Map(e => e.PatientId).Not.Nullable();
 			Map(e => e.Username).Not.Nullable().Length(100);

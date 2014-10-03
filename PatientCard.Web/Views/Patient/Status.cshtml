@@ -1,19 +1,27 @@
 ﻿<div class="container" ng-controller="PatientStatusCtrl">
 	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
-	<div class="page-header">
-		<h3>Стоматологический статус</h3>
+	<div class="row">
+		<div class="col-md-8 col-sm-12">
+			<div class="page-header">
+				<h3>Стоматологический статус</h3>
+			</div>
+			<ng-include src="'/Dentist/DfmStatus'"></ng-include>
+			<div class="page-header">
+				<h3>Описание</h3>
+			</div>
+			<ng-include src="'/Dentist/DentistStatus'"></ng-include>
+		</div>
+		<div class="col-md-2 col-sm-6">
+			<div class="page-header">
+				<h3>OHIS</h3>
+			</div>
+			<ng-include src="'/Dentist/OhisStatus'"></ng-include>
+		</div>
+		<div class="col-md-2 col-sm-6">
+			<div class="page-header">
+				<h3>КПИ</h3>
+			</div>
+			<ng-include src="'/Dentist/CpiStatus'"></ng-include>
+		</div>
 	</div>
-	<ng-include src="'/Dentist/DfmStatus'"></ng-include>
-	<div class="page-header">
-		<h3>OHIS</h3>
-	</div>
-	<ng-include src="'/Dentist/OhisStatus'"></ng-include>
-	<div class="page-header">
-		<h3>КПИ</h3>
-	</div>
-	<ng-include src="'/Dentist/CpiStatus'"></ng-include>
-	<div class="page-header">
-		<h3>Описание</h3>
-	</div>
-	<ng-include src="'/Dentist/DentistStatus'"></ng-include>
 </div>

@@ -1,1 +1,17 @@
-﻿
+﻿<button class="btn btn-default btn-block" ng-if="!editFormEnabled" ng-click="add()">
+	<span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить
+</button>
+<form name="statusForm" class="form-horizontal form-cpi" role="form" ng-if="editFormEnabled">
+	<div class="form-group">
+		<div class="col-xs-12">
+			<input type="text" maxlength="1" class="form-control" name="value1" ng-model="status.value1" />
+			<input type="text" maxlength="1" class="form-control" name="value2" ng-model="status.value2" />
+			<input type="text" maxlength="1" class="form-control" name="value3" ng-model="status.value3" />
+			<input type="text" maxlength="1" class="form-control" name="value4" ng-model="status.value4" />
+			<input type="text" maxlength="1" class="form-control" name="value5" ng-model="status.value5" />
+			<input type="text" maxlength="1" class="form-control" name="value6" ng-model="status.value6" />
+		</div>
+	</div>
+	<button class="btn btn-primary btn-block" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+	<button type="reset" class="btn btn-default btn-block" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+</form>

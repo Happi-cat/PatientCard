@@ -1,13 +1,20 @@
-﻿<table class="table table-condensed table-bordered small">
-	<thead ng-include="'/Widget/TableHeader'"></thead>
-	<tbody>
-		<tr ng-repeat="item in dentistStatuses | orderBy:'-created' | limitTo:3">
-			<td>{{ item.created | date }}</td>
-			<td>{{ item.bite }}</td>
-			<td>{{ item.hardTissue }}</td>
-			<td>{{ item.mucous }}</td>
-			<td>{{ item.xrayDiagnostics }}</td>
-			<td>{{ item.preliminaryDiagnosis }}</td>
-		</tr>
-	</tbody>
-</table>
+﻿<ul class="media-list" ng-controller="PatientDentistStatusCtrl">
+	<li class="media" ng-if="checkPerm(editPerm)" ng-include="'/Dentist/DentistStatusEditor'"></li>
+	<li class="media" ng-repeat="item in dentistStatuses | orderBy:'-created' | limitTo:3">
+		<h4>Дата записи: {{ item.created | date }}</h4>
+		<dl>
+			<dt>Прикус</dt>
+			<dd>{{ item.bite }}</dd>
+			<dt>Состояние твердых тканей зубов, периодонта</dt>
+			<dd>{{ item.hardTissue }}</dd>
+			<dt>Состояние слизистой оболочки рта</dt>
+			<dd>{{ item.mucous }}</dd>
+			<dt>Данные рентгеновского и других исследований</dt>
+			<dd>{{ item.xrayDiagnostics }}</dd>
+			<dt>Предварительный диагноз</dt>
+			<dd>{{ item.preliminaryDiagnosis }}</dd>
+			<dt>Доктор</dt>
+			<dd>{{ item.user.displayName }}</dd>
+		</dl>
+	</li>
+</ul>
