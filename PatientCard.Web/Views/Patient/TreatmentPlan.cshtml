@@ -1,8 +1,5 @@
 ﻿<div class="container" ng-controller="PatientTreatmentPlanCtrl">
-	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
-	<div class="page-header">
-		<h3>План лечения</h3>
-	</div>
+	<div class="page-breadcrumb" ng-include="'/Widget/Breadcrumb'"></div>
 	<dl>
 		<dt ng-repeat-start="item in treatmentPlan | orderBy:['group','order'] ">
 			<label class="col-sm-1 control-label" ng-if="!item.order">{{ item.group }}</label>

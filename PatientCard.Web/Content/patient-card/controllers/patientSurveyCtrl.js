@@ -76,16 +76,25 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
 			}
 		});
 	};
+	
+	$scope.editFormEnabled = false;
+
+	$scope.add = function () {
+		$scope.editFormEnabled = true;
+	};
+
 
 	$scope.ok = function () {
 		$scope.survey.patientId = $scope.patientId;
 		patientSvc.storeSurvey($scope.survey).then(function (data) {
 			$scope.survey = {};
 			load();
+			$scope.editFormEnabled = false;
 		}, $scope.onSaveFailed);
 	};
 
 	$scope.cancel = function () {
 		$scope.survey = {};
+		$scope.editFormEnabled = false;
 	};
 }

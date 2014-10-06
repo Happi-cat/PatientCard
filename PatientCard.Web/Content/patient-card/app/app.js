@@ -85,7 +85,7 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 		// Push auth interceptor
 		$httpProvider.interceptors.push('authHttpInterceptor');
 	}]
-	).run(function ($rootScope, $location, $timeout, permSvc, URLS) {
+	).run(function ($rootScope, $location, $timeout, authSvc, permSvc, URLS) {
 		$rootScope.alerts = [];
 
 		$timeout(function () {
@@ -131,7 +131,9 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 		// Check perm before page change
 		$rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
 			if (!permSvc.checkPerm(currRoute.perm)) {
-				$location.path(URLS.login);
+				authSvc.loginByCookie().catch(function(data) {
+					 $location.path(URLS.login);
+				});
 			}
 		});
 	});

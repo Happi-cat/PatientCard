@@ -8,6 +8,8 @@ namespace PatientCard.Web
 		{
 			bundles.Add(new StyleBundle("~/bundles/styles/common")
 				            .Include("~/Content/bootstrap/css/bootstrap.css")
+							.Include("~/Content/flaticon/dentist/dentist-icon.css")
+							.Include("~/Content/flaticon/medical-service/medical-service-icon.css")
 							.IncludeDirectory("~/Content/patient-card/styles", "*.css"));
 
 			bundles.Add(new ScriptBundle("~/bundles/js/common")

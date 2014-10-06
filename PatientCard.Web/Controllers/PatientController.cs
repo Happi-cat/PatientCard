@@ -49,7 +49,17 @@ namespace PatientCard.Web.Controllers
 			return View();
 		}
 
+		public ActionResult SurveyEditor()
+		{
+			return View();
+		}
+
 		public ActionResult Visit()
+		{
+			return View();
+		}
+
+		public ActionResult VisitEditor()
 		{
 			return View();
 		}

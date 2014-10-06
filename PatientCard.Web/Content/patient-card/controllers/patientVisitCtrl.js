@@ -54,15 +54,24 @@ function PatientVisitCtrl($scope, patientSvc, ROLES) {
 
 	load();
 
+	$scope.editFormEnabled = false;
+
+	$scope.add = function () {
+		$scope.editFormEnabled = true;
+	};
+
+
 	$scope.ok = function () {
 		$scope.visit.patientId = $scope.patientId;
 		patientSvc.storeVisit($scope.visit).then(function (data) {
 			$scope.visit = {};
 			load();
+			$scope.editFormEnabled = false;
 		}, $scope.onSaveFailed);
 	};
 
 	$scope.cancel = function () {
 		$scope.visit = {};
+		$scope.editFormEnabled = false;
 	};
 }

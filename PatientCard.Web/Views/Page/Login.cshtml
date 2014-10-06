@@ -1,25 +1,25 @@
-﻿<div class="container">
-	<div class="jumbotron">
+﻿<div class="jumbotron">
+	<div class="container">
 		<h1 class="text-center">Авторизация</h1>
 		<form name="loginForm" class="form-horizontal" role="form">
-		<div class="form-group" ng-class="{ 'has-error': loginForm.username.$invalid }">
-			<label class="col-sm-offset-3 col-sm-2 control-label">Имя пользователя</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" placeholder="Имя пользователя" name="username" ng-model="user.username" required>
+			<div class="form-group" ng-class="{ 'has-error': loginForm.username.$invalid }">
+				<label class="col-sm-offset-3 col-sm-2 control-label">Имя пользователя</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" placeholder="Имя пользователя" name="username" ng-model="user.username" required>
+				</div>
 			</div>
-		</div>
-		<div class="form-group" ng-class="{ 'has-error': loginForm.password.$invalid }">
-			<label class="col-sm-offset-3 col-sm-2 control-label">Пароль</label>
-			<div class="col-sm-4">
-				<input type="password" class="form-control" placeholder="Пароль" name="password" ng-model="user.password" required>
+			<div class="form-group" ng-class="{ 'has-error': loginForm.password.$invalid }">
+				<label class="col-sm-offset-3 col-sm-2 control-label">Пароль</label>
+				<div class="col-sm-4">
+					<input type="password" class="form-control" placeholder="Пароль" name="password" ng-model="user.password" required>
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-sm-offset-5 col-sm-4">
-				<button class="btn btn-primary" ng-click="ok()" ng-disabled="form.$invalid"><span class="glyphicon glyphicon-user"></span>&nbsp;Войти</button>
+			<div class="form-group">
+				<div class="col-sm-offset-5 col-sm-4">
+					<button class="btn btn-primary" ng-click="ok()" ng-disabled="form.$invalid"><span class="glyphicon glyphicon-user"></span>&nbsp;Войти</button>
+				</div>
 			</div>
-		</div>
-	</form>
+		</form>
 
 	</div>
 </div>

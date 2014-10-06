@@ -1,8 +1,5 @@
 ﻿<div class="container">
-	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
-	<div class="page-header">
-		<h3>Карта пациента</h3>
-	</div>
+	<div class="page-breadcrumb" ng-include="'/Widget/Breadcrumb'"></div>
 	<form name="patientForm" class="form-horizontal" role="form">
 		<div class="form-group" ng-class="{ 'has-error': patientForm.lastName.$invalid || patientForm.firstName.$invalid || patientForm.middleName.$invalid }">
 			<label class="col-sm-3 control-label">Ф.И.О. Пациента</label>

@@ -1,5 +1,9 @@
 ﻿<div class="row" ng-controller="PatientDfmStatusCtrl">
-	<div class="col-sm-12 bottom-padding" ng-include="'/Dentist/DfmStatusEditor'" ng-if="checkPerm(editPerm)">
+	<div class="col-sm-12" ng-if="checkPerm(editPerm)">
+		<div class="btn-group bottom-padding" ng-if="!editFormEnabled">
+			<button class="btn btn-primary" ng-click="add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+		</div>
+		<ng-include src="'/Dentist/DfmStatusEditor'" ng-if="editFormEnabled"></ng-include>
 	</div>
 	<div class="col-sm-12">
 		<div class="panel panel-default">

@@ -1,39 +1,25 @@
 ﻿<div class="container" ng-controller="PatientSurveyCtrl">
-	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
-	<div class="page-header" ng-if="checkPerm(editPerm)">
-		<h3>Заполнить новое исследование пациента</h3>
+	<div class="page-breadcrumb" ng-include="'/Widget/Breadcrumb'"></div>
+	<div class="row">
+		<div class="col-sm-12" ng-if="checkPerm(editPerm)">
+			<div class="btn-group bottom-padding" ng-if="!editFormEnabled">
+				<button class="btn btn-primary" ng-click="add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+			</div>
+			<ng-include src="'/Patient/SurveyEditor'" ng-if="editFormEnabled"></ng-include>
+		</div>
 	</div>
-	<form name="surveyForm" class="form-inline bottom-padding" role="form" ng-if="checkPerm(editPerm)">
-		<div class="form-group">
-			<label class="sr-only">Исследование</label>
-			<select name="typeId" class="form-control" ng-model="survey.typeId" ng-options="type.id as type.value for type in surveyTypes"></select>
-		</div>
-		<div class="form-group" ng-class="{ 'has-error': surveyForm.description.$invalid && surveyForm.description.$dirty }">
-			<label class="sr-only">Проведено</label>
-			<input name="description" type="text" class="form-control" placeholder="Проведено" ng-model="survey.description" required>
-		</div>
-		<div class="form-group">
-			<label class="sr-only">Экв. доза (мЗВ)</label>
-			<input name="dose" type="text" class="form-control" placeholder="Экв. доза (мЗВ)" ng-model="survey.dose">
-		</div>
-		<div class="btn-group">
-			<button class="btn btn-primary" ng-click="ok()" ng-disabled="surveyForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
-			<button type="reset" class="btn btn-default" ng-click="surveyForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Очистить</button>
-		</div>
-	</form>
-	<div class="page-header">
-		<h3>Список исследований пациента</h3>
+	<div class="panel panel-default">
+		<table class="table table-striped table-condensed table-bordered">
+			<thead ng-include="'/Widget/TableHeader'"></thead>
+			<tbody>
+				<tr ng-repeat="item in surveys | orderBy:sortFields | filter:serachText">
+					<td>{{ item.type }}</td>
+					<td>{{ item.description }}</td>
+					<td>{{ item.user.displayName }}</td>
+					<td>{{ item.created | date }}</td>
+					<td>{{ item.dose }}</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
-	<table class="table table-striped table-condensed table-bordered">
-		<thead ng-include="'/Widget/TableHeader'"></thead>
-		<tbody>
-			<tr ng-repeat="item in surveys | orderBy:sortFields | filter:serachText">
-				<td>{{ item.type }}</td>
-				<td>{{ item.description }}</td>
-				<td>{{ item.user.displayName }}</td>
-				<td>{{ item.created | date }}</td>
-				<td>{{ item.dose }}</td>
-			</tr>
-		</tbody>
-	</table>
 </div>
