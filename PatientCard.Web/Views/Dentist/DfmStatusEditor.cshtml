@@ -1,9 +1,8 @@
-<div class="panel panel-primary">
+﻿<div class="panel panel-primary">
 	<div class="panel-heading">
 		Заполнить КПУ
 	</div>
-<form name="statusForm" class="form-horizontal form-dfm" role="form">
-	<div class="panel panel-default">
+	<form name="statusForm" class="form-horizontal form-dfm" role="form">
 		<table class="table table-condensed table-dfm small">
 			<tr class="border-bottom">
 				<td></td>
@@ -76,14 +75,13 @@
 					<input type="text" maxlength="1" class="form-control" name="lowerRight8" ng-model="status.lowerRight8" required pattern="[0-8A-Ea-e]{1}"></td>
 			</tr>
 		</table>
-	</div>
-	<div class="form-group has-error" ng-if="statusForm.$invalid && statusForm.$dirty">
-		<div class="col-sm-12">
-			<p class="help-block">Все значения должны быть в диапазоне 0-8 и A-E</p>
-		</div>
-	</div>
 	</form>
-<div class="panel-footer">
+	<div class="panel-body has-error" ng-if="statusForm.$invalid && statusForm.$dirty">
+			<div class="col-sm-12">
+				<p class="help-block">Все значения должны быть в диапазоне 0-8 и A-E</p>
+			</div>
+		</div>
+	<div class="panel-footer">
 		<button class="btn btn-success" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
 		<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
 	</div>
