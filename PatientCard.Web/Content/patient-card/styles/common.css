@@ -72,3 +72,7 @@
 .form-dfm td {
 	padding: 0 !important;
 }
+
+.has-error .form-control {
+	background-color: #ffbbba;
+}
