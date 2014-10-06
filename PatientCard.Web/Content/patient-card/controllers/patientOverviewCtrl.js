@@ -13,37 +13,37 @@ function PatientOverviewCtrl($scope, patientSvc) {
 
 	$scope.landing = [
 		{
-			icon: 'health-icon-prescription',
+			icon: 'dentist-icon-note29',
 			title: 'Редактировать карту',
 			description: 'Нажмите на этот пункт если хотите изменить информацию о пациенте',
 			url: '/patient/edit/' + $scope.patientId
 		},
 		{
-			icon: 'health-icon-onlinepharmacycheck',
+			icon: 'dentist-icon-tooth18',
 			title: 'Первичное обследование',
 			description: 'Заполнить (просмотреть) результаты первичного обследования пациента',
 			url: '/patient/view/' + $scope.patientId + '/first-survey'
 		},
 		{
-			icon: 'health-icon-toothbrush',
+			icon: 'dentist-icon-toothbrush',
 			title: 'План лечения',
 			description: 'Выберите этот пункт если хотите посмотреть план лечения пациента',
 			url: '/patient/view/' + $scope.patientId + '/treatment-plan'
 		},
 		{
-			icon: 'health-icon-microscope',
+			icon: 'dentist-icon-dentist12',
 			title: 'Обследования',
 			description: 'В данном разделе вы можете посмотреть результаты обследований и добавить новые результаты',
 			url: '/patient/view/' + $scope.patientId + '/survey'
 		},
 		{
-			icon: 'health-icon-sthetoscope',
+			icon: 'dentist-icon-dentist13',
 			title: 'Дневник посещений',
 			description: 'Выберите данный пункт если хотите посмотреть дневник посещений пациента и(или) добавить новую запись',
 			url: '/patient/view/' + $scope.patientId + '/visit'
 		},
 		{
-			icon: 'health-icon-tooth',
+			icon: 'dentist-icon-tooth19',
 			title: 'Стоматологический статус',
 			description: 'Здесь вы можете узнать стоматологический статус для данного пациента',
 			url: '/patient/view/' + $scope.patientId + '/status'

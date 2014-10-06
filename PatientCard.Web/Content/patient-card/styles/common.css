@@ -72,3 +72,8 @@
 .form-dfm td {
 	padding: 0 !important;
 }
+
+.landing-icon {
+	font-size: 60px;
+	width: 64px;
+}
