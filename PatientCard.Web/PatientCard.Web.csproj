@@ -806,8 +806,8 @@
     <Content Include="Content\patient-card\modules\services\systemSvc.js" />
     <Content Include="Content\patient-card\styles\common.css" />
     <Content Include="Content\patient-card\styles\icons.css" />
-    <Content Include="Content\patient-card\styles\img\blue-pattern.jpg" />
-    <Content Include="Content\patient-card\styles\img\tools.jpg" />
+    <Content Include="Content\patient-card\styles\img\dental-tools.png" />
+    <Content Include="Content\patient-card\styles\img\smile.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
