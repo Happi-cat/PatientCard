@@ -1,7 +1,7 @@
 ﻿<ul class="media-list" ng-controller="PatientDentistStatusCtrl">
 	<li class="media" ng-if="checkPerm(editPerm)" ng-include="'/Dentist/DentistStatusEditor'"></li>
 	<li class="media" ng-repeat="item in dentistStatuses | orderBy:'-created' | limitTo:3">
-		<div class="health-icon-lg health-icon-sthetoscope pull-left"></div>
+		<div class="media-object pull-left landing-icon dentist-icon-dentist13"></div>
 		<div class="media-body">
 			<h4 class="media-heading">Дата записи: {{ item.created | date }}</h4>
 			<dl>
