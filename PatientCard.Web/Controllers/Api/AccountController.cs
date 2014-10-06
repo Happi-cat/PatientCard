@@ -33,6 +33,19 @@ namespace PatientCard.Web.Controllers.Api
 		}
 
 		[HttpPost]
+		[ActionName("Login-By-Cookie")]
+		public object Login()
+		{
+			if (HttpContext.Current.User.Identity.IsAuthenticated)
+			{
+				return _accountService.Get(new User { Username = HttpContext.Current.User.Identity.Name });
+			}
+			return new HttpResponseMessage(HttpStatusCode.Unauthorized);
+		}
+
+
+
+		[HttpPost]
 		[ActionName("Logout")]
 		public HttpResponseMessage Logout([FromBody]LoginModel login)
 		{

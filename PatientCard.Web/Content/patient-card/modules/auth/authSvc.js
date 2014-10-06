@@ -28,6 +28,25 @@ angular.module('patient-card.auth')
 			return deferred.promise;
 		};
 
+		self.loginByCookie = function () {
+			var deferred = $q.defer();
+			$http({ method: 'POST', url: '/api/account/login-by-cookie' })
+				.then(function (data) {
+					if (data.data == 'null') {
+						self.status.user = null;
+					} else {
+						self.status.user = data.data;
+					}
+					self.status.authorized = true;
+					deferred.resolve(self.status.user);
+				}, function (data) {
+					deferred.reject({
+						status: data.status,
+						message: data.statusText,
+					});
+				});
+			return deferred.promise;
+		};
 
 		self.logout = function() {
 			var deferred = $q.defer();
