@@ -1,8 +1,8 @@
-﻿<div class="btn-group" ng-if="!editFormEnabled">
-	<button class="btn btn-default" ng-click="add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
-</div>
-<form name="statusForm" class="form-horizontal form-dfm" role="form" ng-if="editFormEnabled">
-	<div class="panel panel-default">
+﻿<div class="panel panel-primary">
+	<div class="panel-heading">
+		Заполнить КПУ
+	</div>
+	<form name="statusForm" class="form-horizontal form-dfm" role="form">
 		<table class="table table-condensed table-dfm small">
 			<tr class="border-bottom">
 				<td></td>
@@ -75,12 +75,9 @@
 					<input type="text" maxlength="1" class="form-control" name="lowerRight8" ng-model="status.lowerRight8"></td>
 			</tr>
 		</table>
+	</form>
+	<div class="panel-footer">
+		<button class="btn btn-success" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
+		<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
 	</div>
-	<div class="form-group">
-		<div class="col-sm-12">
-			<button class="btn btn-primary" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
-			<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
-		</div>
-	</div>
-</form>
-
+</div>

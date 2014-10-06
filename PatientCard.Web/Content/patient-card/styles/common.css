@@ -24,6 +24,10 @@
 }
 
 
+.form-dfm .table-dfm {
+	margin-bottom: 0;
+}
+
 .table-dfm td,
 .table-cpi td,
 .table-ohis td {
@@ -76,4 +80,13 @@
 .landing-icon {
 	font-size: 60px;
 	width: 64px;
+}
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.page-breadcrumb {
+	margin-top: 20px;
 }

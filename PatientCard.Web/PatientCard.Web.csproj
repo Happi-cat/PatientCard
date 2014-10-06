@@ -957,6 +957,12 @@
     <Content Include="Content\flaticon\medical-service\medical-service-icon.ttf" />
     <Content Include="Content\flaticon\medical-service\medical-service-icon.woff" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Patient\SurveyEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Patient\VisitEditor.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

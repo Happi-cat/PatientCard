@@ -1,9 +1,6 @@
 ﻿@model IList<PatientCard.Core.Models.FirstSurveyOption>
 <div class="container" ng-controller="PatientFirstSurveyCtrl">
-	<ng-include src="'/Widget/Breadcrumb'"></ng-include>
-	<div class="page-header">
-		<h3>Первичный осмотр</h3>
-	</div>
+	<div class="page-breadcrumb" ng-include="'/Widget/Breadcrumb'"></div>
 	<form name="firstSurveyForm" class="form-horizontal" role="form">
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Причина обращения, жалобы</label>
