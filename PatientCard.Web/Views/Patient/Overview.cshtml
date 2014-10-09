@@ -1,30 +1,35 @@
-﻿<div class="container" ng-controller="PatientOverviewCtrl">
-	<div class="page-breadcrumb" ng-include="'/Widget/Breadcrumb'"></div>
-	<div class="row">
-		<div class="col-sm-2">
-			<span class="landing-icon medical-service-icon-man412"></span>
+﻿<section class="page-section page-section-breadcrumb">
+	<div class="container" my-breadcrumb="overview.breadcrumb"></div>
+</section>
+
+<section class="page-section page-section-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2">
+				<span class="landing-icon medical-service-icon-man412"></span>
+			</div>
+			<div class="col-sm-5">
+				<dl>
+					<dt>Ф.И.О.</dt>
+					<dd>{{ overview.patient.lastName }} {{ overview.patient.firstName }} {{ overview.patient.middleName }}</dd>
+					<dt>Дата рождения</dt>
+					<dd>{{ overview.patient.birthday | date }}</dd>
+					<dt>Адрес постоянной (временной) регистрации</dt>
+					<dd>{{ overview.patient.address }}</dd>
+				</dl>
+			</div>
+			<div class="col-sm-5">
+				<dl>
+					<dt>Контактные телефоны</dt>
+					<dd>{{ overview.patient.phone }}</dd>
+					<dt>Социальное положение</dt>
+					<dd>{{ overview.patient.social }}</dd>
+					<dt>Место работы (службы, учебы)</dt>
+					<dd>{{ overview.patient.job }}</dd>
+				</dl>
+			</div>
 		</div>
-		<div class="col-sm-5">
-			<dl>
-				<dt>Ф.И.О.</dt>
-				<dd>{{ patient.lastName }} {{ patient.firstName }} {{ patient.middleName }}</dd>
-				<dt>Дата рождения</dt>
-				<dd>{{ patient.birthday | date }}</dd>
-				<dt>Адрес постоянной (временной) регистрации</dt>
-				<dd>{{ patient.address }}</dd>
-			</dl>
-		</div>
-		<div class="col-sm-5">
-			<dl>
-				<dt>Контактные телефоны</dt>
-				<dd>{{ patient.phone }}</dd>
-				<dt>Социальное положение</dt>
-				<dd>{{ patient.social }}</dd>
-				<dt>Место работы (службы, учебы)</dt>
-				<dd>{{ patient.job }}</dd>
-			</dl>
-		</div>
+		<hr />
+		<div class="row" my-landing="overview.landing"></div>
 	</div>
-	<hr/>
-	<ng-include src="'/Widget/Landing'"></ng-include>
-</div>
+</section>

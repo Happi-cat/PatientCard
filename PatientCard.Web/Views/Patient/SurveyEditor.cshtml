@@ -4,20 +4,20 @@
 		<form name="surveyForm" class="form-inline" role="form">
 			<div class="form-group">
 				<label class="sr-only">Исследование</label>
-				<select name="typeId" class="form-control" ng-model="survey.typeId" ng-options="type.id as type.value for type in surveyTypes"></select>
+				<select name="typeId" class="form-control" ng-model="survey.survey.typeId" ng-options="type.id as type.value for type in survey.surveyTypes"></select>
 			</div>
 			<div class="form-group" ng-class="{ 'has-error': surveyForm.description.$invalid && surveyForm.description.$dirty }">
 				<label class="sr-only">Проведено</label>
-				<input name="description" type="text" class="form-control" placeholder="Проведено" ng-model="survey.description" required>
+				<input name="description" type="text" class="form-control" placeholder="Проведено" ng-model="survey.survey.description" required>
 			</div>
 			<div class="form-group">
 				<label class="sr-only">Экв. доза (мЗВ)</label>
-				<input name="dose" type="text" class="form-control" placeholder="Экв. доза (мЗВ)" ng-model="survey.dose">
+				<input name="dose" type="text" class="form-control" placeholder="Экв. доза (мЗВ)" ng-model="survey.survey.dose">
 			</div>
 		</form>
 	</div>
 	<div class="panel-footer">
-		<button class="btn btn-success" ng-click="ok()" ng-disabled="surveyForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
-		<button type="reset" class="btn btn-default" ng-click="surveyForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+		<button class="btn btn-success" ng-click="survey.ok()" ng-disabled="surveyForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
+		<button type="reset" class="btn btn-default" ng-click="surveyForm.$setPristine(); survey.cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
 	</div>
 </div>

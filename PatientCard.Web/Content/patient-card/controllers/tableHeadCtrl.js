@@ -11,11 +11,11 @@ function TableHeadCtrl($scope) {
 			item.sort = 1;
 		}
 
-		if (!$scope.sortFields || !$scope.tablehead)
+		if (!$scope.sortFields || !$scope.tableHead)
 			return;
 		
 		$scope.sortFields.splice(0, $scope.sortFields.length);
-		angular.forEach($scope.tablehead, function (column) {
+		angular.forEach($scope.tableHead, function (column) {
 			if (column.sort == 1) {
 				$scope.sortFields.push(column.name);
 			} else if (column.sort == -1) {

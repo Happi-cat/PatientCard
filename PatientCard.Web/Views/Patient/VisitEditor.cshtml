@@ -7,13 +7,13 @@
 			<div class="form-group" ng-class="{ 'has-error': visitForm.description.$invalid && visitForm.description.$dirty }">
 				<div class="col-sm-12">
 					<label class="sr-only">Детали о посещении</label>
-					<textarea name="description" class="form-control" rows="2" placeholder="Жалобы, клиническая картина и т.д." ng-model="visit.description" required></textarea>
+					<textarea name="description" class="form-control" rows="2" placeholder="Жалобы, клиническая картина и т.д." ng-model="visit.visit.description" required></textarea>
 				</div>
 			</div>
 		</form>
 	</div>
 	<div class="panel-footer">
-		<button class="btn btn-success" ng-click="ok()" ng-disabled="visitForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
-		<button type="reset" class="btn btn-default" ng-click="visitForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+		<button class="btn btn-success" ng-click="visit.ok()" ng-disabled="visitForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
+		<button type="reset" class="btn btn-default" ng-click="visitForm.$setPristine(); visit.cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
 	</div>
 </div>

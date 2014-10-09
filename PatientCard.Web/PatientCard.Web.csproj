@@ -800,6 +800,9 @@
     <Content Include="Content\patient-card\modules\auth\httpInterceptor.js" />
     <Content Include="Content\patient-card\modules\auth\permSvc.js" />
     <Content Include="Content\patient-card\modules\auth\roles.js" />
+    <Content Include="Content\patient-card\modules\directives\myBreadcrumb.js" />
+    <Content Include="Content\patient-card\modules\directives\myLanding.js" />
+    <Content Include="Content\patient-card\modules\directives\myTableHead.js" />
     <Content Include="Content\patient-card\modules\modules.js" />
     <Content Include="Content\patient-card\modules\auth\authSvc.js" />
     <Content Include="Content\patient-card\modules\services\patientSvc.js" />
@@ -821,7 +824,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\patient-card\modules\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

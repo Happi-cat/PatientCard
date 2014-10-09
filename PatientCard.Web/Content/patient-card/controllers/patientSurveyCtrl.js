@@ -1,11 +1,15 @@
 ﻿'use strict';
 
-function PatientSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
-	$scope.editPerm = {
+function PatientSurveyCtrl($routeParams, patientSvc, systemSvc, ROLES) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+	
+	self.editPerm = {
 		role: [ROLES.doctor, ROLES.admin]
 	};
 	
-	$scope.tablehead = [
+	self.tablehead = [
 		{
 			name: 'type',
 			title: 'Тип исследования',
@@ -31,7 +35,7 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
 		}
 	];
 
-	$scope.breadcrumb = {
+	self.breadcrumb = {
 		items: [
 			{
 				title: 'Пациенты',
@@ -39,62 +43,62 @@ function PatientSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
 			},
 			{
 				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
+				url: '/patient/view/' + self.patientId
 			}
 		],
 		current: 'Обследования'
 	};
 
-	$scope.sortFields = [];
-	$scope.survey = {};
+	self.sortFields = [];
+	self.survey = {};
 
 	var load = function () {
 		systemSvc.getSurveyTypes().then(function(data) {
-			$scope.surveyTypes = data;
+			self.surveyTypes = data;
 
-			return patientSvc.getPatient($scope.patientId);
+			return patientSvc.getPatient(self.patientId);
 		}).then(function(data) {
-			$scope.patient = data;
+			self.patient = data;
 
-			var item = $scope.breadcrumb.items[1];
+			var item = self.breadcrumb.items[1];
 			item.title = data.displayName;
 
-			return patientSvc.getSurveys($scope.patientId);
+			return patientSvc.getSurveys(self.patientId);
 		}).then(function(data) {
-			$scope.surveys = data;
+			self.surveys = data;
 
-			angular.forEach($scope.surveys, getSurvey);
-		}, $scope.onLoadFailed);
+			angular.forEach(self.surveys, getSurvey);
+		}, self.onLoadFailed);
 	};
 
 	load();
 
 	var getSurvey = function (survey) {
-		angular.forEach($scope.surveyTypes, function (type) {
+		angular.forEach(self.surveyTypes, function (type) {
 			if (!survey.type && survey.typeId == type.id) {
 				survey.type = type.value;
 			}
 		});
 	};
 	
-	$scope.editFormEnabled = false;
+	self.editFormEnabled = false;
 
-	$scope.add = function () {
-		$scope.editFormEnabled = true;
+	self.add = function () {
+		self.editFormEnabled = true;
 	};
 
 
-	$scope.ok = function () {
-		$scope.survey.patientId = $scope.patientId;
-		patientSvc.storeSurvey($scope.survey).then(function (data) {
-			$scope.survey = {};
+	self.ok = function () {
+		self.survey.patientId = self.patientId;
+		patientSvc.storeSurvey(self.survey).then(function (data) {
+			self.survey = {};
 			load();
-			$scope.editFormEnabled = false;
-		}, $scope.onSaveFailed);
+			self.editFormEnabled = false;
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.survey = {};
-		$scope.editFormEnabled = false;
+	self.cancel = function () {
+		self.survey = {};
+		self.editFormEnabled = false;
 	};
 }

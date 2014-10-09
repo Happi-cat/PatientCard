@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 function MenuCtrl(permSvc, ROLES) {
-	var self = {};
+	var self = this;
+	
 	self.items = [
 		{
 			title: 'Пациенты',

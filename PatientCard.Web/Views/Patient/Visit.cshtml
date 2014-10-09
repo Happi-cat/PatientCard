@@ -1,18 +1,21 @@
-﻿<div class="container" ng-controller="PatientVisitCtrl">
-	<div class="page-breadcrumb" ng-include="'/Widget/Breadcrumb'"></div>
+﻿<section class="page-section page-section-breadcrumb">
+	<div class="container" my-breadcrumb="visit.breadcrumb"></div>
+</section>
+<section class="page-section page-section-white"><div class="container">
+
 	<div class="row">
-		<div class="col-sm-12" ng-if="checkPerm(editPerm)">
-			<div class="btn-group bottom-padding" ng-if="!editFormEnabled">
-				<button class="btn btn-primary" ng-click="add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
+		<div class="col-sm-12" ng-if="checkPerm(visit.editPerm)">
+			<div class="btn-group bottom-padding" ng-if="!visit.editFormEnabled">
+				<button class="btn btn-primary" ng-click="visit.add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
 			</div>
-			<ng-include src="'/Patient/VisitEditor'" ng-if="editFormEnabled"></ng-include>
+			<ng-include src="'/Patient/VisitEditor'" ng-if="visit.editFormEnabled"></ng-include>
 		</div>
 	</div>
 	<div class="panel panel-default">
 		<table class="table table-striped table-condensed table-bordered">
-			<thead ng-include="'/Widget/TableHeader'"></thead>
+			<thead my-table-head="visit.tablehead" my-sort-fields="visit.sortFields"></thead>
 			<tbody>
-				<tr ng-repeat="item in visits | orderBy:sortFields | filter:serachText">
+				<tr ng-repeat="item in visit.visits | orderBy:visit.sortFields | filter:serachText">
 					<td>{{ item.description }}</td>
 					<td>{{ item.user.displayName }}</td>
 					<td>{{ item.created | date }}</td>
@@ -21,3 +24,4 @@
 		</table>
 	</div>
 </div>
+	</section>

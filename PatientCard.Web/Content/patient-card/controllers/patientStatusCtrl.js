@@ -1,11 +1,15 @@
 ﻿'use strict';
 
-function PatientStatusCtrl($scope, patientSvc, ROLES) {
-	$scope.editPerm = {
+function PatientStatusCtrl($routeParams, patientSvc, ROLES) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+
+	self.editPerm = {
 		role: [ROLES.doctor, ROLES.admin]
 	};
 
-	$scope.breadcrumb = {
+	self.breadcrumb = {
 		items: [
 			{
 				title: 'Пациенты',
@@ -13,149 +17,165 @@ function PatientStatusCtrl($scope, patientSvc, ROLES) {
 			},
 			{
 				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
+				url: '/patient/view/' + self.patientId
 			}
 		],
 		current: 'Стоматологический статус'
 	};	
 	
 	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
-			$scope.patient = data;
+		patientSvc.getPatient(self.patientId).then(function (data) {
+			self.patient = data;
 
-			var item = $scope.breadcrumb.items[1];
+			var item = self.breadcrumb.items[1];
 			item.title = data.displayName;
-		}, $scope.onLoadFailed);
+		}, self.onLoadFailed);
 	};
 
 	load();
 }
 
-function PatientDentistStatusCtrl($scope, patientSvc) {
+function PatientDentistStatusCtrl($routeParams, patientSvc) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+
 	var load = function () {
-		patientSvc.getDentistStatuses($scope.patientId).then(function (data) {
-			$scope.dentistStatuses = data;
-		}, $scope.onLoadFailed);
+		patientSvc.getDentistStatuses(self.patientId).then(function (data) {
+			self.dentistStatuses = data;
+		}, self.onLoadFailed);
 	};
 
 	load();
 
-	$scope.editFormEnabled = false;
+	self.editFormEnabled = false;
 
-	$scope.add = function() {
-		$scope.editFormEnabled = true;
+	self.add = function() {
+		self.editFormEnabled = true;
 	};
 
-	$scope.status = {};
+	self.status = {};
 
-	$scope.ok = function () {
-		$scope.status.patientId = $scope.patientId;
-		patientSvc.storeDentistStatus($scope.status).then(function (data) {
-			$scope.status = {};
+	self.ok = function () {
+		self.status.patientId = self.patientId;
+		patientSvc.storeDentistStatus(self.status).then(function (data) {
+			self.status = {};
 			load();
-			$scope.editFormEnabled = false;
-		}, $scope.onSaveFailed);
+			self.editFormEnabled = false;
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.status = {};
-		$scope.editFormEnabled = false;
+	self.cancel = function () {
+		self.status = {};
+		self.editFormEnabled = false;
 	};
 }
 
-function PatientOhisStatusCtrl($scope, patientSvc) {
+function PatientOhisStatusCtrl($routeParams, patientSvc) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+	
 	var load = function () {
-		patientSvc.getOhisStatuses($scope.patientId).then(function (data) {
-			$scope.ohisStatuses = data;
-		}, $scope.onLoadFailed);
+		patientSvc.getOhisStatuses(self.patientId).then(function (data) {
+			self.ohisStatuses = data;
+		}, self.onLoadFailed);
 	};
 
 	load();
 	
-	$scope.editFormEnabled = false;
+	self.editFormEnabled = false;
 	
-	$scope.add = function () {
-		$scope.editFormEnabled = true;
+	self.add = function () {
+		self.editFormEnabled = true;
 	};
 	
-	$scope.status = {};
+	self.status = {};
 
-	$scope.ok = function () {
-		$scope.status.patientId = $scope.patientId;
-		patientSvc.storeOhisStatus($scope.status).then(function (data) {
-			$scope.status = {};
+	self.ok = function () {
+		self.status.patientId = self.patientId;
+		patientSvc.storeOhisStatus(self.status).then(function (data) {
+			self.status = {};
 			load();
-			$scope.editFormEnabled = false;
-		}, $scope.onSaveFailed);
+			self.editFormEnabled = false;
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.status = {};
-		$scope.editFormEnabled = false;
+	self.cancel = function () {
+		self.status = {};
+		self.editFormEnabled = false;
 	};
 }
 
-function PatientDfmStatusCtrl($scope, patientSvc) {
+function PatientDfmStatusCtrl($routeParams, patientSvc) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+	
 	var load = function () {
-		patientSvc.getDfmStatuses($scope.patientId).then(function (data) {
-			$scope.dfmStatuses = data;
-		}, $scope.onLoadFailed);
+		patientSvc.getDfmStatuses(self.patientId).then(function (data) {
+			self.dfmStatuses = data;
+		}, self.onLoadFailed);
 	};
 
 	load();
 	
-	$scope.editFormEnabled = false;
+	self.editFormEnabled = false;
 	
-	$scope.add = function () {
-		$scope.editFormEnabled = true;
+	self.add = function () {
+		self.editFormEnabled = true;
 	};
 	
-	$scope.status = {};
+	self.status = {};
 
-	$scope.ok = function () {
-		$scope.status.patientId = $scope.patientId;
-		patientSvc.storeDfmStatus($scope.status).then(function (data) {
-			$scope.status = {};
+	self.ok = function () {
+		self.status.patientId = self.patientId;
+		patientSvc.storeDfmStatus(self.status).then(function (data) {
+			self.status = {};
 			load();
-			$scope.editFormEnabled = false;
-		}, $scope.onSaveFailed);
+			self.editFormEnabled = false;
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.status = {};
-		$scope.editFormEnabled = false;
+	self.cancel = function () {
+		self.status = {};
+		self.editFormEnabled = false;
 	};
 }
 
-function PatientCpiStatusCtrl($scope, patientSvc) {
+function PatientCpiStatusCtrl($routeParams, patientSvc) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+	
 	var load = function () {
-		patientSvc.getCpiStatuses($scope.patientId).then(function (data) {
-			$scope.cpiStatuses = data;
-		}, $scope.onLoadFailed);
+		patientSvc.getCpiStatuses(self.patientId).then(function (data) {
+			self.cpiStatuses = data;
+		}, self.onLoadFailed);
 	};
 
 	load();
 	
-	$scope.editFormEnabled = false;
+	self.editFormEnabled = false;
 	
-	$scope.add = function () {
-		$scope.editFormEnabled = true;
+	self.add = function () {
+		self.editFormEnabled = true;
 	};
 	
-	$scope.status = {};
+	self.status = {};
 
-	$scope.ok = function () {
-		$scope.status.patientId = $scope.patientId;
-		patientSvc.storeCpiStatus($scope.status).then(function (data) {
-			$scope.status = {};
+	self.ok = function () {
+		self.status.patientId = self.patientId;
+		patientSvc.storeCpiStatus(self.status).then(function (data) {
+			self.status = {};
 			load();
-			$scope.editFormEnabled = false;
-		}, $scope.onSaveFailed);
+			self.editFormEnabled = false;
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.status = {};
-		$scope.editFormEnabled = false;
+	self.cancel = function () {
+		self.status = {};
+		self.editFormEnabled = false;
 	};
 }
 

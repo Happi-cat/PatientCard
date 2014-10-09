@@ -1,11 +1,15 @@
 ﻿'use strict';
 
-function PatientTreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
-	$scope.editPerm = {
+function PatientTreatmentPlanCtrl($routeParams, $scope, patientSvc, systemSvc, ROLES) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+	
+	self.editPerm = {
 		role: [ROLES.doctor, ROLES.admin]
 	};
 	
-	$scope.breadcrumb = {
+	self.breadcrumb = {
 		items: [
 			{
 				title: 'Пациенты',
@@ -13,7 +17,7 @@ function PatientTreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
 			},
 			{
 				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
+				url: '/patient/view/' + self.patientId
 			}
 		],
 		current: 'План лечения'
@@ -24,50 +28,50 @@ function PatientTreatmentPlanCtrl($scope, patientSvc, systemSvc, ROLES) {
 		systemSvc.getTreatmentOptions().then(function (data) {
 			options = data;
 
-			return patientSvc.getPatient($scope.patientId);
+			return patientSvc.getPatient(self.patientId);
 		}).then(function (data) {
-			$scope.patient = data;
+			self.patient = data;
 
-			var item = $scope.breadcrumb.items[1];
+			var item = self.breadcrumb.items[1];
 			item.title = data.displayName;
 
-			return patientSvc.getTreatmentPlan($scope.patientId);
+			return patientSvc.getTreatmentPlan(self.patientId);
 		}).then(function (data) {
-			$scope.treatmentPlan = data;
-			if (!$scope.treatmentPlan) {
-				$scope.treatmentPlan = [];
+			self.treatmentPlan = data;
+			if (!self.treatmentPlan) {
+				self.treatmentPlan = [];
 			}
 
 			angular.forEach(options, getPlan);
-		}, $scope.onLoadFailed);
+		}, self.onLoadFailed);
 	};
 
 	load();
 
 	var getPlan = function (option) {
 		var plan = null;
-		angular.forEach($scope.treatmentPlan, function (item) {
+		angular.forEach(self.treatmentPlan, function (item) {
 			if (!plan && option.id == item.treatmentOptionId) {
 				plan = item;
 			}
 		});
 
 		if (!plan) {
-			plan = { treatmentOptionId: option.id, patientId: $scope.patientId };
-			$scope.treatmentPlan.push(plan);
+			plan = { treatmentOptionId: option.id, patientId: self.patientId };
+			self.treatmentPlan.push(plan);
 		}
 		plan.name = option.name;
 		plan.order = option.order;
 		plan.group = option.group;
 	};
 
-	$scope.ok = function () {
-		patientSvc.storeTreatmentPlan($scope.treatmentPlan).then(function (data) {
-			$scope.goUp($scope.breadcrumb);
-		}, $scope.onSaveFailed);
+	self.ok = function () {
+		patientSvc.storeTreatmentPlan(self.treatmentPlan).then(function (data) {
+			$scope.goUp(self.breadcrumb);
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.goUp($scope.breadcrumb);
+	self.cancel = function () {
+		$scope.goUp(self.breadcrumb);
 	};
 }

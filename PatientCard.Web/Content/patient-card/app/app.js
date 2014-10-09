@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var webapp = angular.module('patient-card-app', ['patient-card.services', 'patient-card.auth', 'ui.bootstrap', 'ui.router', 'nvd3ChartDirectives', 'ngRoute'])
+var webapp = angular.module('patient-card-app', ['patient-card.services', 'patient-card.directives', 'patient-card.auth', 'ui.bootstrap', 'ui.router', 'nvd3ChartDirectives', 'ngRoute'])
 	.constant('URLS', {
 		login: '/login',
 		home: '/',
@@ -10,12 +10,12 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 		$routeProvider
 			.when('/', {
 				templateUrl: '/Page/Home',
-				controller: 'LandingCtrl',
+				controller: 'LandingCtrl as landing',
 				perm: { authorized: true }
 			})
 			.when('/login', {
 				templateUrl: '/Page/Login',
-				controller: 'LoginCtrl'
+				controller: 'LoginCtrl as login'
 			})
 			.when('/logout', {
 				template: '',
@@ -24,51 +24,52 @@ var webapp = angular.module('patient-card-app', ['patient-card.services', 'patie
 			})
 			.when('/patients', {
 				templateUrl: '/Page/Patients',
+				controller: 'PatientListCtrl as patientList',
 				perm: { authorized: true }
 			})
 			.when('/patient/view/:id', {
 				templateUrl: '/Patient/Overview',
-				controller: 'PatientCtrl',
+				controller: 'PatientOverviewCtrl as overview',
 				perm: { authorized: true }
 			})
 			.when('/patient/view/:id/first-survey', {
 				templateUrl: '/Patient/FirstSurvey',
-				controller: 'PatientCtrl',
+				controller: 'PatientFirstSurveyCtrl as firstSurvey',
 				perm: { authorized: true }
 			})
 			.when('/patient/view/:id/survey', {
 				templateUrl: '/Patient/Survey',
-				controller: 'PatientCtrl',
+				controller: 'PatientSurveyCtrl as survey',
 				perm: { authorized: true }
 			})
 			.when('/patient/view/:id/treatment-plan', {
 				templateUrl: '/Patient/TreatmentPlan',
-				controller: 'PatientCtrl',
+				controller: 'PatientTreatmentPlanCtrl as treatmentPlan',
 				perm: { authorized: true }
 			})
 			.when('/patient/view/:id/visit', {
 				templateUrl: '/Patient/Visit',
-				controller: 'PatientCtrl',
+				controller: 'PatientVisitCtrl as visit',
 				perm: { authorized: true }
 			})
 			.when('/patient/view/:id/status', {
 				templateUrl: '/Patient/Status',
-				controller: 'PatientCtrl',
+				controller: 'PatientStatusCtrl as status',
 				perm: { authorized: true }
 			})
 			.when('/patient/new', {
 				templateUrl: '/Patient/Editor',
-				controller: 'PatientNewCtrl',
+				controller: 'PatientNewCtrl as editor',
 				perm: { authorized: true }
 			})
 			.when('/patient/edit/:id', {
 				templateUrl: '/Patient/Editor',
-				controller: 'PatientEditCtrl',
+				controller: 'PatientEditCtrl as editor',
 				perm: { authorized: true }
 			})
 			.when('/patient/edit/:id/treatment-plan', {
 				templateUrl: '/Patient/TreatmentPlanEditor',
-				controller: 'PatientCtrl',
+				controller: 'PatientTreatmentPlanCtrl as treatmentPlan',
 				perm: { authorized: true }
 			})
 			.when('/help', {

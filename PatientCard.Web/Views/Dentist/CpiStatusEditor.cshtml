@@ -3,20 +3,20 @@
 	<form name="statusForm" class="form-horizontal form-cpi" role="form" ng-if="editFormEnabled">
 		<div class="form-group">
 			<div class="col-xs-12">
-				<input type="text" maxlength="1" class="form-control" name="value1" ng-model="status.value1" />
-				<input type="text" maxlength="1" class="form-control" name="value2" ng-model="status.value2" />
-				<input type="text" maxlength="1" class="form-control" name="value3" ng-model="status.value3" />
-				<input type="text" maxlength="1" class="form-control" name="value4" ng-model="status.value4" />
-				<input type="text" maxlength="1" class="form-control" name="value5" ng-model="status.value5" />
-				<input type="text" maxlength="1" class="form-control" name="value6" ng-model="status.value6" />
+				<input type="text" maxlength="1" class="form-control" name="value1" ng-model="cpiStatus.status.value1" />
+				<input type="text" maxlength="1" class="form-control" name="value2" ng-model="cpiStatus.status.value2" />
+				<input type="text" maxlength="1" class="form-control" name="value3" ng-model="cpiStatus.status.value3" />
+				<input type="text" maxlength="1" class="form-control" name="value4" ng-model="cpiStatus.status.value4" />
+				<input type="text" maxlength="1" class="form-control" name="value5" ng-model="cpiStatus.status.value5" />
+				<input type="text" maxlength="1" class="form-control" name="value6" ng-model="cpiStatus.status.value6" />
 			</div>
 		</div>
 	</form>
 	<div class="panel-footer">
 		<div class="row">
 			<div class="col-sm-12 btn-group-vertical">
-				<button class="btn btn-success" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
-				<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+				<button class="btn btn-success" ng-click="cpiStatus.ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
+				<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cpiStatus.cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
 			</div>
 			<div class="clearfix"></div>
 		</div>

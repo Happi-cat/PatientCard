@@ -1,8 +1,10 @@
 ﻿'use strict';
 
 
-function PatientNewCtrl($scope, $location, patientSvc) {
-	$scope.breadcrumb = {
+function PatientNewCtrl($location, $scope, patientSvc) {
+	var self = this;
+
+	self.breadcrumb = {
 		items: [
 			{
 				title: 'Пациенты',
@@ -12,7 +14,7 @@ function PatientNewCtrl($scope, $location, patientSvc) {
 		current: 'Новый пациент'
 	};
 	
-	$scope.gender = [
+	self.gender = [
 		{
 			id: 'male',
 			value: 'Муж.'
@@ -23,21 +25,21 @@ function PatientNewCtrl($scope, $location, patientSvc) {
 		}
 	];
 	
-	$scope.ok = function () {
-		patientSvc.storePatient($scope.patient).then(function (data) {
-			$scope.goUp($scope.breadcrumb);
-		}, $scope.onSaveFailed);
+	self.ok = function () {
+		patientSvc.storePatient(self.patient).then(function (data) {
+			$scope.goUp(self.breadcrumb);
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.goUp($scope.breadcrumb);
+	self.cancel = function () {
+		$scope.goUp(self.breadcrumb);
 	};
 
-	$scope.open = function ($event) {
+	self.open = function ($event) {
 		$event.preventDefault();
 		$event.stopPropagation();
 
-		$scope.opened = true;
+		self.opened = true;
 	};
 
 }

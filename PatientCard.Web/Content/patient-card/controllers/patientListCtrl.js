@@ -1,7 +1,9 @@
 ﻿'use strict';
 
-function PatientListCtrl($scope, patientSvc) {
-	$scope.tablehead = [
+function PatientListCtrl(patientSvc) {
+	var self = this;
+
+	self.tablehead = [
 		{
 			name: 'lastName',
 			title: 'Фамилия',
@@ -25,13 +27,13 @@ function PatientListCtrl($scope, patientSvc) {
 		}
 	];
 
-	$scope.items = [];
-	$scope.sortFields = [];
+	self.items = [];
+	self.sortFields = [];
 
 	var load = function() {
 		patientSvc.getPatients().then(function(data) {
-			$scope.items = data;
-		}, $scope.onLoadFailed);
+			self.items = data;
+		}, self.onLoadFailed);
 	};
 
 	load();

@@ -1,13 +1,9 @@
 ﻿<div class="landing">
 	<div ng-repeat="item in landing" class="action">
-		<div class="media tile">
-			<div class="media-object pull-left landing-icon {{ item.icon }}"></div>
-			<div class="media-body">
-				<a href="#!{{item.url}}">
-					<h4 class="media-heading">{{ item.title }}</h4>
-				</a>
+		<div class="action-icon landing-icon {{ item.icon }}"></div>
+			<div class="action-content">
+				<a href="#!{{item.url}}">{{ item.title }}</a>
 				{{ item.description }}
 			</div>
-		</div>
 	</div>
 </div>

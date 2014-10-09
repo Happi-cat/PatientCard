@@ -1,10 +1,14 @@
 ﻿'use strict';
 
-function PatientEditCtrl($scope, $routeParams, patientSvc) {
-	$scope.patientId = $routeParams.id;
-	$scope.edit = true;
+function PatientEditCtrl($routeParams, $scope, patientSvc) {
+	PatientCtrl.call(this, $routeParams);
 	
-	$scope.breadcrumb = {
+	var self = this;
+
+	self.patientId = $routeParams.id;
+	self.edit = true;
+	
+	self.breadcrumb = {
 		items: [
 			{
 				title: 'Пациенты',
@@ -12,12 +16,12 @@ function PatientEditCtrl($scope, $routeParams, patientSvc) {
 			},
 			{
 				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
+				url: '/patient/view/' + self.patientId
 			}
 		],
 		current: 'Редактирование'
 	};
-	$scope.gender = [
+	self.gender = [
 		{
 			id: 'male',
 			value: 'Муж.'
@@ -30,32 +34,32 @@ function PatientEditCtrl($scope, $routeParams, patientSvc) {
 
 
 	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
-			$scope.patient = data;
+		patientSvc.getPatient(self.patientId).then(function (data) {
+			self.patient = data;
 
-			var item = $scope.breadcrumb.items[1];
+			var item = self.breadcrumb.items[1];
 			item.title = data.displayName;
 
-		}, $scope.onLoadFailed);
+		}, self.onLoadFailed);
 	};
 
 	load();
 
-	$scope.ok = function () {
-		patientSvc.storePatient($scope.patient).then(function (data) {
-			$scope.goUp($scope.breadcrumb);
-		}, $scope.onSaveFailed);
+	self.ok = function () {
+		patientSvc.storePatient(self.patient).then(function (data) {
+			$scope.goUp(self.breadcrumb);
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.goUp($scope.breadcrumb);
+	self.cancel = function () {
+		$scope.goUp(self.breadcrumb);
 	};
 
-	$scope.open = function ($event) {
+	self.open = function ($event) {
 		$event.preventDefault();
 		$event.stopPropagation();
 
-		$scope.opened = true;
+		self.opened = true;
 	};
 
 

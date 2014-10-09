@@ -1,22 +1,28 @@
-﻿<div class="container" ng-controller="PatientTreatmentPlanCtrl">
-	<div class="page-breadcrumb" ng-include="'/Widget/Breadcrumb'"></div>
-	<dl>
-		<dt ng-repeat-start="item in treatmentPlan | orderBy:['group','order'] ">
-			<label class="col-sm-1 control-label" ng-if="!item.order">{{ item.group }}</label>
-			<div class="col-sm-11" ng-class="{ 'col-sm-offset-1' : item.order }">
-				<label class="control-label">{{ item.name }}</label>
-			</div>
-		</dt>
-		<dd ng-repeat-end>
+﻿<section class="page-section page-section-breadcrumb">
+	<div class="container" my-breadcrumb="treatmentPlan.breadcrumb"></div>
+</section>
+<section class="page-section page-section-white">
+	<div class="container">
+
+		<dl>
+			<dt ng-repeat-start="item in treatmentPlan.treatmentPlan | orderBy:['group','order'] ">
+				<label class="col-sm-1 control-label" ng-if="!item.order">{{ item.group }}</label>
+				<div class="col-sm-11" ng-class="{ 'col-sm-offset-1' : item.order }">
+					<label class="control-label">{{ item.name }}</label>
+				</div>
+			</dt>
+			<dd ng-repeat-end>
+				<div class="col-sm-offset-1 col-sm-11">
+					{{ item.description }}
+		
+				</div>
+			</dd>
+		</dl>
+		<div class="clearfix Lower-padding"></div>
+		<div class="row">
 			<div class="col-sm-offset-1 col-sm-11">
-				{{ item.description }}
+				<a href="#!/patient/edit/{{ treatmentPlan.patientId }}/treatment-plan" class="btn btn-primary" ng-if="checkPerm(treatmentPlan.editPerm)"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Заполнить форму</a>
 			</div>
-		</dd>
-	</dl>
-	<div class="clearfix Lower-padding"></div>
-	<div class="row">
-		<div class="col-sm-offset-1 col-sm-11">
-			<a href="#!/patient/edit/{{ patientId }}/treatment-plan" class="btn btn-primary" ng-if="checkPerm(editPerm)"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Заполнить форму</a>
 		</div>
 	</div>
-</div>
+</section>

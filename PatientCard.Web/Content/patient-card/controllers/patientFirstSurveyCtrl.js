@@ -1,11 +1,15 @@
 ﻿'use strict';
 
-function PatientFirstSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
-	$scope.editPerm = {
+function PatientFirstSurveyCtrl($routeParams, $scope, patientSvc, systemSvc, ROLES) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+
+	self.editPerm = {
 		role: [ROLES.doctor, ROLES.admin]
 	};
 	
-	$scope.breadcrumb = {
+	self.breadcrumb = {
 		items: [
 			{
 				title: 'Пациенты',
@@ -13,7 +17,7 @@ function PatientFirstSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
 			},
 			{
 				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
+				url: '/patient/view/' + self.patientId
 			}
 		],
 		current: 'Первичный осмотр'
@@ -24,54 +28,54 @@ function PatientFirstSurveyCtrl($scope, patientSvc, systemSvc, ROLES) {
 		systemSvc.getFirstSurveyOptions().then(function (data) {
 			options = data;
 
-			return patientSvc.getPatient($scope.patientId);
+			return patientSvc.getPatient(self.patientId);
 		}).then(function (data) {
-			$scope.patient = data;
+			self.patient = data;
 
-			var item = $scope.breadcrumb.items[1];
+			var item = self.breadcrumb.items[1];
 			item.title = data.displayName;
 
-			return patientSvc.getFirstSurvey($scope.patientId);
+			return patientSvc.getFirstSurvey(self.patientId);
 		}).then(function (data) {
-			$scope.firstSurvey = data;
-			if (!$scope.firstSurvey) {
-				$scope.firstSurvey = {
-					patientId: $scope.patientId
+			self.firstSurvey = data;
+			if (!self.firstSurvey) {
+				self.firstSurvey = {
+					patientId: self.patientId
 				};
 			}
-			if (!$scope.firstSurvey.details) {
-				$scope.firstSurvey.details = [];
+			if (!self.firstSurvey.details) {
+				self.firstSurvey.details = [];
 			}
 
 			angular.forEach(options, getDetail);
-		}, $scope.onLoadFailed);
+		}, self.onLoadFailed);
 	};
 
 	load();
 	
 	var getDetail = function (option) {
 		var detail = null;
-		angular.forEach($scope.firstSurvey.details, function (item) {
+		angular.forEach(self.firstSurvey.details, function (item) {
 			if (!detail && option.id == item.surveyOptionId) {
 				detail = item;
 			}
 		});
 
 		if (!detail) {
-			detail = { surveyOptionId: option.id, patientId: $scope.patientId };
-			$scope.firstSurvey.details.push(detail);
+			detail = { surveyOptionId: option.id, patientId: self.patientId };
+			self.firstSurvey.details.push(detail);
 		}
 		detail.value = option.value;
 	};
 
-	$scope.ok = function () {
-		$scope.firstSurvey.patientId = $scope.patientId;
-		patientSvc.storeFirstSurvey($scope.firstSurvey).then(function (data) {
-			$scope.goUp($scope.breadcrumb);
-		}, $scope.onSaveFailed);
+	self.ok = function () {
+		self.firstSurvey.patientId = self.patientId;
+		patientSvc.storeFirstSurvey(self.firstSurvey).then(function (data) {
+			$scope.goUp(self.breadcrumb);
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.goUp($scope.breadcrumb);
+	self.cancel = function () {
+		$scope.goUp(self.breadcrumb);
 	};
 }

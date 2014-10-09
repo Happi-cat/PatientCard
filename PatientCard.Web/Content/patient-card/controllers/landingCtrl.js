@@ -1,7 +1,9 @@
 ﻿'use strict';
 
-function LandingCtrl($scope) {
-	$scope.landing = [
+function LandingCtrl() {
+	var self = this;
+
+	self.landing = [
 		{
 			icon: 'medical-service-icon-man410',
 			title: 'Пациенты',

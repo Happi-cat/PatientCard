@@ -1,38 +1,38 @@
 ﻿<div class="panel panel-primary">
 	<div class="panel-heading">КПИ</div>
-	<form name="statusForm" class="form-horizontal form-ohis" role="form" ng-if="editFormEnabled">
+	<form name="statusForm" class="form-horizontal form-ohis" role="form" ng-if="ohistStatus.editFormEnabled">
 		<div class="form-group">
 			<div class="col-xs-12">
 				<div class="input-group">
-					<input type="text" maxlength="1" class="form-control" name="dis1" ng-model="status.dis1" />
+					<input type="text" maxlength="1" class="form-control" name="dis1" ng-model="ohistStatus.status.dis1" />
 					<span class="input-group-addon">&#x2215</span>
-					<input type="text" maxlength="1" class="form-control" name="cis1" ng-model="status.cis1" />
+					<input type="text" maxlength="1" class="form-control" name="cis1" ng-model="ohistStatus.status.cis1" />
 				</div>
 				<div class="input-group">
-					<input type="text" maxlength="1" class="form-control" name="dis2" ng-model="status.dis2" />
+					<input type="text" maxlength="1" class="form-control" name="dis2" ng-model="ohistStatus.status.dis2" />
 					<span class="input-group-addon">&#x2215</span>
-					<input type="text" maxlength="1" class="form-control" name="cis2" ng-model="status.cis2" />
+					<input type="text" maxlength="1" class="form-control" name="cis2" ng-model="ohistStatus.status.cis2" />
 				</div>
 				<div class="input-group">
-					<input type="text" maxlength="1" class="form-control" name="dis3" ng-model="status.dis3" />
+					<input type="text" maxlength="1" class="form-control" name="dis3" ng-model="ohistStatus.status.dis3" />
 					<span class="input-group-addon">&#x2215</span>
-					<input type="text" maxlength="1" class="form-control" name="cis3" ng-model="status.cis3" />
+					<input type="text" maxlength="1" class="form-control" name="cis3" ng-model="ohistStatus.status.cis3" />
 				</div>
 				<div class="input-group">
-					<input type="text" maxlength="1" class="form-control" name="dis4" ng-model="status.dis4" />
+					<input type="text" maxlength="1" class="form-control" name="dis4" ng-model="ohistStatus.status.dis4" />
 					<span class="input-group-addon">&#x2215</span>
-					<input type="text" maxlength="1" class="form-control" name="cis4" ng-model="status.cis4" />
+					<input type="text" maxlength="1" class="form-control" name="cis4" ng-model="ohistStatus.status.cis4" />
 				</div>
 				<div class="input-group">
-					<input type="text" maxlength="1" class="form-control" name="dis5" ng-model="status.dis5" />
+					<input type="text" maxlength="1" class="form-control" name="dis5" ng-model="ohistStatus.status.dis5" />
 					<span class="input-group-addon">&#x2215</span>
-					<input type="text" maxlength="1" class="form-control" name="cis5" ng-model="status.cis5" />
+					<input type="text" maxlength="1" class="form-control" name="cis5" ng-model="ohistStatus.status.cis5" />
 				</div>
 
 				<div class="input-group">
-					<input type="text" maxlength="1" class="form-control" name="dis6" ng-model="status.dis6" />
+					<input type="text" maxlength="1" class="form-control" name="dis6" ng-model="ohistStatus.status.dis6" />
 					<span class="input-group-addon">&#x2215</span>
-					<input type="text" maxlength="1" class="form-control" name="cis6" ng-model="status.cis6" />
+					<input type="text" maxlength="1" class="form-control" name="cis6" ng-model="ohistStatus.status.cis6" />
 				</div>
 			</div>
 		</div>
@@ -40,8 +40,8 @@
 	<div class="panel-footer">
 		<div class="row">
 			<div class="col-sm-12 btn-group-vertical">
-				<button class="btn btn-success" ng-click="ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
-				<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+				<button class="btn btn-success" ng-click="ohistStatus.ok()" ng-disabled="statusForm.$invalid"><span class="glyphicon glyphicon-ok"></span>&nbsp;Сохранить</button>
+				<button type="reset" class="btn btn-default" ng-click="statusForm.$setPristine(); ohistStatus.cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
 			</div>
 			<div class="clearfix"></div>
 		</div>

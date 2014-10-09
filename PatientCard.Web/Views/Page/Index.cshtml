@@ -5,5 +5,5 @@
 <div class="container">
 	 <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><strong>{{ alert.title }}</strong>&nbsp;{{ alert.details }}</alert>
 </div>
-<div ng-view>
-</div>
+<section class="main" ng-view>
+</section>

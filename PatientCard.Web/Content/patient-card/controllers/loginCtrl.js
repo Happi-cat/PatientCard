@@ -1,17 +1,21 @@
 ﻿'use strict';
 
-function LoginCtrl($scope, $location, authSvc, URLS) {
-	$scope.user = {};
+function LoginCtrl($location, authSvc, URLS) {
+	var self = this;
+	
+	self.user = {};
 
-	$scope.ok = function() {
-		authSvc.login($scope.user.username, $scope.user.password).then(function(data) {
+	self.ok = function() {
+		authSvc.login(self.user.username, self.user.password).then(function(data) {
 			$location.path(URLS.home);
-		}, $scope.onLoadFailed);
+		}, self.onLoadFailed);
 	};
 }
 
-function LogoutCtrl($scope, $location, authSvc, URLS) {
+function LogoutCtrl($location, authSvc, URLS) {
+	var self = this;
+	
 	authSvc.logout().then(function() {
 		$location.path(URLS.login);
-	}, $scope.onLoadFailed);
+	}, self.onLoadFailed);
 }

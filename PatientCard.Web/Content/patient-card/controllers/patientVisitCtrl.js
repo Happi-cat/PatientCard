@@ -1,11 +1,15 @@
 ﻿'use strict';
 
-function PatientVisitCtrl($scope, patientSvc, ROLES) {
-	$scope.editPerm = {
+function PatientVisitCtrl($routeParams, patientSvc, ROLES) {
+	PatientCtrl.call(this, $routeParams);
+
+	var self = this;
+	
+	self.editPerm = {
 		role: [ROLES.doctor, ROLES.admin]
 	};
 	
-	$scope.tablehead = [
+	self.tablehead = [
 			{
 				name: 'description',
 				title: 'Описание'
@@ -22,7 +26,7 @@ function PatientVisitCtrl($scope, patientSvc, ROLES) {
 			}
 	];
 
-	$scope.breadcrumb = {
+	self.breadcrumb = {
 		items: [
 			{
 				title: 'Пациенты',
@@ -30,48 +34,48 @@ function PatientVisitCtrl($scope, patientSvc, ROLES) {
 			},
 			{
 				title: 'Пациент',
-				url: '/patient/view/' + $scope.patientId
+				url: '/patient/view/' + self.patientId
 			}
 		],
 		current: 'Дневник посещений'
 	};
 
-	$scope.sortFields = [];
-	$scope.visit = {};
+	self.sortFields = [];
+	self.visit = {};
 
 	var load = function () {
-		patientSvc.getPatient($scope.patientId).then(function (data) {
-			$scope.patient = data;
+		patientSvc.getPatient(self.patientId).then(function (data) {
+			self.patient = data;
 
-			var item = $scope.breadcrumb.items[1];
+			var item = self.breadcrumb.items[1];
 			item.title = data.displayName;
 
-			return patientSvc.getVisit($scope.patientId);
+			return patientSvc.getVisit(self.patientId);
 		}).then(function (data) {
-			$scope.visits = data;
-		}, $scope.onLoadFailed);
+			self.visits = data;
+		}, self.onLoadFailed);
 	};
 
 	load();
 
-	$scope.editFormEnabled = false;
+	self.editFormEnabled = false;
 
-	$scope.add = function () {
-		$scope.editFormEnabled = true;
+	self.add = function () {
+		self.editFormEnabled = true;
 	};
 
 
-	$scope.ok = function () {
-		$scope.visit.patientId = $scope.patientId;
-		patientSvc.storeVisit($scope.visit).then(function (data) {
-			$scope.visit = {};
+	self.ok = function () {
+		self.visit.patientId = self.patientId;
+		patientSvc.storeVisit(self.visit).then(function (data) {
+			self.visit = {};
 			load();
-			$scope.editFormEnabled = false;
-		}, $scope.onSaveFailed);
+			self.editFormEnabled = false;
+		}, self.onSaveFailed);
 	};
 
-	$scope.cancel = function () {
-		$scope.visit = {};
-		$scope.editFormEnabled = false;
+	self.cancel = function () {
+		self.visit = {};
+		self.editFormEnabled = false;
 	};
 }

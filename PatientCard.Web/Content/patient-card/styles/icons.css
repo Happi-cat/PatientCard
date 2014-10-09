@@ -1,9 +1,15 @@
-﻿body
+﻿/*body
 {
 	background: url('img/dental-tools.png') no-repeat 100% 100% fixed;
 	background-size: 600px;
 }
 .jumbotron {
-	background: url('img/smile.png') no-repeat 100%;
-	background-color: #ccc4c4;
+	background: url('img/doctors.png') no-repeat 50% 100%;
+	background-color: #002c51;
+	min-height: 320px;
 }
+
+.navbar {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}*/

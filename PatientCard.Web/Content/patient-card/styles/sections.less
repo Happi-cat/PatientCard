@@ -1,0 +1,29 @@
+.page-section-padding() {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+section.main {
+	.page-section {
+		&-branding {
+			.page-section-padding();
+			background: url('img/doctors.png') no-repeat 50% 100%;
+			background-color: @header-color;
+			min-height: 320px;
+			color: white;
+		}
+
+		&-white {
+			.page-section-padding();
+			background-color: white;
+		}
+
+		&-breadcrumb {
+			background-color: @breadcrumb-color;
+
+			.breadcrumb {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-﻿<div class="jumbotron">
+﻿<section class="page-section page-section-branding">
 	<div class="container">
 		<h2>Список пациентов</h2>
 		<p>Если хотите добавить пациента нажмите на кнопку ниже</p>
@@ -8,27 +8,29 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="container" ng-controller="PatientListCtrl">
-	<div class="panel panel-default">
-		<table class="table table-striped table-condensed table-bordered">
-			<thead ng-include="'/Widget/TableHeader'"></thead>
-			<tbody>
-				<tr ng-repeat="item in items | orderBy:sortFields | filter: searchText">
-					<td><a href="#!/patient/view/{{ item.id }}">{{ item.lastName }}</a></td>
-					<td>{{ item.firstName }}</td>
-					<td>{{ item.middleName }}</td>
-					<td>{{ item.phone }}</td>
-					<td>{{ item.address }}</td>
-					<td>
-						<div class="btn-toolbar pull-right">
-							<div class="btn-group btn-group-xs">
-								<a href="#!/patient/edit/{{ item.id }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+</section>
+<section class="page-section page-section-white">
+	<div class="container">
+		<div class="panel panel-default">
+			<table class="table table-striped table-condensed table-bordered">
+				<thead my-table-head="patientList.tablehead" my-sort-fields="patientList.sortFields"></thead>
+				<tbody>
+					<tr ng-repeat="item in patientList.items | orderBy:sortFields | filter: searchText">
+						<td><a href="#!/patient/view/{{ item.id }}">{{ item.lastName }}</a></td>
+						<td>{{ item.firstName }}</td>
+						<td>{{ item.middleName }}</td>
+						<td>{{ item.phone }}</td>
+						<td>{{ item.address }}</td>
+						<td>
+							<div class="btn-toolbar pull-right">
+								<div class="btn-group btn-group-xs">
+									<a href="#!/patient/edit/{{ item.id }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+								</div>
 							</div>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
-</div>
+</section>

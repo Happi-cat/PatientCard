@@ -1,5 +1,7 @@
 ﻿'use strict';
 
-function PatientCtrl($scope, $routeParams) {
-	$scope.patientId = $routeParams.id;
+function PatientCtrl($routeParams) {
+	var self = this;
+	
+	self.patientId = $routeParams.id;
 }
