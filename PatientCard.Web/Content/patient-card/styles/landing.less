@@ -1,0 +1,45 @@
+﻿@landing-padding : 20px;
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.landing-layout(@landing-cols) {
+	min-height: 1px;
+
+	& .action {
+		padding: @landing-padding;
+		width: (100% / @landing-cols);
+		float:left;
+		
+		&:nth-child(@{landing-cols}n + 1) {
+			clear: both;
+		}
+
+		&:nth-child(n) {
+			clear: none;
+		}
+	}
+}
+
+.landing {
+	.clearfix();
+	.landing-layout(3);
+	
+	@media screen {
+		@media (max-width: 767px) {
+			.landing-layout(1);
+		}
+
+		@media (min-width: 768px) and (max-width: 991px) {
+			.landing-layout(2);
+		}
+	}
+}

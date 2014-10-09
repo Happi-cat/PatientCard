@@ -1,5 +1,5 @@
-﻿<div class="row">
-	<div ng-repeat-start="item in landing" class="col-md-4 col-sm-6">
+﻿<div class="landing">
+	<div ng-repeat="item in landing" class="action">
 		<div class="media tile">
 			<div class="media-object pull-left landing-icon {{ item.icon }}"></div>
 			<div class="media-body">
@@ -10,6 +10,4 @@
 			</div>
 		</div>
 	</div>
-	<div ng-if="$index % 2 == 1" class="clearfix visible-sm"></div>
-	<div ng-repeat-end ng-if="$index % 3 == 2" class="clearfix visible-md"></div>
 </div>

@@ -808,6 +808,7 @@
     <Content Include="Content\patient-card\styles\icons.css" />
     <Content Include="Content\patient-card\styles\img\dental-tools.png" />
     <Content Include="Content\patient-card\styles\img\smile.png" />
+    <Content Include="Content\patient-card\styles\landing.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -944,6 +945,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Patient\VisitEditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\patient-card\styles\landing.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\patient-card\styles\landing.css.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
