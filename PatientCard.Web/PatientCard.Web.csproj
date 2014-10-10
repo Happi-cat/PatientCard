@@ -796,7 +796,6 @@
     <Content Include="Content\patient-card\controllers\patientSurveyCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientTreatmentPlanCtrl.js" />
     <Content Include="Content\patient-card\controllers\patientVisitCtrl.js" />
-    <Content Include="Content\patient-card\controllers\tableHeadCtrl.js" />
     <Content Include="Content\patient-card\modules\auth\httpInterceptor.js" />
     <Content Include="Content\patient-card\modules\auth\permSvc.js" />
     <Content Include="Content\patient-card\modules\auth\roles.js" />

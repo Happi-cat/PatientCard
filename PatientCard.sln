@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{27A03818-F47C-40E7-969B-C6F8AB0F349B}"
 	ProjectSection(SolutionItems) = preProject
 		CreateDatabase.sql = CreateDatabase.sql
+		GenderFixup.sql = GenderFixup.sql
+		Patient.sql = Patient.sql
 	EndProjectSection
 EndProject
 Global

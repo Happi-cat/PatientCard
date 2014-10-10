@@ -7,24 +7,24 @@
 			<div class="form-group" ng-class="{ 'has-error': patientForm.lastName.$invalid || patientForm.firstName.$invalid || patientForm.middleName.$invalid }">
 				<label class="col-sm-3 control-label">Ф.И.О. Пациента</label>
 				<div class="col-sm-3">
-					<input type="text" class="form-control capitalize" placeholder="Фамилия" name="lastName" ng-model="editor.patient.lastName" required ng-disabled="edit">
+					<input type="text" class="form-control capitalize" placeholder="Фамилия" name="lastName" ng-model="editor.patient.lastName" required ng-disabled="editor.edit">
 				</div>
 				<div class="col-sm-3">
-					<input type="text" class="form-control capitalize" placeholder="Имя" name="firstName" ng-model="editor.patient.firstName" required ng-disabled="edit">
+					<input type="text" class="form-control capitalize" placeholder="Имя" name="firstName" ng-model="editor.patient.firstName" required ng-disabled="editor.edit">
 				</div>
 				<div class="col-sm-3">
-					<input type="text" class="form-control capitalize" placeholder="Отчество" name="middleName" ng-model="editor.patient.middleName" required ng-disabled="edit">
+					<input type="text" class="form-control capitalize" placeholder="Отчество" name="middleName" ng-model="editor.patient.middleName" required ng-disabled="editor.edit">
 				</div>
 			</div>
 			<div class="form-group" ng-class="{ 'has-error': patientForm.birthday.$invalid || patientForm.gender.$invalid  }">
 				<label class="col-sm-3 control-label">Дата рождения</label>
 				<div class="col-sm-3">
 					<p class="input-group">
-						<input type="text" class="form-control" datepicker-popup="dd.MM.yyyy" name="birthday" ng-model="editor.patient.birthday" is-open="opened"
+						<input type="text" class="form-control" datepicker-popup="dd.MM.yyyy" name="birthday" ng-model="editor.patient.birthday" is-open="editor.opened"
 							datepicker-options="{ formatYear: 'yyyy', startingDay: 1 }" show-button-bar="false"
 							ng-required="true" close-text="Close" />
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+							<button type="button" class="btn btn-default" ng-click="editor.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
 						</span>
 					</p>
 				</div>

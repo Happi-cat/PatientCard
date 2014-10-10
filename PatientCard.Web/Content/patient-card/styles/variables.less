@@ -10,7 +10,24 @@
 
 
 @header-color : 	     #002c51;
+@header-color-darker:	 darken(@header-color, 40%);
+@header-color-dark:		 darken(@header-color, 20%);
 @header-color-light:     lighten(@header-color, 20%);
 @header-color-lighter:   lighten(@header-color, 40%);
 
-@breadcrumb-color: 	     #f5f5f5;
+
+//== Breadcrumbs
+//
+//##
+
+@breadcrumb-padding-vertical:   8px;
+@breadcrumb-padding-horizontal: 15px;
+//** Breadcrumb background color
+@breadcrumb-bg:                 #f5f5f5;
+//** Breadcrumb text color
+@breadcrumb-color:              #ccc;
+//** Text color of current page in the breadcrumb
+@breadcrumb-active-color:       @gray-light;
+//** Textual separator for between breadcrumb elements
+@breadcrumb-separator:          "/";
+
