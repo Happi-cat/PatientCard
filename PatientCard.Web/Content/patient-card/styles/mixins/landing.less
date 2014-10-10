@@ -1,0 +1,20 @@
+// mixin for landing layout
+.landing-layout(@columns) {
+	min-height: 1px;
+
+	& .action {
+		padding: @landing-padding-vertical @landing-padding-horizontal;
+		width: (100% / @columns);
+		float:left;
+		
+		// clear sett to none for all items
+		&:nth-child(n) {
+			clear: none;
+		}
+
+		// set clear both for specified items
+		&:nth-child(@{columns}n + 1) {
+			clear: both;
+		}
+	}
+}
