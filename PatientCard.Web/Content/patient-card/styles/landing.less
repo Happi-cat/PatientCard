@@ -16,22 +16,31 @@
 
 // action elements
 .landing .action {
-	// prefix
-	.action {
-		&-icon {
-			float: left;
-			display: block;
-			margin-right: 5px;
-		}
+	.transition(0.7s ease-in-out);
+    
+	&:hover  {
+		.scale(1.1);
+	}
 
-		&-content {
-			overflow: hidden;
+	color: @text-color;
+	text-decoration: none;
 
-			a {
-				display: block;
-				font-size: 18px;
-				margin-bottom:  5px;
-			}
-		}
+	.icon {
+		float: left;
+		display: block;
+		font-size: 64px;
+		margin-right: 10px;
+	}
+
+	.content {
+		overflow: hidden;
+	}
+
+	.heading
+	{
+		display: block;
+		font-size: 18px;
+		margin-bottom:  5px;
+		color: @link-color;
 	}
 }

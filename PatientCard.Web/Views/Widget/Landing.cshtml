@@ -1,9 +1,9 @@
 ﻿<div class="landing">
-	<div ng-repeat="item in landing" class="action">
-		<div class="action-icon landing-icon {{ item.icon }}"></div>
-			<div class="action-content">
-				<a href="#!{{item.url}}">{{ item.title }}</a>
-				{{ item.description }}
-			</div>
-	</div>
+	<a href="#!{{item.url}}" ng-repeat="item in landing" class="action">
+		<div class="icon {{ item.icon }}"></div>
+		<div class="content">
+			<p class="heading">{{ item.title }}</p>
+			{{ item.description }}
+		</div>
+	</a>
 </div>
