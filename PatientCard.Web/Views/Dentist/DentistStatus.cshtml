@@ -1,5 +1,5 @@
 ﻿<ul class="media-list" ng-controller="PatientDentistStatusCtrl as dentistStatus">
-	<li class="media" ng-if="checkPerm(dentistStatus.editPerm)">
+	<li class="media hidden-print" ng-if="checkPerm(dentistStatus.editPerm)">
 		<div ng-if="!dentistStatus.editFormEnabled">
 			<button class="btn btn-primary" ng-click="dentistStatus.add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
 		</div>

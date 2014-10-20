@@ -1,5 +1,5 @@
 ﻿<div class="row" ng-controller="PatientDfmStatusCtrl as dfmStatus">
-	<div class="col-sm-12" ng-if="checkPerm(dfmStatus.editPerm)">
+	<div class="col-sm-12 hidden-print" ng-if="checkPerm(dfmStatus.editPerm)">
 		<div class="btn-group bottom-padding" ng-if="!dfmStatus.editFormEnabled">
 			<button class="btn btn-primary" ng-click="dfmStatus.add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить</button>
 		</div>

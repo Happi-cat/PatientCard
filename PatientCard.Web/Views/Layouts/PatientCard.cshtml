@@ -10,7 +10,7 @@
 	@Styles.Render("~/bundles/styles/common")
 </head>
 	<body>
-		<header>
+		<header class="hidden-print">
 			<nav class="navbar" role="navigation">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -47,7 +47,7 @@
 			</nav>
 		</header>
 		@RenderBody()
-		<footer>
+		<footer class="hidden-print">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-2">
