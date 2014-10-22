@@ -4,7 +4,7 @@ angular.module('patientCardApp')
   .controller('PatientEditCtrl', function ($scope, $routeParams, patientService) {
     var self = $scope;
 
-	self.patientId = $routeParams.id;
+	self.patientId = $routeParams.patientId;
 	self.edit = true;
 	
 	self.breadcrumb = {

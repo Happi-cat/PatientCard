@@ -1,3 +1,71 @@
-<div class="col-md-12">
-This is the patient-edit view.
-</div>
+<ng-include src="'components/header/header.html'"></ng-include>
+<section class="page-section page-section-breadcrumb">
+	<div class="container" breadcrumb datasource="breadcrumb"></div>
+</section>
+<section class="page-section page-section-white">
+	<div class="container">
+		<form name="patientForm" class="form-horizontal" role="form">
+			<div class="form-group" ng-class="{ 'has-error': patientForm.lastName.$invalid || patientForm.firstName.$invalid || patientForm.middleName.$invalid }">
+				<label class="col-sm-3 control-label">Ф.И.О. Пациента</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control capitalize" placeholder="Фамилия" name="lastName" ng-model="patient.lastName" required ng-disabled="edit">
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control capitalize" placeholder="Имя" name="firstName" ng-model="patient.firstName" required ng-disabled="edit">
+				</div>
+				<div class="col-sm-3">
+					<input type="text" class="form-control capitalize" placeholder="Отчество" name="middleName" ng-model="patient.middleName" required ng-disabled="edit">
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': patientForm.birthday.$invalid || patientForm.gender.$invalid  }">
+				<label class="col-sm-3 control-label">Дата рождения</label>
+				<div class="col-sm-3">
+					<p class="input-group">
+						<input type="text" class="form-control" datepicker-popup="dd.MM.yyyy" name="birthday" ng-model="patient.birthday" is-open="opened"
+							datepicker-options="{ formatYear: 'yyyy', startingDay: 1 }" show-button-bar="false"
+							ng-required="true" close-text="Close" />
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+						</span>
+					</p>
+				</div>
+				<label class="col-sm-offset-1 col-sm-2 control-label">Пол</label>
+				<div class="col-sm-3">
+					<select name="gender" class="form-control" ng-model="patient.gender" ng-options="g.id as g.value for g in gender" required />
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': patientForm.address.$invalid }">
+				<label class="col-sm-3 control-label">Адрес постоянной (временной) регистрации</label>
+				<div class="col-sm-9">
+					<textarea class="form-control" rows="2" placeholder="Адрес" name="address" ng-model="patient.address" required></textarea>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': patientForm.phone.$invalid }">
+				<label class="col-sm-3 control-label">Контактные телефоны</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" placeholder="Телефоны" name="phone" ng-model="patient.phone">
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': patientForm.socialStatus.$invalid }">
+				<label class="col-sm-3 control-label">Социальное положение</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" placeholder="Соц. положение" name="socialStatus" ng-model="patient.socialStatus">
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error': patientForm.job.$invalid }">
+				<label class="col-sm-3 control-label">Место работы (службы, учебы)</label>
+				<div class="col-sm-9">
+					<textarea class="form-control" rows="2" placeholder="Место работы и т.д." name="job" ng-model="patient.job"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-9">
+					<button class="btn btn-primary" ng-click="ok()" ng-disabled="patientForm.$invalid"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Сохранить</button>
+					<button type="reset" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Отмена</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
+
+<ng-include src="'components/footer/footer.html'"></ng-include>

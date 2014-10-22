@@ -2,12 +2,12 @@
 	<div class="row">
 		<div class="col-sm-2">
 			<ul class="nav nav-stacked nav-pills">
-				<li ng-repeat="item in menu | filter:checkItemPerm" ><a href="#!{{ item.url }}">{{ item.title }}</a></li>
+				<li ng-repeat="item in menu | filter:checkItemPerm" ><a href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-2">
 			<ul class="nav nav-stacked nav-pills">
-				<li ng-repeat="item in actions | filter:checkItemPerm"><a href="#!{{ item.url }}">{{ item.title }}</a></li>
+				<li ng-repeat="item in actions | filter:checkItemPerm"><a href="{{ item.url }}">{{ item.title }}</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-8 text-muted">

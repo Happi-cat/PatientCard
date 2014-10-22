@@ -1,4 +1,4 @@
 <ol class="breadcrumb" ng-if="datasource">
-	<li ng-repeat="item in datasource.items"><a href="#!{{ item.url }}">{{ item.title }}</a></li>
+	<li ng-repeat="item in datasource.items"><a href="{{ item.url }}">{{ item.title }}</a></li>
 	<li class="active" ng-if="datasource.current">{{ datasource.current }}</li>
 </ol>

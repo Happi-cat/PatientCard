@@ -4,7 +4,11 @@ var _ = require('lodash');
 
 // Get list of patients
 exports.index = function(req, res) {
-	 res.json([]);
+	 res.json([{
+	 	id: 1,
+	 	firstName: 'firstName',
+	 	lastName: 'lastName',
+	 }]);
 };
 
 exports.item = function(req, res) {

@@ -1,154 +1,83 @@
 'use strict';
 
 angular.module('patientCardApp')
-.factory('patientService', function ($http, $q) {
+.factory('patientService', function ($http, $q, $resource) {
     var self = {};
 
-    var httpWrap = function(obj) {
-      obj.url = 'http://localhost:10762' + obj.url;
-
-      var deferred = $q.defer();
-      $http(obj).then(function (data) {
-        if (data.data === 'null') {
-          deferred.resolve(null);
-        } else {
-          deferred.resolve(data.data);
-        }
-      }, function (data) {
-        deferred.reject({
-          status: data.status,
-          message: data.statusText,
-        });
-      });
-      return deferred.promise;
-    };
-
     self.getPatients = function() {
-      return httpWrap({ method: 'GET', url: '/api/patient' });
+      return $resource('/api/patient').query().$promise;
     };
 
     self.getPatient = function(id) {
-      return httpWrap({ method: 'GET', url: '/api/patient', params: { id: id } }).then(function (data) {
-        var deferred = $q.defer();
-        deferred.resolve(data);
-        return deferred.promise;
-      });
+      return $resource('/api/patient/:id', { id: id }).get().$promise;
     };
 
     self.storePatient = function(patient) {
-      return httpWrap({ method: 'POST', url: '/api/patient', data: patient });
+      return $resource('/api/patient').save(patient).$promise;
     };
 
     self.getFirstSurvey = function(patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/first-survey',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/first-survey', { id: patientId }).get().$promise;
     };
 
     self.storeFirstSurvey = function(survey) {
-      return httpWrap({ method: 'POST', url: '/api/patient/first-survey', data: survey });
+      return $resource('/api/patient/:id/first-survey', { id: patientId }).save(survey).$promise;
     };
 
     self.getSurveys = function(patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/survey',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/survey', { id: patientId }).query().$promise;
     };
 
     self.storeSurvey = function(survey) {
-      return httpWrap({ method: 'POST', url: '/api/patient/survey', data: survey });
+      return $resource('/api/patient/:id/survey', { id: patientId }).save(survey).$promise;
     };
 
     self.getTreatmentPlan = function(patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/treatment-plan',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/treatment-plan', { id: patientId }).get().$promise;
     };
 
     self.storeTreatmentPlan = function(treatmentPlan) {
-      return httpWrap({ method: 'POST', url: '/api/patient/treatment-plan', data: treatmentPlan });
+      return $resource('/api/patient/:id/treatment-plan', { id: patientId }).save(treatmentPlan).$promise;
     };
 
     self.getVisit = function(patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/visit',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/visit', { id: patientId }).query().$promise;
     };
 
-    self.storeVisit = function(diary) {
-      return httpWrap({ method: 'POST', url: '/api/patient/visit', data: diary });
+    self.storeVisit = function(visit) {
+      return $resource('/api/patient/:id/visit', { id: patientId }).save(visit).$promise;
     };
 
     self.getDentistStatuses = function (patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/dentist-status',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/dentist-status', { id: patientId }).query().$promise;
     };
 
     self.storeDentistStatus = function (status) {
-      return httpWrap({ method: 'POST', url: '/api/patient/dentist-status', data: status });
+      return $resource('/api/patient/:id/dentist-status', { id: patientId }).save(status).$promise;
     };
     
     self.getOhisStatuses = function (patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/ohis-status',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/ohis-status', { id: patientId }).query().$promise;
     };
 
     self.storeOhisStatus = function (status) {
-      return httpWrap({ method: 'POST', url: '/api/patient/ohis-status', data: status });
+      return $resource('/api/patient/:id/ohis-status', { id: patientId }).save(status).$promise;
     };
     
     self.getCpiStatuses = function (patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/cpi-status',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/cpi-status', { id: patientId }).query().$promise;
     };
 
     self.storeCpiStatus = function (status) {
-      return httpWrap({ method: 'POST', url: '/api/patient/cpi-status', data: status });
+      return $resource('/api/patient/:id/cpi-status', { id: patientId }).save(status).$promise;
     };
     
     self.getDfmStatuses = function (patientId) {
-      return httpWrap({
-        method: 'GET',
-        url: '/api/patient/dfm-status',
-        params: {
-          patientId: patientId
-        }
-      });
+      return $resource('/api/patient/:id/dfm-status', { id: patientId }).query().$promise;
     };
 
     self.storeDfmStatus = function (status) {
-      return httpWrap({ method: 'POST', url: '/api/patient/dfm-status', data: status });
+      return $resource('/api/patient/:id/dfm-status', { id: patientId }).save(status).$promise;
     };
 
     return self;

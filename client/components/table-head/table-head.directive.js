@@ -6,6 +6,7 @@ angular.module('patientCardApp')
       templateUrl: 'components/table-head/table-head.html',
       scope: {
       	datasource: '=',
+      	sortFields: '='
       },
       restrict: 'EA',
       controller: function ($scope) {
