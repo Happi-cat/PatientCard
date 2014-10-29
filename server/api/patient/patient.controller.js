@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var validate = require('./patient.validate');
 
 // Get list of patients
 exports.index = function(req, res) {

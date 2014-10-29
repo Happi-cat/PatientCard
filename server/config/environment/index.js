@@ -32,15 +32,12 @@ var all = {
   // List of user roles
   userRoles: ['guest', 'user', 'admin'],
 
-  // MongoDB connection options
-  mongo: {
-    options: {
-      db: {
-        safe: true
-      }
-    }
+  // MySql
+  mysql: {
+    host     : 'localhost',
+    user     : 'pcard',
+    password : 'pass'
   },
-
 };
 
 // Export the config object based on the NODE_ENV
