@@ -6,6 +6,7 @@ angular.module('patientCardApp', [
   'ngSanitize',
   'ngRoute',
   'ngResource',  
+  'ngAnimate',
   'ui.bootstrap'
 ])
   .constant('ROLES', {

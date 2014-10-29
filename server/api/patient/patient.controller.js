@@ -6,13 +6,19 @@ var _ = require('lodash');
 exports.index = function(req, res) {
 	 res.json([{
 	 	id: 1,
-	 	firstName: 'firstName',
-	 	lastName: 'lastName',
+	 	firstName: 'Иван',
+	 	lastName: 'Пупкин',
+	 	displayName: 'Пупкин Иван',
 	 }]);
 };
 
 exports.item = function(req, res) {
-	res.json({ patientId: req.params.patientId });	
+	res.json({ 
+		patientId: req.params.patientId,
+		firstName: 'Иван',
+	 	lastName: 'Пупкин',
+	 	displayName: 'Пупкин Иван',
+	});	
 };
 
 exports.post = function(req, res) {

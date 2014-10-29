@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('patientCardApp')
-.factory('patientService', function ($http, $q, $resource) {
+.service('patientService', function ($http, $q, $resource) {
     var self = {};
 
     self.getPatients = function() {
@@ -21,7 +21,7 @@ angular.module('patientCardApp')
     };
 
     self.storeFirstSurvey = function(survey) {
-      return $resource('/api/patient/:id/first-survey', { id: patientId }).save(survey).$promise;
+      return $resource('/api/patient/:id/first-survey', { id: survey.patientId }).save(survey).$promise;
     };
 
     self.getSurveys = function(patientId) {
@@ -29,7 +29,7 @@ angular.module('patientCardApp')
     };
 
     self.storeSurvey = function(survey) {
-      return $resource('/api/patient/:id/survey', { id: patientId }).save(survey).$promise;
+      return $resource('/api/patient/:id/survey', { id: survey.patientId }).save(survey).$promise;
     };
 
     self.getTreatmentPlan = function(patientId) {
@@ -37,7 +37,7 @@ angular.module('patientCardApp')
     };
 
     self.storeTreatmentPlan = function(treatmentPlan) {
-      return $resource('/api/patient/:id/treatment-plan', { id: patientId }).save(treatmentPlan).$promise;
+      return $resource('/api/patient/:id/treatment-plan', { id: treatmentPlan.patientId }).save(treatmentPlan).$promise;
     };
 
     self.getVisit = function(patientId) {
@@ -45,7 +45,7 @@ angular.module('patientCardApp')
     };
 
     self.storeVisit = function(visit) {
-      return $resource('/api/patient/:id/visit', { id: patientId }).save(visit).$promise;
+      return $resource('/api/patient/:id/visit', { id: visit.patientId }).save(visit).$promise;
     };
 
     self.getDentistStatuses = function (patientId) {
@@ -53,7 +53,7 @@ angular.module('patientCardApp')
     };
 
     self.storeDentistStatus = function (status) {
-      return $resource('/api/patient/:id/dentist-status', { id: patientId }).save(status).$promise;
+      return $resource('/api/patient/:id/dentist-status', { id: status.patientId }).save(status).$promise;
     };
     
     self.getOhisStatuses = function (patientId) {
@@ -61,7 +61,7 @@ angular.module('patientCardApp')
     };
 
     self.storeOhisStatus = function (status) {
-      return $resource('/api/patient/:id/ohis-status', { id: patientId }).save(status).$promise;
+      return $resource('/api/patient/:id/ohis-status', { id: status.patientId }).save(status).$promise;
     };
     
     self.getCpiStatuses = function (patientId) {
@@ -69,7 +69,7 @@ angular.module('patientCardApp')
     };
 
     self.storeCpiStatus = function (status) {
-      return $resource('/api/patient/:id/cpi-status', { id: patientId }).save(status).$promise;
+      return $resource('/api/patient/:id/cpi-status', { id: status.patientId }).save(status).$promise;
     };
     
     self.getDfmStatuses = function (patientId) {
@@ -77,7 +77,7 @@ angular.module('patientCardApp')
     };
 
     self.storeDfmStatus = function (status) {
-      return $resource('/api/patient/:id/dfm-status', { id: patientId }).save(status).$promise;
+      return $resource('/api/patient/:id/dfm-status', { id: status.patientId }).save(status).$promise;
     };
 
     return self;

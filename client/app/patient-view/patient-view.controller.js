@@ -60,7 +60,7 @@ angular.module('patientCardApp')
 			self.patient = data;
 			self.breadcrumb.current = data.displayName;
 		}, function (error) {
-			self.addAlert({ type: 'danger', title: error.status, details: error.message })
+			self.addAlert({ type: 'danger', title: error.status, details: error.message });
 		});
 	};
 
