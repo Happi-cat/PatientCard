@@ -36,7 +36,8 @@ var all = {
   mysql: {
     host     : 'localhost',
     user     : 'pcard',
-    password : 'pass'
+    password : 'pass',
+    database : 'patient_cards'
   },
 };
 

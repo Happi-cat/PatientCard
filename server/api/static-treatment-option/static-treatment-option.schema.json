@@ -1,0 +1,10 @@
+{
+	"table": "treatment_options",
+	"fields": {
+		"id" : "id",
+		"name": "name",
+		"is_fillable": "isFillable",
+		"group_number": "groupNumber",
+		"order_number": "orderNumber"
+	}
+}

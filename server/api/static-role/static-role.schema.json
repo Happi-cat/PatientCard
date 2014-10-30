@@ -1,0 +1,7 @@
+{
+	"table": "roles",
+	"fields": {
+		"name": "name",
+		"description": "description"
+	}
+}

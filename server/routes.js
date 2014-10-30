@@ -15,7 +15,7 @@ module.exports = function(app) {
 
   // Insert routes below
   app.use('/api/static/survey-type', require('./api/static-survey-type'));
-  app.use('/api/static/job', require('./api/static-job'));
+  app.use('/api/static/role', require('./api/static-role'));
   app.use('/api/static/first-survey-option', require('./api/static-first-survey-option'));
   app.use('/api/static/treatment-option', require('./api/static-treatment-option'));
   app.use('/api/user', require('./api/user'));

@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./static-job.controller');
+var controller = require('./static-role.controller');
 
 var router = express.Router();
 

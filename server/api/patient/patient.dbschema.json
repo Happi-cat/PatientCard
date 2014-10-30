@@ -1,0 +1,16 @@
+{
+	'table': 'patients',
+	'fields': {
+		id': 'id',
+		'first_name': 'firstName',
+		'middle_name': 'middleName',
+		'last_name': 'lastName',
+		'birth_date': 'birthDate',
+		'gender': 'gender',
+		'address': 'address',
+		'phone': 'phone',
+		'social_status': 'socialStatus',
+		'job': 'job',
+		'created': 'created',		
+	},
+}
