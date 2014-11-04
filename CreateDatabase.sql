@@ -273,7 +273,7 @@ insert into [Jobs] ( [Name] ) values ( N'Doctor' );
 insert into [Jobs] ( [Name] ) values ( N'Nurse' );
 
 insert into [SurveyTypes] ( [Name] ) values ( N'Разное' );
-insert into [SurveyTypes] ( [Name] ) values ( N'Рентген' );
+insert into [SurveyTypes] ( [Name] ) values ( N'Рентгенограмма' );
 
 insert into [TreatmentOptions] ( [Name], [GroupNumber], [OrderNumber] ) values ( N'Оказание неотложной помощи', 1, 0 );
 insert into [TreatmentOptions] ( [Name], [GroupNumber], [OrderNumber] ) values ( N'Профилактические мероприятия (указать)', 2, 0 );

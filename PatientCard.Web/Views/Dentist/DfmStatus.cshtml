@@ -9,7 +9,7 @@
 		<div class="panel panel-default">
 			<table class="table table-condensed table-bordered table-dfm small">
 				<tr ng-repeat="item in dfmStatus.dfmStatuses | orderBy:'-created' | limitTo:3 | orderBy:'created'">
-					<td>{{ item.created | date }}<span class="badge pull-right">{{ item.dfm }}</span></td>
+					<td>{{ item.created | date }}<span class="badge pull-right">{{ item.dfm | number:2 }}</span></td>
 					<td>{{ item.upperLeft8 }}</td>
 					<td>{{ item.upperLeft7 }}</td>
 					<td>{{ item.upperLeft6 }}</td>

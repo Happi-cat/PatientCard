@@ -8,7 +8,7 @@
 	<li class="media" ng-repeat="item in cpiStatus.cpiStatuses | orderBy:'-created' | limitTo:3">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				{{ item.created | date }}<span class="badge pull-right">{{ item.cpi }}</span>
+				{{ item.created | date }}<span class="badge pull-right">{{ item.cpi | number:2 }}</span>
 			</div>
 			<table class="table table-cpi table-condensed table-bordered small">
 				<tr>
