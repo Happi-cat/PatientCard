@@ -28,7 +28,7 @@ function PatientNewCtrl($location, $scope, patientSvc) {
 	self.ok = function () {
 		patientSvc.storePatient(self.patient).then(function (data) {
 			$scope.goUp(self.breadcrumb);
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {

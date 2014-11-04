@@ -43,7 +43,7 @@ function PatientTreatmentPlanCtrl($routeParams, $scope, patientSvc, systemSvc, R
 			}
 
 			angular.forEach(options, getPlan);
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -68,7 +68,7 @@ function PatientTreatmentPlanCtrl($routeParams, $scope, patientSvc, systemSvc, R
 	self.ok = function () {
 		patientSvc.storeTreatmentPlan(self.treatmentPlan).then(function (data) {
 			$scope.goUp(self.breadcrumb);
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {

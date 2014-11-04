@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function PatientStatusCtrl($routeParams, patientSvc, ROLES) {
+function PatientStatusCtrl($routeParams, $scope, patientSvc, ROLES) {
 	PatientCtrl.call(this, $routeParams);
 
 	var self = this;
@@ -29,13 +29,13 @@ function PatientStatusCtrl($routeParams, patientSvc, ROLES) {
 
 			var item = self.breadcrumb.items[1];
 			item.title = data.displayName;
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
 }
 
-function PatientDentistStatusCtrl($routeParams, patientSvc) {
+function PatientDentistStatusCtrl($routeParams, $scope, patientSvc) {
 	PatientCtrl.call(this, $routeParams);
 
 	var self = this;
@@ -43,7 +43,7 @@ function PatientDentistStatusCtrl($routeParams, patientSvc) {
 	var load = function () {
 		patientSvc.getDentistStatuses(self.patientId).then(function (data) {
 			self.dentistStatuses = data;
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -62,7 +62,7 @@ function PatientDentistStatusCtrl($routeParams, patientSvc) {
 			self.status = {};
 			load();
 			self.editFormEnabled = false;
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {
@@ -71,7 +71,7 @@ function PatientDentistStatusCtrl($routeParams, patientSvc) {
 	};
 }
 
-function PatientOhisStatusCtrl($routeParams, patientSvc) {
+function PatientOhisStatusCtrl($routeParams, $scope, patientSvc) {
 	PatientCtrl.call(this, $routeParams);
 
 	var self = this;
@@ -79,7 +79,7 @@ function PatientOhisStatusCtrl($routeParams, patientSvc) {
 	var load = function () {
 		patientSvc.getOhisStatuses(self.patientId).then(function (data) {
 			self.ohisStatuses = data;
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -98,7 +98,7 @@ function PatientOhisStatusCtrl($routeParams, patientSvc) {
 			self.status = {};
 			load();
 			self.editFormEnabled = false;
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {
@@ -107,7 +107,7 @@ function PatientOhisStatusCtrl($routeParams, patientSvc) {
 	};
 }
 
-function PatientDfmStatusCtrl($routeParams, patientSvc) {
+function PatientDfmStatusCtrl($routeParams,  $scope, patientSvc) {
 	PatientCtrl.call(this, $routeParams);
 
 	var self = this;
@@ -115,7 +115,7 @@ function PatientDfmStatusCtrl($routeParams, patientSvc) {
 	var load = function () {
 		patientSvc.getDfmStatuses(self.patientId).then(function (data) {
 			self.dfmStatuses = data;
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -134,7 +134,7 @@ function PatientDfmStatusCtrl($routeParams, patientSvc) {
 			self.status = {};
 			load();
 			self.editFormEnabled = false;
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {
@@ -143,7 +143,7 @@ function PatientDfmStatusCtrl($routeParams, patientSvc) {
 	};
 }
 
-function PatientCpiStatusCtrl($routeParams, patientSvc) {
+function PatientCpiStatusCtrl($routeParams, $scope, patientSvc) {
 	PatientCtrl.call(this, $routeParams);
 
 	var self = this;
@@ -151,7 +151,7 @@ function PatientCpiStatusCtrl($routeParams, patientSvc) {
 	var load = function () {
 		patientSvc.getCpiStatuses(self.patientId).then(function (data) {
 			self.cpiStatuses = data;
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -170,7 +170,7 @@ function PatientCpiStatusCtrl($routeParams, patientSvc) {
 			self.status = {};
 			load();
 			self.editFormEnabled = false;
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {

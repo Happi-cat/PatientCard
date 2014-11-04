@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function PatientVisitCtrl($routeParams, patientSvc, ROLES) {
+function PatientVisitCtrl($routeParams, $scope, patientSvc, ROLES) {
 	PatientCtrl.call(this, $routeParams);
 
 	var self = this;
@@ -53,7 +53,7 @@ function PatientVisitCtrl($routeParams, patientSvc, ROLES) {
 			return patientSvc.getVisit(self.patientId);
 		}).then(function (data) {
 			self.visits = data;
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -71,7 +71,7 @@ function PatientVisitCtrl($routeParams, patientSvc, ROLES) {
 			self.visit = {};
 			load();
 			self.editFormEnabled = false;
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {

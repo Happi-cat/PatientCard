@@ -72,7 +72,7 @@ create table [Surveys] (
 	[TypeId] int null,
 	[Description] nvarchar(400) null,
 	[Created] datetime not null default GETDATE(),
-	[Dose] int null
+	[Dose] float null
 );
 
 create table [SurveyTypes] (

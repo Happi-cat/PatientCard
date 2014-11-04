@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function PatientListCtrl(patientSvc) {
+function PatientListCtrl($scope, patientSvc) {
 	var self = this;
 
 	self.tablehead = [
@@ -33,7 +33,7 @@ function PatientListCtrl(patientSvc) {
 	var load = function() {
 		patientSvc.getPatients().then(function(data) {
 			self.items = data;
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();

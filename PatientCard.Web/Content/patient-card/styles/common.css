@@ -81,6 +81,9 @@
 .has-error .form-control {
 	background-color: #ffbbba;
 }
+input.has-error.form-control {
+	background-color: #ffbbba;
+}
 
 .landing-icon {
 	font-size: 60px;

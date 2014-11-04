@@ -3,12 +3,12 @@
 	<form name="statusForm" class="form-horizontal form-cpi" role="form" ng-if="cpiStatus.editFormEnabled">
 		<div class="form-group">
 			<div class="col-xs-12">
-				<input type="text" maxlength="1" class="form-control" name="value1" ng-model="cpiStatus.status.value1" ng-pattern="/^[0-5]{1}$/"/>
-				<input type="text" maxlength="1" class="form-control" name="value2" ng-model="cpiStatus.status.value2" ng-pattern="/^[0-5]{1}$/"/>
-				<input type="text" maxlength="1" class="form-control" name="value3" ng-model="cpiStatus.status.value3" ng-pattern="/^[0-5]{1}$/"/>
-				<input type="text" maxlength="1" class="form-control" name="value4" ng-model="cpiStatus.status.value4" ng-pattern="/^[0-5]{1}$/"/>
-				<input type="text" maxlength="1" class="form-control" name="value5" ng-model="cpiStatus.status.value5" ng-pattern="/^[0-5]{1}$/"/>
-				<input type="text" maxlength="1" class="form-control" name="value6" ng-model="cpiStatus.status.value6" ng-pattern="/^[0-5]{1}$/"/>
+				<input type="text" maxlength="1" class="form-control" name="value1" ng-class="{ 'has-error': statusForm.value1.$invalid }" ng-model="cpiStatus.status.value1" ng-pattern="/^[0-5]{1}$/"/>
+				<input type="text" maxlength="1" class="form-control" name="value2" ng-class="{ 'has-error': statusForm.value2.$invalid }" ng-model="cpiStatus.status.value2" ng-pattern="/^[0-5]{1}$/"/>
+				<input type="text" maxlength="1" class="form-control" name="value3" ng-class="{ 'has-error': statusForm.value3.$invalid }" ng-model="cpiStatus.status.value3" ng-pattern="/^[0-5]{1}$/"/>
+				<input type="text" maxlength="1" class="form-control" name="value4" ng-class="{ 'has-error': statusForm.value4.$invalid }" ng-model="cpiStatus.status.value4" ng-pattern="/^[0-5]{1}$/"/>
+				<input type="text" maxlength="1" class="form-control" name="value5" ng-class="{ 'has-error': statusForm.value5.$invalid }" ng-model="cpiStatus.status.value5" ng-pattern="/^[0-5]{1}$/"/>
+				<input type="text" maxlength="1" class="form-control" name="value6" ng-class="{ 'has-error': statusForm.value6.$invalid }" ng-model="cpiStatus.status.value6" ng-pattern="/^[0-5]{1}$/"/>
 			</div>
 		</div>
 	</form>

@@ -19,7 +19,8 @@ angular.module('patient-card.auth')
 					}
 					self.status.authorized = true;
 					deferred.resolve(self.status.user);
-				}, function(data) {
+				}, function (data) {
+					console.log('auth failed');
 					deferred.reject({
 						status: data.status,
 						message: data.statusText,

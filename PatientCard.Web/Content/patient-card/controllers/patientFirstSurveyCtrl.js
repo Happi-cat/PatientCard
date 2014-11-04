@@ -48,7 +48,7 @@ function PatientFirstSurveyCtrl($routeParams, $scope, patientSvc, systemSvc, ROL
 			}
 
 			angular.forEach(options, getDetail);
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -72,7 +72,7 @@ function PatientFirstSurveyCtrl($routeParams, $scope, patientSvc, systemSvc, ROL
 		self.firstSurvey.patientId = self.patientId;
 		patientSvc.storeFirstSurvey(self.firstSurvey).then(function (data) {
 			$scope.goUp(self.breadcrumb);
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {

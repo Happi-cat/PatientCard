@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-function PatientSurveyCtrl($routeParams, patientSvc, systemSvc, ROLES) {
+function PatientSurveyCtrl($routeParams, $scope, patientSvc, systemSvc, ROLES) {
 	PatientCtrl.call(this, $routeParams);
 
 	var self = this;
@@ -68,7 +68,7 @@ function PatientSurveyCtrl($routeParams, patientSvc, systemSvc, ROLES) {
 			self.surveys = data;
 
 			angular.forEach(self.surveys, getSurvey);
-		}, self.onLoadFailed);
+		}, $scope.onLoadFailed);
 	};
 
 	load();
@@ -94,7 +94,7 @@ function PatientSurveyCtrl($routeParams, patientSvc, systemSvc, ROLES) {
 			self.survey = {};
 			load();
 			self.editFormEnabled = false;
-		}, self.onSaveFailed);
+		}, $scope.onSaveFailed);
 	};
 
 	self.cancel = function () {
