@@ -37,6 +37,6 @@ namespace PatientCard.Core.Models
 		public virtual DateTime Created { get; set; }
 
 		[DataMember]
-		public virtual int? Dose { get; set; }
+		public virtual float? Dose { get; set; }
 	}
 }
