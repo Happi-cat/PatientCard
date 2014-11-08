@@ -8,5 +8,6 @@ var router = express.Router();
 router.get('/', controller.index);
 router.get('/:patientId', controller.item);
 router.post('/', controller.post);
+router.put('/', controller.put);
 
 module.exports = router;

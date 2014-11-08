@@ -5,15 +5,15 @@ var validate = require('validate');
 var constraints = {
 	firstName: { 
 		presence: true,
-		length: { maximum: 100 },
+		//length: { maximum: 100 },
 	},
 	lastName: { 
 		presence: true,
-		length: { maximum: 100 },
+		//length: { maximum: 100 },
 	},
 	middleName: { 
 		presence: true,
-		length: { maximum: 100 },
+		//length: { maximum: 100 },
 	},
 	birthDate: {
 		presence: true,
@@ -25,19 +25,19 @@ var constraints = {
 	},
 	address: {
 		presence: true,
-		length: { maximum: 400 },
+		//length: { maximum: 400 },
 	},
 	phone: {
-		length: { maximum: 400 },
+		//length: { maximum: 400 },
 	},
 	socialStatus: {
-		length: { maximum: 400 },
+		//length: { maximum: 400 },
 	},
 	job: {
-		length: { maximum: 400 },
+		//length: { maximum: 400 },
 	},
 };
 
-exports = function (obj) {
+module.exports = function (obj) {
 	return validate(obj, constraints);
 };

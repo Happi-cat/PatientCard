@@ -1,0 +1,24 @@
+{
+	"table": "patients",
+	"fields": {
+		"id": {
+			"prop": "id",
+			"insertable": "false",
+			"updatable": "false"
+			},
+		"first_name": "firstName",
+		"middle_name": "middleName",
+		"last_name": "lastName",
+		"birth_date": "birthDate",
+		"gender": "gender",
+		"address": "address",
+		"phone": "phone",
+		"social_status": "socialStatus",
+		"job": "job",
+		"created": {
+			"prop" : "created",
+			"insertable": "false",
+			"updatable": "false"
+		}
+	}
+}

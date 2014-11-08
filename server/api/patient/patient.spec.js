@@ -26,7 +26,7 @@ describe('GET /api/patient', function() {
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
-        res.body.should.have.property('patientId', patientId);
+        res.body.should.have.property('id', patientId);
         done();
       });
   });
