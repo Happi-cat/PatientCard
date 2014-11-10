@@ -53,6 +53,16 @@ module.exports.number =  function number(value, options) {
 		return options.message || "is not a number";
 	}
 }
+module.exports.bool =  function bool(value, options) {
+	if (_.isNull(value) || _.isUndefined(value)) {
+		return;
+	}
+
+	// If it's not a boolean we shouldn't continue since it will compare it.
+	if (!_.isBoolean(value)) {
+		return options.message || "is not a boolean";
+	}
+}
 module.exports.datetime = function datetime(value, options) {
 	if (_.isNull(value) || _.isUndefined(value)) {
 		return;
