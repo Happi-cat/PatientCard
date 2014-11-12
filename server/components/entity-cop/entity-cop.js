@@ -7,17 +7,45 @@ module.exports = Cop;
 
 function Cop (schema) {
 	this.constraints = Cop.getConstraints(schema);
+	this.defaultValues = Cop.getDefaultValues(schema);
+}
+
+Cop.getDefaultValues = function getDefaultValues(schema) {
+	schema = schema || {};
+	return _(schema)
+		.mapValues('default')
+		.omit(function (value) { return !value; })
+		.valueOf();
 }
 
 Cop.getConstraints = function getConstraints(schema) {
 	schema = schema || {};
 	return _(schema)
-	.mapValues('validation')
-	.omit(function (value) { return !value; })
-	.valueOf();
+		.mapValues('validation')
+		.omit(function (value) { return !value; })
+		.valueOf();
+}
+
+Cop.prototype.defaults = function defaults(obj) {
+	obj = obj || {};
+	for(var prop in this.defaultValues) {
+		var defaultValue = this.defaultValues[prop];
+		var value = obj[prop];
+
+		if (_.isUndefined(value)) {
+			if (_.isFunction(defaultValue)) {
+				defaultValue = defaultValue.call(obj, prop);
+			}
+
+			obj[prop] = defaultValue;
+		}
+	}
+
+	return obj;
 }
 
 Cop.prototype.validate = function validate(obj) {
+	obj = obj || {};
 	var results = this.runValidation(obj);
 	return this.processResults(results);
 }

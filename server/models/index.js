@@ -1,8 +1,13 @@
 'use strict';
 
+var mysql = require('mysql');
+var connection  = require('express-myconnection'); 
+
 var model = require('./../components/express-model');
 
-module.exports = function (app) {
+module.exports = function(app, config) {
+	app.use(connection(mysql, config.mysql, 'request'));
+
 	app.use(model('patient', require('./patient')));
 	app.use(model('patientFirstSurvey', require('./patient-first-survey')));
 	app.use(model('patientStatusCpi', require('./patient-status-cpi')));

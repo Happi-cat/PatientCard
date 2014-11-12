@@ -4,21 +4,17 @@ var _ = require('lodash');
 
 // Get list of patients
 exports.index = function(req, res, next) {
-	/*req.repos.patient.select(req, null, function(err, data) {
-		if (err) next(err)
-		else res.json(data);
-	});*/
-	res.json([]);
+	req.models.patient.find({}, function (err, data) {
+		if (err) return next(err);
+		return res.json(data);
+	})
 };
 
 exports.item = function(req, res, next) {
-	/*db.select(req, { 
-		id: req.params.patientId 
-	}, function(err, data) {
-		if (err) next(err)
-		else res.json(data[0]);
-	});*/
-	res.json({});
+	req.models.patient.findOne({ id: req.params.patientId }, function (err, data) {
+		if (err) return next(err);
+		return res.json(data[0]);
+	})
 };
 
 exports.post = function(req, res, next) {

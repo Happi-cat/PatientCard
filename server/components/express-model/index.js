@@ -15,6 +15,9 @@ module.exports = function (name, schema) {
 			validate: function (obj) {
 				return cop.validate(obj);
 			},
+			defaults: function (obj) {
+				return cop.defaults(obj);
+			}
 			find: function (where, done) {
 				return repos.find(req, where, done);
 			},

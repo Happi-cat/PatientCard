@@ -3,20 +3,11 @@
 module.exports = {
     table: 'patients',
     fields: {
-        username: {
+        id: {
+            notInsert: true,
             notUpdate: true,
             validation: {
-                length: {
-                    maximum: 100
-                },
-                required: true,
-            }
-        },
-        password: {
-            validation: {
-                length: {
-                    maximum: 100
-                },
+                number: true,
                 required: true,
             }
         },
@@ -44,31 +35,17 @@ module.exports = {
                 },
             }
         },
-        email: {
+        birthDate: {
+            column: 'birth_date',
             validation: {
-            	email: true,
-                length: {
-                    maximum: 100
-                },
-            }
-        },
-        role: {
-            validation: {
-                length: {
-                    maximum: 100
-                },
-            }
-        },
-        created: {
-            notInsert: true,
-            validation: {
-            	datetime: true,
+                datetime: true,
                 required: true,
             }
         },
-        active: {
+        gender: {
             validation: {
-                required: true,
+                inclusion: ['male, female'],
+                requierd: true,
             }
         },
         address: {
@@ -76,13 +53,35 @@ module.exports = {
                 length: {
                     maximum: 400
                 },
+                required: true,
             }
         },
         phone: {
             validation: {
                 length: {
-                    maximum: 100
+                    maximum: 400
                 },
+            }
+        },
+        socialStatus: {
+            column: 'social_status',
+            validation: {
+                length: {
+                    maximum: 400
+                },
+            }
+        },
+        job: {
+            validation: {
+                length: {
+                    maximum: 400
+                },
+            }
+        },
+        created: {
+            validation: {
+                datetime: true,
+                required: true,
             }
         },
     }

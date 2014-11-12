@@ -1,70 +1,86 @@
 'use strict';
 
 var _ = require('lodash');
+var mapper = require('./lib/mapper');
+var query = require('./lib/query-builder');
 
 module.exports = Repos;
 
 function Repos(schema) {
-	this.table = scheme.table;
+	this.maps = mapper(schema.fields);
+	this.table = schema.table;
 }
 
-Repos.getSelectable = function getSelectable(schema) {
-	return _.mapValues(schema.fields, function (value, key) {
-		if (value.column) {
-			return value.column;
-		}
-		return key;
-	});
-}
-
-Repos.getInsertable = function getInsertable(schema) {
-	return _(schema.fields)
-	.mapValues(function (value, key) {
-		if (value.notInsert) {
-			return;
-		}
-
-		if (value.column) {
-			return value.column;
-		}
-		return key;
-	})
-	.omit (function (value) { return !value; })
-	.valueOf();
-}
-
-Repos.getUpdatable = function getUpdatable(schema) {
-	return _(schema.fields)
-	.mapValues(function (value, key) {
-		if (value.notUpdate) {
-			return;
-		}
-
-		if (value.column) {
-			return value.column;
-		}
-		return key;
-	})
-	.omit (function (value) { return !value; })
-	.valueOf();
-}
-
-Repos.prototype.select = function select(req, where, done) {
+Repos.prototype.find = function select(req, where, done) {
+	var self = this;
 	req.getConnection(function (err, connection) {
 		if (err) return done(err, null);
 
-		connection.query
+		var sql = query(self.maps)
+			.select()
+			.columns()
+			.from(self.table)
+			.where(where)
+			.compile();
+		connection.query(sql, done);
+	});
+}
+
+Repos.prototype.findOne = function select(req, where, done) {
+	var self = this;
+	req.getConnection(function (err, connection) {
+		if (err) return done(err, null);
+
+		var sql = query(self.maps)
+			.select()
+			.columns()
+			.from(self.table)
+			.where(where)
+			.limit(1)
+			.compile();
+		connection.query(sql, done);
 	});
 }
 
 Repos.prototype.create = function create(req, obj, done) {
+	var self = this;
+	req.getConnection(function (err, connection) {
+		if (err) return done(err, null);
 
+		var sql = query(self.maps)
+			.insert()
+			.into(self.table)
+			.values(obj)
+			.compile();
+		connection.query(sql, done);
+	});
 }
 
-Repos.prototype.update = function update(req, obj, where, done) {
+Repos.prototype.update = function update(req, where, obj, done) {
+	var self = this;
+	req.getConnection(function (err, connection) {
+		if (err) return done(err, null);
 
+		var sql = query(self.maps)
+			.update()
+			.table(self.table)
+			.set(obj, true)
+			.where(where)
+			.compile();
+		connection.query(sql, done);
+	});
 }
 
-Repos.prototype.delete = function delete(req, where, done) {
+Repos.prototype.delete = function $delete(req, where, done) {
+	var self = this;
+	req.getConnection(function (err, connection) {
+		if (err) return done(err, null);
 
+		var sql = query(self.maps)
+			.delete()
+			.from(self.table)
+			.where(where)
+			.compile();
+		connection.query(sql, done);
+	});
 }
