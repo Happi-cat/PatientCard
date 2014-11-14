@@ -13,12 +13,14 @@ exports.index = function(req, res, next) {
 exports.item = function(req, res, next) {
 	req.models.patient.findOne({ id: req.params.patientId }, function (err, data) {
 		if (err) return next(err);
-		return res.json(data[0]);
+		return res.json(data);
 	})
 };
 
 exports.post = function(req, res, next) {
+	var item = req.body;
 	var errors = req.models.patient.validate(req.body);
+	
 	if (errors) {
 		return res.status(400).json(errors);
 	}
@@ -32,7 +34,7 @@ exports.post = function(req, res, next) {
 exports.put = function(req, res, next) {
 	var item = req.models.patient.defaults(req.body);
 	var errors = req.models.patient.validate(item);
-	
+	console.log(item);
 	if (errors) {
 		return res.status(400).json(errors);
 	}

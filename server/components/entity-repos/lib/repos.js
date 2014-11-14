@@ -50,7 +50,10 @@ Repos.prototype.findOne = function select(req, where, done) {
 			.where(where)
 			.limit(1)
 			.compile();
-		connection.query(sql, done);
+		connection.query(sql, function (err, data) {
+			if (err) return done(err, null);
+			return done(null, data[0]);
+		});
 	});
 }
 

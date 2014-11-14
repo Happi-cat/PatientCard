@@ -6,6 +6,7 @@ module.exports = {
         id: {
             notInsert: true,
             notUpdate: true,
+            default: 0,
             validation: {
                 number: true,
                 required: true,
@@ -14,7 +15,9 @@ module.exports = {
         firstName: {
             column: 'first_name',
             validation: {
+                required: true,
                 length: {
+                    minimum: 2,
                     maximum: 100
                 },
             }
@@ -22,7 +25,9 @@ module.exports = {
         middleName: {
             column: 'middle_name',
             validation: {
+                required: true,
                 length: {
+                    minimum: 2,
                     maximum: 100
                 },
             }
@@ -30,7 +35,9 @@ module.exports = {
         lastName: {
             column: 'last_name',
             validation: {
+                required: true,
                 length: {
+                    minimum: 2,
                     maximum: 100
                 },
             }
@@ -44,8 +51,8 @@ module.exports = {
         },
         gender: {
             validation: {
-                inclusion: ['male, female'],
-                requierd: true,
+                inclusion: ['male', 'female'],
+                required: true,
             }
         },
         address: {
@@ -79,9 +86,10 @@ module.exports = {
             }
         },
         created: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
-                required: true,
             }
         },
     }

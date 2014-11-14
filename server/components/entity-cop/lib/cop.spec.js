@@ -78,7 +78,7 @@ describe('Entity Cop (validator)', function() {
 			// valid instance
 			t = _.isEmpty( cop.validate({ prop: true }) ).should.be.true; 
 			t = _.isEmpty( cop.validate({ prop: ' aasd ' }) ).should.be.true; 
-			t = _.isEmpty( cop.validate({ prop: 1 }) ).should.be.true; 
+			t = _.isEmpty( cop.validate({ prop: 0 }) ).should.be.true; 
 			t = _.isEmpty( cop.validate({ prop: { a : 1 } }) ).should.be.true; 
 			t = _.isEmpty( cop.validate({ prop: [ 1 ] }) ).should.be.true; 
 			t = _.isEmpty( cop.validate({ prop: true }) ).should.be.true; 

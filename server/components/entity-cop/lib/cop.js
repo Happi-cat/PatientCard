@@ -14,7 +14,6 @@ Cop.getDefaultValues = function getDefaultValues(schema) {
 	schema = schema || {};
 	return _(schema)
 		.mapValues('default')
-		.omit(function (value) { return !value; })
 		.valueOf();
 }
 
@@ -28,9 +27,12 @@ Cop.getConstraints = function getConstraints(schema) {
 
 Cop.prototype.defaults = function defaults(obj) {
 	obj = obj || {};
+
 	for(var prop in this.defaultValues) {
 		var defaultValue = this.defaultValues[prop];
 		var value = obj[prop];
+		console.log(prop);
+
 
 		if (_.isUndefined(value)) {
 			if (_.isFunction(defaultValue)) {
@@ -38,6 +40,7 @@ Cop.prototype.defaults = function defaults(obj) {
 			}
 
 			obj[prop] = defaultValue;
+			console.log(prop, obj[prop]);
 		}
 	}
 
