@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
-var validators = require('./entity-cop.validators');
+var validators = require('./cop.validators');
 
 module.exports = Cop;
 

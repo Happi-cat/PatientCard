@@ -13,7 +13,7 @@ var config = require('./config/environment');
 var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
-require('./models')(app, config);
+require('./storage')(app, config);
 require('./routes')(app);
 
 

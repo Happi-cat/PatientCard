@@ -2,7 +2,7 @@
 
 var _ = require('lodash');
 var should = require('should');
-var Cop = require('./entity-cop');
+var Cop = require('./cop');
 
 describe('Entity Cop (validator)', function() {
 	var cop;

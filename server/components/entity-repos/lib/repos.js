@@ -1,8 +1,8 @@
 'use strict';
 
 var _ = require('lodash');
-var mapper = require('./lib/mapper');
-var query = require('./lib/query-builder');
+var mapper = require('./repos.mapper');
+var query = require('./query/query-builder');
 
 module.exports = Repos;
 
@@ -13,6 +13,12 @@ function Repos(schema) {
 
 Repos.prototype.find = function select(req, where, done) {
 	var self = this;
+
+	if (_.isFunction(where)) {
+		done = where;
+		where = null;
+	}
+
 	req.getConnection(function (err, connection) {
 		if (err) return done(err, null);
 
@@ -28,6 +34,12 @@ Repos.prototype.find = function select(req, where, done) {
 
 Repos.prototype.findOne = function select(req, where, done) {
 	var self = this;
+
+	if (_.isFunction(where)) {
+		done = where;
+		where = null;
+	}
+
 	req.getConnection(function (err, connection) {
 		if (err) return done(err, null);
 
@@ -56,7 +68,7 @@ Repos.prototype.create = function create(req, obj, done) {
 	});
 }
 
-Repos.prototype.update = function update(req, where, obj, done) {
+Repos.prototype.update = function update(req, obj, where, done) {
 	var self = this;
 	req.getConnection(function (err, connection) {
 		if (err) return done(err, null);

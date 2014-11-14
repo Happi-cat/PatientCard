@@ -1,7 +1,0 @@
-{
-	"table": "survey_types",
-	"fields": {
-		"id": "id",
-		"name": "name"
-	}
-}

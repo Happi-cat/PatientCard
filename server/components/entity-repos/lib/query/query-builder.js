@@ -142,7 +142,5 @@ QueryBuilder.prototype.set = function set(obj, updateAll) {
 }
 
 QueryBuilder.prototype.compile = function compile() {
-	var t= compiler(this.query);
-	console.log(t);
-	return t;
+	return compiler(this.query);
 };

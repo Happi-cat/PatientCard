@@ -3,7 +3,6 @@
 var _ = require('lodash');
 var should = require('should');
 var query = require('./query-builder');
-var mapper = require('./mapper');
 
 describe('Query Builder', function() {
 	var table = 't';

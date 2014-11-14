@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./entity-cop');
+module.exports = require('./lib/cop');

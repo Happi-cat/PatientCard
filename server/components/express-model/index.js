@@ -17,7 +17,7 @@ module.exports = function (name, schema) {
 			},
 			defaults: function (obj) {
 				return cop.defaults(obj);
-			}
+			},
 			find: function (where, done) {
 				return repos.find(req, where, done);
 			},
@@ -27,8 +27,8 @@ module.exports = function (name, schema) {
 			create: function (obj, done) {
 				return repos.create(req, obj, done);
 			},
-			update: function (where ,obj, done) {
-				return repos.update(req, where, obj, done);
+			update: function (obj, where, done) {
+				return repos.update(req, obj, where, done);
 			},
 			delete: function (where, done) {
 				return repos.delete(req, where, done);

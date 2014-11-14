@@ -1,3 +1,3 @@
 'use struct';
 
-module.exports = require('./entity-repos');
+module.exports = require('./lib/repos');

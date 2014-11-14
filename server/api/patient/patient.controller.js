@@ -18,25 +18,27 @@ exports.item = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
-	/*if (_.isNumber(req.body.id) && validator(req.body)) {
-		db.update(req, req.body, { id: req.body.id }, function(err, data) {
-			if (err) next(err);
-			else res.status(200).send();
-		});
-	} else {
-		res.status(400).send();
-	}*/
-	res.status(200).send();
+	var errors = req.models.patient.validate(req.body);
+	if (errors) {
+		return res.status(400).json(errors);
+	}
+
+	req.models.patient.update(req.body, { id: req.body.id }, function (err, data) {
+		if (err) return next(err);
+		return res.status(200).send();
+	})
 };
 
 exports.put = function(req, res, next) {
-	/*if (validator(req.body)) {
-		db.insert(req, req.body, function(err, data) {
-			if (err) next(err);
-			else res.status(201).send();
-		});
-	} else {
-		res.status(400).send();
-	}*/		
-	res.status(201).send();
+	var item = req.models.patient.defaults(req.body);
+	var errors = req.models.patient.validate(item);
+	
+	if (errors) {
+		return res.status(400).json(errors);
+	}
+
+	req.models.patient.create(item, function (err, data) {
+		if (err) return next(err);
+		return res.status(201).send();
+	})
 }
