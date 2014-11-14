@@ -37,7 +37,7 @@ var all = {
     host     : 'localhost',
     user     : 'pcard',
     password : 'pass',
-    database : 'patient_cards'
+    database : 'dental_patient_card'
   },
 };
 

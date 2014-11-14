@@ -1,11 +1,11 @@
 ﻿-- Drop data base command --
-drop database patient_cards;
+drop database dental_patient_card;
 
 -- create and use database --
-create database patient_cards DEFAULT charset utf8;
+create database dental_patient_card DEFAULT charset utf8;
 
 
-use patient_cards;
+use dental_patient_card;
 
 -- tables --
 SELECT 'USERS' as '';

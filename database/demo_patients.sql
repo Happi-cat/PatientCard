@@ -1,4 +1,4 @@
-﻿use patient_cards;
+﻿use dental_patient_card;
 
 insert into patients ( last_name, first_name, middle_name, birth_date, gender, social_status, phone, address, job ) values ( N'Антонова', N'Анна', N'Владимировна', N'1989-03-13', N'female', N'кассир', N'768945', N'Борисов', N'"Корона"');
 insert into patients ( last_name, first_name, middle_name, birth_date, gender, social_status, phone, address, job ) values ( N'Петрова', N'Инга', N'Николаевна', N'1975-12-05', N'female', N'директор', N'986547', N'Борисов', N'ИП');
