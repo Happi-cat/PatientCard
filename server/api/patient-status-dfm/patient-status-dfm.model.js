@@ -1,9 +1,39 @@
 ﻿'use strict';
 
+var _ = require('lodash');
+
+function dfmFormula() {
+    /*jshint validthis:true */
+    var count = 0;
+
+    var vals = [];
+    for (var i = 1; i <= 8; i++) {
+        vals.push(this['upperLeft' + i]);
+        vals.push(this['upperRight' + i]);
+        vals.push(this['lowerLeft' + i]);
+        vals.push(this['lowerRight' + i]);
+    }
+
+    for (i = vals.length - 1; i >= 0; i--) {
+        var filter = (vals[i] > '0' && vals[i] < '8') || 
+            (vals[i] > 'A' && vals[i] < 'F');
+
+        if ( filter ){
+            count++;
+        }
+    }
+
+    return count;
+}
+
+
 module.exports = {
     table: 'dfm_statuses',
     fields: {
         id: {
+            notInsert: true,
+            notUpdate: true,
+            default: 0,
             validation: {
                 number: true,
                 required: true,
@@ -209,17 +239,22 @@ module.exports = {
             }
         },
         dfm: {
+            formula: dfmFormula,
             validation: {
                 number: true
             }
         },
         created: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
                 required: true,
             }
         },
         updated: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
             }

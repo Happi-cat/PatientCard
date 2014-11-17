@@ -65,6 +65,7 @@ module.exports = {
             },
             yesNo: {
                 column: 'yes_no',
+                default: false,
                 validation: {
                     bool: true,
                     required: true,

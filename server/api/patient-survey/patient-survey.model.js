@@ -4,6 +4,9 @@ module.exports = {
     table: 'surveys',
     fields: {
         id: {
+            notInsert: true,
+            notUpdate: true,
+            default: 0,
             validation: {
                 number: true,
                 required: true,
@@ -36,12 +39,16 @@ module.exports = {
             }
         },
         created: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
                 required: true,
             }
         },
         updated: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
             }

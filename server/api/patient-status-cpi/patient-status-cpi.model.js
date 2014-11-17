@@ -1,10 +1,32 @@
 ﻿'use strict';
 
+var _ = require('lodash');
+
+function cpiFormula() {
+    /*jshint validthis:true */
+    
+    var cpiSum = 0;
+    var cpiCount = 0;
+
+    for (var i = 1; i <= 6; i++) {
+        var val = this['value' + i];
+
+        if (val >= 0 && val <=3) {
+            cpiSum += val;
+            cpiCount++;
+        }
+    }
+
+    return cpiSum / cpiCount;
+}
 
 module.exports = {
     table: 'cpi_statuses',
     fields: {
         id: {
+            notInsert: true,
+            notUpdate: true,
+            default: 0,
             validation: {
                 number: true,
                 required: true,
@@ -48,17 +70,22 @@ module.exports = {
         	}
         },
         cpi: {
+            formula: cpiFormula,
         	validation: {
         		number: true,
         	}
         },
         created: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
                 required: true,
             }
         },
         updated: {
+            notInsert: true,
+            notUpdate: true,
             validation:{
                 datetime: true,
             }

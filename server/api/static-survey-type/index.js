@@ -2,12 +2,12 @@
 
 var express = require('express');
 var controller = require('./static-survey-type.controller');
-var model = require('./static-survey-type.model');
-var repo = require('./../../components/express-model');
+var schema = require('./static-survey-type.model');
+var model = require('./../../components/express-model');
 
 var router = express.Router();
 
-router.use(repo('surveyType', model));
+router.use(model('surveyType', schema));
 
 router.get('/', controller.index);
 

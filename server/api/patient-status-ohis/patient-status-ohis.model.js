@@ -1,9 +1,39 @@
 ﻿'use strict';
 
+var _ = require('lodash');
+
+function ohisFormula () {
+    /*jshint validthis:true */
+
+    var cisSum = 0;
+    var cisCount = 0;
+    var disSum = 0;
+    var disCount = 0;
+
+    for (var i = 1; i <= 6; i++) {
+        var cis = this['cis' + i];
+        var dis = this['dis' + i];
+
+        if (cis >= 0 && cis <=6) {
+            cisSum += cis;
+            cisCount++;
+        }
+        if (dis >= 0 && dis <= 6) {
+            disSum += dis;
+            disCount++;
+        }
+    }
+
+    return cisSum / cisCount + disSum / disCount;
+}
+
 module.exports = {
     table: 'ohis_statuses',
     fields: {
         id: {
+            notInsert: true,
+            notUpdate: true,
+            default: 0,
             validation: {
                 number: true,
                 required: true,
@@ -113,17 +143,22 @@ module.exports = {
             }
         },
         ohis: {
+            formula: ohisFormula,
             validation: {
                 number: true,
             }
         },
         created: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
                 required: true,
             }
         },
         updated: {
+            notInsert: true,
+            notUpdate: true,
             validation: {
                 datetime: true,
             }

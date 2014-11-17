@@ -11,7 +11,9 @@ exports.index = function(req, res, next) {
 };
 
 exports.item = function(req, res, next) {
-	req.models.patient.findOne({ id: req.params.patientId }, function (err, data) {
+	req.models.patient.findOne({ 
+		id: req.params.patientId 
+	}, function (err, data) {
 		if (err) return next(err);
 		return res.json(data);
 	})
@@ -25,7 +27,9 @@ exports.post = function(req, res, next) {
 		return res.status(400).json(item.errors);
 	}
 
-	req.models.patient.update(item.value, { id: item.value.id }, function (err, data) {
+	req.models.patient.update(item.value, { 
+		id: item.value.id 
+	}, function (err, data) {
 		if (err) return next(err);
 		return res.status(200).send();
 	})
@@ -33,7 +37,8 @@ exports.post = function(req, res, next) {
 
 exports.put = function(req, res, next) {
 	var item = req.models.patient(req.body);
-	item.defaults().validate();
+	item.defaults();
+	item.validate();
 	
 	if (item.errors) {
 		return res.status(400).json(item.errors);
