@@ -1,13 +1,16 @@
 'use strict';
 
 var _ = require('lodash');
-var mapper = require('./repos.mapper');
 var query = require('./query/query-builder');
 
 module.exports = Repos;
 
 function Repos(schema) {
-	this.maps = mapper(schema.fields);
+	this.maps = {
+		select: schema.select,
+		insert: schema.insert,
+		update: schema.update
+	};
 	this.table = schema.table;
 }
 
@@ -28,6 +31,9 @@ Repos.prototype.find = function select(req, where, done) {
 			.from(self.table)
 			.where(where)
 			.compile();
+
+		console.log(sql);
+
 		connection.query(sql, done);
 	});
 }

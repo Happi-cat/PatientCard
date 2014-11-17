@@ -1,38 +1,29 @@
 'use strict';
 
 var _ = require('lodash');
-var Cop = require('./../entity-cop');
-var Repos = require('./../entity-repos');
 
 module.exports = function (name, schema) {
-	var cop = new Cop(schema.fields);
-	var repos = new Repos(schema);
+	var model = require('./../entity-model')(schema);
 
 	return function (req, res, next) {
 		req.models = req.models || {};
 
-		req.models[name] = {
-			validate: function (obj) {
-				return cop.validate(obj);
-			},
-			defaults: function (obj) {
-				return cop.defaults(obj);
-			},
-			find: function (where, done) {
-				return repos.find(req, where, done);
-			},
-			findOne: function (where, done) {
-				return repos.findOne(req, where, done);
-			},
-			create: function (obj, done) {
-				return repos.create(req, obj, done);
-			},
-			update: function (obj, where, done) {
-				return repos.update(req, obj, where, done);
-			},
-			delete: function (where, done) {
-				return repos.delete(req, where, done);
-			}
+		req.models[name] = model;
+
+		model.find = function (where, done) {
+			return model.db.find(req, where, done);
+		};
+		model.findOne= function (where, done) {
+			return model.db.findOne(req, where, done);
+		};
+		model.create= function (obj, done) {
+			return model.db.create(req, obj, done);
+		};
+		model.update= function (obj, where, done) {
+			return model.db.update(req, obj, where, done);
+		};
+		model.delete= function (where, done) {
+			return model.db.delete(req, where, done);
 		};
 
 		next();
