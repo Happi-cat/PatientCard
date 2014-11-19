@@ -101,6 +101,26 @@ module.exports.format = function format(value, options) {
 	}
 }
 
+module.exports.range = function range(value, options) {
+	if (_.isNull(value) || _.isUndefined(value)) {
+		return;
+	}
+
+	if (_.isArray(options)) {
+		options = {range: options};
+	}
+
+	var min = options.range[0];
+	var max = options.range[1];
+
+	if (value >= min && value <= max) {
+		return;
+	}
+	var message = options.message || " doesn't fall in range [%{ min }, %{ max }]";
+	return _.template(message, {min: min, max: max});
+}
+
+
 module.exports.inclusion = function inclusion(value, options) {
 	if (_.isNull(value) || _.isUndefined(value)) {
 		return;

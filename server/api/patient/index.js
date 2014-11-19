@@ -2,12 +2,11 @@
 
 var express = require('express');
 var controller = require('./patient.controller');
-var schema = require('./patient.model');
 var model = require('./../../components/express-model');
 
 var router = express.Router();
 
-router.use(model('patient', schema));
+router.use(model('patient', require('./patient.model')));
 
 router.get('/', controller.index);
 router.get('/:patientId', controller.item);

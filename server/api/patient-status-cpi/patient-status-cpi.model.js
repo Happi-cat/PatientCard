@@ -11,7 +11,9 @@ function cpiFormula() {
     for (var i = 1; i <= 6; i++) {
         var val = this['value' + i];
 
-        if (val >= 0 && val <=3) {
+        val = (val !== null && val !== undefined) ? +val : -1;
+
+        if (val >= 0 && val <=5) {
             cpiSum += val;
             cpiCount++;
         }
@@ -42,31 +44,37 @@ module.exports = {
         value1: {
         	validation: {
         		number: true,
+                range: [0, 5],
         	}
         },
         value2: {
         	validation: {
         		number: true,
+                range: [0, 5],
         	}
         },
         value3: {
         	validation: {
         		number: true,
+                range: [0, 5],
         	}
         },
         value4: {
         	validation: {
         		number: true,
+                range: [0, 5],
         	}
         },
         value5: {
         	validation: {
         		number: true,
+                range: [0, 5],
         	}
         },
         value6: {
         	validation: {
         		number: true,
+                range: [0, 5],
         	}
         },
         cpi: {

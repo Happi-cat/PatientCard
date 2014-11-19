@@ -3,7 +3,9 @@
 var _ = require('lodash');
 
 exports.index = function(req, res, next) {
-  	req.models.patientSurvey.find({}, function (err, data) {
+  	req.models.patientSurvey.find({
+  		patientId: req.patientId,
+  	}, function (err, data) {
 		if (err) return next(err);
 		return res.json(data);
 	})

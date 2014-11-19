@@ -12,6 +12,5 @@ router.use(model('patientFirstSurveyDetails', schema.details));
 
 router.get('/', controller.index);
 router.post('/', controller.post);
-router.put('/', controller.put);
 
 module.exports = router;

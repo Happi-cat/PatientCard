@@ -14,11 +14,14 @@ function ohisFormula () {
         var cis = this['cis' + i];
         var dis = this['dis' + i];
 
-        if (cis >= 0 && cis <=6) {
+        cis = (cis !== null && cis !== undefined) ? +cis : -1;
+        dis = (dis !== null && dis !== undefined) ? +dis : -1;
+
+        if (cis >= 0 && cis <=3) {
             cisSum += cis;
             cisCount++;
         }
-        if (dis >= 0 && dis <= 6) {
+        if (dis >= 0 && dis <= 3) {
             disSum += dis;
             disCount++;
         }
@@ -49,6 +52,7 @@ module.exports = {
         cis1: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.dis1;
                 }
@@ -57,6 +61,7 @@ module.exports = {
         cis2: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.dis2;
                 }
@@ -65,6 +70,7 @@ module.exports = {
         cis3: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.dis3;
                 }
@@ -73,6 +79,7 @@ module.exports = {
         cis4: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.dis4;
                 }
@@ -81,6 +88,7 @@ module.exports = {
         cis5: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.dis5;
                 }
@@ -89,6 +97,7 @@ module.exports = {
         cis6: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.dis6;
                 }
@@ -97,6 +106,7 @@ module.exports = {
         dis1: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.cis1;
                 }
@@ -105,6 +115,7 @@ module.exports = {
         dis2: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.cis2;
                 }
@@ -113,6 +124,7 @@ module.exports = {
         dis3: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.cis3;
                 }
@@ -121,6 +133,7 @@ module.exports = {
         dis4: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.cis4;
                 }
@@ -129,6 +142,7 @@ module.exports = {
         dis5: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.cis5;
                 },
@@ -137,6 +151,7 @@ module.exports = {
         dis6: {
             validation: {
                 number: true,
+                range: [0, 3],
                 required: function() {
                     return !!this.cis6;
                 },
