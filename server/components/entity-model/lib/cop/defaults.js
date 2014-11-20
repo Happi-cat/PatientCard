@@ -10,7 +10,7 @@ module.exports = function defaults(obj, defaultValues) {
 		var value = obj[prop];
 
 
-		if (_.isUndefined(value)) {
+		if (_.isUndefined(value) || _.isNull(value)) {
 			if (_.isFunction(defaultValue)) {
 				defaultValue = defaultValue.call(obj, value, prop);
 			}

@@ -8,7 +8,11 @@ module.exports = function (schema) {
 	schema = mapper(schema);
 
 	function model(obj) {
-		return new Model(obj, schema)
+		var wrapped = new Model(obj, schema);
+		
+		wrapped.defaults();
+		
+		return wrapped;
 	}
 	model.db = new Repos(schema);
 

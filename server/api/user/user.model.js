@@ -4,6 +4,7 @@ module.exports = {
     table: 'users',
     fields: {
         username: {
+            notUpdate: true,
             validation: {
                 length: {
                     maximum: 100
@@ -59,6 +60,8 @@ module.exports = {
             }
         },
         created: {
+            notIsert: true,
+            notUptade: true,
             validation: {
                 datetime: true,
                 required: true,

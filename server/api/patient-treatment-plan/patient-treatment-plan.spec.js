@@ -19,15 +19,4 @@ describe('GET /api/patient/:patientId/treatment-plan', function() {
         done();
       });
   });
-
-  it('should respond on post with ok', function(done) {
-    request(app)
-      .post('/api/patient/' + patientId + '/treatment-plan')
-      .send({ patientId : patientId })
-      .expect(200) 
-      .end(function(err, res) {
-        if (err) return done(err);
-        done();
-      });
-  });
 });

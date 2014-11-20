@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var moment = require('moment');
 
 module.exports.required = function required(value, options) {
 	var message = options.message || "can't be blank";
@@ -48,6 +49,10 @@ module.exports.number =  function number(value, options) {
 		return;
 	}
 
+	if (!options.noStrings) {
+		value = +value;
+	}
+
 	// If it's not a number we shouldn't continue since it will compare it.
 	if (!_.isNumber(value)) {
 		return options.message || "is not a number";
@@ -68,8 +73,10 @@ module.exports.datetime = function datetime(value, options) {
 		return;
 	}
 
+	value = +moment.utc(value);
+
 	// If it's not a date we shouldn't continue since it will compare it.
-	if (!_.isDate(value)) {
+	if (!_.isNaN(value)) {
 		return options.message || "is not a date";
 	}
 }

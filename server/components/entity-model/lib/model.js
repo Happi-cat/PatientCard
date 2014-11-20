@@ -15,7 +15,7 @@ function Model(obj, schema) {
 Model.prototype.validate = function () {
 	this.errors = validate(this.value, this.schema.constraints);
 
-	return this;
+	return this.errors;
 }
 
 Model.prototype.defaults = function() {

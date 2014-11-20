@@ -92,6 +92,19 @@ Repos.prototype.update = function update(req, obj, where, done) {
 	});
 }
 
+Repos.prototype.save = function save(req, obj, where, done) {
+	var self = this;
+	self.findOne(req, where, function (err, data) {
+		if (err) return done(err);
+		
+		if (_.isEmpty(data)) {
+			return self.create(req, obj, done);
+		} else {
+			return self.update(req, obj, where, done);
+		}
+	});
+}
+
 Repos.prototype.delete = function $delete(req, where, done) {
 	var self = this;
 	req.getConnection(function (err, connection) {

@@ -13,12 +13,16 @@ exports.index = function(req, res, next) {
 
 exports.post = function(req, res, next) {
 	var item = req.models.patientStatusCpi(req.body);
-	item.calculate();
-	item.validate();
 	
-	if (item.errors) {
+	// Who updated 
+	item.value.updatedBy = req.user.username;
+
+	if (item.validate()) {
 		return res.status(400).json(item.errors);
 	}
+
+	// Compute  CPI formulas
+	item.calculate();
 
 	req.models.patientStatusCpi.update(item.value, { 
 		id: item.value.id 
@@ -28,15 +32,18 @@ exports.post = function(req, res, next) {
 	})
 };
 
-exports.post = function(req, res, next) {
-	var item = req.models.patientStatusCpi(req.body);
-	item.defaults();
-	item.calculate();
-	item.validate();
+exports.put = function(req, res, next) {
+	var item = req.models.patientStatusCpi(req.body);	
 	
-	if (item.errors) {
+	// Who created
+	item.value.createdBy = req.user.username;
+
+	if (item.validate()) {
 		return res.status(400).json(item.errors);
 	}
+
+	// Compute  CPI formulas
+	item.calculate();
 
 	req.models.patientStatusCpi.create(item.value, function (err, data) {
 		if (err) return next(err);

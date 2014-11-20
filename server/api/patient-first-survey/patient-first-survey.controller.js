@@ -1,29 +1,16 @@
 'use strict';
 
 var _ = require('lodash');
-var Promise = require('es6-promise').Promise;
+var Promise = require('es6-promise').Promise; // jshint ignore:line
 
 // Get list of patient-first-surveys
 exports.index = function(req, res, next) {
-	Promise.all({
-		survey: findeSurvey(req),
-		details: findeSurveyDetails(req),
-	})
-};
-
-exports.post = function(req, res, next) {
-	var item = req.models.patient(req.body);
-	item.defaults();
-	item.validate();
-
-	if (item.errors) {
-		return res.status(400).json(item.errors);
-	}
-
 	req.models.patientFirstSurvey.findOne({ 
 		patientId: req.patientId 
 	}, function (err, firstSurvey) {
 		if (err) return next(err);
+
+		firstSurvey = firstSurvey || {};
 
 		req.models.patientFirstSurveyDetails.find({ 
 			patientId: req.patientId 
@@ -34,31 +21,41 @@ exports.post = function(req, res, next) {
 			return res.json(firstSurvey);
 		})
 	})
-
-	req.models.patientFirstSurvey.create(item.value, function (err, data) {
-		if (err) return next(err);
-		return res.status(201).send();
-	})
 };
 
-function findeSurvey(req) {
-	return new Promise(function (resolve, reject) {
-		req.models.patientFirstSurvey.findOne({ 
-			patientId: req.patientId 
-		}, function (err, data) {
-			if (err) return reject(err);
-			return resolve(data);
-		})
-	});
-}
+exports.post = function(req, res, next) {
+	var item = req.models.patientFirstSurvey(req.body);	
 
-function findeSurveyDetails(req) {
-	return new Promise(function (resolve, reject) {
-		req.models.patientFirstSurveyDetails.find({ 
-			patientId: req.patientId 
-		}, function (err, data) {
-			if (err) return reject(err);
-			return resolve(data);
+	var details = _.map(req.body.details, function (item) {
+		return req.models.patientFirstSurveyDetails(item);
+	})
+
+	var detailsErrors = _(details).map(function (item) {
+		return item.validate();
+	}).compact().value();
+
+	if (item.validate()) {
+		return res.status(400).json(item.errors);
+	}
+	if (detailsErrors.length) {
+		return res.status(400).json(detailsErrors);
+	}
+
+
+	req.models.patientFirstSurvey.save( item.value, { 
+		patientId: req.patientId 
+	}).then(function () {
+		var promises = _.map(details, function (detail) {
+			return req.models.patientFirstSurveyDetails.save(detail.value, { 
+				patientId: detail.value.patientId,
+				optionId: detail.value.optionId,
+			})
 		})
-	});
-}
+
+		return Promise.all(promises);
+	}).then(function () {
+		res.status(200).send();
+	}, function (err) {
+		next(err);
+	})
+};

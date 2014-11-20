@@ -261,6 +261,7 @@ module.exports = {
         },
         createdBy: {
             column: 'created_by',
+            notUpdate: true,
             validation: {
                 required: true,
                 length: {
@@ -270,6 +271,7 @@ module.exports = {
         },
         updatedBy: {
             column: 'updated_by',
+            notInsert: true,
             validation: {
                 length: {
                     maximum: 100

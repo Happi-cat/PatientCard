@@ -13,10 +13,11 @@ exports.index = function(req, res, next) {
 
 exports.post = function(req, res, next) {
 	var item = req.models.patientStatusDentist(req.body);
-	item.calculate();
-	item.validate();
 	
-	if (item.errors) {
+	// Who updated
+	item.value.updatedBy = req.user.username;
+
+	if (item.validate()) {
 		return res.status(400).json(item.errors);
 	}
 
@@ -28,13 +29,13 @@ exports.post = function(req, res, next) {
 	})
 };
 
-exports.post = function(req, res, next) {
-	var item = req.models.patientStatusDentist(req.body);
-	item.defaults();
-	item.calculate();
-	item.validate();
+exports.put = function(req, res, next) {
+	var item = req.models.patientStatusDentist(req.body);	
 	
-	if (item.errors) {
+	// Who created
+	item.value.createdBy = req.user.username;
+
+	if (item.validate()) {
 		return res.status(400).json(item.errors);
 	}
 

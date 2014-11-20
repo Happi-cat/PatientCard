@@ -21,9 +21,8 @@ exports.item = function(req, res, next) {
 
 exports.post = function(req, res, next) {
 	var item = req.models.patient(req.body);
-	item.validate();
 	
-	if (item.errors) {
+	if (item.validate()) {
 		return res.status(400).json(item.errors);
 	}
 
@@ -36,11 +35,9 @@ exports.post = function(req, res, next) {
 };
 
 exports.put = function(req, res, next) {
-	var item = req.models.patient(req.body);
-	item.defaults();
-	item.validate();
+	var item = req.models.patient(req.body);	
 	
-	if (item.errors) {
+	if (item.validate()) {
 		return res.status(400).json(item.errors);
 	}
 

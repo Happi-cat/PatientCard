@@ -1,31 +1,86 @@
 'use strict';
 
 var _ = require('lodash');
+var Promise = require('es6-promise').Promise; // jshint ignore:line
 
-module.exports = function (name, schema) {
-	var model = require('./../entity-model')(schema);
+var noop = function() {};
 
-	return function (req, res, next) {
-		req.models = req.models || {};
+module.exports = function(name, schema) {
+    var model = require('./../entity-model')(schema);
+    var db = model.db;
 
-		req.models[name] = model;
+    return function(req, res, next) {
+        req.models = req.models || {};
 
-		model.find = function (where, done) {
-			return model.db.find(req, where, done);
-		};
-		model.findOne= function (where, done) {
-			return model.db.findOne(req, where, done);
-		};
-		model.create= function (obj, done) {
-			return model.db.create(req, obj, done);
-		};
-		model.update= function (obj, where, done) {
-			return model.db.update(req, obj, where, done);
-		};
-		model.delete= function (where, done) {
-			return model.db.delete(req, where, done);
-		};
+        req.models[name] = model;
 
-		next();
-	};
+        model.find = function(where, done) {
+            done = done || noop;
+            return new Promise(function(resolve, reject) {
+                db.find(req, where, function(err, data) {
+                    if (err) reject(err);
+                    else resolve(data);
+
+                    done(err, data);
+                });
+            });
+        };
+        model.findOne = function(where, done) {
+            done = done || noop;
+            return new Promise(function(resolve, reject) {
+                db.findOne(req, where, function(err, data) {
+                    if (err) reject(err);
+                    else resolve(data);
+
+                    done(err, data);
+                });
+            });
+        };
+        model.create = function(obj, done) {
+            done = done || noop;
+            return new Promise(function(resolve, reject) {
+                db.create(req, obj, function(err, data) {
+                    if (err) reject(err);
+                    else resolve(data);
+
+                    done(err, data);
+                });
+            });
+        };
+        model.update = function(obj, where, done) {
+            done = done || noop;
+            return new Promise(function(resolve, reject) {
+                db.update(req, obj, where, function(err, data) {
+                    if (err) reject(err);
+                    else resolve(data);
+
+                    done(err, data);
+                });
+            });
+        };
+        model.save = function(obj, where, done) {
+            done = done || noop;
+            return new Promise(function(resolve, reject) {
+                db.save(req, obj, where, function(err, data) {
+                    if (err) reject(err);
+                    else resolve(data);
+
+                    done(err, data);
+                });
+            });
+        };
+        model.delete = function(where, done) {
+            done = done || noop;
+            return new Promise(function(resolve, reject) {
+                db.delete(req, where, function(err, data) {
+                    if (err) reject(err);
+                    else resolve(data);
+
+                    done(err, data);
+                });
+            });
+        };
+
+        next();
+    };
 }
