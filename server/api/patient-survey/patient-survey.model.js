@@ -1,6 +1,10 @@
 ﻿'use strict';
 
-module.exports = {
+var easyModel = require('./../../components/easy-model');
+var Schema = easyModel.Schema;
+
+
+var patientSurveySchema = new Schema({
     table: 'surveys',
     fields: {
         id: {
@@ -73,4 +77,6 @@ module.exports = {
             }
         },
     }
-}
+})
+
+module.exports = easyModel.model('patientSurvey', patientSurveySchema);

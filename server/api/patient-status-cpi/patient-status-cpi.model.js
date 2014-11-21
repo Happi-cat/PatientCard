@@ -2,6 +2,10 @@
 
 var _ = require('lodash');
 
+var easyModel = require('./../../components/easy-model');
+var Schema = easyModel.Schema;
+
+
 function cpiFormula() {
     /*jshint validthis:true */
     
@@ -22,7 +26,7 @@ function cpiFormula() {
     return cpiSum / cpiCount;
 }
 
-module.exports = {
+var patientStatusCpiSchema = new Schema({
     table: 'cpi_statuses',
     fields: {
         id: {
@@ -118,4 +122,6 @@ module.exports = {
             }
         },
     }
-}
+})
+
+module.exports = easyModel.model('patientStatusCpi', patientStatusCpiSchema);

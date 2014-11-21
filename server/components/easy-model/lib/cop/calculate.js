@@ -11,6 +11,8 @@ module.exports = function calculate(obj, formulas) {
 
 		if (_.isFunction(formula)) {
 			obj[prop] = formula.call(obj, value, prop);
+		} else {
+			obj[prop] = formula;
 		}
 	}
 

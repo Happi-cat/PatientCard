@@ -1,11 +1,13 @@
 'use strict';
 
 var _ = require('lodash');
+var utils = require('./../utils');
 var Promise = require('es6-promise').Promise; // jshint ignore:line
+var PatientTreatmentPlan =  require('./patient-treatment-plan.model');
 
 // Get list of patient-treatment-plans
 exports.index = function(req, res, next) {
-	req.models.patientTreatmentPlan.find({}, function (err, data) {
+	PatientTreatmentPlan.find(req, function (err, data) {
 		if (err) return next(err);
 		return res.json(data);
 	});
@@ -13,28 +15,28 @@ exports.index = function(req, res, next) {
 
 exports.post = function(req, res, next) {
 	var plans = _.map(req.body, function (item) {
-		var plan = req.models.patientTreatmentPlan(item);
+		PatientTreatmentPlan.defaults(item);
 
 		// Set author
-		plan.value.createdBy = req.user.username;
-		plan.value.updatedBy = req.user.username;
+		item.createdBy = req.user.username;
+		item.updatedBy = req.user.username;
 
-		return plan;
+		return item;
 	})
 
-	var errors = _(plans).map(function (plan) {
-		return plan.validate();
+	var errors = _(plans).map(function (item) {
+		return PatientTreatmentPlan.validate(item);
 	}).compact().value();
 
 	if (errors.length) {
-		return res.status(400).json(errors);
+		return utils.validationError(res, errors);
 	}
 
 
-	var promises = _.map(plans, function (plan) {
-		return req.models.patientTreatmentPlan.save(plan.value, { 
-			patientId: plan.value.patientId,
-			optionId: plan.value.optionId,
+	var promises = _.map(plans, function (item) {
+		return PatientTreatmentPlan.save(req, item, { 
+			patientId: item.patientId,
+			optionId: item.optionId,
 		})
 	})
 

@@ -1,9 +1,11 @@
 'use strict';
 
 var _ = require('lodash');
+var utils = require('./../utils');
+var PatientStatusOhis =  require('./patient-status-ohis.model');
 
 exports.index = function(req, res, next) {
-  	req.models.patientStatusOhis.find({
+  	PatientStatusOhis.find(req, {
   		patientId: req.patientId,
   	}, function (err, data) {
 		if (err) return next(err);
@@ -12,41 +14,45 @@ exports.index = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
-	var item = req.models.patientStatusOhis(req.body);
+	var item = req.body;
+	PatientStatusOhis.defaults(item);
 	
 	// Who updated
-	item.value.updatedBy = req.user.username;
+	item.updatedBy = req.user.username;
 
-	if (item.validate()) {
-		return res.status(400).json(item.errors);
+	var errors = PatientStatusOhis.validate(item);
+	if (errors) {
+		return utils.validationError(res, errors);
 	}
 
 	// Calculate OHIS formula
-	item.calculate();
+	PatientStatusOhis.calculate(item);
 
-	req.models.patientStatusOhis.update(item.value, { 
-		id: item.value.id 
+	PatientStatusOhis.update(req, item, { 
+		id: item.id 
 	}, function (err, data) {
 		if (err) return next(err);
-		return res.status(200).send();
+		return utils.ok(res);
 	})
 };
 
 exports.put = function(req, res, next) {
-	var item = req.models.patientStatusOhis(req.body);	
+	var item = req.body;
+	PatientStatusOhis.defaults(item);
 
 	// Who created
-	item.value.createdBy = req.user.username;
+	item.createdBy = req.user.username;
 
-	if (item.validate()) {
-		return res.status(400).json(item.errors);
+	var errors = PatientStatusOhis.validate(item);
+	if (errors) {
+		return utils.validationError(res, errors);
 	}
 
 	// Calculate OHIS formula
-	item.calculate();
+	PatientStatusOhis.calculate(item);
 
-	req.models.patientStatusOhis.create(item.value, function (err, data) {
+	PatientStatusOhis.create(req, item, function (err, data) {
 		if (err) return next(err);
-		return res.status(201).send();
+		return utils.created(res);
 	})
 };

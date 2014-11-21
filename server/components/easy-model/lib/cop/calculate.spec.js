@@ -22,7 +22,7 @@ describe('Cop. Calculate', function() {
 		result.should.have.property('b', 2);
 		result.should.have.property('c', 3);
 		result.should.have.property('calculated1', 1);
-		result.should.not.have.property('calculated2');
+		result.should.have.property('calculated2', 2);
 		result.should.have.property('calculated3', 4);
 	});
 });

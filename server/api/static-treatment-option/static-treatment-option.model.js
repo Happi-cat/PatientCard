@@ -1,6 +1,10 @@
 ﻿'use strict';
 
-module.exports = {
+var easyModel = require('./../../components/easy-model');
+var Schema = easyModel.Schema;
+
+
+var staticTreatmentOptionSchema = new Schema({
     table: 'treatment_options',
     fields: {
         id: {
@@ -38,4 +42,6 @@ module.exports = {
             }
         },
     }
-}
+})
+
+module.exports = easyModel.model('staticTreatmentOption', staticTreatmentOptionSchema);

@@ -2,6 +2,10 @@
 
 var _ = require('lodash');
 
+var easyModel = require('./../../components/easy-model');
+var Schema = easyModel.Schema;
+
+
 function ohisFormula () {
     /*jshint validthis:true */
 
@@ -30,7 +34,7 @@ function ohisFormula () {
     return cisSum / cisCount + disSum / disCount;
 }
 
-module.exports = {
+var patientStatusOhisSchema = new Schema({
     table: 'ohis_statuses',
     fields: {
         id: {
@@ -198,4 +202,6 @@ module.exports = {
             }
         },
     }
-}
+})
+
+module.exports = easyModel.model('patientStatusOhis', patientStatusOhisSchema);

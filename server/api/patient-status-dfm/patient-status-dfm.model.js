@@ -2,6 +2,10 @@
 
 var _ = require('lodash');
 
+var easyModel = require('./../../components/easy-model');
+var Schema = easyModel.Schema;
+
+
 function dfmFormula() {
     /*jshint validthis:true */
     var count = 0;
@@ -27,7 +31,7 @@ function dfmFormula() {
 }
 
 
-module.exports = {
+var patientStatusDfmSchema = new Schema({
     table: 'dfm_statuses',
     fields: {
         id: {
@@ -279,4 +283,6 @@ module.exports = {
             }
         },
     }
-}
+});
+
+module.exports = easyModel.model('patientStatusDfm', patientStatusDfmSchema);

@@ -2,14 +2,11 @@
 
 var express = require('express');
 var controller = require('./patient-treatment-plan.controller');
-var model = require('./../../components/express-model');
-var permissions = require('./../../components/permissions');
+var auth = require('./../../auth/auth.service');
 
 var router = express.Router();
 
-router.use(model('patientTreatmentPlan', require('./patient-treatment-plan.model')));
-
-router.get('/', permissions.auth(), controller.index);
-router.post('/', permissions.roles(['doctor', 'administrator']), controller.post);
+router.get('/', auth.isAuthenticated(), controller.index);
+router.post('/', auth.hasRole(['doctor', 'administrator']), controller.post);
 
 module.exports = router;

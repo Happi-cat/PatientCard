@@ -1,9 +1,11 @@
 'use strict';
 
 var _ = require('lodash');
+var utils = require('./../utils');
+var PatientSurvey =  require('./patient-survey.model');
 
 exports.index = function(req, res, next) {
-  	req.models.patientSurvey.find({
+  	PatientSurvey.find(req, {
   		patientId: req.patientId,
   	}, function (err, data) {
 		if (err) return next(err);
@@ -12,35 +14,39 @@ exports.index = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
-	var item = req.models.patientSurvey(req.body);
+	var item = req.body;
+	PatientSurvey.defaults(item);
 	
 	// Who updated
-	item.value.updatedBy = req.user.username;
+	item.updatedBy = req.user.username;
 
-	if (item.validate()) {
-		return res.status(400).json(item.errors);
+	var errors = PatientSurvey.validate();
+	if (errors) {
+		return utils.validationError(res, errors);
 	}
 
-	req.models.patientSurvey.update(item.value, { 
-		id: item.value.id 
+	PatientSurvey.update(req, item, { 
+		id: item.id 
 	}, function (err, data) {
 		if (err) return next(err);
-		return res.status(200).send();
+		return utils.ok(res);
 	})
 };
 
 exports.put = function(req, res, next) {
-	var item = req.models.patientSurvey(req.body);
+	var item = req.body;
+	PatientSurvey.defaults(item);
 	
 	// Who created
-	item.value.createdBy = req.user.username;
+	item.createdBy = req.user.username;
 
-	if (item.validate()) {
-		return res.status(400).json(item.errors);
+	var errors = PatientSurvey.validate();
+	if (errors) {
+		return utils.validationError(res, errors);
 	}
 
-	req.models.patientSurvey.create(item.value, function (err, data) {
+	PatientSurvey.create(req, item, function (err, data) {
 		if (err) return next(err);
-		return res.status(201).send();
+		return utils.created(res);
 	})
 };
