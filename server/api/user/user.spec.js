@@ -4,11 +4,28 @@ var should = require('should');
 var app = require('../../app');
 var request = require('supertest');
 
+var token = null;
+
+before(function (done) {
+  request(app)
+    .post('/api/auth/local')
+    .send({ username: "admin", password: "admin"})
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end(function (err, res) {
+      token = res.body.token;
+      if (token) {
+        token = '/?access_token=' + token;
+      }
+      done(null);
+    })
+})
+
 describe('GET /api/user', function() {
 
   it('should respond with JSON array', function(done) {
     request(app)
-      .get('/api/user')
+      .get('/api/user' + token)
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {

@@ -10,6 +10,6 @@ require('./local/passport').setup(User, config);
 
 var router = express.Router();
 
-router.use('/', require('./local'));
+router.use('/local', require('./local'));
 
 module.exports = router;

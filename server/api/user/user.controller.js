@@ -5,14 +5,14 @@ var utils = require('./../utils');
 var User =  require('./user.model');
 
 // Get list of users
-exports.index = function(req, res) {
+exports.index = function(req, res, next) {
   	User.find(req, function (err, data) {
 		if (err) return next(err);
 		return res.json(data);
 	})
 };
 
-exports.me = function(req, req) {
+exports.me = function(req, res, next) {
 	User.findOne(req, {
 		username: req.user.username
 	}, function (err, data) {
@@ -21,7 +21,7 @@ exports.me = function(req, req) {
 	})
 };
 
-exports.item = function(req, req) {
+exports.item = function(req, res, next) {
 	User.findOne(req, {
 		username: req.params.username
 	}, function (err, data) {
