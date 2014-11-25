@@ -8,7 +8,7 @@ var token = null;
 
 before(function (done) {
   request(app)
-    .post('/api/auth/local')
+    .post('/auth/local')
     .send({ username: "admin", password: "admin"})
     .expect(200)
     .expect('Content-Type', /json/)
@@ -21,12 +21,12 @@ before(function (done) {
     })
 })
 
-describe('GET /api/patient', function() {
+describe('GET /api/patients', function() {
   var patientId = 1;
 
   it('should respond with JSON array', function(done) {
     request(app)
-      .get('/api/patient' + token)
+      .get('/api/patients' + token)
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -38,7 +38,7 @@ describe('GET /api/patient', function() {
 
   it('should return patient instance', function(done) {
     request(app)
-      .get('/api/patient/' + patientId + token)
+      .get('/api/patients/' + patientId + token)
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {

@@ -3,7 +3,7 @@
 describe('Controller: PatientSurveyCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('patientCardApp'));
+  beforeEach(module('dentalPatientCardApp'));
 
   var PatientSurveyCtrl, scope;
 

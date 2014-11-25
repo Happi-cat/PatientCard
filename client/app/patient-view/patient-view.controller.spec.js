@@ -3,7 +3,7 @@
 describe('Controller: PatientViewCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('patientCardApp'));
+  beforeEach(module('dentalPatientCardApp'));
 
   var PatientViewCtrl, scope;
 

@@ -13,7 +13,7 @@ exports.index = function(req, res, next) {
 	});
 };
 
-exports.post = function(req, res, next) {
+exports.update = function(req, res, next) {
 	var plans = _.map(req.body, function (item) {
 		PatientTreatmentPlan.defaults(item);
 
@@ -41,8 +41,8 @@ exports.post = function(req, res, next) {
 	})
 
 	Promise.all(promises).then(function () {
-		res.status(200).send();
+		return utils.ok(res);
 	}, function (err) {
-		next(err);
+		return next(err);
 	})
 };

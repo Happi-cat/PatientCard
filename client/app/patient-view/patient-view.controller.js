@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('patientCardApp')
+angular.module('dentalPatientCardApp')
   .controller('PatientViewCtrl', function ($scope, $routeParams, patientService) {
     var self = $scope;
 

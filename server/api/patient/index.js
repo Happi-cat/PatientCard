@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.get('/', auth.isAuthenticated(), controller.index);
 router.get('/:patientId', auth.isAuthenticated(), controller.item);
-router.post('/', auth.hasRole(['nurse', 'doctor', 'administrator']), controller.post);
-router.put('/', auth.hasRole(['nurse', 'doctor', 'administrator']), controller.put);
+router.post('/', auth.hasRole(['nurse', 'doctor', 'administrator']), controller.create);
+router.put('/', auth.hasRole(['nurse', 'doctor', 'administrator']), controller.update);
 
 module.exports = router;

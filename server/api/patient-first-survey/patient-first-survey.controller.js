@@ -26,7 +26,7 @@ exports.index = function(req, res, next) {
 	})
 };
 
-exports.post = function(req, res, next) {
+exports.update = function(req, res, next) {
 	var item = req.body;	
 	PatientFirstSurvey.defaults(item);
 
@@ -59,8 +59,8 @@ exports.post = function(req, res, next) {
 
 		return Promise.all(promises);
 	}).then(function () {
-		res.status(200).send();
+		return utils.ok(res);
 	}, function (err) {
-		next(err);
+		return next(err);
 	})
 };

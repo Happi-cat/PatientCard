@@ -8,7 +8,7 @@ var token = null;
 
 before(function (done) {
   request(app)
-    .post('/api/auth/local')
+    .post('/auth/local')
     .send({ username: "admin", password: "admin"})
     .expect(200)
     .expect('Content-Type', /json/)
@@ -21,12 +21,12 @@ before(function (done) {
     })
 })
 
-describe('GET /api/patient/:patientId/first-survey', function() {
+describe('GET /api/patients/:patientId/first-survey', function() {
   var patientId = 1;
 
   it('should respond with JSON Object', function(done) {
     request(app)
-      .get('/api/patient/' + patientId + '/first-survey' + token)
+      .get('/api/patients/' + patientId + '/first-survey' + token)
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {

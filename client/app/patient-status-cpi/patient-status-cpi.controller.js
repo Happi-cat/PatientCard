@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('patientCardApp')
+angular.module('dentalPatientCardApp')
   .controller('PatientStatusCpiCtrl', function ($scope) {
     $scope.message = 'Hello';
   });

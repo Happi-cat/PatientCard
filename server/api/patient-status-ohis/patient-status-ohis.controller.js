@@ -13,7 +13,28 @@ exports.index = function(req, res, next) {
 	})
 };
 
-exports.post = function(req, res, next) {
+exports.create = function(req, res, next) {
+	var item = req.body;
+	PatientStatusOhis.defaults(item);
+
+	// Who created
+	item.createdBy = req.user.username;
+
+	var errors = PatientStatusOhis.validate(item);
+	if (errors) {
+		return utils.validationError(res, errors);
+	}
+
+	// Calculate OHIS formula
+	PatientStatusOhis.calculate(item);
+
+	PatientStatusOhis.create(req, item, function (err, data) {
+		if (err) return next(err);
+		return utils.created(res);
+	})
+}
+
+exports.update = function(req, res, next) {
 	var item = req.body;
 	PatientStatusOhis.defaults(item);
 	
@@ -32,27 +53,6 @@ exports.post = function(req, res, next) {
 		id: item.id 
 	}, function (err, data) {
 		if (err) return next(err);
-		return utils.ok(res);
-	})
-};
-
-exports.put = function(req, res, next) {
-	var item = req.body;
-	PatientStatusOhis.defaults(item);
-
-	// Who created
-	item.createdBy = req.user.username;
-
-	var errors = PatientStatusOhis.validate(item);
-	if (errors) {
-		return utils.validationError(res, errors);
-	}
-
-	// Calculate OHIS formula
-	PatientStatusOhis.calculate(item);
-
-	PatientStatusOhis.create(req, item, function (err, data) {
-		if (err) return next(err);
-		return utils.created(res);
+		return utils.updated(res);
 	})
 };

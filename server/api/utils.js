@@ -11,3 +11,9 @@ module.exports.ok = function (res) {
 module.exports.created = function(res) {
 	return res.status(201).json(true);
 }
+
+module.exports.updated = function (res) {
+	// No content status
+	return res.status(204).json(true);
+}
+
