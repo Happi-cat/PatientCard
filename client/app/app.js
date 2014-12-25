@@ -14,6 +14,9 @@ angular.module('dentalPatientCardApp', [
     doctor: 'doctor',
     nurse: 'nurse',
   })
+  .constant('URLS', {
+    login: '/login',
+  })
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .otherwise({

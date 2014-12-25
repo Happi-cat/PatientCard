@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dentalPatientCardApp')
-  .controller('PatientEditCtrl', function ($scope, $routeParams, patientService) {
+  .controller('PatientEditCtrl', function ($scope, $routeParams, Auth, Patient) {
     var self = $scope;
 
 	self.patientId = $routeParams.patientId;
@@ -33,7 +33,10 @@ angular.module('dentalPatientCardApp')
 
 
 	var load = function () {
-		patientService.getPatient(self.patientId).then(function (data) {
+		Patient.get({
+			patientId: self.patientId,
+			token: Auth.getToken(),
+		}).then(function (data) {
 			self.patient = data;
 
 			var item = self.breadcrumb.items[1];
@@ -45,7 +48,9 @@ angular.module('dentalPatientCardApp')
 	load();
 
 	self.ok = function () {
-		patientService.storePatient(self.patient).then(function () {
+		Patient.update({
+			token: Auth.getToken()
+		}, self.patient).then(function () {
 			$scope.goUp(self.breadcrumb);
 		}, self.onSaveFailed);
 	};

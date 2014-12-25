@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('patientCardApp')
+angular.module('dentalPatientCardApp')
   .directive('landing', function () {
     return {
       templateUrl: 'components/landing/landing.html',

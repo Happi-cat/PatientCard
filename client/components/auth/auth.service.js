@@ -77,6 +77,23 @@ angular.module('dentalPatientCardApp')
 			return currentUser.role === 'administrator';
 		};
 
+		self.isInRole = function(roles) {
+			if (roles === true) {
+				return self.isLoggedIn();
+			}
+			if (angular.isString(roles)) {
+				return currentUser.role === roles;
+			}
+			if (angular.isArray(roles)) {
+				for(var role in roles) {
+					if (currentUser.role === role) {
+						return true;
+					}
+				}
+			}
+			return false;
+		};
+
 		/**
 		 * Get auth token
 		 */
@@ -85,4 +102,11 @@ angular.module('dentalPatientCardApp')
 		};
 
 		return self;
+	}).run(function ($rootScope, $location, Auth, URLS) {
+		// Check perm before page change
+		$rootScope.$on('$routeChangeStart', function (event, currRoute) {
+			if (!Auth.isInRole(currRoute.auth)) {
+				$location.path(URLS.login);
+			}
+		});
 	});

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('patientCardApp')
+angular.module('dentalPatientCardApp')
   .directive('tableHead', function () {
     return {
       templateUrl: 'components/table-head/table-head.html',

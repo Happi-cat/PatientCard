@@ -15,7 +15,7 @@ angular.module('dentalPatientCardApp')
 			icon: 'medical-service-icon-clipboard64',
 			title: 'Добавить нового пациента',
 			description: 'Выберите этот  пункт меню если хотите добавить нового пациента (заполнить карточку пациента)',
-			url: '/patient/new'
+			url: '/patients/new'
 		},
 		{
 			icon: 'medical-service-icon-2444',

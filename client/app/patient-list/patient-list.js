@@ -5,6 +5,7 @@ angular.module('dentalPatientCardApp')
     $routeProvider
       .when('/patients', {
         templateUrl: 'app/patient-list/patient-list.html',
-        controller: 'PatientListCtrl'
+        controller: 'PatientListCtrl',
+        auth: true,
       });
   });

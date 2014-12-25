@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('patientCardApp')
-  .controller('HeaderCtrl', function ($scope, authService, ROLES) {
+angular.module('dentalPatientCardApp')
+  .controller('HeaderCtrl', function ($scope, Auth) {
     var self = $scope;
 
     self.isCollapsed = true;
@@ -11,16 +11,12 @@ angular.module('patientCardApp')
 		{
 			title: 'Пациенты',
 			url: '/patients',
-			perm: {
-				authorized: true
-			}
+			auth: true,
 		},
 		{
 			title: 'Пользователи',
 			url: '/users',
-			perm: {
-				role: ROLES.admin
-			}
+			auth: 'administrator',
 		},
 	];
 
@@ -35,21 +31,20 @@ angular.module('patientCardApp')
 		},
 		{
 			divider: true,
-			perm: {
-				authorized: true,
-			}
+			auth: true,
 		},
 		{
 			title: 'Выйти',
 			url: '/logout',
-			perm: {
-				authorized: true,
-			}
+			auth: true,
 		}
 	];
 	
 	self.checkItemPerm = function (item) {
-		return authService.checkPerm(item.perm);
+		if (item.auth) {
+			return Auth.isInRole(item.auth);
+		}
+		return true;
 	};
 
   });

@@ -3,8 +3,9 @@
 angular.module('dentalPatientCardApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/patient/:patientId/edit', {
+      .when('/patients/:patientId/edit', {
         templateUrl: 'app/patient-edit/patient-edit.html',
-        controller: 'PatientEditCtrl'
+        controller: 'PatientEditCtrl',
+        auth: true,
       });
   });

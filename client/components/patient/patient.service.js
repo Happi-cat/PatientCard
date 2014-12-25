@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dentalPatientCardApp')
-    .factory('Patient', function($resource, Auth) {
+    .factory('Patient', function($resource) {
         return $resource('/api/patients/:patientId', {
             patientId: '@patientId'
         }, {

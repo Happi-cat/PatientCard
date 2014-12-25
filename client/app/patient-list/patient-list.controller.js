@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dentalPatientCardApp')
-  .controller('PatientListCtrl', function ($scope, patientService) {
+  .controller('PatientListCtrl', function ($scope, Auth, Patient) {
     var self = $scope;
 
 	self.tablehead = [
@@ -32,7 +32,9 @@ angular.module('dentalPatientCardApp')
 	self.sortFields = [];
 
 	var load = function() {
-		patientService.getPatients().then(function(data) {
+		Patient.all({
+			token: Auth.getToken(),
+		}).then(function(data) {
 			self.items = data;
 		}, self.onLoadFailed);
 	};

@@ -3,7 +3,7 @@
 describe('Directive: breadcrumb', function () {
 
   // load the directive's module and view
-  beforeEach(module('patientCardApp'));
+  beforeEach(module('dentalPatientCardApp'));
   beforeEach(module('components/breadcrumb/breadcrumb.html'));
 
   var element, scope;

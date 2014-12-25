@@ -5,7 +5,7 @@
 		<p>Если хотите добавить пациента нажмите на кнопку ниже</p>
 		<div class="btn-toolbar">
 			<div class="btn-group">
-				<a href="/patient/new" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить пациента</a>
+				<a href="/patients/new" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>&nbsp;Добавить пациента</a>
 			</div>
 		</div>
 	</div>
@@ -17,7 +17,7 @@
 				<thead table-head datasource="tablehead" sort-fields="sortFields"></thead>
 				<tbody>
 					<tr ng-repeat="item in items | orderBy:sortFields | filter: searchText">
-						<td><a href="/patient/{{ item.id }}/view">{{ item.lastName }}</a></td>
+						<td><a href="/patients/{{ item.id }}/view">{{ item.lastName }}</a></td>
 						<td>{{ item.firstName }}</td>
 						<td>{{ item.middleName }}</td>
 						<td>{{ item.phone }}</td>
@@ -25,7 +25,7 @@
 						<td>
 							<div class="btn-toolbar pull-right">
 								<div class="btn-group btn-group-xs">
-									<a href="/patient/{{ item.id }}/edit" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+									<a href="/patients/{{ item.id }}/edit" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
 								</div>
 							</div>
 						</td>

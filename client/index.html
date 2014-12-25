@@ -21,7 +21,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="patientCardApp">
+  <body ng-app="dentalPatientCardApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -63,9 +63,10 @@
           <!-- injector:js -->
           <script src="app/about/about.controller.js"></script>
           <script src="app/about/about.js"></script>
-          <script src="app/auth-service/auth-service.service.js"></script>
           <script src="app/help/help.controller.js"></script>
           <script src="app/help/help.js"></script>
+          <script src="app/login/login.controller.js"></script>
+          <script src="app/login/login.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/patient-edit/patient-edit.controller.js"></script>
@@ -76,7 +77,6 @@
           <script src="app/patient-list/patient-list.js"></script>
           <script src="app/patient-new/patient-new.controller.js"></script>
           <script src="app/patient-new/patient-new.js"></script>
-          <script src="app/patient-service/patient-service.service.js"></script>
           <script src="app/patient-status-cpi/patient-status-cpi.controller.js"></script>
           <script src="app/patient-status-cpi/patient-status-cpi.js"></script>
           <script src="app/patient-status-dentist/patient-status-dentist.controller.js"></script>
@@ -95,7 +95,6 @@
           <script src="app/patient-view/patient-view.js"></script>
           <script src="app/patient-visit/patient-visit.controller.js"></script>
           <script src="app/patient-visit/patient-visit.js"></script>
-          <script src="app/static-service/static-service.service.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/breadcrumb/breadcrumb.directive.js"></script>
@@ -103,7 +102,16 @@
           <script src="components/header/header.controller.js"></script>
           <script src="components/landing/landing.directive.js"></script>
           <script src="components/modal/modal.service.js"></script>
+          <script src="components/patient/patient-first-survey.service.js"></script>
+          <script src="components/patient/patient-status-cpi.service.js"></script>
+          <script src="components/patient/patient-status-dentist.service.js"></script>
+          <script src="components/patient/patient-status-dfm.service.js"></script>
+          <script src="components/patient/patient-status-ohis.service.js"></script>
+          <script src="components/patient/patient-survey.service.js"></script>
+          <script src="components/patient/patient-treatment-plan.service.js"></script>
+          <script src="components/patient/patient-visit.service.js"></script>
           <script src="components/patient/patient.service.js"></script>
+          <script src="components/static/static.service.js"></script>
           <script src="components/table-head/table-head.directive.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->

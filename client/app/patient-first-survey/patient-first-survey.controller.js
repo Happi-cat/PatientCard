@@ -1,14 +1,12 @@
 'use strict';
 
 angular.module('dentalPatientCardApp')
-  .controller('PatientFirstSurveyCtrl', function ($scope, $routeParams, patientService, staticService, ROLES) {
+  .controller('PatientFirstSurveyCtrl', function ($scope, $routeParams, Auth, Patient, PatientFirstSurvey) {
   	var self = $scope;
 
     self.patientId = $routeParams.patientId;
 
-	self.editPerm = {
-		role: [ROLES.doctor, ROLES.admin]
-	};
+	self.editPerm = role: ['administrator', 'doctor'];
 	
 	self.breadcrumb = {
 		items: [
@@ -18,7 +16,7 @@ angular.module('dentalPatientCardApp')
 			},
 			{
 				title: 'Пациент',
-				url: '/patient/view/' + self.patientId
+				url: '/patients/view/' + self.patientId
 			}
 		],
 		current: 'Первичный осмотр'

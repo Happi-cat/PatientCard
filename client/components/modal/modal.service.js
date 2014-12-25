@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('patientCardApp')
+angular.module('dentalPatientCardApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

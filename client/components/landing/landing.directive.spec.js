@@ -3,7 +3,7 @@
 describe('Directive: landing', function () {
 
   // load the directive's module and view
-  beforeEach(module('patientCardApp'));
+  beforeEach(module('dentalPatientCardApp'));
   beforeEach(module('components/landing/landing.html'));
 
   var element, scope;

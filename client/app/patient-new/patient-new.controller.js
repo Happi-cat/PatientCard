@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dentalPatientCardApp')
-  .controller('PatientNewCtrl', function ($scope, patientService) {
+  .controller('PatientNewCtrl', function ($scope, Auth, Patient) {
     var self = $scope;
 
 	self.breadcrumb = {
@@ -26,7 +26,9 @@ angular.module('dentalPatientCardApp')
 	];
 	
 	self.ok = function () {
-		patientService.storePatient(self.patient).then(function () {
+		Patient.create({
+			token: Auth.getToken()
+		}, self.patient).then(function () {
 			$scope.goUp(self.breadcrumb);
 		}, self.onSaveFailed);
 	};
